@@ -14,9 +14,11 @@ class Soup < Formula
     sha256 '75e790ddf37071288648eff2781db2a139e246ada01d6f16b9ea6b5e83d7e899'
   end
 
-  resource 'cocoapods' do
-    url 'https://rubygems.org/gems/cocoapods-1.11.3.gem'
-    sha256 'c3cfe166ce716f4739de017806b02e76d719721defd7126a6014452dd6293d32'
+  if on_macos?
+    resource 'cocoapods' do
+      url 'https://rubygems.org/gems/cocoapods-1.11.3.gem'
+      sha256 'c3cfe166ce716f4739de017806b02e76d719721defd7126a6014452dd6293d32'
+    end
   end
 
   resource 'httparty' do
@@ -59,10 +61,10 @@ class Soup < Formula
 
   def exec_script
     <<~EOS
-    #!/usr/bin/env bash
-    export GEM_HOME="#{HOMEBREW_PREFIX}/lib/soup/vendor"
-    export DISABLE_BUNDLER_SETUP=1
-    exec ruby "#{bin}/soup.rb" "$@"
+      #!/usr/bin/env bash
+      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/soup/vendor"
+      export DISABLE_BUNDLER_SETUP=1
+      exec ruby "#{bin}/soup.rb" "$@"
     EOS
   end
 end
