@@ -14,7 +14,7 @@ class Soup < Formula
     sha256 '75e790ddf37071288648eff2781db2a139e246ada01d6f16b9ea6b5e83d7e899'
   end
 
-  on_macos do
+  if OS.mac?
     resource 'cocoapods' do
       url 'https://rubygems.org/gems/cocoapods-1.11.3.gem'
       sha256 'c3cfe166ce716f4739de017806b02e76d719721defd7126a6014452dd6293d32'
