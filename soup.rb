@@ -58,7 +58,7 @@ class Soup < Formula
   end
 
   def exec_script
-    <<-EOS.undent
+    <<~EOS
     #!/usr/bin/env bash
     export GEM_HOME="#{HOMEBREW_PREFIX}/lib/soup/vendor"
     export DISABLE_BUNDLER_SETUP=1
