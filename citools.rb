@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CiTools < Formula
+class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
