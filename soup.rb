@@ -53,18 +53,18 @@ class Soup < Formula
       system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/soup/vendor")
     end
 
-    rm_rf 'vendor'
-    bin.install 'soup.rb'
+    rm_rf('vendor')
+    bin.install('soup.rb')
 
     (bin / 'soup').write(exec_script)
   end
 
   def exec_script
-    <<~EOS
+    <<~SHELL
       #!/usr/bin/env bash
       export GEM_HOME="#{HOMEBREW_PREFIX}/lib/soup/vendor"
       export DISABLE_BUNDLER_SETUP=1
       exec ruby "#{bin}/soup.rb" "$@"
-    EOS
+    SHELL
   end
 end

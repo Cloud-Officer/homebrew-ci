@@ -23,7 +23,7 @@ class CiTools < Formula
   depends_on 'yamllint'
 
   def install
-    bin.install 'linters'
-    bin.install 'ssh-jump'
+    bin.install('linters')
+    bin.install('ssh-jump')
   end
 end
