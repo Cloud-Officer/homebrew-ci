@@ -67,7 +67,7 @@ class Soup < Formula
       #!/usr/bin/env bash
       export GEM_HOME="#{HOMEBREW_PREFIX}/lib/soup/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec ruby "#{HOMEBREW_PREFIX}/bin/soup" "$@"
+      exec ruby "#{HOMEBREW_PREFIX}/bin/soup.rb" "$@"
     SHELL
   end
 end
