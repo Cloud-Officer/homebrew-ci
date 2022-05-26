@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '0.0.8'
+      tag: '0.0.9'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -48,13 +48,13 @@ class Soup < Formula
 
   def install
     (lib / 'soup/vendor').mkpath
+
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
       system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/soup/vendor")
     end
 
     rm_rf('vendor')
-    bin.install('soup.rb')
 
     (bin / 'soup').write(exec_script)
   end
@@ -64,7 +64,7 @@ class Soup < Formula
       #!/usr/bin/env bash
       export GEM_HOME="#{HOMEBREW_PREFIX}/lib/soup/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec ruby "#{bin}/soup.rb" "$@"
+      exec ruby "#{HOMEBREW_PREFIX}/bin/soup" "$@"
     SHELL
   end
 end
