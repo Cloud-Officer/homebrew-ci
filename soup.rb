@@ -47,6 +47,7 @@ class Soup < Formula
   end
 
   def install
+    prefix.install 'bin', 'conf', 'lib'
     (lib / 'soup/vendor').mkpath
 
     resources.each do |r|
