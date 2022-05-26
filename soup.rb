@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '0.0.9'
+      tag: '0.0.10'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -59,7 +59,7 @@ class Soup < Formula
 
     rm_rf('vendor')
 
-    #(bin / 'soup').write(exec_script)
+    (bin / 'soup').write(exec_script)
   end
 
   def exec_script
