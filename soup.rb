@@ -59,7 +59,7 @@ class Soup < Formula
 
     rm_rf('vendor')
 
-    (bin / 'soup').write(exec_script)
+    #(bin / 'soup').write(exec_script)
   end
 
   def exec_script
