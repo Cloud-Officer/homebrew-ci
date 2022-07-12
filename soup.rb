@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '0.0.13'
+      tag: '0.0.14'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -304,7 +304,7 @@ class Soup < Formula
     url 'https://rubygems.org/gems/zeitwerk-2.6.0.gem'
     sha256 '6cb2ee4645c6e597640d6f2d8cc91a59a6699ab38896a5c3fac3eefeb5c84d76'
   end
-  
+
   def install
     prefix.install(Dir['bin'])
     prefix.install(Dir['conf'])
