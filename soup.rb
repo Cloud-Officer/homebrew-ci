@@ -162,7 +162,7 @@ class Soup < Formula
 
   resource 'json' do
     url 'https://rubygems.org/gems/json-2.6.2.gem'
-    sha256 'cc9eedb357374667fe2b45e2a7fa65af517cc33bbfa12f56a14953f38a4845f5'
+    sha256 '940dc787e33d7e846898724331c9463fd89b54602ff5ed6561f3eaed4168657a'
   end
 
   resource 'mime-types' do
