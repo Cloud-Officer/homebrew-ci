@@ -1,6 +1,6 @@
 # homebrew-ci
 
-This repository contains formulae for shared tools used locally or in CI pipelines.
+This repository contains homebrew formulae for shared tools used locally or in CI pipelines.
 
 ## citools
 
@@ -23,3 +23,5 @@ brew install cloud-officer/ci/soup
 This formula installs the following tools:
 
 * soup (software of unknown provenance licenses checker)
+
+See [soup](https://github.com/Cloud-Officer/soup) for more information.
