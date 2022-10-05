@@ -14,6 +14,8 @@ This formula installs the following tools:
 * linters (run all linters)
 * ssh-jump (ssh to a host by name via a VPN)
 
+See [ci-tools](https://github.com/Cloud-Officer/ci-tools) for more information.
+
 ## soup
 
 ```bash
