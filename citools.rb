@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '0.0.8'
+      tag: '0.0.9'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'actionlint'
