@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.0.7'
+      tag: '1.0.8'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -20,8 +20,8 @@ class Soup < Formula
   end
 
   resource 'addressable' do
-    url 'https://rubygems.org/gems/addressable-2.8.1.gem'
-    sha256 'bc724a176ef02118c8a3ed6b5c04c39cf59209607ffcce77b91d0261dbadedfa'
+    url 'https://rubygems.org/gems/addressable-2.8.4.gem'
+    sha256 '40a88af5285625b7fb14070e550e667d5b0cc91f748068701b4d897cacda4897'
   end
 
   resource 'algoliasearch' do
@@ -46,15 +46,15 @@ class Soup < Formula
 
   if OS.mac?
     resource 'cocoapods' do
-      url 'https://rubygems.org/gems/cocoapods-1.12.0.gem'
-      sha256 '1cfa506bad4a7190abf5add82e6a2a933289dc87094afc081f1b440e5aa0331c'
+      url 'https://rubygems.org/gems/cocoapods-1.12.1.gem'
+      sha256 '48f353135d29ae573bfaa6ca3df478e3617c0b964c63c7e17664e76de27d4530'
     end
   end
 
   if OS.mac?
     resource 'cocoapods-core' do
-      url 'https://rubygems.org/gems/cocoapods-core-1.12.0.gem'
-      sha256 'ab50eec3b8e8fd59ce02dd398c30c1a349d692f46ff6389f3d97adbe9f22e83f'
+      url 'https://rubygems.org/gems/cocoapods-core-1.12.1.gem'
+      sha256 '69433444058ce4a9b861fdf8246dd61121fd16393a26dfe91f7200634a341f0e'
     end
   end
 
@@ -151,8 +151,8 @@ class Soup < Formula
   end
 
   resource 'i18n' do
-    url 'https://rubygems.org/gems/i18n-1.12.0.gem'
-    sha256 '91e3cc1b97616d308707eedee413d82ee021d751c918661fb82152793e64aced'
+    url 'https://rubygems.org/gems/i18n-1.13.0.gem'
+    sha256 '1d24cacd941be578faa7fc5d537d573a3e76e2822ce7dffc0c71c41ba91e63fa'
   end
 
   resource 'inquirer' do
@@ -206,13 +206,13 @@ class Soup < Formula
   end
 
   resource 'parallel' do
-    url 'https://rubygems.org/gems/parallel-1.22.1.gem'
-    sha256 'ebdf1f0c51f182df38522f70ba770214940bef998cdb6e00f36492b29699761f'
+    url 'https://rubygems.org/gems/parallel-1.23.0.gem'
+    sha256 '27154713ad6ef32fa3dcb7788a721d6c07bca77e72443b4c6080a14145288c49'
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.2.1.1.gem'
-    sha256 '2c3fe2cbc54c90b74f2de92e61bc533090bc6eb84290db03a9dd1eee902b5ba8'
+    url 'https://rubygems.org/gems/parser-3.2.2.1.gem'
+    sha256 '1d6542b6d3c5e15bedb500fa68eb937aa0eaae644eb0eda43e9a1fa9b54dc821'
   end
 
   resource 'public_suffix' do
@@ -226,8 +226,8 @@ class Soup < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.7.0.gem'
-    sha256 'f8b8b7f34cc53c907fad6aec2b9da996a4311a0ddd92f3bfd3b999de5420c234'
+    url 'https://rubygems.org/gems/regexp_parser-2.8.0.gem'
+    sha256 'a02491c3d41f4815ea7381e1096961b7b79cdbaf1d4762308488fb5cf8fcb19f'
   end
 
   resource 'rexml' do
@@ -236,13 +236,13 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.48.1.gem'
-    sha256 '18cf7216ba8febb2f8a2a5978f36c54cfdf0de4427cb190a20fd0ee38ccdbee8'
+    url 'https://rubygems.org/gems/rubocop-1.51.0.gem'
+    sha256 'beba4c57242d3dfd9561d67f6588e2568a818445d51d172dda836223bfad2300'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.27.0.gem'
-    sha256 '0a88b64598ce7a7422579a11f419e4424fb2b10537b34b1a1b107f88f95c2a9a'
+    url 'https://rubygems.org/gems/rubocop-ast-1.28.1.gem'
+    sha256 '5a52ac8833c5c3756a8279e304cd9f26f3ad3e691be65ad90412b7ffa2fc483f'
   end
 
   resource 'ruby-macho' do
