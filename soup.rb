@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.0.8'
+      tag: '1.1.0'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -15,8 +15,8 @@ class Soup < Formula
   end
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-7.0.4.3.gem'
-    sha256 '571ed0fac8510f1fc8a1d66aa070d07ea269913bf9ef50960a8044536358a096'
+    url 'https://rubygems.org/gems/activesupport-7.0.5.gem'
+    sha256 'd58f62bf992ffe1c0efdaedc6edf1a94fdd3cfcecbca80098de587514c2cf3b0'
   end
 
   resource 'addressable' do
@@ -241,8 +241,8 @@ class Soup < Formula
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.28.1.gem'
-    sha256 '5a52ac8833c5c3756a8279e304cd9f26f3ad3e691be65ad90412b7ffa2fc483f'
+    url 'https://rubygems.org/gems/rubocop-ast-1.29.0.gem'
+    sha256 'd1da2ab279a074baefc81758ac430c5768a8da8c7438dd4e5819ce5984d00ba1'
   end
 
   resource 'ruby-macho' do
@@ -295,9 +295,14 @@ class Soup < Formula
     sha256 'f15adfafb1a859e6763056759a5d4939a8b93d7d7949512bcd24bad0b0eaf0e8'
   end
 
+  resource 'yarn_lock_parser' do
+    url 'https://rubygems.org/gems/yarn_lock_parser-0.1.0.gem'
+    sha256 '60d2a86f5aec213976c94e6cc584781d78f5696c1408a066a948899ab596d8ef'
+  end
+
   def install
     prefix.install(Dir['bin'])
-    prefix.install(Dir['conf'])
+    prefix.install(Dir['config'])
     prefix.install(Dir['lib'])
     (lib / 'soup/vendor').mkpath
 
