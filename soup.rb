@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.1.2'
+      tag: '1.1.3'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -151,8 +151,8 @@ class Soup < Formula
   end
 
   resource 'i18n' do
-    url 'https://rubygems.org/gems/i18n-1.13.0.gem'
-    sha256 '1d24cacd941be578faa7fc5d537d573a3e76e2822ce7dffc0c71c41ba91e63fa'
+    url 'https://rubygems.org/gems/i18n-1.14.1.gem'
+    sha256 '9d03698903547c060928e70a9bc8b6b87fda674453cda918fc7ab80235ae4a61'
   end
 
   resource 'inquirer' do
@@ -211,13 +211,18 @@ class Soup < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.2.2.1.gem'
-    sha256 '1d6542b6d3c5e15bedb500fa68eb937aa0eaae644eb0eda43e9a1fa9b54dc821'
+    url 'https://rubygems.org/gems/parser-3.2.2.3.gem'
+    sha256 '10685f358ab36ffea2252dc4952e5b8fad3a297a8152a85f59adc982747b91eb'
   end
 
   resource 'public_suffix' do
     url 'https://rubygems.org/gems/public_suffix-4.0.7.gem'
     sha256 '8be161e2421f8d45b0098c042c06486789731ea93dc3a896d30554ee38b573b8'
+  end
+
+  resource 'racc' do
+    url 'https://rubygems.org/gems/racc-1.7.0.gem'
+    sha256 '24fd0b223afc133cf4baf7e893ac35b99529f8ed0f803f8a90ebf8e2a01e5154'
   end
 
   resource 'rainbow' do
@@ -236,8 +241,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.51.0.gem'
-    sha256 'beba4c57242d3dfd9561d67f6588e2568a818445d51d172dda836223bfad2300'
+    url 'https://rubygems.org/gems/rubocop-1.52.0.gem'
+    sha256 'a9860af191f6d51696de9ece6ca8c072643ee6c04af4310242b13e642b11ef91'
   end
 
   resource 'rubocop-ast' do
