@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GithubBuild < Formula
+class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
