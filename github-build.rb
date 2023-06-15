@@ -143,11 +143,11 @@ class GithubBuild < Formula
     prefix.install(Dir['bin'])
     prefix.install(Dir['config'])
     prefix.install(Dir['lib'])
-    (lib / 'soup/vendor').mkpath
+    (lib / 'github-build/vendor').mkpath
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/soup/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/github-build/vendor")
     end
 
     rm_rf('vendor')
