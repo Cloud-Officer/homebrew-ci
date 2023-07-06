@@ -160,7 +160,7 @@ class Githubbuild < Formula
       #!/usr/bin/env bash
       export GEM_HOME="#{HOMEBREW_PREFIX}/lib/github-build/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec ruby "#{HOMEBREW_PREFIX}/bin/github-build.rb" "$@"
+      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/github-build.rb" "$@"
     SHELL
   end
 end

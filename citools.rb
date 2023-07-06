@@ -175,7 +175,7 @@ class Citools < Formula
       #!/usr/bin/env bash
       export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec ruby "#{HOMEBREW_PREFIX}/bin/brew-resources.rb" "$@"
+      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/brew-resources.rb" "$@"
     SHELL
   end
 
@@ -184,7 +184,7 @@ class Citools < Formula
       #!/usr/bin/env bash
       export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec ruby "#{HOMEBREW_PREFIX}/bin/cycle-keys.rb" "$@"
+      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/cycle-keys.rb" "$@"
     SHELL
   end
 
@@ -193,7 +193,7 @@ class Citools < Formula
       #!/usr/bin/env bash
       export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec ruby "#{HOMEBREW_PREFIX}/bin/deploy.rb" "$@"
+      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/deploy.rb" "$@"
     SHELL
   end
 
@@ -202,7 +202,7 @@ class Citools < Formula
       #!/usr/bin/env bash
       export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec ruby "#{HOMEBREW_PREFIX}/bin/encrypt-logs.rb" "$@"
+      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/encrypt-logs.rb" "$@"
     SHELL
   end
 end
