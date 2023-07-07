@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.0.3'
+      tag: '1.0.4'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -147,7 +147,7 @@ class Githubbuild < Formula
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/github-build/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/vendor")
     end
 
     rm_rf('vendor')
@@ -158,7 +158,7 @@ class Githubbuild < Formula
   def exec_script
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/github-build/vendor"
+      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/vendor"
       export DISABLE_BUNDLER_SETUP=1
       exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/github-build.rb" "$@"
     SHELL
