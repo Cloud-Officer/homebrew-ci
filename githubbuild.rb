@@ -147,7 +147,7 @@ class Githubbuild < Formula
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/ghb/vendor")
     end
 
     rm_rf('vendor')
@@ -158,7 +158,7 @@ class Githubbuild < Formula
   def exec_script
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/vendor"
+      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/ghb/vendor"
       export DISABLE_BUNDLER_SETUP=1
       exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/github-build.rb" "$@"
     SHELL

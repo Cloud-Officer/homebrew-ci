@@ -159,7 +159,7 @@ class Citools < Formula
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/citools/vendor")
     end
 
     rm_rf('vendor')
@@ -173,7 +173,7 @@ class Citools < Formula
   def exec_script_brew_resources
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/vendor"
+      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
       export DISABLE_BUNDLER_SETUP=1
       exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/brew-resources.rb" "$@"
     SHELL
@@ -182,7 +182,7 @@ class Citools < Formula
   def exec_script_cycle_keys
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/vendor"
+      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
       export DISABLE_BUNDLER_SETUP=1
       exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/cycle-keys.rb" "$@"
     SHELL
@@ -191,7 +191,7 @@ class Citools < Formula
   def exec_script_deploy
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/vendor"
+      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
       export DISABLE_BUNDLER_SETUP=1
       exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/deploy.rb" "$@"
     SHELL
@@ -200,7 +200,7 @@ class Citools < Formula
   def exec_script_encrypt_logs
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/vendor"
+      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
       export DISABLE_BUNDLER_SETUP=1
       exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/encrypt-logs.rb" "$@"
     SHELL
