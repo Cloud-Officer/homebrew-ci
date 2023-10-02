@@ -10,8 +10,8 @@ class Githubbuild < Formula
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-7.0.7.2.gem'
-    sha256 '62e01393689c8514a65e2cf8be6f4781d1e6c7d9adc25b1056902d8abd659fee'
+    url 'https://rubygems.org/gems/activesupport-7.0.8.gem'
+    sha256 '458316bb5098211ba9436d3c64d883177f09c49d1e29aa00f970d160275f13a1'
   end
 
   resource 'ast' do
@@ -120,8 +120,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.56.2.gem'
-    sha256 'db35d1f59c293fc0f1262f6705e3d755929ebdba9de139903a880f8e6f7a28c3'
+    url 'https://rubygems.org/gems/rubocop-1.56.4.gem'
+    sha256 '98239f52989fb48fff855aae9a10dd3b021edaea90909c8e234e08ac4f70f671'
   end
 
   resource 'rubocop-ast' do
@@ -145,8 +145,8 @@ class Githubbuild < Formula
   end
 
   resource 'unicode-display_width' do
-    url 'https://rubygems.org/gems/unicode-display_width-2.4.2.gem'
-    sha256 '6a10205d1a19ca790c4e53064ba93f09d9eb234bf6bd135d9deb6001c21428be'
+    url 'https://rubygems.org/gems/unicode-display_width-2.5.0.gem'
+    sha256 '7e7681dcade1add70cb9fda20dd77f300b8587c81ebbd165d14fd93144ff0ab4'
   end
 
   def install
