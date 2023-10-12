@@ -16,9 +16,7 @@ class Soup < Formula
     system "gem", "install", "bundler"
     system "bundle", "install"
 
-    prefix.install(Dir['bin'])
-    prefix.install(Dir['config'])
-    prefix.install(Dir['lib'])
+    prefix.install(Dir['*'])
     bin.install_symlink(libexec/'bin/soup')
     (bin / 'soup').write(exec_script)
   end
