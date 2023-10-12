@@ -15,7 +15,10 @@ class Soup < Formula
     system "gem", "install", "bundler"
     system "bundle", "install"
 
-    prefix.install(Dir['*'])
+    prefix.install(Dir['bin'])
+    prefix.install(Dir['config'])
+    prefix.install(Dir['lib'])
+    prefix.install(Dir['Gemfile*'])
     bin.install_symlink(libexec/'bin/soup')
     (bin / 'soup').write(exec_script)
   end
@@ -23,7 +26,7 @@ class Soup < Formula
   def exec_script
     <<~SHELL
       #!/usr/bin/env bash
-      exec "#{Formula["ruby"].opt_bin}/ruby" "#{libexec}/bin/soup" "$@"
+      exec "#{Formula["ruby"].opt_bin}/ruby" "#{HOMEBREW_PREFIX}/bin/soup.rb" "$@"
     SHELL
   end
 end
