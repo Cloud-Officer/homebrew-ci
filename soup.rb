@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.1.10'
+      tag: '1.1.11'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -126,8 +126,8 @@ class Soup < Formula
   end
 
   resource 'ffi' do
-    url 'https://rubygems.org/gems/ffi-1.16.2.gem'
-    sha256 '8ef2ae82bb0c332d2ce3e92d9446b2ba2bc7c40a53d785a8556640afad995d39'
+    url 'https://rubygems.org/gems/ffi-1.16.3.gem'
+    sha256 '6d3242ff10c87271b0675c58d68d3f10148fabc2ad6da52a18123f06078871fb'
   end
 
   resource 'fourflusher' do
@@ -221,8 +221,8 @@ class Soup < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.2.2.3.gem'
-    sha256 '10685f358ab36ffea2252dc4952e5b8fad3a297a8152a85f59adc982747b91eb'
+    url 'https://rubygems.org/gems/parser-3.2.2.4.gem'
+    sha256 'edbe6751f85599c8152173ccadbd708f444b7214de2a1d4969441a68e06ac964'
   end
 
   resource 'public_suffix' do
@@ -241,8 +241,8 @@ class Soup < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.8.1.gem'
-    sha256 '83f63e2bfae3db38f988c66f114485140ff1791321fd827480bc75aa42cacb8c'
+    url 'https://rubygems.org/gems/regexp_parser-2.8.2.gem'
+    sha256 '5e65506e536e4f14ce2cd98a3daecf20b88ac77b6268412928bec98c872e2ab5'
   end
 
   resource 'rexml' do
@@ -251,8 +251,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.56.4.gem'
-    sha256 '98239f52989fb48fff855aae9a10dd3b021edaea90909c8e234e08ac4f70f671'
+    url 'https://rubygems.org/gems/rubocop-1.57.0.gem'
+    sha256 'f31c53fbb25d506621e9f57486d1d5aeeada007ca39c7b8c5effbf5d6cfb5452'
   end
 
   resource 'rubocop-ast' do
