@@ -12,7 +12,6 @@ class Soup < Formula
   def install
     ENV["GEM_HOME"] = libexec
     ENV["BUNDLE_PATH"] = libexec
-    ENV["BUNDLE_GEMFILE"] = libexec/"Gemfile"
     system "gem", "install", "bundler"
     system "bundle", "install"
 
