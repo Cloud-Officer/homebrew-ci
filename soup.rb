@@ -316,7 +316,9 @@ class Soup < Formula
   end
 
   def install
-    prefix.install(Dir['*'])
+    prefix.install(Dir['bin'])
+    prefix.install(Dir['config'])
+    prefix.install(Dir['lib'])
     (lib / 'soup/vendor').mkpath
 
     resources.each do |r|
