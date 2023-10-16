@@ -22,7 +22,7 @@ class Soup < Formula
       export GEM_HOME="#{libexec}"
       export GEM_PATH="#{libexec}"
       export BUNDLE_PATH="#{libexec}"
-      exec "#{Formula["ruby"].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
+      exec "#{Formula["ruby"].opt_bin}/bundle" exec "ruby" "#{bin}/soup.rb" "$@"
     SHELL
   end
 end
