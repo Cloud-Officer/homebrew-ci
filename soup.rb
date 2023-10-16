@@ -15,16 +15,16 @@ class Soup < Formula
     prefix.install(Dir['lib'])
     prefix.install(Dir['Gemfile*'])
 
-    ENV["GEM_HOME"] = "#{HOMEBREW_PREFIX}/vendor"
-    ENV["BUNDLE_PATH"] = "#{HOMEBREW_PREFIX}/vendor"
-    ENV["BUNDLE_GEMFILE"] = "#{HOMEBREW_PREFIX}/Gemfile"
+    ENV["GEM_HOME"] = libexec
+    ENV["BUNDLE_PATH"] = libexec
+    ENV["BUNDLE_GEMFILE"] = libexec/"Gemfile"
     system "gem", "install", "bundler"
     system "bundle", "install"
 
     (bin/'soup').write <<~SHELL
       #!/usr/bin/env bash
       export GEM_HOME="#{HOMEBREW_PREFIX}/vendor"
-      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/soup.rb" "$@"
+      exec "#{Formula["ruby"].opt_bin}/ruby" "#{HOMEBREW_PREFIX}/bin/soup.rb" "$@"
     SHELL
   end
 end
