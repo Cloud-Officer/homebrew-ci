@@ -13,7 +13,6 @@ class Soup < Formula
     prefix.install(Dir['bin'])
     prefix.install(Dir['config'])
     prefix.install(Dir['lib'])
-    prefix.install(Dir['Gemfile*'])
 
     ENV["GEM_HOME"] = libexec
     ENV["BUNDLE_PATH"] = libexec
