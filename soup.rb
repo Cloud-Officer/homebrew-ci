@@ -14,8 +14,8 @@ class Soup < Formula
 
     ENV["GEM_HOME"] = libexec
     ENV["BUNDLE_PATH"] = libexec
-    system('gem', 'install', 'bundler')
-    system('bundle', 'install')
+    system 'gem', 'install', 'bundler'
+    system 'bundle', 'install'
 
     (bin/'soup').write <<~SHELL
       #!/usr/bin/env bash
