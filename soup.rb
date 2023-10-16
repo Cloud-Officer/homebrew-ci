@@ -19,10 +19,8 @@ class Soup < Formula
 
     (bin/'soup').write <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{libexec}"
-      export GEM_PATH="#{libexec}"
-      export BUNDLE_PATH="#{libexec}"
-      exec "#{Formula["ruby"].opt_bin}/bundle" exec "ruby" "#{bin}/soup.rb" "$@"
+      export GEM_HOME="#{libexec}/ruby/$(#{Formula["ruby"].opt_bin}/ruby -e 'puts RUBY_VERSION')/gems"
+      exec "#{Formula["ruby"].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
     SHELL
   end
 end
