@@ -28,18 +28,18 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.830.0.gem'
-    sha256 '0760a21250e18b5d476d3f74dcd0283fd08a3fe76ed8feceb1953d41b3cbe0b4'
+    url 'https://rubygems.org/gems/aws-partitions-1.836.0.gem'
+    sha256 '7fffdd820473fae20bb3273342c72aad55097574a65716c25b17febc47efbbf4'
   end
 
   resource 'aws-sdk-autoscaling' do
-    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.98.0.gem'
-    sha256 'd4cd13c8a65c276db51fb0953c2e7795268c4824719d64989d69d5b930c4f0cc'
+    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.99.0.gem'
+    sha256 '15f5d09216b790e2d2d02dfb6ddbeec3498318530c5c64faa118751ca2038bf2'
   end
 
   resource 'aws-sdk-cloudformation' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.90.0.gem'
-    sha256 'c6aa858457dcdd2a0a1fb9c0a870ee9853598848729a0051cfd0507f9a9873ee'
+    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.91.0.gem'
+    sha256 '58f2b03cad2b2a7bd25e8375574848e65c4cbc3495e2b588ac436cf693969a83'
   end
 
   resource 'aws-sdk-cloudfront' do
@@ -53,18 +53,18 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.184.0.gem'
-    sha256 '408cffb9716f338f08998ea069bac1491cb8f6222f07f32679f0ec7b8b04e4f9'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.185.1.gem'
+    sha256 '572ada4eaf8393a9999d9a50adc2dcb78cc742c26a5727248c27f02cdaf97973'
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.410.0.gem'
-    sha256 '935b2a2c0069ce2b65f0f6dcb5fde29b6c0ebbf1da30e6a38cf0a02288982581'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.413.0.gem'
+    sha256 '2e835717fb5ea4971c0ea7fc1540e3bd741f6a9440cb5d4a9ce51463729adaec'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
-    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.92.0.gem'
-    sha256 'bfe057f2edca1b6abba43388fd5cbb0f0f4871caa80ce0c84364fa0e5c1b5ce9'
+    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.93.0.gem'
+    sha256 'fa21b78ea0a6e048333d86de055daa77984941a7553f43240ccb302f2dbb732d'
   end
 
   resource 'aws-sdk-iam' do
@@ -78,8 +78,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.105.0.gem'
-    sha256 'b60a6167314017162ac1b2157ab390cd6d2576e67f4d7ff67c57aa0ff1ae09e1'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.106.0.gem'
+    sha256 'a73d6d210cc14c3f068722d823aed67cba938834ef5001b1f99cbeb4d0361371'
   end
 
   resource 'aws-sdk-ssm' do
@@ -155,11 +155,11 @@ class Citools < Formula
     bin.install('generate-codeowners')
     bin.install('linters')
     bin.install('ssh-jump')
-    (lib / 'citools/vendor').mkpath
+    (libexec / 'vendor').mkpath
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/citools/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor")
     end
 
     rm_rf('vendor')
@@ -173,36 +173,40 @@ class Citools < Formula
   def exec_script_brew_resources
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
+      export GEM_HOME="#{libexec}/vendor"
+      export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/brew-resources.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/brew-resources.rb" "$@"
     SHELL
   end
 
   def exec_script_cycle_keys
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
+      export GEM_HOME="#{libexec}/vendor"
+      export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/cycle-keys.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/cycle-keys.rb" "$@"
     SHELL
   end
 
   def exec_script_deploy
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
+      export GEM_HOME="#{libexec}/vendor"
+      export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/deploy.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/deploy.rb" "$@"
     SHELL
   end
 
   def exec_script_encrypt_logs
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/citools/vendor"
+      export GEM_HOME="#{libexec}/vendor"
+      export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/encrypt-logs.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/encrypt-logs.rb" "$@"
     SHELL
   end
 end

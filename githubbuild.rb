@@ -10,8 +10,8 @@ class Githubbuild < Formula
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-7.0.8.gem'
-    sha256 '458316bb5098211ba9436d3c64d883177f09c49d1e29aa00f970d160275f13a1'
+    url 'https://rubygems.org/gems/activesupport-7.1.1.gem'
+    sha256 '8770bca4af1cbd6e9ffb944b41056321499ff82e8e7c2ed34e48eff4a5ee58a2'
   end
 
   resource 'ast' do
@@ -24,9 +24,24 @@ class Githubbuild < Formula
     sha256 '0c75d351a429b5176a476cd8a3740cff3277d2bac26a50b5c7456c266e9acd33'
   end
 
+  resource 'bigdecimal' do
+    url 'https://rubygems.org/gems/bigdecimal-3.1.4.gem'
+    sha256 'de0c967bb24afe45e0e3d2d65e376614a430c3bc70563ac21cb3518f7409c61f'
+  end
+
   resource 'concurrent-ruby' do
     url 'https://rubygems.org/gems/concurrent-ruby-1.2.2.gem'
     sha256 '3879119b8b75e3b62616acc256c64a134d0b0a7a9a3fcba5a233025bcde22c4f'
+  end
+
+  resource 'connection_pool' do
+    url 'https://rubygems.org/gems/connection_pool-2.4.1.gem'
+    sha256 '0f40cf997091f1f04ff66da67eabd61a9fe0d4928b9a3645228532512fab62f4'
+  end
+
+  resource 'drb' do
+    url 'https://rubygems.org/gems/drb-2.1.1.gem'
+    sha256 '6b8f481d9a9a7528c41d4f66484a4a73d2204f095da8ab141b5ea0aa22162c41'
   end
 
   resource 'duplicate' do
@@ -74,6 +89,11 @@ class Githubbuild < Formula
     sha256 'd24393cf958adb226db884b976b007914a89c53ad88718e25679d7008823ad52'
   end
 
+  resource 'mutex_m' do
+    url 'https://rubygems.org/gems/mutex_m-0.1.2.gem'
+    sha256 '0a9bc5ebe3495e3fc39b1c56292792c1f793b3926fad050cd17b1272cfb57dde'
+  end
+
   resource 'open3' do
     url 'https://rubygems.org/gems/open3-0.1.2.gem'
     sha256 'be2909458efacbe1c568668d3745ed240fc84a5f73c36bed6a72749222d9726e'
@@ -90,13 +110,13 @@ class Githubbuild < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.2.2.3.gem'
-    sha256 '10685f358ab36ffea2252dc4952e5b8fad3a297a8152a85f59adc982747b91eb'
+    url 'https://rubygems.org/gems/parser-3.2.2.4.gem'
+    sha256 'edbe6751f85599c8152173ccadbd708f444b7214de2a1d4969441a68e06ac964'
   end
 
   resource 'psych' do
-    url 'https://rubygems.org/gems/psych-5.1.0.gem'
-    sha256 '7f17a4c4d89eed786eac4a122cd1a7092679c524d2576d9e0e6d6452d6aa4ad7'
+    url 'https://rubygems.org/gems/psych-5.1.1.1.gem'
+    sha256 '44b0d1823629ac815f1f470af642dc7261489d67feb622a3f5573aa9f5cc5f72'
   end
 
   resource 'racc' do
@@ -110,8 +130,8 @@ class Githubbuild < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.8.1.gem'
-    sha256 '83f63e2bfae3db38f988c66f114485140ff1791321fd827480bc75aa42cacb8c'
+    url 'https://rubygems.org/gems/regexp_parser-2.8.2.gem'
+    sha256 '5e65506e536e4f14ce2cd98a3daecf20b88ac77b6268412928bec98c872e2ab5'
   end
 
   resource 'rexml' do
@@ -120,8 +140,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.56.4.gem'
-    sha256 '98239f52989fb48fff855aae9a10dd3b021edaea90909c8e234e08ac4f70f671'
+    url 'https://rubygems.org/gems/rubocop-1.57.1.gem'
+    sha256 '815449c1918f8acfd000cd52e2e20283e20540fac8d81c10e8d76df312dbfdc7'
   end
 
   resource 'rubocop-ast' do
@@ -132,6 +152,11 @@ class Githubbuild < Formula
   resource 'ruby-progressbar' do
     url 'https://rubygems.org/gems/ruby-progressbar-1.13.0.gem'
     sha256 '80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33'
+  end
+
+  resource 'ruby2_keywords' do
+    url 'https://rubygems.org/gems/ruby2_keywords-0.0.5.gem'
+    sha256 'ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef'
   end
 
   resource 'stringio' do
@@ -153,11 +178,11 @@ class Githubbuild < Formula
     prefix.install(Dir['bin'])
     prefix.install(Dir['config'])
     prefix.install(Dir['lib'])
-    (lib / 'github-build/vendor').mkpath
+    (libexec / 'vendor').mkpath
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/ghb/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor")
     end
 
     rm_rf('vendor')
@@ -168,9 +193,10 @@ class Githubbuild < Formula
   def exec_script
     <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/lib/ghb/vendor"
+      export GEM_HOME="#{libexec}/vendor"
+      export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{HOMEBREW_PREFIX}/opt/ruby/bin/ruby" "#{HOMEBREW_PREFIX}/bin/github-build.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/github-build.rb" "$@"
     SHELL
   end
 end

@@ -329,12 +329,16 @@ class Soup < Formula
     rm_rf('vendor')
     rm_rf("#{libexec}/vendor/gems/activesupport-7.1.1")
 
-    (bin/'soup').write <<~SHELL
+    (bin / 'soup').write(exec_script)
+  end
+
+  def exec_script
+    <<~SHELL
       #!/usr/bin/env bash
       export GEM_HOME="#{libexec}/vendor"
       export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula["ruby"].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
     SHELL
   end
 end
