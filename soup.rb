@@ -327,6 +327,7 @@ class Soup < Formula
     end
 
     rm_rf('vendor')
+    rm_rf("#{lib}/soup/vendor/gems/activesupport-7.1*")
 
     (bin/'soup').write <<~SHELL
       #!/usr/bin/env bash
