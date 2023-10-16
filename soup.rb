@@ -317,16 +317,18 @@ class Soup < Formula
 
   def install
     prefix.install(Dir['*'])
-    (prefix/'vendor').mkpath
+    (lib / 'soup/vendor').mkpath
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{prefix}/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/soup/vendor")
     end
+
+    rm_rf('vendor')
 
     (bin/'soup').write <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/vendor"
+      export GEM_HOME="#{lib}/soup/vendor"
       export DISABLE_BUNDLER_SETUP=1
       exec "#{Formula["ruby"].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
     SHELL
