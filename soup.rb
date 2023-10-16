@@ -319,19 +319,19 @@ class Soup < Formula
     prefix.install(Dir['bin'])
     prefix.install(Dir['config'])
     prefix.install(Dir['lib'])
-    (lib / 'soup/vendor').mkpath
+    (libexec / 'vendor').mkpath
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{lib}/soup/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor")
     end
 
     rm_rf('vendor')
-    rm_rf("#{lib}/soup/vendor/gems/activesupport-7.1*")
+    rm_rf("#{libexec}/vendor/gems/activesupport-7.1.1")
 
     (bin/'soup').write <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{lib}/soup/vendor"
+      export GEM_HOME="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
       exec "#{Formula["ruby"].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
     SHELL
