@@ -12,10 +12,10 @@ class Soup < Formula
   def install
     prefix.install(%w[bin config lib])
 
-    #ENV["GEM_HOME"] = libexec
-    #ENV["BUNDLE_PATH"] = libexec
-    system(%w[gem install bundler])
-    system(%w[bundle install])
+    ENV["GEM_HOME"] = libexec
+    ENV["BUNDLE_PATH"] = libexec
+    system('gem', 'install', 'bundler')
+    system('bundle', 'install')
 
     (bin/'soup').write <<~SHELL
       #!/usr/bin/env bash
