@@ -332,6 +332,7 @@ class Soup < Formula
     (bin/'soup').write <<~SHELL
       #!/usr/bin/env bash
       export GEM_HOME="#{libexec}/vendor"
+      export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
       exec "#{Formula["ruby"].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
     SHELL
