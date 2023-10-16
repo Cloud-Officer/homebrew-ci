@@ -10,19 +10,17 @@ class Soup < Formula
   depends_on 'ruby'
 
   def install
-    prefix.install(Dir['bin'])
-    prefix.install(Dir['config'])
-    prefix.install(Dir['lib'])
+    prefix.install(%w[bin config lib])
 
-    ENV["GEM_HOME"] = libexec
-    ENV["BUNDLE_PATH"] = libexec
-    system "gem", "install", "bundler"
-    system "bundle", "install"
+    #ENV["GEM_HOME"] = libexec
+    #ENV["BUNDLE_PATH"] = libexec
+    system(%w[gem install bundler])
+    system(%w[bundle install])
 
     (bin/'soup').write <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{HOMEBREW_PREFIX}/vendor"
-      exec "#{Formula["ruby"].opt_bin}/ruby" "#{HOMEBREW_PREFIX}/bin/soup.rb" "$@"
+      export GEM_HOME="#{libexec}"
+      exec "#{Formula["ruby"].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
     SHELL
   end
 end
