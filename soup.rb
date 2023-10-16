@@ -16,10 +16,11 @@ class Soup < Formula
     system 'gem', 'install', 'bundler'
     system 'bundle', 'install'
     prefix.install(Dir['*'])
+    rubygems_path = Utils.safe_popen_read("#{Formula["ruby"].opt_bin}/ruby", "-e", "puts Gem.path").chomp
 
     (bin/'soup').write <<~SHELL
       #!/usr/bin/env bash
-      export GEM_HOME="#{libexec}/ruby/$(#{Formula["ruby"].opt_bin}/ruby -e 'puts RUBY_VERSION')/gems"
+      export GEM_HOME="#{rubygems_path}"
       exec "#{Formula["ruby"].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
     SHELL
   end
