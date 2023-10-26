@@ -352,7 +352,6 @@ class Soup < Formula
     end
 
     rm_rf('vendor')
-    rm_rf("#{libexec}/vendor/gems/activesupport-7.1.1")
 
     (bin / 'soup').write(exec_script)
   end
