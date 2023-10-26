@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.1.12'
+      tag: '1.1.13'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -15,8 +15,8 @@ class Soup < Formula
   end
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-7.0.8.gem'
-    sha256 '458316bb5098211ba9436d3c64d883177f09c49d1e29aa00f970d160275f13a1'
+    url 'https://rubygems.org/gems/activesupport-7.1.1.gem'
+    sha256 '8770bca4af1cbd6e9ffb944b41056321499ff82e8e7c2ed34e48eff4a5ee58a2'
   end
 
   resource 'addressable' do
@@ -44,6 +44,11 @@ class Soup < Formula
     sha256 '0c75d351a429b5176a476cd8a3740cff3277d2bac26a50b5c7456c266e9acd33'
   end
 
+  resource 'bigdecimal' do
+    url 'https://rubygems.org/gems/bigdecimal-3.1.4.gem'
+    sha256 'de0c967bb24afe45e0e3d2d65e376614a430c3bc70563ac21cb3518f7409c61f'
+  end
+
   resource 'claide' do
     url 'https://rubygems.org/gems/claide-1.1.0.gem'
     sha256 '6d3c5c089dde904d96aa30e73306d0d4bd444b1accb9b3125ce14a3c0183f82e'
@@ -51,15 +56,15 @@ class Soup < Formula
 
   if OS.mac?
     resource 'cocoapods' do
-      url 'https://rubygems.org/gems/cocoapods-1.12.0.gem'
-      sha256 '1cfa506bad4a7190abf5add82e6a2a933289dc87094afc081f1b440e5aa0331c'
+      url 'https://rubygems.org/gems/cocoapods-1.14.0.gem'
+      sha256 '5a67845857b44d4fe4d30b56193a130b4195b03372b0509f3ea77aad0e841a16'
     end
   end
 
   if OS.mac?
     resource 'cocoapods-core' do
-      url 'https://rubygems.org/gems/cocoapods-core-1.12.0.gem'
-      sha256 'ab50eec3b8e8fd59ce02dd398c30c1a349d692f46ff6389f3d97adbe9f22e83f'
+      url 'https://rubygems.org/gems/cocoapods-core-1.14.0.gem'
+      sha256 '15300c2fed1ba81868dcea76869aba0d217ad2458068bf603d6ae76ead1ac6ba'
     end
   end
 
@@ -72,8 +77,8 @@ class Soup < Formula
 
   if OS.mac?
     resource 'cocoapods-downloader' do
-      url 'https://rubygems.org/gems/cocoapods-downloader-1.6.3.gem'
-      sha256 'f0ebe76e6b4ecb5c660a833555da562d862ad6600a9baed2c2e60fa8e2bcf149'
+      url 'https://rubygems.org/gems/cocoapods-downloader-2.0.gem'
+      sha256 '1a91695529b6b38ebb9d6f472e031e29f8f212e66aa5e53fc40af2c94608155b'
     end
   end
 
@@ -113,6 +118,16 @@ class Soup < Formula
   resource 'concurrent-ruby' do
     url 'https://rubygems.org/gems/concurrent-ruby-1.2.2.gem'
     sha256 '3879119b8b75e3b62616acc256c64a134d0b0a7a9a3fcba5a233025bcde22c4f'
+  end
+
+  resource 'connection_pool' do
+    url 'https://rubygems.org/gems/connection_pool-2.4.1.gem'
+    sha256 '0f40cf997091f1f04ff66da67eabd61a9fe0d4928b9a3645228532512fab62f4'
+  end
+
+  resource 'drb' do
+    url 'https://rubygems.org/gems/drb-2.1.1.gem'
+    sha256 '6b8f481d9a9a7528c41d4f66484a4a73d2204f095da8ab141b5ea0aa22162c41'
   end
 
   resource 'escape' do
@@ -195,6 +210,11 @@ class Soup < Formula
     sha256 'd24393cf958adb226db884b976b007914a89c53ad88718e25679d7008823ad52'
   end
 
+  resource 'mutex_m' do
+    url 'https://rubygems.org/gems/mutex_m-0.1.2.gem'
+    sha256 '0a9bc5ebe3495e3fc39b1c56292792c1f793b3926fad050cd17b1272cfb57dde'
+  end
+
   resource 'nanaimo' do
     url 'https://rubygems.org/gems/nanaimo-0.3.0.gem'
     sha256 'aaaedc60497070b864a7e220f7c4b4cad3a0daddda2c30055ba8dae306342376'
@@ -251,8 +271,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.57.0.gem'
-    sha256 'f31c53fbb25d506621e9f57486d1d5aeeada007ca39c7b8c5effbf5d6cfb5452'
+    url 'https://rubygems.org/gems/rubocop-1.57.2.gem'
+    sha256 '8f679dfe42d7821dc61dafb17d14b1294343157a197b9f8a23720ca17fb9161b'
   end
 
   resource 'rubocop-ast' do
@@ -268,6 +288,11 @@ class Soup < Formula
   resource 'ruby-progressbar' do
     url 'https://rubygems.org/gems/ruby-progressbar-1.13.0.gem'
     sha256 '80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33'
+  end
+
+  resource 'ruby2_keywords' do
+    url 'https://rubygems.org/gems/ruby2_keywords-0.0.5.gem'
+    sha256 'ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef'
   end
 
   resource 'semantic' do
