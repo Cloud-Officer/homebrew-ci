@@ -4,7 +4,7 @@
 
 # build/deploy related files
 
-.github/*                @ydesgagn
+.github/                 @ydesgagn
 .gitignore               @ydesgagn
 .markdownlint.yml        @ydesgagn
 .rubocop.yml             @ydesgagn
