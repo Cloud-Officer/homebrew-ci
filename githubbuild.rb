@@ -4,14 +4,14 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.0.13'
+      tag: '1.0.14'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-7.1.1.gem'
-    sha256 '8770bca4af1cbd6e9ffb944b41056321499ff82e8e7c2ed34e48eff4a5ee58a2'
+    url 'https://rubygems.org/gems/activesupport-7.1.2.gem'
+    sha256 '5bd81ef71524a14725ecb6c3b07bfc00ae0ccc77dd611190bd93bd9f92abd0d0'
   end
 
   resource 'ast' do
@@ -20,8 +20,8 @@ class Githubbuild < Formula
   end
 
   resource 'base64' do
-    url 'https://rubygems.org/gems/base64-0.1.1.gem'
-    sha256 '0c75d351a429b5176a476cd8a3740cff3277d2bac26a50b5c7456c266e9acd33'
+    url 'https://rubygems.org/gems/base64-0.2.0.gem'
+    sha256 '0f25e9b21a02a0cc0cea8ef92b2041035d39350946e8789c562b2d1a3da01507'
   end
 
   resource 'bigdecimal' do
@@ -40,8 +40,8 @@ class Githubbuild < Formula
   end
 
   resource 'drb' do
-    url 'https://rubygems.org/gems/drb-2.1.1.gem'
-    sha256 '6b8f481d9a9a7528c41d4f66484a4a73d2204f095da8ab141b5ea0aa22162c41'
+    url 'https://rubygems.org/gems/drb-2.2.0.gem'
+    sha256 'e9e4af1cded3306cfe37e064a0086e302d5f40df9cb4d161d059a6bb3a75d40f'
   end
 
   resource 'duplicate' do
@@ -50,8 +50,8 @@ class Githubbuild < Formula
   end
 
   resource 'fileutils' do
-    url 'https://rubygems.org/gems/fileutils-1.7.1.gem'
-    sha256 'cef0f9c7ca39a265ede68c7372e0969986436c579d2971b3e147e859e6020221'
+    url 'https://rubygems.org/gems/fileutils-1.7.2.gem'
+    sha256 '36a0fb324218263e52b486ad7408e9a295378fe8edc9fd343709e523c0980631'
   end
 
   resource 'httparty' do
@@ -90,18 +90,18 @@ class Githubbuild < Formula
   end
 
   resource 'mutex_m' do
-    url 'https://rubygems.org/gems/mutex_m-0.1.2.gem'
-    sha256 '0a9bc5ebe3495e3fc39b1c56292792c1f793b3926fad050cd17b1272cfb57dde'
+    url 'https://rubygems.org/gems/mutex_m-0.2.0.gem'
+    sha256 'b6ef0c6c842ede846f2ec0ade9e266b1a9dac0bc151682b04835e8ebd54840d5'
   end
 
   resource 'open3' do
-    url 'https://rubygems.org/gems/open3-0.1.2.gem'
-    sha256 'be2909458efacbe1c568668d3745ed240fc84a5f73c36bed6a72749222d9726e'
+    url 'https://rubygems.org/gems/open3-0.2.0.gem'
+    sha256 '26c35d8de007f76fa6bfea8660460a2b6e3b9e17fac2c4afbef3ae945f27c71e'
   end
 
   resource 'optparse' do
-    url 'https://rubygems.org/gems/optparse-0.3.1.gem'
-    sha256 'c56a6190fea251a74c4f85242bb41e2c25ee9f4bb54ef512673bec79f1f9bb8f'
+    url 'https://rubygems.org/gems/optparse-0.4.0.gem'
+    sha256 'f584afc034f610ea7b28a9b1a68b0917d34e0da73c40c2b29cd7151c5eb0bade'
   end
 
   resource 'parallel' do
@@ -120,8 +120,8 @@ class Githubbuild < Formula
   end
 
   resource 'racc' do
-    url 'https://rubygems.org/gems/racc-1.7.1.gem'
-    sha256 'af64124836fdd3c00e830703d7f873ea5deabde923f37006a39f5a5e0da16387'
+    url 'https://rubygems.org/gems/racc-1.7.3.gem'
+    sha256 'b785ab8a30ec43bce073c51dbbe791fd27000f68d1c996c95da98bf685316905'
   end
 
   resource 'rainbow' do
@@ -140,13 +140,13 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.57.1.gem'
-    sha256 '815449c1918f8acfd000cd52e2e20283e20540fac8d81c10e8d76df312dbfdc7'
+    url 'https://rubygems.org/gems/rubocop-1.57.2.gem'
+    sha256 '8f679dfe42d7821dc61dafb17d14b1294343157a197b9f8a23720ca17fb9161b'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.29.0.gem'
-    sha256 'd1da2ab279a074baefc81758ac430c5768a8da8c7438dd4e5819ce5984d00ba1'
+    url 'https://rubygems.org/gems/rubocop-ast-1.30.0.gem'
+    sha256 'faad6452b1018fee0dd9e21a44445908e94ee2a4435932a9dae0e0740b6349b3'
   end
 
   resource 'ruby-progressbar' do
@@ -160,8 +160,8 @@ class Githubbuild < Formula
   end
 
   resource 'stringio' do
-    url 'https://rubygems.org/gems/stringio-3.0.8.gem'
-    sha256 '135b23c65628dc395d49cf660df1c10b6417338f8dac175bf59762b97a33a947'
+    url 'https://rubygems.org/gems/stringio-3.0.9.gem'
+    sha256 'e7398558e3c5409447b147bd5b031a375616f443880aeb357c4e4df0ca23eee5'
   end
 
   resource 'tzinfo' do
