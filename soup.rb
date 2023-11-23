@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.1.13'
+      tag: '1.1.14'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -15,8 +15,8 @@ class Soup < Formula
   end
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-7.1.1.gem'
-    sha256 '8770bca4af1cbd6e9ffb944b41056321499ff82e8e7c2ed34e48eff4a5ee58a2'
+    url 'https://rubygems.org/gems/activesupport-7.1.2.gem'
+    sha256 '5bd81ef71524a14725ecb6c3b07bfc00ae0ccc77dd611190bd93bd9f92abd0d0'
   end
 
   resource 'addressable' do
@@ -40,8 +40,8 @@ class Soup < Formula
   end
 
   resource 'base64' do
-    url 'https://rubygems.org/gems/base64-0.1.1.gem'
-    sha256 '0c75d351a429b5176a476cd8a3740cff3277d2bac26a50b5c7456c266e9acd33'
+    url 'https://rubygems.org/gems/base64-0.2.0.gem'
+    sha256 '0f25e9b21a02a0cc0cea8ef92b2041035d39350946e8789c562b2d1a3da01507'
   end
 
   resource 'bigdecimal' do
@@ -56,15 +56,15 @@ class Soup < Formula
 
   if OS.mac?
     resource 'cocoapods' do
-      url 'https://rubygems.org/gems/cocoapods-1.14.0.gem'
-      sha256 '5a67845857b44d4fe4d30b56193a130b4195b03372b0509f3ea77aad0e841a16'
+      url 'https://rubygems.org/gems/cocoapods-1.14.3.gem'
+      sha256 '232f1296f2a8361777022b6e02db3b8ba440b6b4d71666f9a0dffdd252385ce4'
     end
   end
 
   if OS.mac?
     resource 'cocoapods-core' do
-      url 'https://rubygems.org/gems/cocoapods-core-1.14.0.gem'
-      sha256 '15300c2fed1ba81868dcea76869aba0d217ad2458068bf603d6ae76ead1ac6ba'
+      url 'https://rubygems.org/gems/cocoapods-core-1.14.3.gem'
+      sha256 '967f405a6c8b7feb7a050e5f4ea9dece67bdaf78a89a2b27a1a72e3e39fb1e13'
     end
   end
 
@@ -77,8 +77,8 @@ class Soup < Formula
 
   if OS.mac?
     resource 'cocoapods-downloader' do
-      url 'https://rubygems.org/gems/cocoapods-downloader-2.0.gem'
-      sha256 '1a91695529b6b38ebb9d6f472e031e29f8f212e66aa5e53fc40af2c94608155b'
+      url 'https://rubygems.org/gems/cocoapods-downloader-2.1.gem'
+      sha256 'bb6ebe1b3966dc4055de54f7a28b773485ac724fdf575d9bee2212d235e7b6d1'
     end
   end
 
@@ -126,8 +126,8 @@ class Soup < Formula
   end
 
   resource 'drb' do
-    url 'https://rubygems.org/gems/drb-2.1.1.gem'
-    sha256 '6b8f481d9a9a7528c41d4f66484a4a73d2204f095da8ab141b5ea0aa22162c41'
+    url 'https://rubygems.org/gems/drb-2.2.0.gem'
+    sha256 'e9e4af1cded3306cfe37e064a0086e302d5f40df9cb4d161d059a6bb3a75d40f'
   end
 
   resource 'escape' do
@@ -211,8 +211,8 @@ class Soup < Formula
   end
 
   resource 'mutex_m' do
-    url 'https://rubygems.org/gems/mutex_m-0.1.2.gem'
-    sha256 '0a9bc5ebe3495e3fc39b1c56292792c1f793b3926fad050cd17b1272cfb57dde'
+    url 'https://rubygems.org/gems/mutex_m-0.2.0.gem'
+    sha256 'b6ef0c6c842ede846f2ec0ade9e266b1a9dac0bc151682b04835e8ebd54840d5'
   end
 
   resource 'nanaimo' do
@@ -231,8 +231,8 @@ class Soup < Formula
   end
 
   resource 'optparse' do
-    url 'https://rubygems.org/gems/optparse-0.3.1.gem'
-    sha256 'c56a6190fea251a74c4f85242bb41e2c25ee9f4bb54ef512673bec79f1f9bb8f'
+    url 'https://rubygems.org/gems/optparse-0.4.0.gem'
+    sha256 'f584afc034f610ea7b28a9b1a68b0917d34e0da73c40c2b29cd7151c5eb0bade'
   end
 
   resource 'parallel' do
@@ -251,8 +251,8 @@ class Soup < Formula
   end
 
   resource 'racc' do
-    url 'https://rubygems.org/gems/racc-1.7.1.gem'
-    sha256 'af64124836fdd3c00e830703d7f873ea5deabde923f37006a39f5a5e0da16387'
+    url 'https://rubygems.org/gems/racc-1.7.3.gem'
+    sha256 'b785ab8a30ec43bce073c51dbbe791fd27000f68d1c996c95da98bf685316905'
   end
 
   resource 'rainbow' do
@@ -276,8 +276,8 @@ class Soup < Formula
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.29.0.gem'
-    sha256 'd1da2ab279a074baefc81758ac430c5768a8da8c7438dd4e5819ce5984d00ba1'
+    url 'https://rubygems.org/gems/rubocop-ast-1.30.0.gem'
+    sha256 'faad6452b1018fee0dd9e21a44445908e94ee2a4435932a9dae0e0740b6349b3'
   end
 
   resource 'ruby-macho' do
@@ -316,8 +316,8 @@ class Soup < Formula
   end
 
   resource 'typhoeus' do
-    url 'https://rubygems.org/gems/typhoeus-1.4.0.gem'
-    sha256 'fff9880d5dc35950e7706cf132fd297f377c049101794be1cf01c95567f642d4'
+    url 'https://rubygems.org/gems/typhoeus-1.4.1.gem'
+    sha256 '1c17db8364bd45ab302dc61e460173c3e69835896be88a3df07c206d5c55ef7c'
   end
 
   resource 'tzinfo' do
