@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.1.14'
+      tag: '1.2.0'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -339,7 +339,7 @@ class Soup < Formula
     url 'https://rubygems.org/gems/yarn_lock_parser-0.1.0.gem'
     sha256 '60d2a86f5aec213976c94e6cc584781d78f5696c1408a066a948899ab596d8ef'
   end
-
+  
   def install
     prefix.install(Dir['bin'])
     prefix.install(Dir['config'])
