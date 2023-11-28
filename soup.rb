@@ -339,7 +339,7 @@ class Soup < Formula
     url 'https://rubygems.org/gems/yarn_lock_parser-0.1.0.gem'
     sha256 '60d2a86f5aec213976c94e6cc584781d78f5696c1408a066a948899ab596d8ef'
   end
-  
+
   def install
     prefix.install(Dir['bin'])
     prefix.install(Dir['config'])
