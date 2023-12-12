@@ -28,8 +28,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.862.0.gem'
-    sha256 '0debbfe30ce7e75823f90fafa675d85e0780c974a528a3b9fd371d062691cae1'
+    url 'https://rubygems.org/gems/aws-partitions-1.864.0.gem'
+    sha256 '5ae21437336e9baf1cd53f0c09a4ae5ae4e8a6cdd421477c11c9ff011768c19a'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -38,8 +38,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudformation' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.95.0.gem'
-    sha256 '66da4b675e678b996ab89127c05f404427afa0be517a770c28fc4c5d0dad2695'
+    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.97.0.gem'
+    sha256 '0ac4b22da2791fd0f948b7b3afbb9ea3650283c780e98066498737e9f5f7fa69'
   end
 
   resource 'aws-sdk-cloudfront' do
@@ -58,8 +58,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.427.0.gem'
-    sha256 '2dbe5b203ee879379233fafb1f63686695a5c68a3d97556fd3b425713969de96'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.430.0.gem'
+    sha256 'ae64f3c1b7139a8f43c3682774b61457802873c0e25dfd7ba26f6a7b52ffcaff'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
