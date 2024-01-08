@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.2.1'
+      tag: '1.2.2'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -45,8 +45,8 @@ class Soup < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-3.1.4.gem'
-    sha256 'de0c967bb24afe45e0e3d2d65e376614a430c3bc70563ac21cb3518f7409c61f'
+    url 'https://rubygems.org/gems/bigdecimal-3.1.5.gem'
+    sha256 '534faee5ae3b4a0a6369fe56cd944e907bf862a9209544a9e55f550592c22fac'
   end
 
   resource 'claide' do
@@ -236,13 +236,13 @@ class Soup < Formula
   end
 
   resource 'parallel' do
-    url 'https://rubygems.org/gems/parallel-1.23.0.gem'
-    sha256 '27154713ad6ef32fa3dcb7788a721d6c07bca77e72443b4c6080a14145288c49'
+    url 'https://rubygems.org/gems/parallel-1.24.0.gem'
+    sha256 '5bf38efb9b37865f8e93d7a762727f8c5fc5deb19949f4040c76481d5eee9397'
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.2.2.4.gem'
-    sha256 'edbe6751f85599c8152173ccadbd708f444b7214de2a1d4969441a68e06ac964'
+    url 'https://rubygems.org/gems/parser-3.3.0.2.gem'
+    sha256 '418c5d5b56143c541693b9a00968b7005f94440e94e0b2945b55dc543e562ea0'
   end
 
   resource 'public_suffix' do
@@ -261,8 +261,8 @@ class Soup < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.8.3.gem'
-    sha256 '953277d2268bfb2f03275f36222ba9b36342f744a886cb7c8eefa8b985842ff7'
+    url 'https://rubygems.org/gems/regexp_parser-2.9.0.gem'
+    sha256 '81a00ba141cec0d4b4bf58cb80cd9193e5180836d3fa6ef623f7886d3ba8bdd9'
   end
 
   resource 'rexml' do
