@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.2.2'
+      tag: '1.2.3'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -56,15 +56,15 @@ class Soup < Formula
 
   if OS.mac?
     resource 'cocoapods' do
-      url 'https://rubygems.org/gems/cocoapods-1.14.3.gem'
-      sha256 '232f1296f2a8361777022b6e02db3b8ba440b6b4d71666f9a0dffdd252385ce4'
+      url 'https://rubygems.org/gems/cocoapods-1.15.0.gem'
+      sha256 'c2f1e763a61e1c8883c96e99ef1c833b1b442ad756821a71e0b6104a7267035d'
     end
   end
 
   if OS.mac?
     resource 'cocoapods-core' do
-      url 'https://rubygems.org/gems/cocoapods-core-1.14.3.gem'
-      sha256 '967f405a6c8b7feb7a050e5f4ea9dece67bdaf78a89a2b27a1a72e3e39fb1e13'
+      url 'https://rubygems.org/gems/cocoapods-core-1.15.0.gem'
+      sha256 'f6e5f90d1773e8f4c284c62b5fecb01913fa2d43c08b69c0df69d5ff150d9ff7'
     end
   end
 
@@ -331,8 +331,8 @@ class Soup < Formula
   end
 
   resource 'xcodeproj' do
-    url 'https://rubygems.org/gems/xcodeproj-1.23.0.gem'
-    sha256 '16224a3104e0c8286f9bb9e9bcc956413fcb8ddfe6044c40f75abbc2a06ad69c'
+    url 'https://rubygems.org/gems/xcodeproj-1.24.0.gem'
+    sha256 'a6e0ac757420a5198498b0a26adccb81847cd19c621f88a090e114b48e25eff2'
   end
 
   resource 'yarn_lock_parser' do
