@@ -15,8 +15,8 @@ class Soup < Formula
   end
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-7.1.2.gem'
-    sha256 '5bd81ef71524a14725ecb6c3b07bfc00ae0ccc77dd611190bd93bd9f92abd0d0'
+    url 'https://rubygems.org/gems/activesupport-7.1.3.gem'
+    sha256 'fbfc137f1ab0e3909bd3de3e2a965245abf0381a2a7e283fa766cee6f5e0f927'
   end
 
   resource 'addressable' do
@@ -45,8 +45,8 @@ class Soup < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-3.1.5.gem'
-    sha256 '534faee5ae3b4a0a6369fe56cd944e907bf862a9209544a9e55f550592c22fac'
+    url 'https://rubygems.org/gems/bigdecimal-3.1.6.gem'
+    sha256 'bcbc27d449cf8ed1b1814d21308f49c9d22ce73e33fff0d228e38799c02eab01'
   end
 
   resource 'claide' do
@@ -116,8 +116,8 @@ class Soup < Formula
   end
 
   resource 'concurrent-ruby' do
-    url 'https://rubygems.org/gems/concurrent-ruby-1.2.2.gem'
-    sha256 '3879119b8b75e3b62616acc256c64a134d0b0a7a9a3fcba5a233025bcde22c4f'
+    url 'https://rubygems.org/gems/concurrent-ruby-1.2.3.gem'
+    sha256 '82fdd3f8a0816e28d513e637bb2b90a45d7b982bdf4f3a0511722d2e495801e2'
   end
 
   resource 'connection_pool' do
@@ -196,8 +196,8 @@ class Soup < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.20.0.gem'
-    sha256 'a3faf26a757ced073aaae0bd10481340f53e221a4f50d8a6033591555374752e'
+    url 'https://rubygems.org/gems/minitest-5.21.2.gem'
+    sha256 '7685cdb8db964c7f68fcee974f21b62f0b60aaea2a6c898782e27e720ffebac2'
   end
 
   resource 'molinillo' do
@@ -241,8 +241,8 @@ class Soup < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.0.2.gem'
-    sha256 '418c5d5b56143c541693b9a00968b7005f94440e94e0b2945b55dc543e562ea0'
+    url 'https://rubygems.org/gems/parser-3.3.0.5.gem'
+    sha256 '7748313e505ca87045dc0465c776c802043f777581796eb79b1654c5d19d2687'
   end
 
   resource 'public_suffix' do
@@ -271,8 +271,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.59.0.gem'
-    sha256 '09cf4b874ce87f777e8dc711b0f5e2ef4b123eb20d7e38ae2b85c43015a0fc43'
+    url 'https://rubygems.org/gems/rubocop-1.60.2.gem'
+    sha256 '000da0bffba2da48efdab233b13085afc3fabad2aa17ef0470cbaa0fd7cbc76c'
   end
 
   resource 'rubocop-ast' do
