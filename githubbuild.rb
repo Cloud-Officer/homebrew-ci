@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.1.2'
+      tag: '1.1.3'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -80,8 +80,8 @@ class Githubbuild < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.21.2.gem'
-    sha256 '7685cdb8db964c7f68fcee974f21b62f0b60aaea2a6c898782e27e720ffebac2'
+    url 'https://rubygems.org/gems/minitest-5.22.2.gem'
+    sha256 'c5a5003fc2114a3fde506e87f377f32a0882b41d944d7b90cf4cd1f781dbc718'
   end
 
   resource 'multi_xml' do

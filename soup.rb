@@ -10,8 +10,8 @@ class Soup < Formula
   depends_on 'ruby'
 
   resource 'CFPropertyList' do
-    url 'https://rubygems.org/gems/CFPropertyList-3.0.6.gem'
-    sha256 '78097539f2c69424d8a29ca725584469fbe1de4611a8799dc62b7a7f8efd66a8'
+    url 'https://rubygems.org/gems/CFPropertyList-3.0.7.gem'
+    sha256 'c45721614aca8d5eb6fa216f2ec28ec38de1a94505e9766a20e98745492c3c4c'
   end
 
   resource 'activesupport' do
@@ -56,15 +56,15 @@ class Soup < Formula
 
   if OS.mac?
     resource 'cocoapods' do
-      url 'https://rubygems.org/gems/cocoapods-1.15.0.gem'
-      sha256 'c2f1e763a61e1c8883c96e99ef1c833b1b442ad756821a71e0b6104a7267035d'
+      url 'https://rubygems.org/gems/cocoapods-1.15.2.gem'
+      sha256 'f0f5153de8d028d133b96f423e04f37fb97a1da0d11dda581a9f46c0cba4090a'
     end
   end
 
   if OS.mac?
     resource 'cocoapods-core' do
-      url 'https://rubygems.org/gems/cocoapods-core-1.15.0.gem'
-      sha256 'f6e5f90d1773e8f4c284c62b5fecb01913fa2d43c08b69c0df69d5ff150d9ff7'
+      url 'https://rubygems.org/gems/cocoapods-core-1.15.2.gem'
+      sha256 '322650d97fe1ad4c0831a09669764b888bd91c6d79d0f6bb07281a17667a2136'
     end
   end
 
@@ -196,8 +196,8 @@ class Soup < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.21.2.gem'
-    sha256 '7685cdb8db964c7f68fcee974f21b62f0b60aaea2a6c898782e27e720ffebac2'
+    url 'https://rubygems.org/gems/minitest-5.22.2.gem'
+    sha256 'c5a5003fc2114a3fde506e87f377f32a0882b41d944d7b90cf4cd1f781dbc718'
   end
 
   resource 'molinillo' do
@@ -228,6 +228,11 @@ class Soup < Formula
   resource 'netrc' do
     url 'https://rubygems.org/gems/netrc-0.11.0.gem'
     sha256 'de1ce33da8c99ab1d97871726cba75151113f117146becbe45aa85cb3dabee3f'
+  end
+
+  resource 'nkf' do
+    url 'https://rubygems.org/gems/nkf-0.2.0.gem'
+    sha256 'fbc151bda025451f627fafdfcb3f4f13d0b22ae11f58c6d3a2939c76c5f5f126'
   end
 
   resource 'optparse' do
