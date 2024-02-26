@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.0.14'
+      tag: '1.0.15'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'actionlint'
@@ -53,8 +53,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.191.2.gem'
-    sha256 'acc195bd9222ef03f456fd15347135779d42e4d438ef1ac86906f473f1a9e4b6'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.191.3.gem'
+    sha256 'da3632f76c61b9e52da176ff7921e3f2c849fbb2e97209ed3d97d8f43dc21621'
   end
 
   resource 'aws-sdk-ec2' do
@@ -78,23 +78,18 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.115.0.gem'
-    sha256 '136824afd84a79efc8d6e5c3880f0fc4cb1ba37818a4e351864730fc2764dc29'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.116.0.gem'
+    sha256 '2cd9efe9341e6411831dcea09f963d202159fe72642b080ac6f7508349972c8b'
   end
 
   resource 'aws-sdk-ssm' do
-    url 'https://rubygems.org/gems/aws-sdk-ssm-1.164.0.gem'
-    sha256 '0942151a949b78f14bae65d06c16a71238b3a417c5cf6cd4ff6219fbff1bf095'
+    url 'https://rubygems.org/gems/aws-sdk-ssm-1.165.0.gem'
+    sha256 '66e9c9e7a79736b18f54e8774ae1b0f356139eef8b576eb3e97c5e7d6afe71f1'
   end
 
   resource 'aws-sigv4' do
     url 'https://rubygems.org/gems/aws-sigv4-1.8.0.gem'
     sha256 '84dd99768b91b93b63d1d8e53ee837cfd06ab402812772a7899a78f9f9117cbc'
-  end
-
-  resource 'base64' do
-    url 'https://rubygems.org/gems/base64-0.2.0.gem'
-    sha256 '0f25e9b21a02a0cc0cea8ef92b2041035d39350946e8789c562b2d1a3da01507'
   end
 
   resource 'date' do
