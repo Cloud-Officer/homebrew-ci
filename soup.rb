@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.2.4'
+      tag: '1.2.5'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -126,8 +126,8 @@ class Soup < Formula
   end
 
   resource 'drb' do
-    url 'https://rubygems.org/gems/drb-2.2.0.gem'
-    sha256 'e9e4af1cded3306cfe37e064a0086e302d5f40df9cb4d161d059a6bb3a75d40f'
+    url 'https://rubygems.org/gems/drb-2.2.1.gem'
+    sha256 'e9d472bf785f558b96b25358bae115646da0dbfd45107ad858b0bc0d935cb340'
   end
 
   resource 'escape' do
@@ -276,13 +276,13 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.60.2.gem'
-    sha256 '000da0bffba2da48efdab233b13085afc3fabad2aa17ef0470cbaa0fd7cbc76c'
+    url 'https://rubygems.org/gems/rubocop-1.61.0.gem'
+    sha256 '0c35a94bc6c088205d525b8082affd3b412d75347faff52c1f71a6205301b48e'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.30.0.gem'
-    sha256 'faad6452b1018fee0dd9e21a44445908e94ee2a4435932a9dae0e0740b6349b3'
+    url 'https://rubygems.org/gems/rubocop-ast-1.31.1.gem'
+    sha256 'c02282d8af84a67d3eeab6fa29888a1093dc342c6d9cb05af050a71e5e855e8a'
   end
 
   resource 'ruby-macho' do
@@ -293,11 +293,6 @@ class Soup < Formula
   resource 'ruby-progressbar' do
     url 'https://rubygems.org/gems/ruby-progressbar-1.13.0.gem'
     sha256 '80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33'
-  end
-
-  resource 'ruby2_keywords' do
-    url 'https://rubygems.org/gems/ruby2_keywords-0.0.5.gem'
-    sha256 'ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef'
   end
 
   resource 'semantic' do
