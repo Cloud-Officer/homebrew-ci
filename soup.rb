@@ -45,8 +45,8 @@ class Soup < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-3.1.6.gem'
-    sha256 'bcbc27d449cf8ed1b1814d21308f49c9d22ce73e33fff0d228e38799c02eab01'
+    url 'https://rubygems.org/gems/bigdecimal-3.1.7.gem'
+    sha256 'e799b369a0005fc6d62eed7ef19139ac9bc319cc51470c637b9dcdf593600133'
   end
 
   resource 'claide' do
@@ -196,8 +196,8 @@ class Soup < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.22.2.gem'
-    sha256 'c5a5003fc2114a3fde506e87f377f32a0882b41d944d7b90cf4cd1f781dbc718'
+    url 'https://rubygems.org/gems/minitest-5.22.3.gem'
+    sha256 'ea84676290cb5e2b4f31f25751af6050aa90d3e43e4337141c3e3e839611981e'
   end
 
   resource 'molinillo' do
@@ -276,13 +276,13 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.62.0.gem'
-    sha256 '47446ce8eaab86e3533ed45990440a0f7f33ea98ae26f3a89c21c40e89ebb026'
+    url 'https://rubygems.org/gems/rubocop-1.62.1.gem'
+    sha256 'aeb1ec501aef5833617b3b6a1512303806218c349c28ce5b3ea72e3782ad4a35'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.31.1.gem'
-    sha256 'c02282d8af84a67d3eeab6fa29888a1093dc342c6d9cb05af050a71e5e855e8a'
+    url 'https://rubygems.org/gems/rubocop-ast-1.31.2.gem'
+    sha256 '7c206fb094553779923eca862aceece3913ce384f1bf85730208228e884578ec'
   end
 
   resource 'ruby-macho' do
@@ -306,8 +306,8 @@ class Soup < Formula
   end
 
   resource 'term-ansicolor' do
-    url 'https://rubygems.org/gems/term-ansicolor-1.7.1.gem'
-    sha256 '92339ffec77c4bddc786a29385c91601dd52fc68feda23609bba0491229b05f7'
+    url 'https://rubygems.org/gems/term-ansicolor-1.7.2.gem'
+    sha256 '17a4b2284c526376eefffae21d0ac59d3bce0c9ea41e2348a71d83d3027644d9'
   end
 
   resource 'tins' do
