@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.1.6'
+      tag: '1.1.7'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -25,8 +25,8 @@ class Githubbuild < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-3.1.6.gem'
-    sha256 'bcbc27d449cf8ed1b1814d21308f49c9d22ce73e33fff0d228e38799c02eab01'
+    url 'https://rubygems.org/gems/bigdecimal-3.1.7.gem'
+    sha256 'e799b369a0005fc6d62eed7ef19139ac9bc319cc51470c637b9dcdf593600133'
   end
 
   resource 'concurrent-ruby' do
@@ -60,8 +60,8 @@ class Githubbuild < Formula
   end
 
   resource 'i18n' do
-    url 'https://rubygems.org/gems/i18n-1.14.1.gem'
-    sha256 '9d03698903547c060928e70a9bc8b6b87fda674453cda918fc7ab80235ae4a61'
+    url 'https://rubygems.org/gems/i18n-1.14.4.gem'
+    sha256 'c7deedead0866ea9102975a4eab7968f53de50793a0c211a37808f75dd187551'
   end
 
   resource 'json' do
@@ -80,8 +80,8 @@ class Githubbuild < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.22.2.gem'
-    sha256 'c5a5003fc2114a3fde506e87f377f32a0882b41d944d7b90cf4cd1f781dbc718'
+    url 'https://rubygems.org/gems/minitest-5.22.3.gem'
+    sha256 'ea84676290cb5e2b4f31f25751af6050aa90d3e43e4337141c3e3e839611981e'
   end
 
   resource 'multi_xml' do
@@ -140,13 +140,13 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.61.0.gem'
-    sha256 '0c35a94bc6c088205d525b8082affd3b412d75347faff52c1f71a6205301b48e'
+    url 'https://rubygems.org/gems/rubocop-1.62.1.gem'
+    sha256 'aeb1ec501aef5833617b3b6a1512303806218c349c28ce5b3ea72e3782ad4a35'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.31.1.gem'
-    sha256 'c02282d8af84a67d3eeab6fa29888a1093dc342c6d9cb05af050a71e5e855e8a'
+    url 'https://rubygems.org/gems/rubocop-ast-1.31.2.gem'
+    sha256 '7c206fb094553779923eca862aceece3913ce384f1bf85730208228e884578ec'
   end
 
   resource 'ruby-progressbar' do
