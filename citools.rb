@@ -28,8 +28,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.898.0.gem'
-    sha256 'f821150c2c750416327b7c201e11f009cec1350cde5571d517a0234e77b9d1dd'
+    url 'https://rubygems.org/gems/aws-partitions-1.899.0.gem'
+    sha256 'f79cfec9f679a0b9ed2569646bb0fafb41e73f3c2019c4a26e8a585ed87ecd57'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -38,8 +38,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudformation' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.101.0.gem'
-    sha256 'a49e826d7637b3365b326ea9ad44defa6a133b0d083f427ad62d88220feb853c'
+    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.103.0.gem'
+    sha256 '1d7514561cc7dc9059e2b7a18ab61ed16fab54a3124c84eb0cd0dbde6675f3ba'
   end
 
   resource 'aws-sdk-cloudfront' do
@@ -48,8 +48,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.79.0.gem'
-    sha256 '0dcdd8d8ea84eb27450491252a30a4db215fbd6c7845054e705065a61d7eada3'
+    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.80.0.gem'
+    sha256 'cf55753e298f92d109e44ea3e7b5906eee8d6698c4199ebedb7a68cf536f5022'
   end
 
   resource 'aws-sdk-core' do
@@ -58,8 +58,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.443.0.gem'
-    sha256 '79bea02e33c611ffe46e230330c790728b189681662c81728d31804c4ab01d1b'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.444.0.gem'
+    sha256 '1b764c9c13099e14ce7ddef6c60281c1303f229900b9567deadcef79c062eea5'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -73,8 +73,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-kms' do
-    url 'https://rubygems.org/gems/aws-sdk-kms-1.77.0.gem'
-    sha256 '0e7b49aa44df59709df4c5500e1e4df56137f0cd92eb846625f46bd586ae7dbd'
+    url 'https://rubygems.org/gems/aws-sdk-kms-1.78.0.gem'
+    sha256 '6b5585523c4d1154616556d18bfd8d140cb8268ebc52388cf2d15b5cf8167739'
   end
 
   resource 'aws-sdk-lambda' do
