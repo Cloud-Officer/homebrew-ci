@@ -236,8 +236,8 @@ class Soup < Formula
   end
 
   resource 'optparse' do
-    url 'https://rubygems.org/gems/optparse-0.4.0.gem'
-    sha256 'f584afc034f610ea7b28a9b1a68b0917d34e0da73c40c2b29cd7151c5eb0bade'
+    url 'https://rubygems.org/gems/optparse-0.5.0.gem'
+    sha256 'b359d993f138cf27276c6ce9d2caa21d570eb718cd15c09e88a63de86491de08'
   end
 
   resource 'parallel' do
@@ -276,8 +276,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.62.1.gem'
-    sha256 'aeb1ec501aef5833617b3b6a1512303806218c349c28ce5b3ea72e3782ad4a35'
+    url 'https://rubygems.org/gems/rubocop-1.63.2.gem'
+    sha256 'b431793eec5a15fb2d55f23ab76144f67bdffa390c9aa7fecf14eef54b49b2b6'
   end
 
   resource 'rubocop-ast' do
@@ -306,13 +306,13 @@ class Soup < Formula
   end
 
   resource 'term-ansicolor' do
-    url 'https://rubygems.org/gems/term-ansicolor-1.7.2.gem'
-    sha256 '17a4b2284c526376eefffae21d0ac59d3bce0c9ea41e2348a71d83d3027644d9'
+    url 'https://rubygems.org/gems/term-ansicolor-1.8.0.gem'
+    sha256 '2395cd3ba5ab583a70a4a71764dca892977cea35506d5d2dc66ee2a68b019d2e'
   end
 
   resource 'tins' do
-    url 'https://rubygems.org/gems/tins-1.32.1.gem'
-    sha256 'b75c4dafafa83744b6925c0e4ac7a9a8ee9aba7c72514fb0b08cd2f98ffde30c'
+    url 'https://rubygems.org/gems/tins-1.33.0.gem'
+    sha256 '1e408a90a6a61beb0a19721aa4ec6dfc7f18d0ba2b146d1a5c99b1324a136acf'
   end
 
   resource 'typhoeus' do

@@ -100,8 +100,8 @@ class Githubbuild < Formula
   end
 
   resource 'optparse' do
-    url 'https://rubygems.org/gems/optparse-0.4.0.gem'
-    sha256 'f584afc034f610ea7b28a9b1a68b0917d34e0da73c40c2b29cd7151c5eb0bade'
+    url 'https://rubygems.org/gems/optparse-0.5.0.gem'
+    sha256 'b359d993f138cf27276c6ce9d2caa21d570eb718cd15c09e88a63de86491de08'
   end
 
   resource 'parallel' do
@@ -140,8 +140,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.62.1.gem'
-    sha256 'aeb1ec501aef5833617b3b6a1512303806218c349c28ce5b3ea72e3782ad4a35'
+    url 'https://rubygems.org/gems/rubocop-1.63.2.gem'
+    sha256 'b431793eec5a15fb2d55f23ab76144f67bdffa390c9aa7fecf14eef54b49b2b6'
   end
 
   resource 'rubocop-ast' do
