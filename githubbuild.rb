@@ -90,8 +90,8 @@ class Githubbuild < Formula
   end
 
   resource 'multi_xml' do
-    url 'https://rubygems.org/gems/multi_xml-0.6.0.gem'
-    sha256 'd24393cf958adb226db884b976b007914a89c53ad88718e25679d7008823ad52'
+    url 'https://rubygems.org/gems/multi_xml-0.7.0.gem'
+    sha256 '9e9aaa683a8022548da2922e1ff9eb1507c59294b7ae6c23b7116bde1d18486c'
   end
 
   resource 'mutex_m' do
