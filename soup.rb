@@ -125,6 +125,11 @@ class Soup < Formula
     sha256 '0f40cf997091f1f04ff66da67eabd61a9fe0d4928b9a3645228532512fab62f4'
   end
 
+  resource 'csv' do
+    url 'https://rubygems.org/gems/csv-3.3.0.gem'
+    sha256 '0bbd1defdc31134abefed027a639b3723c2753862150f4c3ee61cab71b20d67d'
+  end
+
   resource 'drb' do
     url 'https://rubygems.org/gems/drb-2.2.1.gem'
     sha256 'e9d472bf785f558b96b25358bae115646da0dbfd45107ad858b0bc0d935cb340'
@@ -161,8 +166,8 @@ class Soup < Formula
   end
 
   resource 'httparty' do
-    url 'https://rubygems.org/gems/httparty-0.21.0.gem'
-    sha256 '00ef7bf9a71f30a3bff88edeb5b16a34bea883ab67c246b3f0db2d6794fe1214'
+    url 'https://rubygems.org/gems/httparty-0.22.0.gem'
+    sha256 '78652a5c9471cf0093d3b2083c2295c9c8f12b44c65112f1846af2b71430fa6c'
   end
 
   resource 'httpclient' do
@@ -206,8 +211,8 @@ class Soup < Formula
   end
 
   resource 'multi_xml' do
-    url 'https://rubygems.org/gems/multi_xml-0.6.0.gem'
-    sha256 'd24393cf958adb226db884b976b007914a89c53ad88718e25679d7008823ad52'
+    url 'https://rubygems.org/gems/multi_xml-0.7.0.gem'
+    sha256 '9e9aaa683a8022548da2922e1ff9eb1507c59294b7ae6c23b7116bde1d18486c'
   end
 
   resource 'mutex_m' do
@@ -246,8 +251,8 @@ class Soup < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.0.5.gem'
-    sha256 '7748313e505ca87045dc0465c776c802043f777581796eb79b1654c5d19d2687'
+    url 'https://rubygems.org/gems/parser-3.3.1.0.gem'
+    sha256 '78f3e62b925500409e8cc2006c638e454c864be728790bd80accf04b68290244'
   end
 
   resource 'public_suffix' do
@@ -276,13 +281,13 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.63.3.gem'
-    sha256 '17a31f16658f2fbb20bc7bcb4a841a06f7368da4f3be8a50365ad61e658d5f44'
+    url 'https://rubygems.org/gems/rubocop-1.63.4.gem'
+    sha256 'abae93da9dc08f4fce8eeb50a5c58ad1cf84b8c9ad0ccdeabe1a7ae6ad1bd229'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.31.2.gem'
-    sha256 '7c206fb094553779923eca862aceece3913ce384f1bf85730208228e884578ec'
+    url 'https://rubygems.org/gems/rubocop-ast-1.31.3.gem'
+    sha256 '1b07d618d8776993ec6053a706d1c09f0bf15139fd69415924656cbff07e7818'
   end
 
   resource 'ruby-macho' do
