@@ -211,8 +211,8 @@ class Soup < Formula
   end
 
   resource 'multi_xml' do
-    url 'https://rubygems.org/gems/multi_xml-0.7.0.gem'
-    sha256 '9e9aaa683a8022548da2922e1ff9eb1507c59294b7ae6c23b7116bde1d18486c'
+    url 'https://rubygems.org/gems/multi_xml-0.7.1.gem'
+    sha256 '4fce100c68af588ff91b8ba90a0bb3f0466f06c909f21a32f4962059140ba61b'
   end
 
   resource 'mutex_m' do
