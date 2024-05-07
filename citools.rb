@@ -28,8 +28,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.923.0.gem'
-    sha256 '8c5880c589aa56406026402fa3fa7a957faf7c1c9721c351d944b97abcd537b9'
+    url 'https://rubygems.org/gems/aws-partitions-1.925.0.gem'
+    sha256 'e41bce6567dd71532618fc6003f8aaedeacca29f18443690d714d73d5f4baaeb'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -53,8 +53,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.194.0.gem'
-    sha256 'ac34863f3fa0f60b11896361fb8ac85fe16674111c6f811ca27b463405bfe6f6'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.194.1.gem'
+    sha256 '3ac7a3d6b872ae69ded6ee0394e3b64645dde1f7c78e123b7dd84700d392607a'
   end
 
   resource 'aws-sdk-ec2' do
@@ -93,8 +93,8 @@ class Citools < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-3.1.7.gem'
-    sha256 'e799b369a0005fc6d62eed7ef19139ac9bc319cc51470c637b9dcdf593600133'
+    url 'https://rubygems.org/gems/bigdecimal-3.1.8.gem'
+    sha256 'a89467ed5a44f8ae01824af49cbc575871fa078332e8f77ea425725c1ffe27be'
   end
 
   resource 'csv' do
