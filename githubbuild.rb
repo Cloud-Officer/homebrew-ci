@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.2.4'
+      tag: '1.2.5'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -25,8 +25,8 @@ class Githubbuild < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-3.1.7.gem'
-    sha256 'e799b369a0005fc6d62eed7ef19139ac9bc319cc51470c637b9dcdf593600133'
+    url 'https://rubygems.org/gems/bigdecimal-3.1.8.gem'
+    sha256 'a89467ed5a44f8ae01824af49cbc575871fa078332e8f77ea425725c1ffe27be'
   end
 
   resource 'concurrent-ruby' do
@@ -65,8 +65,8 @@ class Githubbuild < Formula
   end
 
   resource 'i18n' do
-    url 'https://rubygems.org/gems/i18n-1.14.4.gem'
-    sha256 'c7deedead0866ea9102975a4eab7968f53de50793a0c211a37808f75dd187551'
+    url 'https://rubygems.org/gems/i18n-1.14.5.gem'
+    sha256 '26dcbc05e364b57e27ab430148b3377bc413987d34cc042336271d8f42e9d1b9'
   end
 
   resource 'json' do
