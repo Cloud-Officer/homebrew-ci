@@ -53,8 +53,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.194.1.gem'
-    sha256 '3ac7a3d6b872ae69ded6ee0394e3b64645dde1f7c78e123b7dd84700d392607a'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.194.2.gem'
+    sha256 'f925fb739cd093e5834910aed85aba5ac8d1b210f26c2cf51f0daf932cc77567'
   end
 
   resource 'aws-sdk-ec2' do
