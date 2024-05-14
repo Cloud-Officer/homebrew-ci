@@ -135,8 +135,8 @@ class Githubbuild < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.9.0.gem'
-    sha256 '81a00ba141cec0d4b4bf58cb80cd9193e5180836d3fa6ef623f7886d3ba8bdd9'
+    url 'https://rubygems.org/gems/regexp_parser-2.9.1.gem'
+    sha256 '44c89e97c9237de3510b3fe85b0c87bba2956dc359c1ac6f59d8e7d4f48c3bbc'
   end
 
   resource 'rexml' do
@@ -145,8 +145,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.63.4.gem'
-    sha256 'abae93da9dc08f4fce8eeb50a5c58ad1cf84b8c9ad0ccdeabe1a7ae6ad1bd229'
+    url 'https://rubygems.org/gems/rubocop-1.63.5.gem'
+    sha256 'a3270524ba00ce93f58e41e980feba80374070ae97d92c78b9aa57b8e1ec6dfe'
   end
 
   resource 'rubocop-ast' do

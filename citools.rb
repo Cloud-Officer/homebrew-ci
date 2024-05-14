@@ -28,8 +28,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.925.0.gem'
-    sha256 'e41bce6567dd71532618fc6003f8aaedeacca29f18443690d714d73d5f4baaeb'
+    url 'https://rubygems.org/gems/aws-partitions-1.927.0.gem'
+    sha256 'c872524672aed2857fca342431c95df4561bdd224efa72a01fd969f1ed77c5b9'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -53,13 +53,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.194.2.gem'
-    sha256 'f925fb739cd093e5834910aed85aba5ac8d1b210f26c2cf51f0daf932cc77567'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.195.0.gem'
+    sha256 'd8684a051970ff4f35840878b3fd439b543943030b6975c659fd3efab9113db0'
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.455.0.gem'
-    sha256 '46794958d3e13bed7f6e0a6724de2f98ac7ee99737baa602886ac5733af89e93'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.456.0.gem'
+    sha256 '6dc977d32f850f41aeda403aa7a1321c9000f9f2e8ca4df6e82a027a809b247a'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -133,18 +133,18 @@ class Citools < Formula
   end
 
   resource 'nokogiri' do
-    url 'https://rubygems.org/gems/nokogiri-1.16.4.gem'
-    sha256 '62c116c3a14b4ed4e1faec786da266c4bd4c717a0bd04a9916164a7046040f45'
+    url 'https://rubygems.org/gems/nokogiri-1.16.5.gem'
+    sha256 'ec36162c68984fa0a90a5c4ae7ab7759460639e716cc1ce75f34c3cb54158ad2'
   end
 
   resource 'nokogiri' do
-    url 'https://rubygems.org/gems/nokogiri-1.16.4.gem'
-    sha256 '62c116c3a14b4ed4e1faec786da266c4bd4c717a0bd04a9916164a7046040f45'
+    url 'https://rubygems.org/gems/nokogiri-1.16.5.gem'
+    sha256 'ec36162c68984fa0a90a5c4ae7ab7759460639e716cc1ce75f34c3cb54158ad2'
   end
 
   resource 'nokogiri' do
-    url 'https://rubygems.org/gems/nokogiri-1.16.4.gem'
-    sha256 '62c116c3a14b4ed4e1faec786da266c4bd4c717a0bd04a9916164a7046040f45'
+    url 'https://rubygems.org/gems/nokogiri-1.16.5.gem'
+    sha256 'ec36162c68984fa0a90a5c4ae7ab7759460639e716cc1ce75f34c3cb54158ad2'
   end
 
   resource 'optparse' do
