@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.3.4'
+      tag: '1.3.5'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -201,8 +201,8 @@ class Soup < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.22.3.gem'
-    sha256 'ea84676290cb5e2b4f31f25751af6050aa90d3e43e4337141c3e3e839611981e'
+    url 'https://rubygems.org/gems/minitest-5.23.0.gem'
+    sha256 '4c488e69b6a0a8bece496bfde92e39fb806f3d786eb935d55864b4dc927639a0'
   end
 
   resource 'molinillo' do
@@ -240,6 +240,26 @@ class Soup < Formula
     sha256 'fbc151bda025451f627fafdfcb3f4f13d0b22ae11f58c6d3a2939c76c5f5f126'
   end
 
+  resource 'nokogiri' do
+    url 'https://rubygems.org/gems/nokogiri-1.16.5.gem'
+    sha256 'ec36162c68984fa0a90a5c4ae7ab7759460639e716cc1ce75f34c3cb54158ad2'
+  end
+
+  resource 'nokogiri' do
+    url 'https://rubygems.org/gems/nokogiri-1.16.5.gem'
+    sha256 'ec36162c68984fa0a90a5c4ae7ab7759460639e716cc1ce75f34c3cb54158ad2'
+  end
+
+  resource 'nokogiri' do
+    url 'https://rubygems.org/gems/nokogiri-1.16.5.gem'
+    sha256 'ec36162c68984fa0a90a5c4ae7ab7759460639e716cc1ce75f34c3cb54158ad2'
+  end
+
+  resource 'nokogiri' do
+    url 'https://rubygems.org/gems/nokogiri-1.16.5.gem'
+    sha256 'ec36162c68984fa0a90a5c4ae7ab7759460639e716cc1ce75f34c3cb54158ad2'
+  end
+
   resource 'optparse' do
     url 'https://rubygems.org/gems/optparse-0.5.0.gem'
     sha256 'b359d993f138cf27276c6ce9d2caa21d570eb718cd15c09e88a63de86491de08'
@@ -271,8 +291,8 @@ class Soup < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.9.1.gem'
-    sha256 '44c89e97c9237de3510b3fe85b0c87bba2956dc359c1ac6f59d8e7d4f48c3bbc'
+    url 'https://rubygems.org/gems/regexp_parser-2.9.2.gem'
+    sha256 '5a27e767ad634f8a4b544520d5cd28a0db7aa1198a5d7c9d7e11d7b3d9066446'
   end
 
   resource 'rexml' do
