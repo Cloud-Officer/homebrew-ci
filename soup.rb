@@ -15,8 +15,8 @@ class Soup < Formula
   end
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-7.1.3.2.gem'
-    sha256 'ad8445b7ae4a6d3acc5f88c8c5f437eb0b54062032aaf44856c7b6d3855b8b2e'
+    url 'https://rubygems.org/gems/activesupport-7.1.3.3.gem'
+    sha256 'f1147f1eedff05b7816b48d0aa89c912b83fed3f245d7ed3cf33a55ffbf3137d'
   end
 
   resource 'addressable' do
@@ -281,8 +281,8 @@ class Soup < Formula
   end
 
   resource 'racc' do
-    url 'https://rubygems.org/gems/racc-1.7.3.gem'
-    sha256 'b785ab8a30ec43bce073c51dbbe791fd27000f68d1c996c95da98bf685316905'
+    url 'https://rubygems.org/gems/racc-1.8.0.gem'
+    sha256 '09349a65c37c4fe710a435f25c9f1652e39f29ad6b1fa08d4a8d30c0553d3a08'
   end
 
   resource 'rainbow' do
@@ -296,8 +296,8 @@ class Soup < Formula
   end
 
   resource 'rexml' do
-    url 'https://rubygems.org/gems/rexml-3.2.6.gem'
-    sha256 'e0669a2d4e9f109951cb1fde723d8acd285425d81594a2ea929304af50282816'
+    url 'https://rubygems.org/gems/rexml-3.2.8.gem'
+    sha256 '0908a86381d9f973824680df4e0a75422766272f03b1c0e49db7e79c23db1135'
   end
 
   resource 'rubocop' do
@@ -323,6 +323,11 @@ class Soup < Formula
   resource 'semantic' do
     url 'https://rubygems.org/gems/semantic-1.6.1.gem'
     sha256 '3cdbb48f59198ebb782a3fdfb87b559e0822a311610db153bae22777a7d0c163'
+  end
+
+  resource 'strscan' do
+    url 'https://rubygems.org/gems/strscan-3.1.0.gem'
+    sha256 '01b8a81d214fbf7b5308c6fb51b5972bbfc4a6aa1f166fd3618ba97e0fcd5555'
   end
 
   resource 'sync' do

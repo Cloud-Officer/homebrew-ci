@@ -4,14 +4,14 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.2.5'
+      tag: '1.2.6'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-7.1.3.2.gem'
-    sha256 'ad8445b7ae4a6d3acc5f88c8c5f437eb0b54062032aaf44856c7b6d3855b8b2e'
+    url 'https://rubygems.org/gems/activesupport-7.1.3.3.gem'
+    sha256 'f1147f1eedff05b7816b48d0aa89c912b83fed3f245d7ed3cf33a55ffbf3137d'
   end
 
   resource 'ast' do
@@ -85,8 +85,8 @@ class Githubbuild < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.22.3.gem'
-    sha256 'ea84676290cb5e2b4f31f25751af6050aa90d3e43e4337141c3e3e839611981e'
+    url 'https://rubygems.org/gems/minitest-5.23.0.gem'
+    sha256 '4c488e69b6a0a8bece496bfde92e39fb806f3d786eb935d55864b4dc927639a0'
   end
 
   resource 'multi_xml' do
@@ -125,8 +125,8 @@ class Githubbuild < Formula
   end
 
   resource 'racc' do
-    url 'https://rubygems.org/gems/racc-1.7.3.gem'
-    sha256 'b785ab8a30ec43bce073c51dbbe791fd27000f68d1c996c95da98bf685316905'
+    url 'https://rubygems.org/gems/racc-1.8.0.gem'
+    sha256 '09349a65c37c4fe710a435f25c9f1652e39f29ad6b1fa08d4a8d30c0553d3a08'
   end
 
   resource 'rainbow' do
@@ -135,13 +135,13 @@ class Githubbuild < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.9.1.gem'
-    sha256 '44c89e97c9237de3510b3fe85b0c87bba2956dc359c1ac6f59d8e7d4f48c3bbc'
+    url 'https://rubygems.org/gems/regexp_parser-2.9.2.gem'
+    sha256 '5a27e767ad634f8a4b544520d5cd28a0db7aa1198a5d7c9d7e11d7b3d9066446'
   end
 
   resource 'rexml' do
-    url 'https://rubygems.org/gems/rexml-3.2.6.gem'
-    sha256 'e0669a2d4e9f109951cb1fde723d8acd285425d81594a2ea929304af50282816'
+    url 'https://rubygems.org/gems/rexml-3.2.8.gem'
+    sha256 '0908a86381d9f973824680df4e0a75422766272f03b1c0e49db7e79c23db1135'
   end
 
   resource 'rubocop' do
@@ -162,6 +162,11 @@ class Githubbuild < Formula
   resource 'stringio' do
     url 'https://rubygems.org/gems/stringio-3.1.0.gem'
     sha256 'c1f6263ae03a15025e51194ab19b06b15e06adcaaedb7f5f6c06ab60f5d67718'
+  end
+
+  resource 'strscan' do
+    url 'https://rubygems.org/gems/strscan-3.1.0.gem'
+    sha256 '01b8a81d214fbf7b5308c6fb51b5972bbfc4a6aa1f166fd3618ba97e0fcd5555'
   end
 
   resource 'tzinfo' do
