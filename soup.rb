@@ -201,8 +201,8 @@ class Soup < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.23.0.gem'
-    sha256 '4c488e69b6a0a8bece496bfde92e39fb806f3d786eb935d55864b4dc927639a0'
+    url 'https://rubygems.org/gems/minitest-5.23.1.gem'
+    sha256 'f1e8f8d6ffd96fb17339ce50768bcbbdbbadff5073cb9583d084403877a77abe'
   end
 
   resource 'molinillo' do
@@ -301,8 +301,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.63.5.gem'
-    sha256 'a3270524ba00ce93f58e41e980feba80374070ae97d92c78b9aa57b8e1ec6dfe'
+    url 'https://rubygems.org/gems/rubocop-1.64.0.gem'
+    sha256 'c67d0821334c9f603ce7623f65fa7b1dd6e7202046ef31e7f2013f1de970e245'
   end
 
   resource 'rubocop-ast' do
