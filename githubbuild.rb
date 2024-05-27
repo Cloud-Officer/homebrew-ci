@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.2.10'
+      tag: '1.2.11'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
