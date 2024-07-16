@@ -80,8 +80,8 @@ class Githubbuild < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.24.0.gem'
-    sha256 'affaa7dc0ce9b9162bb389e49428998875315ed4f40e886fb5f879a07818f87d'
+    url 'https://rubygems.org/gems/minitest-5.24.1.gem'
+    sha256 '31ec31ac9088d9e21fcc5a5487912234de83966f24368241b2bef03d7012464a'
   end
 
   resource 'multi_xml' do
@@ -110,8 +110,8 @@ class Githubbuild < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.3.0.gem'
-    sha256 'a2e23c90918d9b7e866b18dca2b6835f227769dd2fa8e59c5841f3389cf53eeb'
+    url 'https://rubygems.org/gems/parser-3.3.4.0.gem'
+    sha256 '8d247769c3873fe92201d591a7463384022a1a25e214853df5d6806623179e82'
   end
 
   resource 'psych' do
@@ -135,13 +135,13 @@ class Githubbuild < Formula
   end
 
   resource 'rexml' do
-    url 'https://rubygems.org/gems/rexml-3.3.0.gem'
-    sha256 '2959f7f006adcec3cea6ebe916f3fa15a9e5b7ccdf29cbabad5ae3447c534810'
+    url 'https://rubygems.org/gems/rexml-3.3.2.gem'
+    sha256 '4513686f858d0ff2e5a412d734c8a192e16cb1df4cb2063f56b72a8ad4c5257f'
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.64.1.gem'
-    sha256 '3145bf1863771e400a1c041060e751e5ff0edd9ceb99d01df36db1902f611f3b'
+    url 'https://rubygems.org/gems/rubocop-1.65.0.gem'
+    sha256 '624316407a3f8e3999c6f75c528471ed3d4513ca39cec3bede1964c69630e4a1'
   end
 
   resource 'rubocop-ast' do
@@ -155,8 +155,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-rspec' do
-    url 'https://rubygems.org/gems/rubocop-rspec-3.0.1.gem'
-    sha256 '555bec56eb9a3e2a66ade6c74c48ed05251afafae9c6509fe96d31cddb3fe9e0'
+    url 'https://rubygems.org/gems/rubocop-rspec-3.0.3.gem'
+    sha256 'ee90e0efb9a6725ab4147d89bf4761c8548b4d04069da95aca4696cd57f02511'
   end
 
   resource 'ruby-progressbar' do
