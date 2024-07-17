@@ -20,8 +20,8 @@ class Soup < Formula
   end
 
   resource 'addressable' do
-    url 'https://rubygems.org/gems/addressable-2.8.6.gem'
-    sha256 '798f6af3556641a7619bad1dce04cdb6eb44b0216a991b0396ea7339276f2b47'
+    url 'https://rubygems.org/gems/addressable-2.8.7.gem'
+    sha256 '462986537cf3735ab5f3c0f557f14155d778f4b43ea4f485a9deb9c8f7c58232'
   end
 
   resource 'algoliasearch' do
@@ -216,8 +216,13 @@ class Soup < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.23.1.gem'
-    sha256 'f1e8f8d6ffd96fb17339ce50768bcbbdbbadff5073cb9583d084403877a77abe'
+    url 'https://rubygems.org/gems/minitest-5.24.1.gem'
+    sha256 '31ec31ac9088d9e21fcc5a5487912234de83966f24368241b2bef03d7012464a'
+  end
+
+  resource 'mize' do
+    url 'https://rubygems.org/gems/mize-0.5.0.gem'
+    sha256 'c35323d102b54cc96f21e7cefa558573ab1f287393e8e0ca13c193e5dc9b3cbc'
   end
 
   resource 'molinillo' do
@@ -286,8 +291,8 @@ class Soup < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.3.0.gem'
-    sha256 'a2e23c90918d9b7e866b18dca2b6835f227769dd2fa8e59c5841f3389cf53eeb'
+    url 'https://rubygems.org/gems/parser-3.3.4.0.gem'
+    sha256 '8d247769c3873fe92201d591a7463384022a1a25e214853df5d6806623179e82'
   end
 
   resource 'public_suffix' do
@@ -316,8 +321,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.64.1.gem'
-    sha256 '3145bf1863771e400a1c041060e751e5ff0edd9ceb99d01df36db1902f611f3b'
+    url 'https://rubygems.org/gems/rubocop-1.65.0.gem'
+    sha256 '624316407a3f8e3999c6f75c528471ed3d4513ca39cec3bede1964c69630e4a1'
   end
 
   resource 'rubocop-ast' do
@@ -331,8 +336,8 @@ class Soup < Formula
   end
 
   resource 'rubocop-rspec' do
-    url 'https://rubygems.org/gems/rubocop-rspec-3.0.1.gem'
-    sha256 '555bec56eb9a3e2a66ade6c74c48ed05251afafae9c6509fe96d31cddb3fe9e0'
+    url 'https://rubygems.org/gems/rubocop-rspec-3.0.3.gem'
+    sha256 'ee90e0efb9a6725ab4147d89bf4761c8548b4d04069da95aca4696cd57f02511'
   end
 
   resource 'ruby-macho' do
@@ -361,8 +366,8 @@ class Soup < Formula
   end
 
   resource 'term-ansicolor' do
-    url 'https://rubygems.org/gems/term-ansicolor-1.8.0.gem'
-    sha256 '2395cd3ba5ab583a70a4a71764dca892977cea35506d5d2dc66ee2a68b019d2e'
+    url 'https://rubygems.org/gems/term-ansicolor-1.10.4.gem'
+    sha256 'a115c2528a4ffa8a0329e921dac2cb1ba95039a4cc213556c5b9b3dd79c99802'
   end
 
   resource 'tins' do
