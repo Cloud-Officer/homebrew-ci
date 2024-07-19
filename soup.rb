@@ -8,6 +8,8 @@ class Soup < Formula
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
+  depends_on 'libxml2'
+  depends_on 'libxslt'
 
   resource 'CFPropertyList' do
     url 'https://rubygems.org/gems/CFPropertyList-3.0.7.gem'
