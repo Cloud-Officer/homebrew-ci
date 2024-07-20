@@ -265,21 +265,6 @@ class Soup < Formula
     sha256 '935fe4dd67d4377f4a05002acb1ffbadbcae265ea8e7869fc40e3a8121f3e1ef'
   end
 
-  resource 'nokogiri' do
-    url 'https://rubygems.org/gems/nokogiri-1.16.6.gem'
-    sha256 '935fe4dd67d4377f4a05002acb1ffbadbcae265ea8e7869fc40e3a8121f3e1ef'
-  end
-
-  resource 'nokogiri' do
-    url 'https://rubygems.org/gems/nokogiri-1.16.6.gem'
-    sha256 '935fe4dd67d4377f4a05002acb1ffbadbcae265ea8e7869fc40e3a8121f3e1ef'
-  end
-
-  resource 'nokogiri' do
-    url 'https://rubygems.org/gems/nokogiri-1.16.6.gem'
-    sha256 '935fe4dd67d4377f4a05002acb1ffbadbcae265ea8e7869fc40e3a8121f3e1ef'
-  end
-
   resource 'optparse' do
     url 'https://rubygems.org/gems/optparse-0.5.0.gem'
     sha256 'b359d993f138cf27276c6ce9d2caa21d570eb718cd15c09e88a63de86491de08'
