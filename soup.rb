@@ -4,12 +4,10 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.3.10'
+      tag: '1.3.11'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
-  depends_on 'libxml2'
-  depends_on 'libxslt'
 
   resource 'CFPropertyList' do
     url 'https://rubygems.org/gems/CFPropertyList-3.0.7.gem'
