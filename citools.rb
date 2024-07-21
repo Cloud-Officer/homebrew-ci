@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.1.4'
+      tag: '1.1.5'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'actionlint'
@@ -33,8 +33,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.956.0.gem'
-    sha256 '6e4e446bf54ec2850a6abcdb8a9ef5ed12dfa151247acdfd0bc923d34937eb0f'
+    url 'https://rubygems.org/gems/aws-partitions-1.957.0.gem'
+    sha256 'ed1b897122426f019c1d4d6187baf659212a6adea880d72d61c196b843842689'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -58,13 +58,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.201.1.gem'
-    sha256 '6f38f22d180a26dca7334eea654e8c67b58a1c3f82409d909772d066793c14c6'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.201.2.gem'
+    sha256 '6b595926c33aadc5fc61026260b7f69adc55827ebdf9d9fa2205aad6207a26f4'
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.465.0.gem'
-    sha256 'f6dc0d63dee93d1fbcf3cd3609d8b77bca25e3900db3085c9f60daf92f882681'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.466.0.gem'
+    sha256 '17a32aaed1d1e0c0c078e4a68bd5cf336eafa96acbbace938cbe80c35a80a17f'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -142,19 +142,40 @@ class Citools < Formula
     sha256 '4fce100c68af588ff91b8ba90a0bb3f0466f06c909f21a32f4962059140ba61b'
   end
 
-  resource 'nokogiri' do
-    url 'https://rubygems.org/gems/nokogiri-1.16.6.gem'
-    sha256 '935fe4dd67d4377f4a05002acb1ffbadbcae265ea8e7869fc40e3a8121f3e1ef'
+  on_linux do
+    on_arm do
+      resource 'nokogiri' do
+        url 'https://rubygems.org/gems/nokogiri-1.16.6-aarch64-linux.gem'
+        sha256 '7f4c37ee2dd9c97fdfb6278cf3d9dd2078651f241eed320e26902135dbf78183'
+      end
+    end
   end
 
-  resource 'nokogiri' do
-    url 'https://rubygems.org/gems/nokogiri-1.16.6.gem'
-    sha256 '935fe4dd67d4377f4a05002acb1ffbadbcae265ea8e7869fc40e3a8121f3e1ef'
+  on_macos do
+    on_arm do
+      resource 'nokogiri' do
+        url 'https://rubygems.org/gems/nokogiri-1.16.6-arm64-darwin.gem'
+        sha256 '43e8a783697c65413408a4923b5c2ed6bea6632cfdab4da220446b601733fa4b'
+      end
+    end
   end
 
-  resource 'nokogiri' do
-    url 'https://rubygems.org/gems/nokogiri-1.16.6.gem'
-    sha256 '935fe4dd67d4377f4a05002acb1ffbadbcae265ea8e7869fc40e3a8121f3e1ef'
+  on_macos do
+    on_intel do
+      resource 'nokogiri' do
+        url 'https://rubygems.org/gems/nokogiri-1.16.6-x86_64-darwin.gem'
+        sha256 '92fa413d866baf9b609f17558ecfbcf950d5373213babcf4ce11d7eaed4b21cf'
+      end
+    end
+  end
+
+  on_linux do
+    on_intel do
+      resource 'nokogiri' do
+        url 'https://rubygems.org/gems/nokogiri-1.16.6-x86_64-linux.gem'
+        sha256 '769bd2c14ad76dd5a7e14c867741cf2e3b8c25626a34f40aee7b0b998b8de820'
+      end
+    end
   end
 
   resource 'optparse' do
