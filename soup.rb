@@ -54,60 +54,44 @@ class Soup < Formula
     sha256 '6d3c5c089dde904d96aa30e73306d0d4bd444b1accb9b3125ce14a3c0183f82e'
   end
 
-  if OS.mac?
-    resource 'cocoapods' do
-      url 'https://rubygems.org/gems/cocoapods-1.15.2.gem'
-      sha256 'f0f5153de8d028d133b96f423e04f37fb97a1da0d11dda581a9f46c0cba4090a'
-    end
+  resource 'cocoapods' do
+    url 'https://rubygems.org/gems/cocoapods-1.15.2.gem'
+    sha256 'f0f5153de8d028d133b96f423e04f37fb97a1da0d11dda581a9f46c0cba4090a'
   end
 
-  if OS.mac?
-    resource 'cocoapods-core' do
-      url 'https://rubygems.org/gems/cocoapods-core-1.15.2.gem'
-      sha256 '322650d97fe1ad4c0831a09669764b888bd91c6d79d0f6bb07281a17667a2136'
-    end
+  resource 'cocoapods-core' do
+    url 'https://rubygems.org/gems/cocoapods-core-1.15.2.gem'
+    sha256 '322650d97fe1ad4c0831a09669764b888bd91c6d79d0f6bb07281a17667a2136'
   end
 
-  if OS.mac?
-    resource 'cocoapods-deintegrate' do
-      url 'https://rubygems.org/gems/cocoapods-deintegrate-1.0.5.gem'
-      sha256 '517c2a448ef563afe99b6e7668704c27f5de9e02715a88ee9de6974dc1b3f6a2'
-    end
+  resource 'cocoapods-deintegrate' do
+    url 'https://rubygems.org/gems/cocoapods-deintegrate-1.0.5.gem'
+    sha256 '517c2a448ef563afe99b6e7668704c27f5de9e02715a88ee9de6974dc1b3f6a2'
   end
 
-  if OS.mac?
-    resource 'cocoapods-downloader' do
-      url 'https://rubygems.org/gems/cocoapods-downloader-2.1.gem'
-      sha256 'bb6ebe1b3966dc4055de54f7a28b773485ac724fdf575d9bee2212d235e7b6d1'
-    end
+  resource 'cocoapods-downloader' do
+    url 'https://rubygems.org/gems/cocoapods-downloader-2.1.gem'
+    sha256 'bb6ebe1b3966dc4055de54f7a28b773485ac724fdf575d9bee2212d235e7b6d1'
   end
 
-  if OS.mac?
-    resource 'cocoapods-plugins' do
-      url 'https://rubygems.org/gems/cocoapods-plugins-1.0.0.gem'
-      sha256 '725d17ce90b52f862e73476623fd91441b4430b742d8a071000831efb440ca9a'
-    end
+  resource 'cocoapods-plugins' do
+    url 'https://rubygems.org/gems/cocoapods-plugins-1.0.0.gem'
+    sha256 '725d17ce90b52f862e73476623fd91441b4430b742d8a071000831efb440ca9a'
   end
 
-  if OS.mac?
-    resource 'cocoapods-search' do
-      url 'https://rubygems.org/gems/cocoapods-search-1.0.1.gem'
-      sha256 '1b133b0e6719ed439bd840e84a1828cca46425ab73a11eff5e096c3b2df05589'
-    end
+  resource 'cocoapods-search' do
+    url 'https://rubygems.org/gems/cocoapods-search-1.0.1.gem'
+    sha256 '1b133b0e6719ed439bd840e84a1828cca46425ab73a11eff5e096c3b2df05589'
   end
 
-  if OS.mac?
-    resource 'cocoapods-trunk' do
-      url 'https://rubygems.org/gems/cocoapods-trunk-1.6.0.gem'
-      sha256 '5f5bda8c172afead48fa2d43a718cf534b1313c367ba1194cebdeb9bfee9ed31'
-    end
+  resource 'cocoapods-trunk' do
+    url 'https://rubygems.org/gems/cocoapods-trunk-1.6.0.gem'
+    sha256 '5f5bda8c172afead48fa2d43a718cf534b1313c367ba1194cebdeb9bfee9ed31'
   end
 
-  if OS.mac?
-    resource 'cocoapods-try' do
-      url 'https://rubygems.org/gems/cocoapods-try-1.2.0.gem'
-      sha256 '145b946c6e7747ed0301d975165157951153d27469e6b2763c83e25c84b9defe'
-    end
+  resource 'cocoapods-try' do
+    url 'https://rubygems.org/gems/cocoapods-try-1.2.0.gem'
+    sha256 '145b946c6e7747ed0301d975165157951153d27469e6b2763c83e25c84b9defe'
   end
 
   resource 'colored2' do
@@ -145,24 +129,32 @@ class Soup < Formula
     sha256 'bba0da1cea8ac3e1f5cdd7cb1cb5fc78d7ac562c33736f18f0c3eb2b63053d9e'
   end
 
-  resource 'ffi' do
-    url 'https://rubygems.org/gems/ffi-1.17.0.gem'
-    sha256 '51630e43425078311c056ca75f961bb3bda1641ab36e44ad4c455e0b0e4a231c'
+  if RbConfig::CONFIG['host_os'] == 'linux' && RbConfig::CONFIG['host_cpu'] == 'aarch64'
+    resource 'ffi' do
+      url 'https://rubygems.org/gems/ffi-1.17.0-aarch64-linux-gnu.gem'
+      sha256 '228c8fb79e6b018a31c75414115a75ca65f74e8138b2c9c97d22041e4e12f2c1'
+    end
   end
 
-  resource 'ffi' do
-    url 'https://rubygems.org/gems/ffi-1.17.0.gem'
-    sha256 '51630e43425078311c056ca75f961bb3bda1641ab36e44ad4c455e0b0e4a231c'
+  if RbConfig::CONFIG['host_os'] == 'darwin' && RbConfig::CONFIG['host_cpu'] == 'arm64'
+    resource 'ffi' do
+      url 'https://rubygems.org/gems/ffi-1.17.0-arm64-darwin.gem'
+      sha256 '609c874e76614542c6d485b0576e42a7a38ffcdf086612f9a300c4ec3fcd0d12'
+    end
   end
 
-  resource 'ffi' do
-    url 'https://rubygems.org/gems/ffi-1.17.0.gem'
-    sha256 '51630e43425078311c056ca75f961bb3bda1641ab36e44ad4c455e0b0e4a231c'
+  if RbConfig::CONFIG['host_os'] == 'darwin' && RbConfig::CONFIG['host_cpu'] == 'x86_64'
+    resource 'ffi' do
+      url 'https://rubygems.org/gems/ffi-1.17.0-x86_64-darwin.gem'
+      sha256 'fdcd48c69db3303ef95aec5c64d6275fcf9878a02c0bec0afddc506ceca0f56b'
+    end
   end
 
-  resource 'ffi' do
-    url 'https://rubygems.org/gems/ffi-1.17.0.gem'
-    sha256 '51630e43425078311c056ca75f961bb3bda1641ab36e44ad4c455e0b0e4a231c'
+  if RbConfig::CONFIG['host_os'] == 'linux' && RbConfig::CONFIG['host_cpu'] == 'x86_64'
+    resource 'ffi' do
+      url 'https://rubygems.org/gems/ffi-1.17.0-x86_64-linux-gnu.gem'
+      sha256 '1015e59d5919dd6bbcb0704325b0bd639be664a79b1e2189943ceb18faa34198'
+    end
   end
 
   resource 'fourflusher' do
@@ -260,9 +252,32 @@ class Soup < Formula
     sha256 'fbc151bda025451f627fafdfcb3f4f13d0b22ae11f58c6d3a2939c76c5f5f126'
   end
 
-  resource 'nokogiri' do
-    url 'https://rubygems.org/gems/nokogiri-1.16.6.gem'
-    sha256 '935fe4dd67d4377f4a05002acb1ffbadbcae265ea8e7869fc40e3a8121f3e1ef'
+  if RbConfig::CONFIG['host_os'] == 'linux' && RbConfig::CONFIG['host_cpu'] == 'aarch64'
+    resource 'nokogiri' do
+      url 'https://rubygems.org/gems/nokogiri-1.16.6-aarch64-linux.gem'
+      sha256 '7f4c37ee2dd9c97fdfb6278cf3d9dd2078651f241eed320e26902135dbf78183'
+    end
+  end
+
+  if RbConfig::CONFIG['host_os'] == 'darwin' && RbConfig::CONFIG['host_cpu'] == 'arm64'
+    resource 'nokogiri' do
+      url 'https://rubygems.org/gems/nokogiri-1.16.6-arm64-darwin.gem'
+      sha256 '43e8a783697c65413408a4923b5c2ed6bea6632cfdab4da220446b601733fa4b'
+    end
+  end
+
+  if RbConfig::CONFIG['host_os'] == 'darwin' && RbConfig::CONFIG['host_cpu'] == 'x86_64'
+    resource 'nokogiri' do
+      url 'https://rubygems.org/gems/nokogiri-1.16.6-x86_64-darwin.gem'
+      sha256 '92fa413d866baf9b609f17558ecfbcf950d5373213babcf4ce11d7eaed4b21cf'
+    end
+  end
+
+  if RbConfig::CONFIG['host_os'] == 'linux' && RbConfig::CONFIG['host_cpu'] == 'x86_64'
+    resource 'nokogiri' do
+      url 'https://rubygems.org/gems/nokogiri-1.16.6-x86_64-linux.gem'
+      sha256 '769bd2c14ad76dd5a7e14c867741cf2e3b8c25626a34f40aee7b0b998b8de820'
+    end
   end
 
   resource 'optparse' do
