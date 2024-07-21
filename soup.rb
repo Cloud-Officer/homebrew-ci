@@ -129,31 +129,39 @@ class Soup < Formula
     sha256 'bba0da1cea8ac3e1f5cdd7cb1cb5fc78d7ac562c33736f18f0c3eb2b63053d9e'
   end
 
-  if OS.linux? && OS.host_cpu != "x86_64"
-    resource 'ffi' do
-      url 'https://rubygems.org/gems/ffi-1.17.0-aarch64-linux-gnu.gem'
-      sha256 '228c8fb79e6b018a31c75414115a75ca65f74e8138b2c9c97d22041e4e12f2c1'
+  on_linux do
+    on_arm do
+      resource 'ffi' do
+        url 'https://rubygems.org/gems/ffi-1.17.0-aarch64-linux-gnu.gem'
+        sha256 '228c8fb79e6b018a31c75414115a75ca65f74e8138b2c9c97d22041e4e12f2c1'
+      end
     end
   end
 
-  if OS.mac? && OS.host_cpu != "x86_64"
-    resource 'ffi' do
-      url 'https://rubygems.org/gems/ffi-1.17.0-arm64-darwin.gem'
-      sha256 '609c874e76614542c6d485b0576e42a7a38ffcdf086612f9a300c4ec3fcd0d12'
+  on_macos do
+    on_arm do
+      resource 'ffi' do
+        url 'https://rubygems.org/gems/ffi-1.17.0-arm64-darwin.gem'
+        sha256 '609c874e76614542c6d485b0576e42a7a38ffcdf086612f9a300c4ec3fcd0d12'
+      end
     end
   end
 
-  if OS.mac? && OS.host_cpu == "x86_64"
-    resource 'ffi' do
-      url 'https://rubygems.org/gems/ffi-1.17.0-x86_64-darwin.gem'
-      sha256 'fdcd48c69db3303ef95aec5c64d6275fcf9878a02c0bec0afddc506ceca0f56b'
+  on_macos do
+    on_intel do
+      resource 'ffi' do
+        url 'https://rubygems.org/gems/ffi-1.17.0-x86_64-darwin.gem'
+        sha256 'fdcd48c69db3303ef95aec5c64d6275fcf9878a02c0bec0afddc506ceca0f56b'
+      end
     end
   end
 
-  if OS.linux? && OS.host_cpu == "x86_64"
-    resource 'ffi' do
-      url 'https://rubygems.org/gems/ffi-1.17.0-x86_64-linux-gnu.gem'
-      sha256 '1015e59d5919dd6bbcb0704325b0bd639be664a79b1e2189943ceb18faa34198'
+  on_linux do
+    on_intel do
+      resource 'ffi' do
+        url 'https://rubygems.org/gems/ffi-1.17.0-x86_64-linux-gnu.gem'
+        sha256 '1015e59d5919dd6bbcb0704325b0bd639be664a79b1e2189943ceb18faa34198'
+      end
     end
   end
 
@@ -252,31 +260,39 @@ class Soup < Formula
     sha256 'fbc151bda025451f627fafdfcb3f4f13d0b22ae11f58c6d3a2939c76c5f5f126'
   end
 
-  if OS.linux? && OS.host_cpu != "x86_64"
-    resource 'nokogiri' do
-      url 'https://rubygems.org/gems/nokogiri-1.16.6-aarch64-linux.gem'
-      sha256 '7f4c37ee2dd9c97fdfb6278cf3d9dd2078651f241eed320e26902135dbf78183'
+  on_linux do
+    on_arm do
+      resource 'nokogiri' do
+        url 'https://rubygems.org/gems/nokogiri-1.16.6-aarch64-linux.gem'
+        sha256 '7f4c37ee2dd9c97fdfb6278cf3d9dd2078651f241eed320e26902135dbf78183'
+      end
     end
   end
 
-  if OS.mac? && OS.host_cpu != "x86_64"
-    resource 'nokogiri' do
-      url 'https://rubygems.org/gems/nokogiri-1.16.6-arm64-darwin.gem'
-      sha256 '43e8a783697c65413408a4923b5c2ed6bea6632cfdab4da220446b601733fa4b'
+  on_macos do
+    on_arm do
+      resource 'nokogiri' do
+        url 'https://rubygems.org/gems/nokogiri-1.16.6-arm64-darwin.gem'
+        sha256 '43e8a783697c65413408a4923b5c2ed6bea6632cfdab4da220446b601733fa4b'
+      end
     end
   end
 
-  if OS.mac? && OS.host_cpu == "x86_64"
-    resource 'nokogiri' do
-      url 'https://rubygems.org/gems/nokogiri-1.16.6-x86_64-darwin.gem'
-      sha256 '92fa413d866baf9b609f17558ecfbcf950d5373213babcf4ce11d7eaed4b21cf'
+  on_macos do
+    on_intel do
+      resource 'nokogiri' do
+        url 'https://rubygems.org/gems/nokogiri-1.16.6-x86_64-darwin.gem'
+        sha256 '92fa413d866baf9b609f17558ecfbcf950d5373213babcf4ce11d7eaed4b21cf'
+      end
     end
   end
 
-  if OS.linux? && OS.host_cpu == "x86_64"
-    resource 'nokogiri' do
-      url 'https://rubygems.org/gems/nokogiri-1.16.6-x86_64-linux.gem'
-      sha256 '769bd2c14ad76dd5a7e14c867741cf2e3b8c25626a34f40aee7b0b998b8de820'
+  on_linux do
+    on_intel do
+      resource 'nokogiri' do
+        url 'https://rubygems.org/gems/nokogiri-1.16.6-x86_64-linux.gem'
+        sha256 '769bd2c14ad76dd5a7e14c867741cf2e3b8c25626a34f40aee7b0b998b8de820'
+      end
     end
   end
 
