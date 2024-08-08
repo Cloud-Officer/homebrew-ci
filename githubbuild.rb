@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.3.10'
+      tag: '1.3.11'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -110,8 +110,8 @@ class Githubbuild < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.4.0.gem'
-    sha256 '8d247769c3873fe92201d591a7463384022a1a25e214853df5d6806623179e82'
+    url 'https://rubygems.org/gems/parser-3.3.4.1.gem'
+    sha256 'fac400a9ebfcc050ba2da5e6f7c09b83a4ec12b630396a38c0a3b3b4d139a01a'
   end
 
   resource 'psych' do
@@ -120,8 +120,8 @@ class Githubbuild < Formula
   end
 
   resource 'racc' do
-    url 'https://rubygems.org/gems/racc-1.8.0.gem'
-    sha256 '09349a65c37c4fe710a435f25c9f1652e39f29ad6b1fa08d4a8d30c0553d3a08'
+    url 'https://rubygems.org/gems/racc-1.8.1.gem'
+    sha256 '4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f'
   end
 
   resource 'rainbow' do
@@ -135,18 +135,18 @@ class Githubbuild < Formula
   end
 
   resource 'rexml' do
-    url 'https://rubygems.org/gems/rexml-3.3.2.gem'
-    sha256 '4513686f858d0ff2e5a412d734c8a192e16cb1df4cb2063f56b72a8ad4c5257f'
+    url 'https://rubygems.org/gems/rexml-3.3.4.gem'
+    sha256 'ea9176276a71f8475378299ec5f7257eaedd17d561a5d3dec0284a1467725b51'
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.65.0.gem'
-    sha256 '624316407a3f8e3999c6f75c528471ed3d4513ca39cec3bede1964c69630e4a1'
+    url 'https://rubygems.org/gems/rubocop-1.65.1.gem'
+    sha256 '3a239b71fcfdeb32c654f4b48c2e6aeb4f77b128e348fa9442184f207e70718d'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.31.3.gem'
-    sha256 '1b07d618d8776993ec6053a706d1c09f0bf15139fd69415924656cbff07e7818'
+    url 'https://rubygems.org/gems/rubocop-ast-1.32.0.gem'
+    sha256 'ecff238ff339b12e1f2a857833a5f9024aa91085516f5eb9c3027f7164908629'
   end
 
   resource 'rubocop-performance' do
@@ -155,8 +155,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-rspec' do
-    url 'https://rubygems.org/gems/rubocop-rspec-3.0.3.gem'
-    sha256 'ee90e0efb9a6725ab4147d89bf4761c8548b4d04069da95aca4696cd57f02511'
+    url 'https://rubygems.org/gems/rubocop-rspec-3.0.4.gem'
+    sha256 'eb4ffa14a6be7e722f6c5dc48759356753e714f32ed4adbeddf14057694ec11d'
   end
 
   resource 'ruby-progressbar' do
