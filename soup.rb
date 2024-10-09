@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.2'
+      tag: '1.4.3'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -321,11 +321,6 @@ class Soup < Formula
     sha256 '4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f'
   end
 
-  resource 'rack' do
-    url 'https://rubygems.org/gems/rack-3.1.7.gem'
-    sha256 '0e9982db4ea9013326788ca2a7f48e32a4e746765e7c3512d424ef0dd22ae58b'
-  end
-
   resource 'rainbow' do
     url 'https://rubygems.org/gems/rainbow-3.1.1.gem'
     sha256 '039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a'
@@ -337,8 +332,8 @@ class Soup < Formula
   end
 
   resource 'rexml' do
-    url 'https://rubygems.org/gems/rexml-3.3.7.gem'
-    sha256 '62a3a4d288ace18830ad6ca8aba845037d231c4f8cb481ba270ca1b75b605027'
+    url 'https://rubygems.org/gems/rexml-3.3.8.gem'
+    sha256 'f68fd96345330a1062896d0d0401324b0dae0ee20f784791b0843db96b212167'
   end
 
   resource 'rubocop' do
@@ -361,11 +356,6 @@ class Soup < Formula
     sha256 '2d888d40b08577daf1e74ca4623be1e3058c1a93543d5a7220818f561a254192'
   end
 
-  resource 'rubocop-i18n' do
-    url 'https://rubygems.org/gems/rubocop-i18n-3.0.0.gem'
-    sha256 '75138f55c4d9c02074a6db031f31f0071bb3d396c6f39fcb0199ae0b30753589'
-  end
-
   resource 'rubocop-minitest' do
     url 'https://rubygems.org/gems/rubocop-minitest-0.36.0.gem'
     sha256 '1d15850849c685ff4b6d64dd801ec2d13eb2fe56b6f7ce9aab93d1b0508e7b9f'
@@ -376,24 +366,9 @@ class Soup < Formula
     sha256 '9ed9737af1ee90655654b483e0eac4e64702139e85d33335bf744b57a309a679'
   end
 
-  resource 'rubocop-rails' do
-    url 'https://rubygems.org/gems/rubocop-rails-2.26.1.gem'
-    sha256 '78ef58c4bde201609ed30b65acaac6615275c818f185be9e0c6f73aa6c122afc'
-  end
-
-  resource 'rubocop-rake' do
-    url 'https://rubygems.org/gems/rubocop-rake-0.6.0.gem'
-    sha256 '56b6f22189af4b33d4f4e490a555c09f1281b02f4d48c3a61f6e8fe5f401d8db'
-  end
-
   resource 'rubocop-rspec' do
-    url 'https://rubygems.org/gems/rubocop-rspec-3.0.5.gem'
-    sha256 'c6a8e29fb1b00d227c32df159e92f5ebb9e0ff734e52955fb13aff5c74977e0f'
-  end
-
-  resource 'rubocop-rspec_rails' do
-    url 'https://rubygems.org/gems/rubocop-rspec_rails-2.30.0.gem'
-    sha256 '888112e83f9d7ef7ad2397e9d69a0b9614a4bae24f072c399804a180f80c4c46'
+    url 'https://rubygems.org/gems/rubocop-rspec-3.1.0.gem'
+    sha256 '1edcd4dbb4feebbb6e4d8b0d7e43147e8f4f69d317fa964ae9413f2124898bdb'
   end
 
   resource 'rubocop-thread_safety' do
@@ -432,8 +407,8 @@ class Soup < Formula
   end
 
   resource 'tins' do
-    url 'https://rubygems.org/gems/tins-1.33.0.gem'
-    sha256 '1e408a90a6a61beb0a19721aa4ec6dfc7f18d0ba2b146d1a5c99b1324a136acf'
+    url 'https://rubygems.org/gems/tins-1.34.0.gem'
+    sha256 'b7d71dd137400d37facadabccc9d92340310f163fd66ebeb7472fd7834014b80'
   end
 
   resource 'tty-color' do
@@ -482,8 +457,8 @@ class Soup < Formula
   end
 
   resource 'xcodeproj' do
-    url 'https://rubygems.org/gems/xcodeproj-1.25.0.gem'
-    sha256 'aa0bc57eb3bd616357088a9b41794ef79bdcf7ba969000642aec1e768e7b06ce'
+    url 'https://rubygems.org/gems/xcodeproj-1.25.1.gem'
+    sha256 '9a2310dccf6d717076e86f602b17c640046b6f1dfe64480044596f6f2f13dc84'
   end
 
   resource 'yarn_lock_parser' do
