@@ -33,8 +33,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.987.0.gem'
-    sha256 '850cdbd1c512099dacd3fd83f471a759ada510cce997a3d1d58936e70682f7df'
+    url 'https://rubygems.org/gems/aws-partitions-1.990.0.gem'
+    sha256 '6d11b5dd690d4420fff00e7aea92c88f4730209ba2fa67f926003ed7755881c0'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -63,13 +63,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.480.0.gem'
-    sha256 '65cf99daa4f1233827df81d5842e2c75fdff720c98bf0fe66ebf1345a18b2527'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.481.0.gem'
+    sha256 'db6baf2d59b10294ba0cb411613f7ad1dfca0c046cb9637a5069860e3b608acb'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
-    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.117.0.gem'
-    sha256 '34e25ce8bd9da8c969022d3d763259e28cc5fb7c81b878e22da2850deb10b611'
+    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.118.0.gem'
+    sha256 '02e9344a2922dd99899b92ca2ec8974846b2e68a83fef1ac898c3b2cd3bd9566'
   end
 
   resource 'aws-sdk-iam' do
@@ -209,8 +209,8 @@ class Citools < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.66.1.gem'
-    sha256 '0679c263b1164fd003b8590ae83b3e9e9bf72282d411755f227f1d6268ee5ee7'
+    url 'https://rubygems.org/gems/rubocop-1.67.0.gem'
+    sha256 '8ccca7226e76d0a9974af960ea446d1fb38adf0c491214294e2fed75a85c378c'
   end
 
   resource 'rubocop-ast' do
