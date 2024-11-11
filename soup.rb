@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.3'
+      tag: '1.4.4'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -15,8 +15,8 @@ class Soup < Formula
   end
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-7.2.1.gem'
-    sha256 '7557fa077a592a4f36f7ddacf4d9d71c34aff69ed20236b8a61c22d567da8c24'
+    url 'https://rubygems.org/gems/activesupport-7.2.2.gem'
+    sha256 '436360924cf758dfa9d60ab22a8afe6da8babf6f1286d4087f0a9c576bf8328a'
   end
 
   resource 'addressable' do
@@ -44,6 +44,11 @@ class Soup < Formula
     sha256 '0f25e9b21a02a0cc0cea8ef92b2041035d39350946e8789c562b2d1a3da01507'
   end
 
+  resource 'benchmark' do
+    url 'https://rubygems.org/gems/benchmark-0.4.0.gem'
+    sha256 '0f12f8c495545e3710c3e4f0480f63f06b4c842cc94cec7f33a956f5180e874a'
+  end
+
   resource 'bigdecimal' do
     url 'https://rubygems.org/gems/bigdecimal-3.1.8.gem'
     sha256 'a89467ed5a44f8ae01824af49cbc575871fa078332e8f77ea425725c1ffe27be'
@@ -55,13 +60,13 @@ class Soup < Formula
   end
 
   resource 'cocoapods' do
-    url 'https://rubygems.org/gems/cocoapods-1.15.2.gem'
-    sha256 'f0f5153de8d028d133b96f423e04f37fb97a1da0d11dda581a9f46c0cba4090a'
+    url 'https://rubygems.org/gems/cocoapods-1.16.2.gem'
+    sha256 '0ff1c860f32df3db8b16df09b58da1a6bb2a12fe55f6d5e8be994a74fadd1e5e'
   end
 
   resource 'cocoapods-core' do
-    url 'https://rubygems.org/gems/cocoapods-core-1.15.2.gem'
-    sha256 '322650d97fe1ad4c0831a09669764b888bd91c6d79d0f6bb07281a17667a2136'
+    url 'https://rubygems.org/gems/cocoapods-core-1.16.2.gem'
+    sha256 '4bb1b5c420691e60cf36fa227dec6bc48c096c34c97bb7aa512ea7f3246fc12b'
   end
 
   resource 'cocoapods-deintegrate' do
@@ -201,8 +206,8 @@ class Soup < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.7.2.gem'
-    sha256 '1898b5cbc81cd36c0fd4d0b7ad2682c39fb07c5ff682fc6265f678f550d4982c'
+    url 'https://rubygems.org/gems/json-2.8.1.gem'
+    sha256 '404e8ca4c2ef6c7a6fa15bb9e2e280f3523334b78a83f22268297fe7939ee22a'
   end
 
   resource 'language_server-protocol' do
@@ -236,8 +241,8 @@ class Soup < Formula
   end
 
   resource 'nanaimo' do
-    url 'https://rubygems.org/gems/nanaimo-0.3.0.gem'
-    sha256 'aaaedc60497070b864a7e220f7c4b4cad3a0daddda2c30055ba8dae306342376'
+    url 'https://rubygems.org/gems/nanaimo-0.4.0.gem'
+    sha256 'faf069551bab17f15169c1f74a1c73c220657e71b6e900919897a10d991d0723'
   end
 
   resource 'nap' do
@@ -292,8 +297,8 @@ class Soup < Formula
   end
 
   resource 'optparse' do
-    url 'https://rubygems.org/gems/optparse-0.5.0.gem'
-    sha256 'b359d993f138cf27276c6ce9d2caa21d570eb718cd15c09e88a63de86491de08'
+    url 'https://rubygems.org/gems/optparse-0.6.0.gem'
+    sha256 '25e90469c1cd44048a89dc01c1dde9d5f0bdf717851055fb18237780779b068c'
   end
 
   resource 'parallel' do
@@ -302,8 +307,8 @@ class Soup < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.5.0.gem'
-    sha256 'f30ebb71b7830c2e7cdc4b2b0e0ec2234900e3fca3fe2fba47f78be759181ab3'
+    url 'https://rubygems.org/gems/parser-3.3.6.0.gem'
+    sha256 '25d4e67cc4f0f7cab9a2ae1f38e2005b6904d2ea13c34734511d0faad038bc3b'
   end
 
   resource 'pastel' do
@@ -332,18 +337,18 @@ class Soup < Formula
   end
 
   resource 'rexml' do
-    url 'https://rubygems.org/gems/rexml-3.3.8.gem'
-    sha256 'f68fd96345330a1062896d0d0401324b0dae0ee20f784791b0843db96b212167'
+    url 'https://rubygems.org/gems/rexml-3.3.9.gem'
+    sha256 'd71875b85299f341edf47d44df0212e7658cbdf35aeb69cefdb63f57af3137c9'
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.66.1.gem'
-    sha256 '0679c263b1164fd003b8590ae83b3e9e9bf72282d411755f227f1d6268ee5ee7'
+    url 'https://rubygems.org/gems/rubocop-1.68.0.gem'
+    sha256 '07df508504d81e97174e8d21030f25d52c1be7ee8615939db43f3b377ea6c12b'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.32.3.gem'
-    sha256 '40201e861c73a3c2d59428c7627828ef81fb2f8a306bc4a1c1801452afe3fe0f'
+    url 'https://rubygems.org/gems/rubocop-ast-1.35.0.gem'
+    sha256 '0e4a677b47ce7b3416ace79e6119e4c3b77c0689f264b81072a78655f9d7f233'
   end
 
   resource 'rubocop-capybara' do
@@ -367,13 +372,13 @@ class Soup < Formula
   end
 
   resource 'rubocop-rspec' do
-    url 'https://rubygems.org/gems/rubocop-rspec-3.1.0.gem'
-    sha256 '1edcd4dbb4feebbb6e4d8b0d7e43147e8f4f69d317fa964ae9413f2124898bdb'
+    url 'https://rubygems.org/gems/rubocop-rspec-3.2.0.gem'
+    sha256 'd2c8568c7790ab62dd380c703b3067e78a248fb25d8c7d8d70c268de2eb243de'
   end
 
   resource 'rubocop-thread_safety' do
-    url 'https://rubygems.org/gems/rubocop-thread_safety-0.5.1.gem'
-    sha256 'db7cd50e01c61ccce9022afd93713e3b136c76d266c62c8b0d38424b192e58b8'
+    url 'https://rubygems.org/gems/rubocop-thread_safety-0.6.0.gem'
+    sha256 '234857694d77a20498e4aae25d87d13e6be462f27d59c40b2a277d67442baea5'
   end
 
   resource 'ruby-macho' do
@@ -387,8 +392,8 @@ class Soup < Formula
   end
 
   resource 'securerandom' do
-    url 'https://rubygems.org/gems/securerandom-0.3.1.gem'
-    sha256 '98f0450c0ea46d2f9a4b6db4f391dbd83dc08049592eada155739f40e0341bde'
+    url 'https://rubygems.org/gems/securerandom-0.3.2.gem'
+    sha256 'e8b2ffa651dfbbb26eb4bfb8ddcfff94221a93e3f118f39e0f7f94c14fea9dc0'
   end
 
   resource 'semantic' do
@@ -407,8 +412,8 @@ class Soup < Formula
   end
 
   resource 'tins' do
-    url 'https://rubygems.org/gems/tins-1.34.0.gem'
-    sha256 'b7d71dd137400d37facadabccc9d92340310f163fd66ebeb7472fd7834014b80'
+    url 'https://rubygems.org/gems/tins-1.37.0.gem'
+    sha256 '28bdf4b3d0eae8da3d369169fdf6a48cad2067befdd4ef99c5f10a3942529dd5'
   end
 
   resource 'tty-color' do
@@ -457,8 +462,8 @@ class Soup < Formula
   end
 
   resource 'xcodeproj' do
-    url 'https://rubygems.org/gems/xcodeproj-1.25.1.gem'
-    sha256 '9a2310dccf6d717076e86f602b17c640046b6f1dfe64480044596f6f2f13dc84'
+    url 'https://rubygems.org/gems/xcodeproj-1.27.0.gem'
+    sha256 '8cc7a73b4505c227deab044dce118ede787041c702bc47636856a2e566f854d3'
   end
 
   resource 'yarn_lock_parser' do
