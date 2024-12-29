@@ -4,14 +4,14 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.4.4'
+      tag: '1.4.5'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-8.0.0.gem'
-    sha256 '2c596c4b923f155b25657169c52e78a35d89bb53ab51074ef1b05d43797bac5e'
+    url 'https://rubygems.org/gems/activesupport-8.0.1.gem'
+    sha256 'fd5bc74641c24ac3541055c2879789198ff42adee3e39c2933289ba008912e37'
   end
 
   resource 'ast' do
@@ -30,8 +30,8 @@ class Githubbuild < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-3.1.8.gem'
-    sha256 'a89467ed5a44f8ae01824af49cbc575871fa078332e8f77ea425725c1ffe27be'
+    url 'https://rubygems.org/gems/bigdecimal-3.1.9.gem'
+    sha256 '2ffc742031521ad69c2dfc815a98e426a230a3d22aeac1995826a75dabfad8cc'
   end
 
   resource 'concurrent-ruby' do
@@ -45,8 +45,13 @@ class Githubbuild < Formula
   end
 
   resource 'csv' do
-    url 'https://rubygems.org/gems/csv-3.3.0.gem'
-    sha256 '0bbd1defdc31134abefed027a639b3723c2753862150f4c3ee61cab71b20d67d'
+    url 'https://rubygems.org/gems/csv-3.3.2.gem'
+    sha256 '6ff0c135e65e485d1864dde6c1703b60d34cc9e19bed8452834a0b28a519bd4e'
+  end
+
+  resource 'date' do
+    url 'https://rubygems.org/gems/date-3.4.1.gem'
+    sha256 'bf268e14ef7158009bfeaec40b5fa3c7271906e88b196d958a89d4b408abe64f'
   end
 
   resource 'drb' do
@@ -70,8 +75,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.8.1.gem'
-    sha256 '404e8ca4c2ef6c7a6fa15bb9e2e280f3523334b78a83f22268297fe7939ee22a'
+    url 'https://rubygems.org/gems/json-2.9.1.gem'
+    sha256 'd2bdef4644052fad91c1785d48263756fe32fcac08b96a20bb15840e96550d11'
   end
 
   resource 'language_server-protocol' do
@@ -80,8 +85,8 @@ class Githubbuild < Formula
   end
 
   resource 'logger' do
-    url 'https://rubygems.org/gems/logger-1.6.1.gem'
-    sha256 '3ad9587ed3940bf7897ea64a673971415523f4f7d6b22c5e3af5219705669653'
+    url 'https://rubygems.org/gems/logger-1.6.4.gem'
+    sha256 'b627b91c922231050932e7bf8ee886fe54790ba2238a468ead52ba21911f2ee7'
   end
 
   resource 'mini_mime' do
@@ -90,8 +95,8 @@ class Githubbuild < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.25.1.gem'
-    sha256 '3db6795a80634def1cf86fda79d2d83b59b25ce5e186fa675f73c565589d2ad8'
+    url 'https://rubygems.org/gems/minitest-5.25.4.gem'
+    sha256 '9cf2cae25ac4dfc90c988ebc3b917f53c054978b673273da1bd20bcb0778f947'
   end
 
   resource 'multi_xml' do
@@ -120,8 +125,8 @@ class Githubbuild < Formula
   end
 
   resource 'psych' do
-    url 'https://rubygems.org/gems/psych-5.2.0.gem'
-    sha256 '6603fe756bcaf14daa25bc17625f36c90931dcf70452ac1e8da19760dc310573'
+    url 'https://rubygems.org/gems/psych-5.2.2.gem'
+    sha256 'a4a9477c85d3e858086c38cf64e7096abe40d1b1eed248b01020dec0ff9906ab'
   end
 
   resource 'racc' do
@@ -135,18 +140,18 @@ class Githubbuild < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.9.2.gem'
-    sha256 '5a27e767ad634f8a4b544520d5cd28a0db7aa1198a5d7c9d7e11d7b3d9066446'
+    url 'https://rubygems.org/gems/regexp_parser-2.10.0.gem'
+    sha256 'cb6f0ddde88772cd64bff1dbbf68df66d376043fe2e66a9ef77fcb1b0c548c61'
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.68.0.gem'
-    sha256 '07df508504d81e97174e8d21030f25d52c1be7ee8615939db43f3b377ea6c12b'
+    url 'https://rubygems.org/gems/rubocop-1.69.2.gem'
+    sha256 '762fb0f30a379bf6054588d39f1815a2a1df8f067bc0337d3fe500e346924bb8'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.35.0.gem'
-    sha256 '0e4a677b47ce7b3416ace79e6119e4c3b77c0689f264b81072a78655f9d7f233'
+    url 'https://rubygems.org/gems/rubocop-ast-1.37.0.gem'
+    sha256 '9513ac88aaf113d04b52912533ffe46475de1362d4aa41141b51b2455827c080'
   end
 
   resource 'rubocop-capybara' do
@@ -165,13 +170,13 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-performance' do
-    url 'https://rubygems.org/gems/rubocop-performance-1.22.1.gem'
-    sha256 '9ed9737af1ee90655654b483e0eac4e64702139e85d33335bf744b57a309a679'
+    url 'https://rubygems.org/gems/rubocop-performance-1.23.0.gem'
+    sha256 '34ae78cb1bc5f1a0b34a34a1f9f6eec2cb8b8b9cafa2ce37982021e86fa49171'
   end
 
   resource 'rubocop-rspec' do
-    url 'https://rubygems.org/gems/rubocop-rspec-3.2.0.gem'
-    sha256 'd2c8568c7790ab62dd380c703b3067e78a248fb25d8c7d8d70c268de2eb243de'
+    url 'https://rubygems.org/gems/rubocop-rspec-3.3.0.gem'
+    sha256 '79e1b281a689044d1516fefbc52e2e6c06cd367c25ebeaf06a7a198e9071cd7d'
   end
 
   resource 'rubocop-thread_safety' do
@@ -185,8 +190,8 @@ class Githubbuild < Formula
   end
 
   resource 'securerandom' do
-    url 'https://rubygems.org/gems/securerandom-0.3.2.gem'
-    sha256 'e8b2ffa651dfbbb26eb4bfb8ddcfff94221a93e3f118f39e0f7f94c14fea9dc0'
+    url 'https://rubygems.org/gems/securerandom-0.4.1.gem'
+    sha256 'cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1'
   end
 
   resource 'stringio' do
@@ -200,13 +205,18 @@ class Githubbuild < Formula
   end
 
   resource 'unicode-display_width' do
-    url 'https://rubygems.org/gems/unicode-display_width-2.6.0.gem'
-    sha256 '12279874bba6d5e4d2728cef814b19197dbb10d7a7837a869bab65da943b7f5a'
+    url 'https://rubygems.org/gems/unicode-display_width-3.1.3.gem'
+    sha256 'dbbbb0fddc2941a5d3582d8f991aad6df1defb83741649a07d27cccc4c95c942'
+  end
+
+  resource 'unicode-emoji' do
+    url 'https://rubygems.org/gems/unicode-emoji-4.0.4.gem'
+    sha256 '2c2c4ef7f353e5809497126285a50b23056cc6e61b64433764a35eff6c36532a'
   end
 
   resource 'uri' do
-    url 'https://rubygems.org/gems/uri-1.0.1.gem'
-    sha256 '3970958370c64d325f715e10fe7af77215d1a33a8a80cc7829e5309cf9c342f2'
+    url 'https://rubygems.org/gems/uri-1.0.2.gem'
+    sha256 'b303504ceb7e5905771fa7fa14b649652fa949df18b5880d69cfb12494791e27'
   end
 
   def install
