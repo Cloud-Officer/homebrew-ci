@@ -21,7 +21,13 @@ for file in "${!files_to_dirs[@]}"; do
   start_marker="${start_markers[${file}]}"
   temp_new_content_file=$(mktemp)
   pushd "../${directory}" >/dev/null
-  brew-resources >"${temp_new_content_file}"
+
+  if type -P brew-resources &>/dev/null; then
+    brew-resources >"${temp_new_content_file}"
+  else
+    "${HOME}/Downloads/cloud-officer/ci-tools/brew-resources.rb" >"${temp_new_content_file}"
+  fi
+
   popd >/dev/null
   temp_file="$(mktemp)"
   awk -v start="${start_marker}" -v end="${end_marker}" -v file="${temp_new_content_file}" '
