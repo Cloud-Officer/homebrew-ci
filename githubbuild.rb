@@ -40,8 +40,8 @@ class Githubbuild < Formula
   end
 
   resource 'connection_pool' do
-    url 'https://rubygems.org/gems/connection_pool-2.4.1.gem'
-    sha256 '0f40cf997091f1f04ff66da67eabd61a9fe0d4928b9a3645228532512fab62f4'
+    url 'https://rubygems.org/gems/connection_pool-2.5.0.gem'
+    sha256 '233b92f8d38e038c1349ccea65dd3772727d669d6d2e71f9897c8bf5cd53ebfc'
   end
 
   resource 'csv' do
@@ -170,8 +170,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-performance' do
-    url 'https://rubygems.org/gems/rubocop-performance-1.23.0.gem'
-    sha256 '34ae78cb1bc5f1a0b34a34a1f9f6eec2cb8b8b9cafa2ce37982021e86fa49171'
+    url 'https://rubygems.org/gems/rubocop-performance-1.23.1.gem'
+    sha256 'f22f86a795f5e6a6180aac2c6fc172534b173a068d6ed3396d6460523e051b82'
   end
 
   resource 'rubocop-rspec' do
