@@ -102,8 +102,8 @@ class Soup < Formula
   on_linux do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.18.0-aarch64-linux-gnu.gem'
-        sha256 'a240b4183b7a12d82cdd46d7a77255d785e01198ffb0c52c8aee1197daf0b465'
+        url 'https://rubygems.org/gems/nokogiri-1.18.1-aarch64-linux-gnu.gem'
+        sha256 '35837013800e34342fcbaca305f8c49231f6bd4f779bfa23fe7b4686ae82d5b8'
       end
     end
   end
@@ -111,8 +111,8 @@ class Soup < Formula
   on_macos do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.18.0-arm64-darwin.gem'
-        sha256 'e6e75760aa66adf5ea0dccfba2516c111526ba50f6475426975532d1a134173c'
+        url 'https://rubygems.org/gems/nokogiri-1.18.1-arm64-darwin.gem'
+        sha256 'd75193f284c899d225943a8944479faedd995a7573ddd5c8308ffbdf2ec55204'
       end
     end
   end
@@ -120,8 +120,8 @@ class Soup < Formula
   on_macos do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.18.0-x86_64-darwin.gem'
-        sha256 '4c27a29a3509f38caeec582feef381b07d1e80f56a622b3548be07271dc903b9'
+        url 'https://rubygems.org/gems/nokogiri-1.18.1-x86_64-darwin.gem'
+        sha256 'd94e3aa6483577495fc8969d6b4b5c075840ce6b1ab09636a6d4177ad171051d'
       end
     end
   end
@@ -129,8 +129,8 @@ class Soup < Formula
   on_linux do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.18.0-x86_64-linux-gnu.gem'
-        sha256 '1232a310b8e186d402a5f3d0c06affafaf25b1c30b01aa797559ac7bd5851c92'
+        url 'https://rubygems.org/gems/nokogiri-1.18.1-x86_64-linux-gnu.gem'
+        sha256 'e516cf16ccde67ed4cc595a2621ca5ddd42562ecb24928914b0045a20a41620e'
       end
     end
   end
@@ -196,8 +196,8 @@ class Soup < Formula
   end
 
   resource 'rubocop-performance' do
-    url 'https://rubygems.org/gems/rubocop-performance-1.23.0.gem'
-    sha256 '34ae78cb1bc5f1a0b34a34a1f9f6eec2cb8b8b9cafa2ce37982021e86fa49171'
+    url 'https://rubygems.org/gems/rubocop-performance-1.23.1.gem'
+    sha256 'f22f86a795f5e6a6180aac2c6fc172534b173a068d6ed3396d6460523e051b82'
   end
 
   resource 'rubocop-rspec' do
