@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.1'
+      tag: '1.5.2'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -75,8 +75,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.9.1.gem'
-    sha256 'd2bdef4644052fad91c1785d48263756fe32fcac08b96a20bb15840e96550d11'
+    url 'https://rubygems.org/gems/json-2.10.1.gem'
+    sha256 'ddc88ad91a1baf3f0038c174f253af3b086d30dc74db17ca4259bbde982f94dc'
   end
 
   resource 'language_server-protocol' do
@@ -84,9 +84,14 @@ class Githubbuild < Formula
     sha256 'c484626478664fd13482d8180947c50a8590484b1258b99b7aedb3b69df89669'
   end
 
+  resource 'lint_roller' do
+    url 'https://rubygems.org/gems/lint_roller-1.1.0.gem'
+    sha256 '2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87'
+  end
+
   resource 'logger' do
-    url 'https://rubygems.org/gems/logger-1.6.5.gem'
-    sha256 'c3cfe56d01656490ddd103d38b8993d73d86296adebc5f58cefc9ec03741e56b'
+    url 'https://rubygems.org/gems/logger-1.6.6.gem'
+    sha256 'dd618d24e637715472732e7eed02e33cfbdf56deaad225edd0f1f89d38024017'
   end
 
   resource 'mini_mime' do
@@ -120,8 +125,8 @@ class Githubbuild < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.7.0.gem'
-    sha256 '7449011771e3e7881297859b849de26a6f4fccd515bece9520a87e7d2116119b'
+    url 'https://rubygems.org/gems/parser-3.3.7.1.gem'
+    sha256 '7dbe61618025519024ac72402a6677ead02099587a5538e84371b76659e6aca1'
   end
 
   resource 'psych' do
@@ -145,8 +150,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.71.1.gem'
-    sha256 'd3dfd1e484a3a619dcf76c6a4fba694cd833921e4fd254d111845c26bcecfcfa'
+    url 'https://rubygems.org/gems/rubocop-1.72.1.gem'
+    sha256 '4306ae64c6e7e1026d2a90ed755a113c7b9bf0ac21037b8046fbc826a87daaa5'
   end
 
   resource 'rubocop-ast' do
@@ -165,18 +170,18 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-minitest' do
-    url 'https://rubygems.org/gems/rubocop-minitest-0.36.0.gem'
-    sha256 '1d15850849c685ff4b6d64dd801ec2d13eb2fe56b6f7ce9aab93d1b0508e7b9f'
+    url 'https://rubygems.org/gems/rubocop-minitest-0.37.1.gem'
+    sha256 'dcdcc2c835a859193e50bc67296daaf95ac99f6410838119374df31490460d36'
   end
 
   resource 'rubocop-performance' do
-    url 'https://rubygems.org/gems/rubocop-performance-1.23.1.gem'
-    sha256 'f22f86a795f5e6a6180aac2c6fc172534b173a068d6ed3396d6460523e051b82'
+    url 'https://rubygems.org/gems/rubocop-performance-1.24.0.gem'
+    sha256 'e5bd39ff3e368395b9af886927cc37f5892f43db4bd6c8526594352d5b4440b5'
   end
 
   resource 'rubocop-rspec' do
-    url 'https://rubygems.org/gems/rubocop-rspec-3.4.0.gem'
-    sha256 '8721c13b6a8c9530a7ac481cea9423022f946fcf72428bda8289f8b57e4d4885'
+    url 'https://rubygems.org/gems/rubocop-rspec-3.5.0.gem'
+    sha256 '710c942fe1af884ba8eea75cbb8bdbb051929a2208880a6fc2e2dce1eed5304c'
   end
 
   resource 'rubocop-thread_safety' do
@@ -195,8 +200,8 @@ class Githubbuild < Formula
   end
 
   resource 'stringio' do
-    url 'https://rubygems.org/gems/stringio-3.1.2.gem'
-    sha256 '204f1828f85cdb39d57cac4abc6dc44b04505a223f131587f2e20ae3729ba131'
+    url 'https://rubygems.org/gems/stringio-3.1.3.gem'
+    sha256 '1eedb8369ee99a9a0edfdacea95c72d647feb8ce844427c150bd641e1797abc8'
   end
 
   resource 'tzinfo' do
