@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.2'
+      tag: '1.5.3'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -150,8 +150,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.72.1.gem'
-    sha256 '4306ae64c6e7e1026d2a90ed755a113c7b9bf0ac21037b8046fbc826a87daaa5'
+    url 'https://rubygems.org/gems/rubocop-1.72.2.gem'
+    sha256 '0259a32d89fee60882bf4c4d8847e696357719c9db4971839da742bf053ae96b'
   end
 
   resource 'rubocop-ast' do
@@ -185,8 +185,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-thread_safety' do
-    url 'https://rubygems.org/gems/rubocop-thread_safety-0.6.0.gem'
-    sha256 '234857694d77a20498e4aae25d87d13e6be462f27d59c40b2a277d67442baea5'
+    url 'https://rubygems.org/gems/rubocop-thread_safety-0.7.0.gem'
+    sha256 '739f755ca008c93b677dead28364a0a62af0a7870cae4412cf248ea16aa5e66f'
   end
 
   resource 'ruby-progressbar' do
@@ -200,8 +200,8 @@ class Githubbuild < Formula
   end
 
   resource 'stringio' do
-    url 'https://rubygems.org/gems/stringio-3.1.3.gem'
-    sha256 '1eedb8369ee99a9a0edfdacea95c72d647feb8ce844427c150bd641e1797abc8'
+    url 'https://rubygems.org/gems/stringio-3.1.5.gem'
+    sha256 'bca92461515a131535743bc81d5559fa1de7d80cff9a654d6c0af6f9f27e35c8'
   end
 
   resource 'tzinfo' do
