@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.3'
+      tag: '1.5.4'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -150,13 +150,13 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.72.2.gem'
-    sha256 '0259a32d89fee60882bf4c4d8847e696357719c9db4971839da742bf053ae96b'
+    url 'https://rubygems.org/gems/rubocop-1.73.2.gem'
+    sha256 '35cd1b1365ba97234323fe771abcecd09c9b77098464cd726c76aa7d9bc12b5d'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.38.0.gem'
-    sha256 '4fdf6792fe443a9a18acb12dbc8225d0d64cd1654e41fedb30e79c18edbb26ae'
+    url 'https://rubygems.org/gems/rubocop-ast-1.38.1.gem'
+    sha256 '80ecbe2ac9bb26693cab9405bf72b41b85a1f909f20f021b983c32c2e7d857fe'
   end
 
   resource 'rubocop-capybara' do
@@ -220,8 +220,8 @@ class Githubbuild < Formula
   end
 
   resource 'uri' do
-    url 'https://rubygems.org/gems/uri-1.0.2.gem'
-    sha256 'b303504ceb7e5905771fa7fa14b649652fa949df18b5880d69cfb12494791e27'
+    url 'https://rubygems.org/gems/uri-1.0.3.gem'
+    sha256 'e9f2244608eea2f7bc357d954c65c910ce0399ca5e18a7a29207ac22d8767011'
   end
 
   def install
