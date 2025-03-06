@@ -176,8 +176,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.73.1.gem'
-    sha256 '2528ac42743491feb996ebdf2babe645df46d2e50e1ee2858fedb10c0d24da17'
+    url 'https://rubygems.org/gems/rubocop-1.73.2.gem'
+    sha256 '35cd1b1365ba97234323fe771abcecd09c9b77098464cd726c76aa7d9bc12b5d'
   end
 
   resource 'rubocop-ast' do
