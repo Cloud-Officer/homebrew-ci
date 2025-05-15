@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.6'
+      tag: '1.5.7'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -40,8 +40,8 @@ class Githubbuild < Formula
   end
 
   resource 'connection_pool' do
-    url 'https://rubygems.org/gems/connection_pool-2.5.1.gem'
-    sha256 'ae802a90a4b5a081101b39d618e69921a9a50bea9ac3420a5b8c71f1befa3e9c'
+    url 'https://rubygems.org/gems/connection_pool-2.5.3.gem'
+    sha256 'cfd74a82b9b094d1ce30c4f1a346da23ee19dc8a062a16a85f58eab1ced4305b'
   end
 
   resource 'csv' do
@@ -75,13 +75,13 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.10.2.gem'
-    sha256 '34e0eada93022b2a0a3345bb0b5efddb6e9ff5be7c48e409cfb54ff8a36a8b06'
+    url 'https://rubygems.org/gems/json-2.12.0.gem'
+    sha256 'b30fce000756de94c756679c7e57ed41f03f8cc8dde2d2dc00a7c44005da0a50'
   end
 
   resource 'language_server-protocol' do
-    url 'https://rubygems.org/gems/language_server-protocol-3.17.0.4.gem'
-    sha256 'c484626478664fd13482d8180947c50a8590484b1258b99b7aedb3b69df89669'
+    url 'https://rubygems.org/gems/language_server-protocol-3.17.0.5.gem'
+    sha256 'fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc'
   end
 
   resource 'lint_roller' do
@@ -105,8 +105,8 @@ class Githubbuild < Formula
   end
 
   resource 'multi_xml' do
-    url 'https://rubygems.org/gems/multi_xml-0.7.1.gem'
-    sha256 '4fce100c68af588ff91b8ba90a0bb3f0466f06c909f21a32f4962059140ba61b'
+    url 'https://rubygems.org/gems/multi_xml-0.7.2.gem'
+    sha256 '307a96dc48613badb7b2fc174fd4e62d7c7b619bc36ea33bfd0c49f64f5787ce'
   end
 
   resource 'open3' do
@@ -135,8 +135,8 @@ class Githubbuild < Formula
   end
 
   resource 'psych' do
-    url 'https://rubygems.org/gems/psych-5.2.3.gem'
-    sha256 '84a54bb952d14604fea22d99938348814678782f58b12648fcdfa4d2fce859ee'
+    url 'https://rubygems.org/gems/psych-5.2.6.gem'
+    sha256 '814328aa5dcb6d604d32126a20bc1cbcf05521a5b49dbb1a8b30a07e580f316e'
   end
 
   resource 'racc' do
@@ -155,8 +155,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.75.3.gem'
-    sha256 '1860a1b571fe4a15dff79d6683642ebf3ea4b3f7ae7903743ab0885b4686a1d5'
+    url 'https://rubygems.org/gems/rubocop-1.75.5.gem'
+    sha256 '6ada7c8635023d81dace453da1e3a573455a277d49c3cba30813f32b423be97d'
   end
 
   resource 'rubocop-ast' do

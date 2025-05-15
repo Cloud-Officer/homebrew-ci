@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.2.11'
+      tag: '1.2.12'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'actionlint'
@@ -33,63 +33,63 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1090.0.gem'
-    sha256 '9df93907a97e7b108b0751d476739cddee8f4e4a89f000a960c2c7a92369d396'
+    url 'https://rubygems.org/gems/aws-partitions-1.1103.0.gem'
+    sha256 '3138c7adf7f159ee93df76e5162cb75f3867784f2d2f162629cd9145ddec64f8'
   end
 
   resource 'aws-sdk-autoscaling' do
-    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.133.0.gem'
-    sha256 '2cf6887ed67f2d6177ea40e049982a80eb6e63abed195917c4e27d107a352f25'
+    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.135.0.gem'
+    sha256 '1413561f8e3fadbe9caeee417fc411a794b6ce0d5bedc6a4b92177bb412a8653'
   end
 
   resource 'aws-sdk-cloudformation' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.129.0.gem'
-    sha256 '538c7631e467e54b5c458c2d2c1641d753d84c349664f658060c9577926abc37'
+    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.131.0.gem'
+    sha256 'b76aff1fa4ce825dfb21d88b105bde5037b12f5596ce9be78778d2f035e873ae'
   end
 
   resource 'aws-sdk-cloudfront' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.114.0.gem'
-    sha256 'b0b459bfe5801fcf705162894683de90f7c5c1df9b1297cdb3d22c6636e71b66'
+    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.118.0.gem'
+    sha256 '3d5c66f661b743a5281935498768e33dbb077e8d3c06fe13961511c25e5496df'
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.110.0.gem'
-    sha256 'bd6e4efe925de7ce96e1e52102a4d9821d7c8ee22d40ef03ad02fce4c0eb7916'
+    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.116.0.gem'
+    sha256 'bba112274d0ba75b10a61570a421e6817cb2f6b1bc5858faf0d954832bf62e0c'
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.222.2.gem'
-    sha256 '0639070595c6d123fc371d773a2a86f9fc208466ec88e9763d7af924a757c8d1'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.224.0.gem'
+    sha256 'c617aae3f43ba2bfe9f819c1a31c7c9dbda3e1d1a33c746c23c4dc15638817ac'
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.515.0.gem'
-    sha256 '6b8a107af9ae5bc40dae42e75f39edbb36a0ef3ec4ad8b1577a8b08cec89f5fd'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.523.0.gem'
+    sha256 'd10e8b5833dd2cd2db7bf45020ccd36488a5adf17964e44fe434ba0ce4035fb0'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
-    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.130.0.gem'
-    sha256 'e797a55f767123ca0b711acff01d064678bed590b820d85fcd0551d18c30e78c'
+    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.132.0.gem'
+    sha256 '96890f6f4c3d47db288b2b7d7a95facc3e6bcc9c2a65d8a38790e1173205c532'
   end
 
   resource 'aws-sdk-iam' do
-    url 'https://rubygems.org/gems/aws-sdk-iam-1.120.0.gem'
-    sha256 '330eb5a96669aa733a38fa927b3c1e7c7ff2e5f87531ccb15ffb178aee5c0a04'
+    url 'https://rubygems.org/gems/aws-sdk-iam-1.122.0.gem'
+    sha256 '05884e4c54ac73d2e88c08e08c99cfd0f91d29435a8f2f2a26074f394aff253b'
   end
 
   resource 'aws-sdk-kms' do
-    url 'https://rubygems.org/gems/aws-sdk-kms-1.99.0.gem'
-    sha256 'ba292fc3ffd672532aae2601fe55ff424eee78da8e23c23ba6ce4037138275a8'
+    url 'https://rubygems.org/gems/aws-sdk-kms-1.101.0.gem'
+    sha256 '44d8b5b69ce7394cc02f30f9a35bea04ea12c947b5ffe1471535eea5119368d7'
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.148.0.gem'
-    sha256 '9c6ef3b96b838651f78cb3e72cb70d58acb2e084bea519ac07a6f2cdb7ef8fa7'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.151.0.gem'
+    sha256 '13a1eb468a2f49de96b25083f0c968cfef65f4dbceb488bf72b43c313f5ab102'
   end
 
   resource 'aws-sdk-ssm' do
-    url 'https://rubygems.org/gems/aws-sdk-ssm-1.192.0.gem'
-    sha256 'f56afc04ea305506dbd45067896a49dede5f1179fede3f38515c769b6cbf9716'
+    url 'https://rubygems.org/gems/aws-sdk-ssm-1.195.0.gem'
+    sha256 'ab26a155395192e836f58d3c9fddcf4ca496843b8e406d29a643c9bd3386aec0'
   end
 
   resource 'aws-sigv4' do
@@ -128,13 +128,13 @@ class Citools < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.10.2.gem'
-    sha256 '34e0eada93022b2a0a3345bb0b5efddb6e9ff5be7c48e409cfb54ff8a36a8b06'
+    url 'https://rubygems.org/gems/json-2.12.0.gem'
+    sha256 'b30fce000756de94c756679c7e57ed41f03f8cc8dde2d2dc00a7c44005da0a50'
   end
 
   resource 'language_server-protocol' do
-    url 'https://rubygems.org/gems/language_server-protocol-3.17.0.4.gem'
-    sha256 'c484626478664fd13482d8180947c50a8590484b1258b99b7aedb3b69df89669'
+    url 'https://rubygems.org/gems/language_server-protocol-3.17.0.5.gem'
+    sha256 'fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc'
   end
 
   resource 'lint_roller' do
@@ -153,8 +153,8 @@ class Citools < Formula
   end
 
   resource 'multi_xml' do
-    url 'https://rubygems.org/gems/multi_xml-0.7.1.gem'
-    sha256 '4fce100c68af588ff91b8ba90a0bb3f0466f06c909f21a32f4962059140ba61b'
+    url 'https://rubygems.org/gems/multi_xml-0.7.2.gem'
+    sha256 '307a96dc48613badb7b2fc174fd4e62d7c7b619bc36ea33bfd0c49f64f5787ce'
   end
 
   on_linux do
@@ -229,8 +229,8 @@ class Citools < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.75.3.gem'
-    sha256 '1860a1b571fe4a15dff79d6683642ebf3ea4b3f7ae7903743ab0885b4686a1d5'
+    url 'https://rubygems.org/gems/rubocop-1.75.5.gem'
+    sha256 '6ada7c8635023d81dace453da1e3a573455a277d49c3cba30813f32b423be97d'
   end
 
   resource 'rubocop-ast' do
