@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.12'
+      tag: '1.4.13'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -50,8 +50,8 @@ class Soup < Formula
   end
 
   resource 'drb' do
-    url 'https://rubygems.org/gems/drb-2.2.1.gem'
-    sha256 'e9d472bf785f558b96b25358bae115646da0dbfd45107ad858b0bc0d935cb340'
+    url 'https://rubygems.org/gems/drb-2.2.3.gem'
+    sha256 '0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373'
   end
 
   resource 'httparty' do
@@ -70,8 +70,8 @@ class Soup < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.12.0.gem'
-    sha256 'b30fce000756de94c756679c7e57ed41f03f8cc8dde2d2dc00a7c44005da0a50'
+    url 'https://rubygems.org/gems/json-2.12.2.gem'
+    sha256 'ba94a48ad265605c8fa9a50a5892f3ba6a02661aa010f638211f3cb36f44abf4'
   end
 
   resource 'language_server-protocol' do
@@ -181,8 +181,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.75.5.gem'
-    sha256 '6ada7c8635023d81dace453da1e3a573455a277d49c3cba30813f32b423be97d'
+    url 'https://rubygems.org/gems/rubocop-1.75.7.gem'
+    sha256 '23566ebb25263f26020687f8abb8aec049f3e29b6a00bdf0aa9d1db16b558be9'
   end
 
   resource 'rubocop-ast' do
