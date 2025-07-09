@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 set -e
 
+cloud_officer_dir="${HOME}/Downloads/cloud-officer"
+
+# try another location if cloud-officer directory is not found
+if [ ! -d "${cloud_officer_dir}" ] && [ -d "$(pwd)/../../cloud-officer" ]; then
+  cloud_officer_dir="$(pwd)/../../cloud-officer"
+elif [ ! -d "${cloud_officer_dir}" ]; then
+  echo "fatal: cannot find cloud-officer directory"
+  exit 1
+fi
+
 declare -A start_markers=(
   ["citools.rb"]="depends_on 'yamllint'"
   ["githubbuild.rb"]="depends_on 'ruby'"
@@ -25,7 +35,7 @@ for file in "${!files_to_dirs[@]}"; do
   if type -P brew-resources &>/dev/null; then
     brew-resources >"${temp_new_content_file}"
   else
-    "${HOME}/Downloads/cloud-officer/ci-tools/brew-resources.rb" >"${temp_new_content_file}"
+    "${cloud_officer_dir}/ci-tools/brew-resources.rb" >"${temp_new_content_file}"
   fi
 
   popd >/dev/null
