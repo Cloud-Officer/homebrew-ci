@@ -4,14 +4,14 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.14'
+      tag: '1.4.15'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-8.0.2.gem'
-    sha256 '8565cddba31b900cdc17682fd66ecd020441e3eef320a9930285394e8c07a45e'
+    url 'https://rubygems.org/gems/activesupport-8.0.2.1.gem'
+    sha256 '0405a76fd1ca989975d9ae00d46a4d3979bdf3817482d846b63affa84bd561c6'
   end
 
   resource 'ast' do
@@ -30,8 +30,8 @@ class Soup < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-3.2.2.gem'
-    sha256 '39085f76b495eb39a79ce07af716f3a6829bc35eb44f2195e2753749f2fa5adc'
+    url 'https://rubygems.org/gems/bigdecimal-3.2.3.gem'
+    sha256 'ffd11d1ac67a0d3b2f44aec0a6487210b3f813f363dd11f1fcccf5ba00da4e1b'
   end
 
   resource 'concurrent-ruby' do
@@ -40,8 +40,8 @@ class Soup < Formula
   end
 
   resource 'connection_pool' do
-    url 'https://rubygems.org/gems/connection_pool-2.5.3.gem'
-    sha256 'cfd74a82b9b094d1ce30c4f1a346da23ee19dc8a062a16a85f58eab1ced4305b'
+    url 'https://rubygems.org/gems/connection_pool-2.5.4.gem'
+    sha256 'e9e1922327416091f3f6542f5f4446c2a20745276b9aa796dd0bb2fd0ea1e70a'
   end
 
   resource 'csv' do
@@ -70,8 +70,8 @@ class Soup < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.13.0.gem'
-    sha256 'a4bdf1ce8db5617ec6c59e021db4a398e54b57b335e1fa417ac7badc3fb7c1a0'
+    url 'https://rubygems.org/gems/json-2.13.2.gem'
+    sha256 '02e1f118d434c6b230a64ffa5c8dee07e3ec96244335c392eaed39e1199dbb68'
   end
 
   resource 'language_server-protocol' do
@@ -151,8 +151,8 @@ class Soup < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.8.0.gem'
-    sha256 '2476364142b307fa5a1b1ece44f260728be23858a9c71078e956131a75453c45'
+    url 'https://rubygems.org/gems/parser-3.3.9.0.gem'
+    sha256 '94d6929354b1a6e3e1f89d79d4d302cc8f5aa814431a6c9c7e0623335d7687f2'
   end
 
   resource 'pastel' do
@@ -176,13 +176,13 @@ class Soup < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.10.0.gem'
-    sha256 'cb6f0ddde88772cd64bff1dbbf68df66d376043fe2e66a9ef77fcb1b0c548c61'
+    url 'https://rubygems.org/gems/regexp_parser-2.11.2.gem'
+    sha256 '5e5e9c1485ffd8de53ab1d2807affd81f617f72967dfc64fc75a69e2cbf0ff98'
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.78.0.gem'
-    sha256 '8b74a6f912eb4fd3e6878851f7f7f45dcad8c7185c34250d4f952b0ee80d6bc0'
+    url 'https://rubygems.org/gems/rubocop-1.80.2.gem'
+    sha256 '6485f30fefcf5c199db3b91e5e253b1ef43f7e564784e2315255809a3dd9abf4'
   end
 
   resource 'rubocop-ast' do
@@ -201,18 +201,18 @@ class Soup < Formula
   end
 
   resource 'rubocop-minitest' do
-    url 'https://rubygems.org/gems/rubocop-minitest-0.38.1.gem'
-    sha256 'f997aa8043d45b1556b818f5dec872ad03c1ab97cd3fb721b0c2aef02dbf7a81'
+    url 'https://rubygems.org/gems/rubocop-minitest-0.38.2.gem'
+    sha256 '5a9dfb5a538973d0601aa51e59637d3998bb8df81233edf1ff421504c6280068'
   end
 
   resource 'rubocop-performance' do
-    url 'https://rubygems.org/gems/rubocop-performance-1.25.0.gem'
-    sha256 '6f7d03568a770054117a78d0a8e191cefeffb703b382871ca7743831b1a52ec1'
+    url 'https://rubygems.org/gems/rubocop-performance-1.26.0.gem'
+    sha256 '7bb0d9d9fb2ea122bf6f9a596dd7cf9dc93ab4950923d26c4ae4f328cef71ca9'
   end
 
   resource 'rubocop-rspec' do
-    url 'https://rubygems.org/gems/rubocop-rspec-3.6.0.gem'
-    sha256 'c0e4205871776727e54dee9cc91af5fd74578001551ba40e1fe1a1ab4b404479'
+    url 'https://rubygems.org/gems/rubocop-rspec-3.7.0.gem'
+    sha256 'b7b214da112034db9c6d00f2d811a354847e870f7b6ed2482b29649c3d42058f'
   end
 
   resource 'rubocop-thread_safety' do
@@ -246,8 +246,8 @@ class Soup < Formula
   end
 
   resource 'tins' do
-    url 'https://rubygems.org/gems/tins-1.38.0.gem'
-    sha256 '99acd138b73d5b1b2dd8e72f1707ac0905c8f63f729ddd7c746d2d3c3803886d'
+    url 'https://rubygems.org/gems/tins-1.43.0.gem'
+    sha256 'e63c0ef0508aa2ede3462556e86309a3ceddefb710a993e7884d0a797574130d'
   end
 
   resource 'tty-color' do
@@ -281,8 +281,8 @@ class Soup < Formula
   end
 
   resource 'unicode-display_width' do
-    url 'https://rubygems.org/gems/unicode-display_width-3.1.4.gem'
-    sha256 '8caf2af1c0f2f07ec89ef9e18c7d88c2790e217c482bfc78aaa65eadd5415ac1'
+    url 'https://rubygems.org/gems/unicode-display_width-3.1.5.gem'
+    sha256 'bf566817855ee7ee3adcf7bace0d5906cb14401417db59193f8a5fcedf02dd4e'
   end
 
   resource 'unicode-emoji' do
