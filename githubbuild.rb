@@ -4,14 +4,14 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.9'
+      tag: '1.5.10'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-8.0.2.1.gem'
-    sha256 '0405a76fd1ca989975d9ae00d46a4d3979bdf3817482d846b63affa84bd561c6'
+    url 'https://rubygems.org/gems/activesupport-8.0.3.gem'
+    sha256 'a711ce5e30660b23232f26a38699469f8d859d47aa1f722e183fda6d7cc17823'
   end
 
   resource 'ast' do
@@ -75,8 +75,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.13.2.gem'
-    sha256 '02e1f118d434c6b230a64ffa5c8dee07e3ec96244335c392eaed39e1199dbb68'
+    url 'https://rubygems.org/gems/json-2.15.0.gem'
+    sha256 'bc24d490a1d81bcbf6b45ee5c02695545d4ed37f679cee879b789a2bbb53ad5c'
   end
 
   resource 'language_server-protocol' do
@@ -130,8 +130,8 @@ class Githubbuild < Formula
   end
 
   resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.4.0.gem'
-    sha256 'dc0e3e00e93160213dc2a65519d9002a4a1e7b962db57d444cf1a71565bb703e'
+    url 'https://rubygems.org/gems/prism-1.5.1.gem'
+    sha256 'b40c1b76ccb9fcccc3d1553967cda6e79fa7274d8bfea0d98b15d27a6d187134'
   end
 
   resource 'psych' do
@@ -150,18 +150,18 @@ class Githubbuild < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.11.2.gem'
-    sha256 '5e5e9c1485ffd8de53ab1d2807affd81f617f72967dfc64fc75a69e2cbf0ff98'
+    url 'https://rubygems.org/gems/regexp_parser-2.11.3.gem'
+    sha256 'ca13f381a173b7a93450e53459075c9b76a10433caadcb2f1180f2c741fc55a4'
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.80.2.gem'
-    sha256 '6485f30fefcf5c199db3b91e5e253b1ef43f7e564784e2315255809a3dd9abf4'
+    url 'https://rubygems.org/gems/rubocop-1.81.1.gem'
+    sha256 '352a9a6f314a4312f6c305f1f72bc466254d221c95445cd49e1b65d1f9411635'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.46.0.gem'
-    sha256 '0da7f6ad5b98614f89b74f11873c191059c823eae07d6ffd40a42a3338f2232b'
+    url 'https://rubygems.org/gems/rubocop-ast-1.47.1.gem'
+    sha256 '592682017855408b046a8190689490763aecea175238232b1b526826349d01ae'
   end
 
   resource 'rubocop-capybara' do
@@ -215,13 +215,13 @@ class Githubbuild < Formula
   end
 
   resource 'unicode-display_width' do
-    url 'https://rubygems.org/gems/unicode-display_width-3.1.5.gem'
-    sha256 'bf566817855ee7ee3adcf7bace0d5906cb14401417db59193f8a5fcedf02dd4e'
+    url 'https://rubygems.org/gems/unicode-display_width-3.2.0.gem'
+    sha256 '0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42'
   end
 
   resource 'unicode-emoji' do
-    url 'https://rubygems.org/gems/unicode-emoji-4.0.4.gem'
-    sha256 '2c2c4ef7f353e5809497126285a50b23056cc6e61b64433764a35eff6c36532a'
+    url 'https://rubygems.org/gems/unicode-emoji-4.1.0.gem'
+    sha256 '4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5'
   end
 
   resource 'uri' do

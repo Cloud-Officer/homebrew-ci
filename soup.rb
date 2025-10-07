@@ -4,14 +4,14 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.15'
+      tag: '1.4.16'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-8.0.2.1.gem'
-    sha256 '0405a76fd1ca989975d9ae00d46a4d3979bdf3817482d846b63affa84bd561c6'
+    url 'https://rubygems.org/gems/activesupport-8.0.3.gem'
+    sha256 'a711ce5e30660b23232f26a38699469f8d859d47aa1f722e183fda6d7cc17823'
   end
 
   resource 'ast' do
@@ -70,8 +70,8 @@ class Soup < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.13.2.gem'
-    sha256 '02e1f118d434c6b230a64ffa5c8dee07e3ec96244335c392eaed39e1199dbb68'
+    url 'https://rubygems.org/gems/json-2.15.0.gem'
+    sha256 'bc24d490a1d81bcbf6b45ee5c02695545d4ed37f679cee879b789a2bbb53ad5c'
   end
 
   resource 'language_server-protocol' do
@@ -99,6 +99,11 @@ class Soup < Formula
     sha256 '391b6c6cb43a4802bfb7c93af1ebe2ac66a210293f4a3fb7db36f2fc7dc2c756'
   end
 
+  resource 'mize' do
+    url 'https://rubygems.org/gems/mize-0.6.1.gem'
+    sha256 '4031558979ff5426fda24c75a149b4e4c0faf4cacf2fae8938f83866ab94b780'
+  end
+
   resource 'multi_xml' do
     url 'https://rubygems.org/gems/multi_xml-0.7.2.gem'
     sha256 '307a96dc48613badb7b2fc174fd4e62d7c7b619bc36ea33bfd0c49f64f5787ce'
@@ -107,8 +112,8 @@ class Soup < Formula
   on_linux do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.18.9-aarch64-linux-gnu.gem'
-        sha256 '5bcfdf7aa8d1056a7ad5e52e1adffc64ef53d12d0724fbc6f458a3af1a4b9e32'
+        url 'https://rubygems.org/gems/nokogiri-1.18.10-aarch64-linux-gnu.gem'
+        sha256 '7fb87235d729c74a2be635376d82b1d459230cc17c50300f8e4fcaabc6195344'
       end
     end
   end
@@ -116,8 +121,8 @@ class Soup < Formula
   on_macos do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.18.9-arm64-darwin.gem'
-        sha256 'eea3f1f06463ff6309d3ff5b88033c4948d0da1ab3cc0a3a24f63c4d4a763979'
+        url 'https://rubygems.org/gems/nokogiri-1.18.10-arm64-darwin.gem'
+        sha256 'c2b0de30770f50b92c9323fa34a4e1cf5a0af322afcacd239cd66ee1c1b22c85'
       end
     end
   end
@@ -125,8 +130,8 @@ class Soup < Formula
   on_macos do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.18.9-x86_64-darwin.gem'
-        sha256 'e0d2deb03d3d7af8016e8c9df5ff4a7d692159cefb135cbb6a4109f265652348'
+        url 'https://rubygems.org/gems/nokogiri-1.18.10-x86_64-darwin.gem'
+        sha256 '536e74bed6db2b5076769cab5e5f5af0cd1dccbbd75f1b3e1fa69d1f5c2d79e2'
       end
     end
   end
@@ -134,8 +139,8 @@ class Soup < Formula
   on_linux do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.18.9-x86_64-linux-gnu.gem'
-        sha256 'b52f5defedc53d14f71eeaaf990da66b077e1918a2e13088b6a96d0230f44360'
+        url 'https://rubygems.org/gems/nokogiri-1.18.10-x86_64-linux-gnu.gem'
+        sha256 'ff5ba26ba2dbce5c04b9ea200777fd225061d7a3930548806f31db907e500f72'
       end
     end
   end
@@ -161,8 +166,8 @@ class Soup < Formula
   end
 
   resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.4.0.gem'
-    sha256 'dc0e3e00e93160213dc2a65519d9002a4a1e7b962db57d444cf1a71565bb703e'
+    url 'https://rubygems.org/gems/prism-1.5.1.gem'
+    sha256 'b40c1b76ccb9fcccc3d1553967cda6e79fa7274d8bfea0d98b15d27a6d187134'
   end
 
   resource 'racc' do
@@ -176,18 +181,18 @@ class Soup < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.11.2.gem'
-    sha256 '5e5e9c1485ffd8de53ab1d2807affd81f617f72967dfc64fc75a69e2cbf0ff98'
+    url 'https://rubygems.org/gems/regexp_parser-2.11.3.gem'
+    sha256 'ca13f381a173b7a93450e53459075c9b76a10433caadcb2f1180f2c741fc55a4'
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.80.2.gem'
-    sha256 '6485f30fefcf5c199db3b91e5e253b1ef43f7e564784e2315255809a3dd9abf4'
+    url 'https://rubygems.org/gems/rubocop-1.81.1.gem'
+    sha256 '352a9a6f314a4312f6c305f1f72bc466254d221c95445cd49e1b65d1f9411635'
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.46.0.gem'
-    sha256 '0da7f6ad5b98614f89b74f11873c191059c823eae07d6ffd40a42a3338f2232b'
+    url 'https://rubygems.org/gems/rubocop-ast-1.47.1.gem'
+    sha256 '592682017855408b046a8190689490763aecea175238232b1b526826349d01ae'
   end
 
   resource 'rubocop-capybara' do
@@ -241,13 +246,13 @@ class Soup < Formula
   end
 
   resource 'term-ansicolor' do
-    url 'https://rubygems.org/gems/term-ansicolor-1.11.2.gem'
-    sha256 '4b00c63f21d496055045240907da30de077e8c6502b2ba7e8638509d689e5083'
+    url 'https://rubygems.org/gems/term-ansicolor-1.11.3.gem'
+    sha256 '8c01ec3abd095eb94dca8aed5a127d36e594239eb525eb306259c9e930534603'
   end
 
   resource 'tins' do
-    url 'https://rubygems.org/gems/tins-1.43.0.gem'
-    sha256 'e63c0ef0508aa2ede3462556e86309a3ceddefb710a993e7884d0a797574130d'
+    url 'https://rubygems.org/gems/tins-1.44.1.gem'
+    sha256 'ad67d88d0702d8edf35a9a1e70fb1a8859876661b7dd5b045f6a1716be5dc76d'
   end
 
   resource 'tty-color' do
@@ -281,13 +286,13 @@ class Soup < Formula
   end
 
   resource 'unicode-display_width' do
-    url 'https://rubygems.org/gems/unicode-display_width-3.1.5.gem'
-    sha256 'bf566817855ee7ee3adcf7bace0d5906cb14401417db59193f8a5fcedf02dd4e'
+    url 'https://rubygems.org/gems/unicode-display_width-3.2.0.gem'
+    sha256 '0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42'
   end
 
   resource 'unicode-emoji' do
-    url 'https://rubygems.org/gems/unicode-emoji-4.0.4.gem'
-    sha256 '2c2c4ef7f353e5809497126285a50b23056cc6e61b64433764a35eff6c36532a'
+    url 'https://rubygems.org/gems/unicode-emoji-4.1.0.gem'
+    sha256 '4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5'
   end
 
   resource 'uri' do
