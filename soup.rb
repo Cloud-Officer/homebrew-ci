@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.16'
+      tag: '1.4.17'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -30,8 +30,8 @@ class Soup < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-3.2.3.gem'
-    sha256 'ffd11d1ac67a0d3b2f44aec0a6487210b3f813f363dd11f1fcccf5ba00da4e1b'
+    url 'https://rubygems.org/gems/bigdecimal-3.3.1.gem'
+    sha256 'eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218'
   end
 
   resource 'concurrent-ruby' do
@@ -55,8 +55,8 @@ class Soup < Formula
   end
 
   resource 'httparty' do
-    url 'https://rubygems.org/gems/httparty-0.23.1.gem'
-    sha256 '3ac1dd62f2010f6ece551716f5ceec2b2012011d89f1751917ab7f724e966b55'
+    url 'https://rubygems.org/gems/httparty-0.23.2.gem'
+    sha256 '72d52830ab5862115a3c9a4b16738dd67d9a691ffd796cf86bad8abaa8f1febb'
   end
 
   resource 'i18n' do
@@ -70,8 +70,8 @@ class Soup < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.15.0.gem'
-    sha256 'bc24d490a1d81bcbf6b45ee5c02695545d4ed37f679cee879b789a2bbb53ad5c'
+    url 'https://rubygems.org/gems/json-2.15.1.gem'
+    sha256 'b1c1b2e7c116eb1903e0ce0c374783e6ead8747a0f9eca132d274018ebb80b89'
   end
 
   resource 'language_server-protocol' do
@@ -95,8 +95,8 @@ class Soup < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.25.5.gem'
-    sha256 '391b6c6cb43a4802bfb7c93af1ebe2ac66a210293f4a3fb7db36f2fc7dc2c756'
+    url 'https://rubygems.org/gems/minitest-5.26.0.gem'
+    sha256 'f5817ad09f863a4f7eac917707c1ca5c09cdc4a35e17d91171760178324d2c30'
   end
 
   resource 'mize' do
@@ -166,8 +166,8 @@ class Soup < Formula
   end
 
   resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.5.1.gem'
-    sha256 'b40c1b76ccb9fcccc3d1553967cda6e79fa7274d8bfea0d98b15d27a6d187134'
+    url 'https://rubygems.org/gems/prism-1.5.2.gem'
+    sha256 '192741663a55af1ac1b987caa1092deb666e4ff46a30c5064ad5456acd05df1d'
   end
 
   resource 'racc' do
@@ -296,8 +296,8 @@ class Soup < Formula
   end
 
   resource 'uri' do
-    url 'https://rubygems.org/gems/uri-1.0.3.gem'
-    sha256 'e9f2244608eea2f7bc357d954c65c910ce0399ca5e18a7a29207ac22d8767011'
+    url 'https://rubygems.org/gems/uri-1.0.4.gem'
+    sha256 '34485d137c079f8753a0ca1d883841a7ba2e5fae556e3c30c2aab0dde616344b'
   end
 
   resource 'wisper' do
