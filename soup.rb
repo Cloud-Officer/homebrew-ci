@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.17'
+      tag: '1.4.18'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -166,8 +166,8 @@ class Soup < Formula
   end
 
   resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.5.2.gem'
-    sha256 '192741663a55af1ac1b987caa1092deb666e4ff46a30c5064ad5456acd05df1d'
+    url 'https://rubygems.org/gems/prism-1.6.0.gem'
+    sha256 'bfc0281a81718c4872346bc858dc84abd3a60cae78336c65ad35c8fbff641c6b'
   end
 
   resource 'racc' do
@@ -211,8 +211,8 @@ class Soup < Formula
   end
 
   resource 'rubocop-performance' do
-    url 'https://rubygems.org/gems/rubocop-performance-1.26.0.gem'
-    sha256 '7bb0d9d9fb2ea122bf6f9a596dd7cf9dc93ab4950923d26c4ae4f328cef71ca9'
+    url 'https://rubygems.org/gems/rubocop-performance-1.26.1.gem'
+    sha256 'cd19b936ff196df85829d264b522fd4f98b6c89ad271fa52744a8c11b8f71834'
   end
 
   resource 'rubocop-rspec' do
@@ -251,8 +251,8 @@ class Soup < Formula
   end
 
   resource 'tins' do
-    url 'https://rubygems.org/gems/tins-1.44.1.gem'
-    sha256 'ad67d88d0702d8edf35a9a1e70fb1a8859876661b7dd5b045f6a1716be5dc76d'
+    url 'https://rubygems.org/gems/tins-1.45.0.gem'
+    sha256 '5a84489b895c5154afba454ab7643bf88d21ea57dff31a46ec15e29007f93b71'
   end
 
   resource 'tty-color' do

@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.11'
+      tag: '1.5.12'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -130,8 +130,8 @@ class Githubbuild < Formula
   end
 
   resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.5.2.gem'
-    sha256 '192741663a55af1ac1b987caa1092deb666e4ff46a30c5064ad5456acd05df1d'
+    url 'https://rubygems.org/gems/prism-1.6.0.gem'
+    sha256 'bfc0281a81718c4872346bc858dc84abd3a60cae78336c65ad35c8fbff641c6b'
   end
 
   resource 'psych' do
@@ -180,8 +180,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-performance' do
-    url 'https://rubygems.org/gems/rubocop-performance-1.26.0.gem'
-    sha256 '7bb0d9d9fb2ea122bf6f9a596dd7cf9dc93ab4950923d26c4ae4f328cef71ca9'
+    url 'https://rubygems.org/gems/rubocop-performance-1.26.1.gem'
+    sha256 'cd19b936ff196df85829d264b522fd4f98b6c89ad271fa52744a8c11b8f71834'
   end
 
   resource 'rubocop-rspec' do
