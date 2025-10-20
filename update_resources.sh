@@ -25,6 +25,38 @@ declare -A files_to_dirs=(
   ["soup.rb"]="soup"
 )
 
+# Function to extract the current tag from a formula file
+extract_tag() {
+  local file=$1
+  grep "tag:" "${file}" | sed -E "s/.*tag: '([^']+)'.*/\1/" | head -1
+}
+
+# Function to increment the patch version (x.y.z -> x.y.z+1)
+increment_patch_version() {
+  local version=$1
+  local major minor patch
+
+  # Split version into major.minor.patch
+  IFS='.' read -r major minor patch <<< "${version}"
+
+  # Increment patch version
+  ((patch++))
+
+  echo "${major}.${minor}.${patch}"
+}
+
+# Function to update the tag in a formula file
+update_formula_tag() {
+  local file=$1
+  local new_tag=$2
+  local temp_file
+
+  temp_file=$(mktemp)
+  sed -E "s/(tag:) '[^']+'/\1 '${new_tag}'/" "${file}" > "${temp_file}"
+  mv "${temp_file}" "${file}"
+  echo "Updated ${file} with tag ${new_tag}"
+}
+
 for file in "${!files_to_dirs[@]}"; do
   echo "Updating ${file}..."
   directory="${files_to_dirs[${file}]}"
@@ -46,4 +78,47 @@ for file in "${!files_to_dirs[@]}"; do
     !p || $0 ~ end' "${file}" >"${temp_file}"
   mv "${temp_file}" "${file}"
   rm "${temp_new_content_file}"
+
+  # Check if the formula file was modified (has uncommitted changes)
+  if ! git diff --quiet "${file}"; then
+    echo "Formula ${file} was updated, incrementing version..."
+
+    current_tag=$(extract_tag "${file}")
+
+    if [ -z "${current_tag}" ]; then
+      echo "Warning: Could not extract tag from ${file}, skipping version increment..."
+      continue
+    fi
+
+    echo "Current tag: ${current_tag}"
+    new_tag=$(increment_patch_version "${current_tag}")
+    echo "New tag: ${new_tag}"
+
+    # Navigate to the source repository
+    pushd "${cloud_officer_dir}/${directory}" >/dev/null
+
+    # Check for uncommitted changes in the source repository
+    if ! git diff-index --quiet HEAD --; then
+      echo "Warning: ${directory} has uncommitted changes. Please commit them first."
+      exit 1
+    fi
+
+    # Create the new tag
+    echo "Creating tag ${new_tag} in ${directory}..."
+    if git tag "${new_tag}"; then
+      git push origin "${new_tag}"
+      echo "Tag ${new_tag} created successfully"
+    else
+      echo "Warning: Failed to create tag ${new_tag}"
+      exit 1
+    fi
+
+    popd >/dev/null
+
+    # Update the formula file with the new tag
+    update_formula_tag "${file}" "${new_tag}"
+
+    echo "✓ Successfully processed ${file}: ${current_tag} -> ${new_tag}"
+    echo ""
+  fi
 done
