@@ -103,6 +103,14 @@ for file in "${!files_to_dirs[@]}"; do
       exit 1
     fi
 
+    # Check for open pull requests
+    open_prs=$(gh pr list --state open --json number --jq 'length')
+
+    if [ "${open_prs}" -gt 0 ]; then
+      echo "Warning: ${directory} has ${open_prs} open pull request(s). Please close or merge them first."
+      exit 1
+    fi
+
     # Create the new tag
     echo "Creating tag ${new_tag} in ${directory}..."
     if git tag "${new_tag}"; then
