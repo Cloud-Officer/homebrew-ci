@@ -4,14 +4,14 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.12'
+      tag: '1.5.14'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-8.0.3.gem'
-    sha256 'a711ce5e30660b23232f26a38699469f8d859d47aa1f722e183fda6d7cc17823'
+    url 'https://rubygems.org/gems/activesupport-8.1.0.gem'
+    sha256 'd4adf40725be7bbc2a16936a6cf41b175a46ba0c5ccdb703ea4ed7c8801e070a'
   end
 
   resource 'ast' do
@@ -22,11 +22,6 @@ class Githubbuild < Formula
   resource 'base64' do
     url 'https://rubygems.org/gems/base64-0.3.0.gem'
     sha256 '27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b'
-  end
-
-  resource 'benchmark' do
-    url 'https://rubygems.org/gems/benchmark-0.4.1.gem'
-    sha256 'd4ef40037bba27f03b28013e219b950b82bace296549ec15a78016552f8d2cce'
   end
 
   resource 'bigdecimal' do
@@ -75,8 +70,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.15.1.gem'
-    sha256 'b1c1b2e7c116eb1903e0ce0c374783e6ead8747a0f9eca132d274018ebb80b89'
+    url 'https://rubygems.org/gems/json-2.15.2.gem'
+    sha256 '1068e1d966d2d0dcaf953eaed09c2d30e4104c64c1e3140c435d17be08d1fa27'
   end
 
   resource 'language_server-protocol' do
@@ -125,8 +120,8 @@ class Githubbuild < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.9.0.gem'
-    sha256 '94d6929354b1a6e3e1f89d79d4d302cc8f5aa814431a6c9c7e0623335d7687f2'
+    url 'https://rubygems.org/gems/parser-3.3.10.0.gem'
+    sha256 'ce3587fa5cc55a88c4ba5b2b37621b3329aadf5728f9eafa36bbd121462aabd6'
   end
 
   resource 'prism' do
@@ -155,8 +150,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.81.1.gem'
-    sha256 '352a9a6f314a4312f6c305f1f72bc466254d221c95445cd49e1b65d1f9411635'
+    url 'https://rubygems.org/gems/rubocop-1.81.6.gem'
+    sha256 'a7095eca1b79bbbe7d81c74c11ed2c532faa868bd9d31c2f12b7be7fbfbfef42'
   end
 
   resource 'rubocop-ast' do
