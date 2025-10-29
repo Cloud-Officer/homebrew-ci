@@ -4,14 +4,14 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.14'
+      tag: '1.5.16'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-8.1.0.gem'
-    sha256 'd4adf40725be7bbc2a16936a6cf41b175a46ba0c5ccdb703ea4ed7c8801e070a'
+    url 'https://rubygems.org/gems/activesupport-8.1.1.gem'
+    sha256 '5e92534e8d0c8b8b5e6b16789c69dbea65c1d7b752269f71a39422e9546cea67'
   end
 
   resource 'ast' do
@@ -45,8 +45,8 @@ class Githubbuild < Formula
   end
 
   resource 'date' do
-    url 'https://rubygems.org/gems/date-3.4.1.gem'
-    sha256 'bf268e14ef7158009bfeaec40b5fa3c7271906e88b196d958a89d4b408abe64f'
+    url 'https://rubygems.org/gems/date-3.5.0.gem'
+    sha256 '5e74fd6c04b0e65d97ad4f3bb5cb2d8efb37f386cc848f46310b4593ffc46ee5'
   end
 
   resource 'drb' do
