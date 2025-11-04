@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.21'
+      tag: '1.4.23'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -141,8 +141,8 @@ class Soup < Formula
   end
 
   resource 'optparse' do
-    url 'https://rubygems.org/gems/optparse-0.6.0.gem'
-    sha256 '25e90469c1cd44048a89dc01c1dde9d5f0bdf717851055fb18237780779b068c'
+    url 'https://rubygems.org/gems/optparse-0.8.0.gem'
+    sha256 'ef6b7fbaf7ec331474f325bc08dd5622e6e1e651007a5341330ee4b08ce734f0'
   end
 
   resource 'parallel' do
@@ -181,8 +181,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.81.6.gem'
-    sha256 'a7095eca1b79bbbe7d81c74c11ed2c532faa868bd9d31c2f12b7be7fbfbfef42'
+    url 'https://rubygems.org/gems/rubocop-1.81.7.gem'
+    sha256 '6fb5cc298c731691e2a414fe0041a13eb1beed7bab23aec131da1bcc527af094'
   end
 
   resource 'rubocop-ast' do
@@ -291,8 +291,8 @@ class Soup < Formula
   end
 
   resource 'uri' do
-    url 'https://rubygems.org/gems/uri-1.0.4.gem'
-    sha256 '34485d137c079f8753a0ca1d883841a7ba2e5fae556e3c30c2aab0dde616344b'
+    url 'https://rubygems.org/gems/uri-1.1.1.gem'
+    sha256 '379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6'
   end
 
   resource 'wisper' do
