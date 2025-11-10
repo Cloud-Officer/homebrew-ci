@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.18'
+      tag: '1.5.19'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -70,8 +70,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.15.2.gem'
-    sha256 '1068e1d966d2d0dcaf953eaed09c2d30e4104c64c1e3140c435d17be08d1fa27'
+    url 'https://rubygems.org/gems/json-2.16.0.gem'
+    sha256 'ca5630320bb5ca23ebfd0bac84532fab56eb357575653b815b9df42c051e1525'
   end
 
   resource 'language_server-protocol' do
@@ -95,8 +95,8 @@ class Githubbuild < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.26.0.gem'
-    sha256 'f5817ad09f863a4f7eac917707c1ca5c09cdc4a35e17d91171760178324d2c30'
+    url 'https://rubygems.org/gems/minitest-5.26.1.gem'
+    sha256 'f16a63d4278e230bba342c3bda3006a69c5216d46461b77dd57f7c7c529b5a96'
   end
 
   resource 'multi_xml' do
@@ -155,8 +155,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-ast' do
-    url 'https://rubygems.org/gems/rubocop-ast-1.47.1.gem'
-    sha256 '592682017855408b046a8190689490763aecea175238232b1b526826349d01ae'
+    url 'https://rubygems.org/gems/rubocop-ast-1.48.0.gem'
+    sha256 '22df9bbf3f7a6eccde0fad54e68547ae1e2a704bf8719e7c83813a99c05d2e76'
   end
 
   resource 'rubocop-capybara' do
