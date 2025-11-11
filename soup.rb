@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.24'
+      tag: '1.4.25'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -246,8 +246,8 @@ class Soup < Formula
   end
 
   resource 'tins' do
-    url 'https://rubygems.org/gems/tins-1.45.0.gem'
-    sha256 '5a84489b895c5154afba454ab7643bf88d21ea57dff31a46ec15e29007f93b71'
+    url 'https://rubygems.org/gems/tins-1.46.0.gem'
+    sha256 '7129543bf4587a0b0ea41fa7e694b7040af3e53ff1df841b688f43c46a7ef40a'
   end
 
   resource 'tty-color' do
