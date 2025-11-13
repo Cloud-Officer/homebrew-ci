@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.2.28'
+      tag: '1.2.29'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'actionlint'
@@ -63,13 +63,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.573.0.gem'
-    sha256 'dd26c0552527fd59fee866d47100ee9200c97c924fd22408f6d7010548750322'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.575.0.gem'
+    sha256 '81605f58e4cbc84a67ffb868f7b58e207b02222ab5ad31623dce07250250e59c'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
-    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.141.0.gem'
-    sha256 '16b9ac342068f0875861d3aec4b57185395827b65a63597d705cab5943998cba'
+    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.142.0.gem'
+    sha256 'ab0af0ca5df936b74b21fc94e1843ab83bd51296adb688e7edc7c8b8d6894eaf'
   end
 
   resource 'aws-sdk-iam' do
@@ -259,8 +259,8 @@ class Citools < Formula
   end
 
   resource 'rubocop-rspec' do
-    url 'https://rubygems.org/gems/rubocop-rspec-3.7.0.gem'
-    sha256 'b7b214da112034db9c6d00f2d811a354847e870f7b6ed2482b29649c3d42058f'
+    url 'https://rubygems.org/gems/rubocop-rspec-3.8.0.gem'
+    sha256 '28440dccb3f223a9938ca1f946bd3438275b8c6c156dab909e2cb8bc424cab33'
   end
 
   resource 'rubocop-thread_safety' do

@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.19'
+      tag: '1.5.20'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -180,8 +180,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-rspec' do
-    url 'https://rubygems.org/gems/rubocop-rspec-3.7.0.gem'
-    sha256 'b7b214da112034db9c6d00f2d811a354847e870f7b6ed2482b29649c3d42058f'
+    url 'https://rubygems.org/gems/rubocop-rspec-3.8.0.gem'
+    sha256 '28440dccb3f223a9938ca1f946bd3438275b8c6c156dab909e2cb8bc424cab33'
   end
 
   resource 'rubocop-thread_safety' do
@@ -200,8 +200,8 @@ class Githubbuild < Formula
   end
 
   resource 'stringio' do
-    url 'https://rubygems.org/gems/stringio-3.1.7.gem'
-    sha256 '5b78b7cb242a315fb4fca61a8255d62ec438f58da2b90be66048546ade4507fa'
+    url 'https://rubygems.org/gems/stringio-3.1.8.gem'
+    sha256 '99c43c3a9302843cca223fd985bfc503dd50a4b1723d3e4a9eb1d9c37d99e4ec'
   end
 
   resource 'tzinfo' do
