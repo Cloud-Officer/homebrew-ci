@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.2.29'
+      tag: '1.2.30'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'actionlint'
@@ -33,8 +33,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1181.0.gem'
-    sha256 'ad818435b31c5ed60f9332896dc83bfa7eff9661af93935b468f012e07c8ea7d'
+    url 'https://rubygems.org/gems/aws-partitions-1.1182.0.gem'
+    sha256 'b16cd182cd278929b6fa8774197f938ece5fca168de9e524da8f5a67004881ae'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -43,8 +43,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudformation' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.143.0.gem'
-    sha256 '6d9fe4d76941ce5aca2f1034ccd257bf15fc4f9d461d5beaccb35a4053512f52'
+    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.144.0.gem'
+    sha256 '042cc9ecf2b325cde27d2adaa4aca108fe9ae87223b198517a57eeaac2b9dfdb'
   end
 
   resource 'aws-sdk-cloudfront' do
@@ -63,13 +63,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.575.0.gem'
-    sha256 '81605f58e4cbc84a67ffb868f7b58e207b02222ab5ad31623dce07250250e59c'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.577.0.gem'
+    sha256 '9c9d2437ec7ccad7ed37c838306be1b305f39328171b907f9f75d1ac411415e0'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
-    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.142.0.gem'
-    sha256 'ab0af0ca5df936b74b21fc94e1843ab83bd51296adb688e7edc7c8b8d6894eaf'
+    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.143.0.gem'
+    sha256 'a4e6167c22c3da371aeb2e4509d5c1a84082dbd4a0c99753df116fcedc441771'
   end
 
   resource 'aws-sdk-iam' do
@@ -291,6 +291,7 @@ class Citools < Formula
     bin.install('generate-codeowners')
     bin.install('linters')
     bin.install('ssh-jump')
+    bin.install('sync-jira-release')
     (libexec / 'vendor').mkpath
 
     resources.each do |r|
