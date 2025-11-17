@@ -57,11 +57,60 @@ update_formula_tag() {
   echo "Updated ${file} with tag ${new_tag}"
 }
 
+# Function to check if source repo has commits newer than the latest tag
+has_commits_since_tag() {
+  local tag=$1
+  local dir=$2
+
+  pushd "${dir}" >/dev/null
+
+  # Check if the tag exists
+  if ! git rev-parse "${tag}" >/dev/null 2>&1; then
+    echo "Warning: Tag ${tag} not found in ${dir}"
+    popd >/dev/null
+    return 1
+  fi
+
+  # Check if there are commits after the tag
+  local commits_since_tag
+  commits_since_tag=$(git rev-list "${tag}"..HEAD --count)
+
+  popd >/dev/null
+
+  if [ "${commits_since_tag}" -gt 0 ]; then
+    echo "Found ${commits_since_tag} commits since tag ${tag}"
+    return 0
+  else
+    return 1
+  fi
+}
+
 for file in "${!files_to_dirs[@]}"; do
   echo "Updating ${file}..."
   directory="${files_to_dirs[${file}]}"
   start_marker="${start_markers[${file}]}"
   temp_new_content_file=$(mktemp)
+
+  # Get current tag before any updates
+  current_tag=$(extract_tag "${file}")
+
+  if [ -z "${current_tag}" ]; then
+    echo "Warning: Could not extract tag from ${file}, skipping..."
+    continue
+  fi
+
+  echo "Current tag in ${file}: ${current_tag}"
+
+  # Check if source repo has new commits since the current tag
+  source_repo_has_changes=false
+  if has_commits_since_tag "${current_tag}" "${cloud_officer_dir}/${directory}"; then
+    source_repo_has_changes=true
+    echo "Source repository ${directory} has new commits since tag ${current_tag}"
+  else
+    echo "Source repository ${directory} has no new commits since tag ${current_tag}"
+  fi
+
+  # Generate new resources
   pushd "../${directory}" >/dev/null
 
   if type -P brew-resources &>/dev/null; then
@@ -71,6 +120,8 @@ for file in "${!files_to_dirs[@]}"; do
   fi
 
   popd >/dev/null
+
+  # Update the formula file with new resources
   temp_file="$(mktemp)"
   awk -v start="${start_marker}" -v end="${end_marker}" -v file="${temp_new_content_file}" '
     !p && $0 ~ start {p=1; printf "%s\n\n", $0; while((getline line < file) > 0) print line; next}
@@ -79,18 +130,21 @@ for file in "${!files_to_dirs[@]}"; do
   mv "${temp_file}" "${file}"
   rm "${temp_new_content_file}"
 
-  # Check if the formula file was modified (has uncommitted changes)
+  # Check if the formula file was modified
+  formula_has_changes=false
   if ! git diff --quiet "${file}"; then
-    echo "Formula ${file} was updated, incrementing version..."
+    formula_has_changes=true
+    echo "Formula ${file} has been updated with new resources"
+  else
+    echo "Formula ${file} has no resource changes"
+  fi
 
-    current_tag=$(extract_tag "${file}")
+  # Create new tag if EITHER condition is true:
+  # 1. Formula file has changes (resources updated)
+  # 2. Source repo has new commits since current tag
+  if [ "${formula_has_changes}" == true ] || [ "${source_repo_has_changes}" == true ]; then
+    echo "Creating new version (formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes})..."
 
-    if [ -z "${current_tag}" ]; then
-      echo "Warning: Could not extract tag from ${file}, skipping version increment..."
-      continue
-    fi
-
-    echo "Current tag: ${current_tag}"
     new_tag=$(increment_patch_version "${current_tag}")
     echo "New tag: ${new_tag}"
 
@@ -127,6 +181,10 @@ for file in "${!files_to_dirs[@]}"; do
     update_formula_tag "${file}" "${new_tag}"
 
     echo "✓ Successfully processed ${file}: ${current_tag} -> ${new_tag}"
+    echo "  Reason: formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes}"
+    echo ""
+  else
+    echo "✓ ${file} is up to date (no formula or source changes)"
     echo ""
   fi
 done
