@@ -33,6 +33,7 @@ This formula installs the following tools:
 * generate-codeowners (generate codeowners file)
 * linters (run all linters)
 * ssh-jump (ssh to a host by name via a VPN)
+* sync-jira-release (synchronize Jira releases with GitHub pull requests)
 
 See [ci-tools](https://github.com/Cloud-Officer/ci-tools) for more information.
 
