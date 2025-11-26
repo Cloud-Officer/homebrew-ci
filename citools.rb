@@ -291,6 +291,7 @@ class Citools < Formula
     bin.install('generate-codeowners')
     bin.install('linters')
     bin.install('ssh-jump')
+    bin.install('ssm-jump')
     bin.install('sync-jira-release')
     (libexec / 'vendor').mkpath
 
