@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.2.30'
+      tag: '1.2.32'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'actionlint'
@@ -291,6 +291,7 @@ class Citools < Formula
     bin.install('generate-codeowners')
     bin.install('linters')
     bin.install('ssh-jump')
+    bin.install('ssm-jump')
     bin.install('sync-jira-release')
     (libexec / 'vendor').mkpath
 
