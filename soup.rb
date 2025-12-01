@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.31'
+      tag: '1.4.32'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
