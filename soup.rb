@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.28'
+      tag: '1.4.31'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -35,8 +35,8 @@ class Soup < Formula
   end
 
   resource 'connection_pool' do
-    url 'https://rubygems.org/gems/connection_pool-2.5.4.gem'
-    sha256 'e9e1922327416091f3f6542f5f4446c2a20745276b9aa796dd0bb2fd0ea1e70a'
+    url 'https://rubygems.org/gems/connection_pool-2.5.5.gem'
+    sha256 'e54ff92855753df1fd7c59fa04a398833355f27dd14c074f8c83a05f72a716ad'
   end
 
   resource 'csv' do
@@ -90,8 +90,8 @@ class Soup < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-5.26.1.gem'
-    sha256 'f16a63d4278e230bba342c3bda3006a69c5216d46461b77dd57f7c7c529b5a96'
+    url 'https://rubygems.org/gems/minitest-5.26.2.gem'
+    sha256 'f021118a6185b9ba9f5af71f2ba103ad770c75afde9f2ab8da512677c550cde3'
   end
 
   resource 'mize' do
