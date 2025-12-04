@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.2.37'
+      tag: '1.2.38'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'actionlint'
@@ -83,8 +83,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.169.0.gem'
-    sha256 '8acb96b4c99c86ef8c8e5cca33bc94096f0ebf50a756be6eaaff650bcb883c7c'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.170.0.gem'
+    sha256 '5cb8dd71e8691fa49c5417654dca06148389e0cf9907c72ef52d886e6c26461e'
   end
 
   resource 'aws-sdk-ssm' do
@@ -128,8 +128,8 @@ class Citools < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.17.0.gem'
-    sha256 '90895466df75c53f0c7ddbae5748bcdf4f908d9d6485242cf4c647f6c3d788b1'
+    url 'https://rubygems.org/gems/json-2.17.1.gem'
+    sha256 'e0e4824541336a44915436f53e7ea74c687314fb8f88080fa1456f6a34ead92e'
   end
 
   resource 'language_server-protocol' do
