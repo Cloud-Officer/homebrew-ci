@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.5.24'
+      tag: '1.5.25'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -35,8 +35,8 @@ class Githubbuild < Formula
   end
 
   resource 'connection_pool' do
-    url 'https://rubygems.org/gems/connection_pool-2.5.5.gem'
-    sha256 'e54ff92855753df1fd7c59fa04a398833355f27dd14c074f8c83a05f72a716ad'
+    url 'https://rubygems.org/gems/connection_pool-3.0.1.gem'
+    sha256 '819ea60fcbee0b557fec6dce41925ec7d24a137a6602587785a9e5a3aaaa6b6c'
   end
 
   resource 'csv' do
@@ -70,8 +70,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.17.0.gem'
-    sha256 '90895466df75c53f0c7ddbae5748bcdf4f908d9d6485242cf4c647f6c3d788b1'
+    url 'https://rubygems.org/gems/json-2.17.1.gem'
+    sha256 'e0e4824541336a44915436f53e7ea74c687314fb8f88080fa1456f6a34ead92e'
   end
 
   resource 'language_server-protocol' do
