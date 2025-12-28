@@ -31,18 +31,51 @@ extract_tag() {
   grep "tag:" "${file}" | sed -E "s/.*tag: '([^']+)'.*/\1/" | head -1
 }
 
-# Function to increment the patch version (x.y.z -> x.y.z+1)
-increment_patch_version() {
-  local version=$1
+# Function to determine the new version based on commit history using Claude
+# Returns empty string if no commits since last tag (no bump needed)
+determine_new_version() {
+  local current_version=$1
+  local dir=$2
   local major minor patch
 
   # Split version into major.minor.patch
-  IFS='.' read -r major minor patch <<< "${version}"
+  IFS='.' read -r major minor patch <<< "${current_version}"
 
-  # Increment patch version
-  ((patch++))
+  # Get commit messages since the last tag
+  local commits
+  commits=$(git -C "${dir}" log "${current_version}"..HEAD --pretty=format:"%s" 2>/dev/null || echo "")
 
-  echo "${major}.${minor}.${patch}"
+  if [ -z "${commits}" ]; then
+    # No commits found, no bump needed
+    echo ""
+    return
+  fi
+
+  # Ask Claude to determine the version bump
+  local prompt="Based on these commit messages, determine if this should be a MINOR (Y) or PATCH (Z) version bump in semver x.y.z format.
+
+MINOR (Y): New features, significant enhancements, new functionality
+PATCH (Z): Bug fixes, small improvements, documentation, dependency updates
+
+Current version: ${current_version}
+
+Commit messages:
+${commits}
+
+Respond with ONLY one word: MINOR or PATCH"
+
+  local response
+  response=$(echo "${prompt}" | claude --print 2>/dev/null || echo "PATCH")
+
+  # Parse response and calculate new version
+  if echo "${response}" | grep -qi "MINOR"; then
+    ((minor++))
+    patch=0
+    echo "${major}.${minor}.${patch}"
+  else
+    ((patch++))
+    echo "${major}.${minor}.${patch}"
+  fi
 }
 
 # Function to update the tag in a formula file
@@ -113,10 +146,10 @@ for file in "${!files_to_dirs[@]}"; do
   # Generate new resources
   pushd "../${directory}" >/dev/null
 
-  if type -P brew-resources &>/dev/null; then
-    brew-resources >"${temp_new_content_file}"
-  else
+  if type -P "${cloud_officer_dir}/ci-tools/brew-resources.rb" &>/dev/null; then
     "${cloud_officer_dir}/ci-tools/brew-resources.rb" >"${temp_new_content_file}"
+  else
+    brew-resources >"${temp_new_content_file}"
   fi
 
   popd >/dev/null
@@ -143,9 +176,16 @@ for file in "${!files_to_dirs[@]}"; do
   # 1. Formula file has changes (resources updated)
   # 2. Source repo has new commits since current tag
   if [ "${formula_has_changes}" == true ] || [ "${source_repo_has_changes}" == true ]; then
-    echo "Creating new version (formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes})..."
+    echo "Determining new version (formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes})..."
 
-    new_tag=$(increment_patch_version "${current_tag}")
+    new_tag=$(determine_new_version "${current_tag}" "${cloud_officer_dir}/${directory}")
+
+    if [ -z "${new_tag}" ]; then
+      echo "✓ ${file} - no commits since ${current_tag}, skipping tag creation"
+      echo ""
+      continue
+    fi
+
     echo "New tag: ${new_tag}"
 
     # Navigate to the source repository
@@ -154,6 +194,13 @@ for file in "${!files_to_dirs[@]}"; do
     # Check for uncommitted changes in the source repository
     if ! git diff-index --quiet HEAD --; then
       echo "Warning: ${directory} has uncommitted changes. Please commit them first."
+      exit 1
+    fi
+
+    # Pull latest changes from remote
+    echo "Pulling latest changes in ${directory}..."
+    if ! git pull; then
+      echo "Warning: Failed to pull latest changes in ${directory}"
       exit 1
     fi
 

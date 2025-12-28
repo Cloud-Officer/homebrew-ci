@@ -1,3 +1,4 @@
+# github-build --organization Cloud-Officer --skip_slack --skip_license_check
 ---
 name: Build
 'on':
@@ -14,9 +15,12 @@ name: Build
     - dependabot/**
     tags:
     - "**"
+permissions:
+  contents: read
+  pull-requests: read
 env:
   RUBY-BUNDLER-CACHE: 'true'
-  RUBY-VERSION: 3.4.7
+  RUBY-VERSION: 4.0.0
 jobs:
   variables:
     name: Prepare Variables
@@ -37,6 +41,7 @@ jobs:
       SKIP_TESTS: "${{steps.variables.outputs.SKIP_TESTS}}"
       UPDATE_PACKAGES: "${{steps.variables.outputs.UPDATE_PACKAGES}}"
       LINTERS: "${{steps.variables.outputs.LINTERS}}"
+    timeout-minutes: 30
     steps:
     - name: Prepare variables
       id: variables
@@ -49,16 +54,32 @@ jobs:
     needs:
     - variables
     if: "${{needs.variables.outputs.SKIP_LINTERS != '1' && (github.event_name == 'pull_request' || github.event_name == 'pull_request_target')}}"
+    timeout-minutes: 30
     steps:
     - name: Actionlint
       id: actionlint
-      uses: cloud-officer/ci-actions/linters/actionlint@master
+      uses: cloud-officer/ci-actions/linters/actionlint@v1
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
         github_token: "${{secrets.GITHUB_TOKEN}}"
-  codeql-ruby:
-    name: CodeQL Ruby Linter
+  markdownlint:
+    name: Markdown Linter
+    runs-on: ubuntu-latest
+    needs:
+    - variables
+    if: "${{needs.variables.outputs.SKIP_LINTERS != '1' && (github.event_name == 'pull_request' || github.event_name == 'pull_request_target')}}"
+    timeout-minutes: 30
+    steps:
+    - name: Markdownlint
+      id: markdownlint
+      uses: cloud-officer/ci-actions/linters/markdownlint@v1
+      with:
+        linters: "${{needs.variables.outputs.LINTERS}}"
+        ssh-key: "${{secrets.SSH_KEY}}"
+        github_token: "${{secrets.GITHUB_TOKEN}}"
+  semgrep:
+    name: Semgrep Security Scanner
     permissions:
       actions: read
       contents: read
@@ -67,24 +88,10 @@ jobs:
     needs:
     - variables
     if: "${{needs.variables.outputs.SKIP_LINTERS != '1' && (github.event_name == 'pull_request' || github.event_name == 'pull_request_target')}}"
+    timeout-minutes: 30
     steps:
-    - name: CodeQL Ruby
-      uses: cloud-officer/ci-actions/linters/codeql@master
-      with:
-        linters: "${{needs.variables.outputs.LINTERS}}"
-        ssh-key: "${{secrets.SSH_KEY}}"
-        github_token: "${{secrets.GITHUB_TOKEN}}"
-        languages: ruby
-  markdownlint:
-    name: Markdown Linter
-    runs-on: ubuntu-latest
-    needs:
-    - variables
-    if: "${{needs.variables.outputs.SKIP_LINTERS != '1' && (github.event_name == 'pull_request' || github.event_name == 'pull_request_target')}}"
-    steps:
-    - name: Markdownlint
-      id: markdownlint
-      uses: cloud-officer/ci-actions/linters/markdownlint@master
+    - name: Semgrep
+      uses: cloud-officer/ci-actions/linters/semgrep@v1
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
@@ -95,10 +102,11 @@ jobs:
     needs:
     - variables
     if: "${{needs.variables.outputs.SKIP_LINTERS != '1' && (github.event_name == 'pull_request' || github.event_name == 'pull_request_target')}}"
+    timeout-minutes: 30
     steps:
     - name: Rubocop
       id: rubocop
-      uses: cloud-officer/ci-actions/linters/rubocop@master
+      uses: cloud-officer/ci-actions/linters/rubocop@v1
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
@@ -109,9 +117,10 @@ jobs:
     needs:
     - variables
     if: "${{needs.variables.outputs.SKIP_LINTERS != '1' && (github.event_name == 'pull_request' || github.event_name == 'pull_request_target')}}"
+    timeout-minutes: 30
     steps:
     - name: ShellCheck
-      uses: cloud-officer/ci-actions/linters/shellcheck@master
+      uses: cloud-officer/ci-actions/linters/shellcheck@v1
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
@@ -122,10 +131,11 @@ jobs:
     needs:
     - variables
     if: "${{needs.variables.outputs.SKIP_LINTERS != '1' && (github.event_name == 'pull_request' || github.event_name == 'pull_request_target')}}"
+    timeout-minutes: 30
     steps:
     - name: Yamllint
       id: yamllint
-      uses: cloud-officer/ci-actions/linters/yamllint@master
+      uses: cloud-officer/ci-actions/linters/yamllint@v1
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
