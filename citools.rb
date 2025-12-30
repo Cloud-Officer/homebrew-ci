@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.3.0'
+      tag: '1.3.1'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'actionlint'
@@ -113,8 +113,8 @@ class Citools < Formula
   end
 
   resource 'httparty' do
-    url 'https://rubygems.org/gems/httparty-0.23.2.gem'
-    sha256 '72d52830ab5862115a3c9a4b16738dd67d9a691ffd796cf86bad8abaa8f1febb'
+    url 'https://rubygems.org/gems/httparty-0.24.0.gem'
+    sha256 'cd93eec3d92c327df77b545e71123a38394e5ae723fb739bca18e0e75143b0ac'
   end
 
   resource 'inifile' do
