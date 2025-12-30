@@ -45,9 +45,10 @@ jobs:
     steps:
     - name: Prepare variables
       id: variables
-      uses: cloud-officer/ci-actions/variables@master
+      uses: cloud-officer/ci-actions/variables@v2
       with:
         ssh-key: "${{secrets.SSH_KEY}}"
+        github-token: "${{secrets.GH_PAT}}"
   actionlint:
     name: Github Actions Linter
     runs-on: ubuntu-latest
@@ -58,11 +59,11 @@ jobs:
     steps:
     - name: Actionlint
       id: actionlint
-      uses: cloud-officer/ci-actions/linters/actionlint@v1
+      uses: cloud-officer/ci-actions/linters/actionlint@v2
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
-        github_token: "${{secrets.GITHUB_TOKEN}}"
+        github-token: "${{secrets.GH_PAT}}"
   markdownlint:
     name: Markdown Linter
     runs-on: ubuntu-latest
@@ -73,11 +74,11 @@ jobs:
     steps:
     - name: Markdownlint
       id: markdownlint
-      uses: cloud-officer/ci-actions/linters/markdownlint@v1
+      uses: cloud-officer/ci-actions/linters/markdownlint@v2
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
-        github_token: "${{secrets.GITHUB_TOKEN}}"
+        github-token: "${{secrets.GH_PAT}}"
   semgrep:
     name: Semgrep Security Scanner
     permissions:
@@ -91,11 +92,11 @@ jobs:
     timeout-minutes: 30
     steps:
     - name: Semgrep
-      uses: cloud-officer/ci-actions/linters/semgrep@v1
+      uses: cloud-officer/ci-actions/linters/semgrep@v2
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
-        github_token: "${{secrets.GITHUB_TOKEN}}"
+        github-token: "${{secrets.GH_PAT}}"
   rubocop:
     name: Ruby Linter
     runs-on: ubuntu-latest
@@ -106,11 +107,11 @@ jobs:
     steps:
     - name: Rubocop
       id: rubocop
-      uses: cloud-officer/ci-actions/linters/rubocop@v1
+      uses: cloud-officer/ci-actions/linters/rubocop@v2
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
-        github_token: "${{secrets.GITHUB_TOKEN}}"
+        github-token: "${{secrets.GH_PAT}}"
   shellcheck:
     name: Shell Scripts Linter
     runs-on: ubuntu-latest
@@ -120,11 +121,11 @@ jobs:
     timeout-minutes: 30
     steps:
     - name: ShellCheck
-      uses: cloud-officer/ci-actions/linters/shellcheck@v1
+      uses: cloud-officer/ci-actions/linters/shellcheck@v2
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
-        github_token: "${{secrets.GITHUB_TOKEN}}"
+        github-token: "${{secrets.GH_PAT}}"
   yamllint:
     name: YAML Linter
     runs-on: ubuntu-latest
@@ -135,8 +136,8 @@ jobs:
     steps:
     - name: Yamllint
       id: yamllint
-      uses: cloud-officer/ci-actions/linters/yamllint@v1
+      uses: cloud-officer/ci-actions/linters/yamllint@v2
       with:
         linters: "${{needs.variables.outputs.LINTERS}}"
         ssh-key: "${{secrets.SSH_KEY}}"
-        github_token: "${{secrets.GITHUB_TOKEN}}"
+        github-token: "${{secrets.GH_PAT}}"
