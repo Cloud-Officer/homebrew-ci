@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.3.4'
+      tag: '1.3.5'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'actionlint'
@@ -33,8 +33,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1202.0.gem'
-    sha256 'c8aa0f134a23464c61cfd00edfb4b6d968b01847a8b591d4dcc0c63a4897c301'
+    url 'https://rubygems.org/gems/aws-partitions-1.1203.0.gem'
+    sha256 'a821fef3d5e64d4cff00ceeacfb61bfae32e023d28b12c42066219a2045b2608'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -209,8 +209,8 @@ class Citools < Formula
   end
 
   resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.7.0.gem'
-    sha256 '10062f734bf7985c8424c44fac382ac04a58124ea3d220ec3ba9fe4f2da65103'
+    url 'https://rubygems.org/gems/prism-1.8.0.gem'
+    sha256 '84453a16ef5530ea62c5f03ec16b52a459575ad4e7b9c2b360fd8ce2c39c1254'
   end
 
   resource 'racc' do
