@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.8.0'
+      tag: '1.8.1'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -125,8 +125,8 @@ class Githubbuild < Formula
   end
 
   resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.7.0.gem'
-    sha256 '10062f734bf7985c8424c44fac382ac04a58124ea3d220ec3ba9fe4f2da65103'
+    url 'https://rubygems.org/gems/prism-1.8.0.gem'
+    sha256 '84453a16ef5530ea62c5f03ec16b52a459575ad4e7b9c2b360fd8ce2c39c1254'
   end
 
   resource 'psych' do
