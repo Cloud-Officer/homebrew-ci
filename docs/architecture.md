@@ -16,6 +16,10 @@ Homebrew taps contain package formulae for distribution, not application source 
 | githubbuild | GitHub build file generator | [Cloud-Officer/github-build](https://github.com/Cloud-Officer/github-build) |
 | soup | Software of Unknown Provenance | [Cloud-Officer/soup](https://github.com/Cloud-Officer/soup) |
 
+## Documentation
+
+For more information about Homebrew taps, see [Homebrew Taps](https://docs.brew.sh/Taps).
+
 ## When This Might Change
 
 Architecture documentation would be required if this repository evolves to include:
