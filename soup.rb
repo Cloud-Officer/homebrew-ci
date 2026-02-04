@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.4.43'
+      tag: '1.4.44'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -59,19 +59,9 @@ class Soup < Formula
     sha256 '285778639134865c5e0f6269e0b818256017e8cde89993fdfcbfb64d088824a5'
   end
 
-  resource 'inquirer' do
-    url 'https://rubygems.org/gems/inquirer-0.2.1.gem'
-    sha256 '1cb639228bf9f2e98543f866e94e64872631d7b6c8b2a5565289175405e1e0af'
-  end
-
-  resource 'io-console' do
-    url 'https://rubygems.org/gems/io-console-0.8.2.gem'
-    sha256 'd6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc'
-  end
-
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.18.0.gem'
-    sha256 'b10506aee4183f5cf49e0efc48073d7b75843ce3782c68dbeb763351c08fd505'
+    url 'https://rubygems.org/gems/json-2.18.1.gem'
+    sha256 'fe112755501b8d0466b5ada6cf50c8c3f41e897fa128ac5d263ec09eedc9f986'
   end
 
   resource 'language_server-protocol' do
@@ -97,11 +87,6 @@ class Soup < Formula
   resource 'minitest' do
     url 'https://rubygems.org/gems/minitest-6.0.1.gem'
     sha256 '7854c74f48e2e975969062833adc4013f249a4b212f5e7b9d5c040bf838d54bb'
-  end
-
-  resource 'mize' do
-    url 'https://rubygems.org/gems/mize-0.6.1.gem'
-    sha256 '4031558979ff5426fda24c75a149b4e4c0faf4cacf2fae8938f83866ab94b780'
   end
 
   resource 'multi_xml' do
@@ -166,8 +151,8 @@ class Soup < Formula
   end
 
   resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.8.0.gem'
-    sha256 '84453a16ef5530ea62c5f03ec16b52a459575ad4e7b9c2b360fd8ce2c39c1254'
+    url 'https://rubygems.org/gems/prism-1.9.0.gem'
+    sha256 '7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85'
   end
 
   resource 'racc' do
@@ -180,24 +165,14 @@ class Soup < Formula
     sha256 '039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a'
   end
 
-  resource 'readline' do
-    url 'https://rubygems.org/gems/readline-0.0.4.gem'
-    sha256 '6138eef17be2b98298b672c3ea63bf9cb5158d401324f26e1e84f235879c1d6a'
-  end
-
   resource 'regexp_parser' do
     url 'https://rubygems.org/gems/regexp_parser-2.11.3.gem'
     sha256 'ca13f381a173b7a93450e53459075c9b76a10433caadcb2f1180f2c741fc55a4'
   end
 
-  resource 'reline' do
-    url 'https://rubygems.org/gems/reline-0.6.3.gem'
-    sha256 '1198b04973565b36ec0f11542ab3f5cfeeec34823f4e54cebde90968092b1835'
-  end
-
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.82.1.gem'
-    sha256 '09f1a6a654a960eda767aebea33e47603080f8e9c9a3f019bf9b94c9cab5e273'
+    url 'https://rubygems.org/gems/rubocop-1.84.1.gem'
+    sha256 '14cc626f355141f5a2ef53c10a68d66b13bb30639b26370a76559096cc6bcc1a'
   end
 
   resource 'rubocop-ast' do
@@ -248,21 +223,6 @@ class Soup < Formula
   resource 'semantic' do
     url 'https://rubygems.org/gems/semantic-1.6.1.gem'
     sha256 '3cdbb48f59198ebb782a3fdfb87b559e0822a311610db153bae22777a7d0c163'
-  end
-
-  resource 'sync' do
-    url 'https://rubygems.org/gems/sync-0.5.0.gem'
-    sha256 '668356cc07c59ac7ed9ecf34fec3929831f179c07adb1f3e1c3b7a1609a638fd'
-  end
-
-  resource 'term-ansicolor' do
-    url 'https://rubygems.org/gems/term-ansicolor-1.11.3.gem'
-    sha256 '8c01ec3abd095eb94dca8aed5a127d36e594239eb525eb306259c9e930534603'
-  end
-
-  resource 'tins' do
-    url 'https://rubygems.org/gems/tins-1.51.1.gem'
-    sha256 'cc17bc37e62bd2dd2e8bc2a706b9cf419dfd4766407b84b341a67db947f8e44a'
   end
 
   resource 'tty-color' do
@@ -328,7 +288,8 @@ class Soup < Formula
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor") ||
+        raise("Failed to install gem: #{r.name}")
     end
 
     rm_rf('vendor')

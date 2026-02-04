@@ -65,7 +65,10 @@ ${commits}
 Respond with ONLY one word: MINOR or PATCH"
 
   local response
-  response=$(echo "${prompt}" | claude --print 2>/dev/null || echo "PATCH")
+  if ! response=$(echo "${prompt}" | claude --print 2>&1); then
+    echo "Warning: Claude API failed, defaulting to PATCH: ${response}" >&2
+    response="PATCH"
+  fi
 
   # Parse response and calculate new version
   if echo "${response}" | grep -qi "MINOR"; then

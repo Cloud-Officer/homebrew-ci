@@ -11,5 +11,4 @@
 .ruby-version            @ydesgagn
 .shellcheckrc            @ydesgagn
 .yamllint.yml            @ydesgagn
-codeowners               @ydesgagn
 *.sh                     @ydesgagn

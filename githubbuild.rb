@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.9.0'
+      tag: '1.10.0'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -12,6 +12,11 @@ class Githubbuild < Formula
   resource 'activesupport' do
     url 'https://rubygems.org/gems/activesupport-8.1.2.gem'
     sha256 '88842578ccd0d40f658289b0e8c842acfe9af751afee2e0744a7873f50b6fdae'
+  end
+
+  resource 'addressable' do
+    url 'https://rubygems.org/gems/addressable-2.8.8.gem'
+    sha256 '7c13b8f9536cf6364c03b9d417c19986019e28f7c00ac8132da4eb0fe393b057'
   end
 
   resource 'ast' do
@@ -39,6 +44,11 @@ class Githubbuild < Formula
     sha256 '33fff5ba71a12d2aa26cb72b1db8bba2a1a01823559fb01d29eb74c286e62e0a'
   end
 
+  resource 'crack' do
+    url 'https://rubygems.org/gems/crack-1.0.1.gem'
+    sha256 'ff4a10390cd31d66440b7524eb1841874db86201d5b70032028553130b6d4c7e'
+  end
+
   resource 'csv' do
     url 'https://rubygems.org/gems/csv-3.3.5.gem'
     sha256 '6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f'
@@ -49,6 +59,11 @@ class Githubbuild < Formula
     sha256 '750d06384d7b9c15d562c76291407d89e368dda4d4fff957eb94962d325a0dc0'
   end
 
+  resource 'diff-lcs' do
+    url 'https://rubygems.org/gems/diff-lcs-1.6.2.gem'
+    sha256 '9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962'
+  end
+
   resource 'drb' do
     url 'https://rubygems.org/gems/drb-2.2.3.gem'
     sha256 '0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373'
@@ -57,6 +72,11 @@ class Githubbuild < Formula
   resource 'duplicate' do
     url 'https://rubygems.org/gems/duplicate-1.1.1.gem'
     sha256 'b0b4096902521038ff0bfde7f5ce66138b5bd03ae4975927a0b373c1229a7d61'
+  end
+
+  resource 'hashdiff' do
+    url 'https://rubygems.org/gems/hashdiff-1.2.1.gem'
+    sha256 '9c079dbc513dfc8833ab59c0c2d8f230fa28499cc5efb4b8dd276cf931457cd1'
   end
 
   resource 'httparty' do
@@ -70,8 +90,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.18.0.gem'
-    sha256 'b10506aee4183f5cf49e0efc48073d7b75843ce3782c68dbeb763351c08fd505'
+    url 'https://rubygems.org/gems/json-2.18.1.gem'
+    sha256 'fe112755501b8d0466b5ada6cf50c8c3f41e897fa128ac5d263ec09eedc9f986'
   end
 
   resource 'language_server-protocol' do
@@ -104,11 +124,6 @@ class Githubbuild < Formula
     sha256 'addba0290bac34e9088bfe73dc4878530297a82a7bbd66cb44dcd0a4b86edf5a'
   end
 
-  resource 'open3' do
-    url 'https://rubygems.org/gems/open3-0.2.1.gem'
-    sha256 '8e2d7d2113526351201438c1aa35c8139f0141c9e8913baa007c898973bf3952'
-  end
-
   resource 'optparse' do
     url 'https://rubygems.org/gems/optparse-0.8.1.gem'
     sha256 '42bea10d53907ccff4f080a69991441d611fbf8733b60ed1ce9ee365ce03bd1a'
@@ -125,13 +140,18 @@ class Githubbuild < Formula
   end
 
   resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.8.0.gem'
-    sha256 '84453a16ef5530ea62c5f03ec16b52a459575ad4e7b9c2b360fd8ce2c39c1254'
+    url 'https://rubygems.org/gems/prism-1.9.0.gem'
+    sha256 '7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85'
   end
 
   resource 'psych' do
     url 'https://rubygems.org/gems/psych-5.3.1.gem'
     sha256 'eb7a57cef10c9d70173ff74e739d843ac3b2c019a003de48447b2963d81b1974'
+  end
+
+  resource 'public_suffix' do
+    url 'https://rubygems.org/gems/public_suffix-7.0.2.gem'
+    sha256 '9114090c8e4e7135c1fd0e7acfea33afaab38101884320c65aaa0ffb8e26a857'
   end
 
   resource 'racc' do
@@ -149,9 +169,39 @@ class Githubbuild < Formula
     sha256 'ca13f381a173b7a93450e53459075c9b76a10433caadcb2f1180f2c741fc55a4'
   end
 
+  resource 'rexml' do
+    url 'https://rubygems.org/gems/rexml-3.4.4.gem'
+    sha256 '19e0a2c3425dfbf2d4fc1189747bdb2f849b6c5e74180401b15734bc97b5d142'
+  end
+
+  resource 'rspec' do
+    url 'https://rubygems.org/gems/rspec-3.13.2.gem'
+    sha256 '206284a08ad798e61f86d7ca3e376718d52c0bc944626b2349266f239f820587'
+  end
+
+  resource 'rspec-core' do
+    url 'https://rubygems.org/gems/rspec-core-3.13.6.gem'
+    sha256 'a8823c6411667b60a8bca135364351dda34cd55e44ff94c4be4633b37d828b2d'
+  end
+
+  resource 'rspec-expectations' do
+    url 'https://rubygems.org/gems/rspec-expectations-3.13.5.gem'
+    sha256 '33a4d3a1d95060aea4c94e9f237030a8f9eae5615e9bd85718fe3a09e4b58836'
+  end
+
+  resource 'rspec-mocks' do
+    url 'https://rubygems.org/gems/rspec-mocks-3.13.7.gem'
+    sha256 '0979034e64b1d7a838aaaddf12bf065ea4dc40ef3d4c39f01f93ae2c66c62b1c'
+  end
+
+  resource 'rspec-support' do
+    url 'https://rubygems.org/gems/rspec-support-3.13.7.gem'
+    sha256 '0640e5570872aafefd79867901deeeeb40b0c9875a36b983d85f54fb7381c47c'
+  end
+
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.82.1.gem'
-    sha256 '09f1a6a654a960eda767aebea33e47603080f8e9c9a3f019bf9b94c9cab5e273'
+    url 'https://rubygems.org/gems/rubocop-1.84.1.gem'
+    sha256 '14cc626f355141f5a2ef53c10a68d66b13bb30639b26370a76559096cc6bcc1a'
   end
 
   resource 'rubocop-ast' do
@@ -224,6 +274,11 @@ class Githubbuild < Formula
     sha256 '379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6'
   end
 
+  resource 'webmock' do
+    url 'https://rubygems.org/gems/webmock-3.26.1.gem'
+    sha256 '4f696fb57c90a827c20aadb2d4f9058bbff10f7f043bd0d4c3f58791143b1cd7'
+  end
+
   def install
     prefix.install(Dir['bin'])
     prefix.install(Dir['config'])
@@ -232,7 +287,8 @@ class Githubbuild < Formula
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor") ||
+        raise("Failed to install gem: #{r.name}")
     end
 
     rm_rf('vendor')

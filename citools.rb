@@ -4,8 +4,8 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.3.6'
-  head 'https://github.com/Cloud-Officer/soup.git'
+      tag: '1.3.7'
+  head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
   depends_on 'awscli'
@@ -33,13 +33,13 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1206.0.gem'
-    sha256 '9016c2d4f5d633aeb95d4cfeb936b5de3d752a5dbae4838bc19d53f202749301'
+    url 'https://rubygems.org/gems/aws-partitions-1.1212.0.gem'
+    sha256 'fa4f5de905cc2b6587747e5b1e2d215e610fa0449c70b9069e3c928a15cc2a15'
   end
 
   resource 'aws-sdk-autoscaling' do
-    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.152.0.gem'
-    sha256 'ca7f230e18166fabed53f1be4bd651ca6d71211d3c7e08d9136cdfb026a25c58'
+    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.154.0.gem'
+    sha256 '7dd7e0bdc5ee148e2315c131b2cf9a04530cdc2607879fdbf792415b845f2417'
   end
 
   resource 'aws-sdk-cloudformation' do
@@ -48,8 +48,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudfront' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.140.0.gem'
-    sha256 'd74fd4089647fa002fe8a973eb2cc49c6d3cd19f698cdcd7e455c719c885c49f'
+    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.141.0.gem'
+    sha256 '857e62408cab8ab39cf3d18f6f93c944ef80ea475880afae0f99385e1c4797b8'
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
@@ -58,13 +58,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.241.4.gem'
-    sha256 'a42ccba8c24ea9800e7b6c40aa201c967458f7c460044a6eebf64fbf1226e4fd'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.242.0.gem'
+    sha256 'c17b3003acc78d80c1a8437b285a1cfc5e4d7749ce7821cf3071e847535a29a0'
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.591.0.gem'
-    sha256 '7290a23285bbec50189433b7dac01a8a0af74c24a01d6d24b2b74a42e5907201'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.597.0.gem'
+    sha256 'b4da34246a2721040d00e086a0d2cf0abb4ac0666f692a425eaeae32fac0de02'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -83,8 +83,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.174.0.gem'
-    sha256 'e28dfbeca7dcd871ab385eacc33ced96352121b4c68f3efdcd033f9c6db53b72'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.175.0.gem'
+    sha256 '74b9c26a42d2332d225a92f1aef183a5bfc37081a728a1bc0930c5fa3b59eac0'
   end
 
   resource 'aws-sdk-ssm' do
@@ -128,8 +128,8 @@ class Citools < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.18.0.gem'
-    sha256 'b10506aee4183f5cf49e0efc48073d7b75843ce3782c68dbeb763351c08fd505'
+    url 'https://rubygems.org/gems/json-2.18.1.gem'
+    sha256 'fe112755501b8d0466b5ada6cf50c8c3f41e897fa128ac5d263ec09eedc9f986'
   end
 
   resource 'language_server-protocol' do
@@ -209,8 +209,8 @@ class Citools < Formula
   end
 
   resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.8.0.gem'
-    sha256 '84453a16ef5530ea62c5f03ec16b52a459575ad4e7b9c2b360fd8ce2c39c1254'
+    url 'https://rubygems.org/gems/prism-1.9.0.gem'
+    sha256 '7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85'
   end
 
   resource 'racc' do
@@ -229,8 +229,8 @@ class Citools < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.82.1.gem'
-    sha256 '09f1a6a654a960eda767aebea33e47603080f8e9c9a3f019bf9b94c9cab5e273'
+    url 'https://rubygems.org/gems/rubocop-1.84.1.gem'
+    sha256 '14cc626f355141f5a2ef53c10a68d66b13bb30639b26370a76559096cc6bcc1a'
   end
 
   resource 'rubocop-ast' do
@@ -290,14 +290,14 @@ class Citools < Formula
     bin.install('encrypt-logs.rb')
     bin.install('generate-codeowners')
     bin.install('linters')
-    bin.install('ssh-jump')
     bin.install('ssm-jump')
     bin.install('sync-jira-release')
     (libexec / 'vendor').mkpath
 
     resources.each do |r|
       r.verify_download_integrity(r.fetch)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor")
+      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor") ||
+        raise("Failed to install gem: #{r.name}")
     end
 
     rm_rf('vendor')
