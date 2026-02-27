@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.10.2'
+      tag: '1.11.0'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -64,6 +64,11 @@ class Githubbuild < Formula
     sha256 '9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962'
   end
 
+  resource 'docile' do
+    url 'https://rubygems.org/gems/docile-1.4.1.gem'
+    sha256 '96159be799bfa73cdb721b840e9802126e4e03dfc26863db73647204c727f21e'
+  end
+
   resource 'drb' do
     url 'https://rubygems.org/gems/drb-2.2.3.gem'
     sha256 '0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373'
@@ -94,6 +99,11 @@ class Githubbuild < Formula
     sha256 'fe112755501b8d0466b5ada6cf50c8c3f41e897fa128ac5d263ec09eedc9f986'
   end
 
+  resource 'json-schema' do
+    url 'https://rubygems.org/gems/json-schema-6.1.0.gem'
+    sha256 '6bf70a2cfb6dfd5a06da28093fa8190f324c88eabd36a7f47097f227321dc702'
+  end
+
   resource 'language_server-protocol' do
     url 'https://rubygems.org/gems/language_server-protocol-3.17.0.5.gem'
     sha256 'fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc'
@@ -109,14 +119,19 @@ class Githubbuild < Formula
     sha256 '196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203'
   end
 
+  resource 'mcp' do
+    url 'https://rubygems.org/gems/mcp-0.7.1.gem'
+    sha256 'fa967895d6952bad0d981ea907731d8528d2c246d2079d56a9c8bae83d14f1c7'
+  end
+
   resource 'mini_mime' do
     url 'https://rubygems.org/gems/mini_mime-1.1.5.gem'
     sha256 '8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef'
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-6.0.1.gem'
-    sha256 '7854c74f48e2e975969062833adc4013f249a4b212f5e7b9d5c040bf838d54bb'
+    url 'https://rubygems.org/gems/minitest-6.0.2.gem'
+    sha256 'db6e57956f6ecc6134683b4c87467d6dd792323c7f0eea7b93f66bd284adbc3d'
   end
 
   resource 'multi_xml' do
@@ -135,8 +150,8 @@ class Githubbuild < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.10.1.gem'
-    sha256 '06f6a725d2cd91e5e7f2b7c32ba143631e1f7c8ae2fb918fc4cebec187e6a688'
+    url 'https://rubygems.org/gems/parser-3.3.10.2.gem'
+    sha256 '6f60c84aa4bdcedb6d1a2434b738fe8a8136807b6adc8f7f53b97da9bc4e9357'
   end
 
   resource 'prism' do
@@ -200,8 +215,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.84.1.gem'
-    sha256 '14cc626f355141f5a2ef53c10a68d66b13bb30639b26370a76559096cc6bcc1a'
+    url 'https://rubygems.org/gems/rubocop-1.85.0.gem'
+    sha256 '317407feb681a07d54f64d2f9e1d6b6af1ce7678e51cd658e3ad8bd66da48c01'
   end
 
   resource 'rubocop-ast' do
@@ -215,13 +230,13 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-graphql' do
-    url 'https://rubygems.org/gems/rubocop-graphql-1.5.6.gem'
-    sha256 '5bb25739d014cb9678edf306aa303705370b2b23c6fc54adbfff71fb6c45b4ba'
+    url 'https://rubygems.org/gems/rubocop-graphql-1.6.0.gem'
+    sha256 '60778e77cbb8384fff9795890d5e8012e82100c356ce15275a599ad341a728ce'
   end
 
   resource 'rubocop-minitest' do
-    url 'https://rubygems.org/gems/rubocop-minitest-0.38.2.gem'
-    sha256 '5a9dfb5a538973d0601aa51e59637d3998bb8df81233edf1ff421504c6280068'
+    url 'https://rubygems.org/gems/rubocop-minitest-0.39.1.gem'
+    sha256 '998398d6da4026d297f0f9bf709a1eac5f2b6947c24431f94af08138510cf7ed'
   end
 
   resource 'rubocop-performance' do
@@ -247,6 +262,21 @@ class Githubbuild < Formula
   resource 'securerandom' do
     url 'https://rubygems.org/gems/securerandom-0.4.1.gem'
     sha256 'cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1'
+  end
+
+  resource 'simplecov' do
+    url 'https://rubygems.org/gems/simplecov-0.22.0.gem'
+    sha256 'fe2622c7834ff23b98066bb0a854284b2729a569ac659f82621fc22ef36213a5'
+  end
+
+  resource 'simplecov-html' do
+    url 'https://rubygems.org/gems/simplecov-html-0.13.2.gem'
+    sha256 'bd0b8e54e7c2d7685927e8d6286466359b6f16b18cb0df47b508e8d73c777246'
+  end
+
+  resource 'simplecov_json_formatter' do
+    url 'https://rubygems.org/gems/simplecov_json_formatter-0.1.4.gem'
+    sha256 '529418fbe8de1713ac2b2d612aa3daa56d316975d307244399fa4838c601b428'
   end
 
   resource 'stringio' do
