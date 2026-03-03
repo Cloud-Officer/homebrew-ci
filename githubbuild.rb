@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.13.0'
+      tag: '1.14.0'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -165,8 +165,8 @@ class Githubbuild < Formula
   end
 
   resource 'public_suffix' do
-    url 'https://rubygems.org/gems/public_suffix-7.0.2.gem'
-    sha256 '9114090c8e4e7135c1fd0e7acfea33afaab38101884320c65aaa0ffb8e26a857'
+    url 'https://rubygems.org/gems/public_suffix-7.0.5.gem'
+    sha256 '1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623'
   end
 
   resource 'racc' do
