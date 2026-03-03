@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.12.1'
+      tag: '1.13.0'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -120,8 +120,8 @@ class Githubbuild < Formula
   end
 
   resource 'mcp' do
-    url 'https://rubygems.org/gems/mcp-0.7.1.gem'
-    sha256 'fa967895d6952bad0d981ea907731d8528d2c246d2079d56a9c8bae83d14f1c7'
+    url 'https://rubygems.org/gems/mcp-0.8.0.gem'
+    sha256 'ae8bd146bb8e168852866fd26f805f52744f6326afb3211e073f78a95e0c34fb'
   end
 
   resource 'mini_mime' do
@@ -205,8 +205,8 @@ class Githubbuild < Formula
   end
 
   resource 'rspec-mocks' do
-    url 'https://rubygems.org/gems/rspec-mocks-3.13.7.gem'
-    sha256 '0979034e64b1d7a838aaaddf12bf065ea4dc40ef3d4c39f01f93ae2c66c62b1c'
+    url 'https://rubygems.org/gems/rspec-mocks-3.13.8.gem'
+    sha256 '086ad3d3d17533f4237643de0b5c42f04b66348c28bf6b9c2d3f4a3b01af1d47'
   end
 
   resource 'rspec-support' do
