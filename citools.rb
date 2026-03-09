@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.5.6'
+      tag: '1.6.0'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -38,8 +38,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1221.0.gem'
-    sha256 'f09304480191f5ff03f8994705067779bc8fe5b4731183ce45f092afb706e8eb'
+    url 'https://rubygems.org/gems/aws-partitions-1.1223.0.gem'
+    sha256 'cdc1b936c2d343c4235f8a0a276bfc27ce17b389b1848a70479b9a686e1f48f3'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -63,13 +63,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.242.0.gem'
-    sha256 'c17b3003acc78d80c1a8437b285a1cfc5e4d7749ce7821cf3071e847535a29a0'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.243.0.gem'
+    sha256 'a014eef785124b71d28325783fa422a1512f8421ec9b6e3931c8b0ca3fbb0f1c'
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.606.0.gem'
-    sha256 '6e578f87771217a681b967da7aa355a3968dcfa130fd22a8d82f5309056bc840'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.607.0.gem'
+    sha256 'f4e1e170bf9359d393f1818a17a3b7e243f99cce54e8003543adfc2cd6b3825e'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -143,13 +143,13 @@ class Citools < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.18.1.gem'
-    sha256 'fe112755501b8d0466b5ada6cf50c8c3f41e897fa128ac5d263ec09eedc9f986'
+    url 'https://rubygems.org/gems/json-2.19.1.gem'
+    sha256 'dd94fdc59e48bff85913829a32350b3148156bc4fd2a95a2568a78b11344082d'
   end
 
   resource 'json-schema' do
-    url 'https://rubygems.org/gems/json-schema-6.1.0.gem'
-    sha256 '6bf70a2cfb6dfd5a06da28093fa8190f324c88eabd36a7f47097f227321dc702'
+    url 'https://rubygems.org/gems/json-schema-6.2.0.gem'
+    sha256 'e8bff46ed845a22c1ab2bd0d7eccf831c01fe23bb3920caa4c74db4306813666'
   end
 
   resource 'language_server-protocol' do
