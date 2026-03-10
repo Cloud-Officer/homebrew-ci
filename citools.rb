@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.6.0'
+      tag: '1.6.1'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -78,8 +78,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-iam' do
-    url 'https://rubygems.org/gems/aws-sdk-iam-1.140.0.gem'
-    sha256 '7a6990342f3c8c39812459949e31ca5c94ee8be8fd9a410c508c2bce767aff9e'
+    url 'https://rubygems.org/gems/aws-sdk-iam-1.141.0.gem'
+    sha256 '2cf899022394cc3dcf234cf08a0bb7360886b111636b5909f6565a0f3292b595'
   end
 
   resource 'aws-sdk-kms' do
