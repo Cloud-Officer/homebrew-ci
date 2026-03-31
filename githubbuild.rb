@@ -4,14 +4,14 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.16.3'
+      tag: '1.17.0'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-8.1.2.gem'
-    sha256 '88842578ccd0d40f658289b0e8c842acfe9af751afee2e0744a7873f50b6fdae'
+    url 'https://rubygems.org/gems/activesupport-8.1.3.gem'
+    sha256 '21a5e0dfbd4c3ddd9e1317ec6a4d782fa226e7867dc70b0743acda81a1dca20e'
   end
 
   resource 'addressable' do
@@ -30,8 +30,8 @@ class Githubbuild < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-4.0.1.gem'
-    sha256 '8b07d3d065a9f921c80ceaea7c9d4ae596697295b584c296fe599dd0ad01c4a7'
+    url 'https://rubygems.org/gems/bigdecimal-4.1.0.gem'
+    sha256 '6dc07767aa3dc456ccd48e7ae70a07b474e9afd7c5bc576f80bd6da5c8dd6cae'
   end
 
   resource 'concurrent-ruby' do
@@ -95,13 +95,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.19.1.gem'
-    sha256 'dd94fdc59e48bff85913829a32350b3148156bc4fd2a95a2568a78b11344082d'
-  end
-
-  resource 'json-schema' do
-    url 'https://rubygems.org/gems/json-schema-6.2.0.gem'
-    sha256 'e8bff46ed845a22c1ab2bd0d7eccf831c01fe23bb3920caa4c74db4306813666'
+    url 'https://rubygems.org/gems/json-2.19.3.gem'
+    sha256 '289b0bb53052a1fa8c34ab33cc750b659ba14a5c45f3fcf4b18762dc67c78646'
   end
 
   resource 'language_server-protocol' do
@@ -117,11 +112,6 @@ class Githubbuild < Formula
   resource 'logger' do
     url 'https://rubygems.org/gems/logger-1.7.0.gem'
     sha256 '196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203'
-  end
-
-  resource 'mcp' do
-    url 'https://rubygems.org/gems/mcp-0.8.0.gem'
-    sha256 'ae8bd146bb8e168852866fd26f805f52744f6326afb3211e073f78a95e0c34fb'
   end
 
   resource 'mini_mime' do
@@ -150,8 +140,8 @@ class Githubbuild < Formula
   end
 
   resource 'parser' do
-    url 'https://rubygems.org/gems/parser-3.3.10.2.gem'
-    sha256 '6f60c84aa4bdcedb6d1a2434b738fe8a8136807b6adc8f7f53b97da9bc4e9357'
+    url 'https://rubygems.org/gems/parser-3.3.11.1.gem'
+    sha256 'd17ace7aabe3e72c3cc94043714be27cc6f852f104d81aa284c2281aecc65d54'
   end
 
   resource 'prism' do
@@ -215,8 +205,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.85.1.gem'
-    sha256 '3dbcf9e961baa4c376eeeb2a03913dca5e3987033b04d38fa538aa1e7406cc77'
+    url 'https://rubygems.org/gems/rubocop-1.86.0.gem'
+    sha256 '4ff1186fe16ebe9baff5e7aad66bb0ad4cabf5cdcd419f773146dbba2565d186'
   end
 
   resource 'rubocop-ast' do
@@ -305,8 +295,8 @@ class Githubbuild < Formula
   end
 
   resource 'webmock' do
-    url 'https://rubygems.org/gems/webmock-3.26.1.gem'
-    sha256 '4f696fb57c90a827c20aadb2d4f9058bbff10f7f043bd0d4c3f58791143b1cd7'
+    url 'https://rubygems.org/gems/webmock-3.26.2.gem'
+    sha256 '774556f2ea6371846cca68c01769b2eac0d134492d21f6d0ab5dd643965a4c90'
   end
 
   def install
