@@ -137,6 +137,35 @@ for file in "${!files_to_dirs[@]}"; do
 
   echo "Current tag in ${file}: ${current_tag}"
 
+  # Navigate to the source repository for pre-flight checks
+  pushd "${cloud_officer_dir}/${directory}" >/dev/null
+
+  # Check for uncommitted changes in the source repository
+  if ! git diff-index --quiet HEAD --; then
+    echo "Warning: ${directory} has uncommitted changes. Please commit them first."
+    exit 1
+  fi
+
+  # Pull latest changes from remote
+  echo "Pulling latest changes in ${directory}..."
+  if ! git pull; then
+    echo "Warning: Failed to pull latest changes in ${directory}"
+    exit 1
+  fi
+
+  # Check for open pull requests
+  if ! open_prs=$(gh pr list --state open --json number --jq 'length' 2>&1); then
+    echo "Warning: Failed to check open pull requests in ${directory}: ${open_prs}"
+    exit 1
+  fi
+
+  if [ -n "${open_prs}" ] && [ "${open_prs}" -gt 0 ]; then
+    echo "Warning: ${directory} has ${open_prs} open pull request(s). Please close or merge them first."
+    exit 1
+  fi
+
+  popd >/dev/null
+
   # Check if source repo has new commits since the current tag
   source_repo_has_changes=false
   if has_commits_since_tag "${current_tag}" "${cloud_officer_dir}/${directory}"; then
@@ -194,35 +223,18 @@ for file in "${!files_to_dirs[@]}"; do
     # Navigate to the source repository
     pushd "${cloud_officer_dir}/${directory}" >/dev/null
 
-    # Check for uncommitted changes in the source repository
-    if ! git diff-index --quiet HEAD --; then
-      echo "Warning: ${directory} has uncommitted changes. Please commit them first."
-      exit 1
-    fi
-
-    # Pull latest changes from remote
-    echo "Pulling latest changes in ${directory}..."
-    if ! git pull; then
-      echo "Warning: Failed to pull latest changes in ${directory}"
-      exit 1
-    fi
-
-    # Check for open pull requests
-    open_prs=$(gh pr list --state open --json number --jq 'length')
-
-    if [ "${open_prs}" -gt 0 ]; then
-      echo "Warning: ${directory} has ${open_prs} open pull request(s). Please close or merge them first."
-      exit 1
-    fi
-
-    # Create the new tag
-    echo "Creating tag ${new_tag} in ${directory}..."
-    if git tag "${new_tag}"; then
-      git push origin "${new_tag}"
-      echo "Tag ${new_tag} created successfully"
+    # Create the new tag if it doesn't already exist
+    if git rev-parse "${new_tag}" >/dev/null 2>&1; then
+      echo "Tag ${new_tag} already exists in ${directory}, skipping tag creation"
     else
-      echo "Warning: Failed to create tag ${new_tag}"
-      exit 1
+      echo "Creating tag ${new_tag} in ${directory}..."
+      if git tag "${new_tag}"; then
+        git push origin "${new_tag}"
+        echo "Tag ${new_tag} created successfully"
+      else
+        echo "Warning: Failed to create tag ${new_tag}"
+        exit 1
+      fi
     fi
 
     popd >/dev/null
