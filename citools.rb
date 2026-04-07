@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.6.4'
+      tag: '1.6.5'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -33,8 +33,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1233.0.gem'
-    sha256 '928d3486082db11659397eb4c957f41e33fac8848bf87eb42fd921bbb96213c2'
+    url 'https://rubygems.org/gems/aws-partitions-1.1235.0.gem'
+    sha256 '84eb9aec5c532c7c0aa008f5ebe4cac38488fa008da20aac1ae3e49eaf3f6240'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -53,8 +53,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.142.0.gem'
-    sha256 'ac83fdb91d2884989fc3beb6686f45d22e6c339018ba81cf97f857a04b67790b'
+    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.144.0.gem'
+    sha256 '0e54050bb68f161befef33d714c80c48b3c5bca39e0d00db079ab0c4c7acbc8a'
   end
 
   resource 'aws-sdk-core' do
@@ -103,8 +103,8 @@ class Citools < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-4.1.0.gem'
-    sha256 '6dc07767aa3dc456ccd48e7ae70a07b474e9afd7c5bc576f80bd6da5c8dd6cae'
+    url 'https://rubygems.org/gems/bigdecimal-4.1.1.gem'
+    sha256 '1c09efab961da45203c8316b0cdaec0ff391dfadb952dd459584b63ebf8054ca'
   end
 
   resource 'csv' do
@@ -209,8 +209,8 @@ class Citools < Formula
   end
 
   resource 'parallel' do
-    url 'https://rubygems.org/gems/parallel-1.27.0.gem'
-    sha256 '4ac151e1806b755fb4e2dc2332cbf0e54f2e24ba821ff2d3dcf86bf6dc4ae130'
+    url 'https://rubygems.org/gems/parallel-1.28.0.gem'
+    sha256 '33e6de1484baf2524792d178b0913fc8eb94c628d6cfe45599ad4458c638c970'
   end
 
   resource 'parser' do
@@ -234,8 +234,8 @@ class Citools < Formula
   end
 
   resource 'regexp_parser' do
-    url 'https://rubygems.org/gems/regexp_parser-2.11.3.gem'
-    sha256 'ca13f381a173b7a93450e53459075c9b76a10433caadcb2f1180f2c741fc55a4'
+    url 'https://rubygems.org/gems/regexp_parser-2.12.0.gem'
+    sha256 '35a916a1d63190ab5c9009457136ae5f3c0c7512d60291d0d1378ba18ce08ebb'
   end
 
   resource 'rspec' do
