@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.6.5'
+      tag: '1.7.0'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -33,8 +33,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1235.0.gem'
-    sha256 '84eb9aec5c532c7c0aa008f5ebe4cac38488fa008da20aac1ae3e49eaf3f6240'
+    url 'https://rubygems.org/gems/aws-partitions-1.1237.0.gem'
+    sha256 '9b82f529b69ad83a8e4c5e123038924ed5e8f59bd6064a293ef20efc63364841'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -63,8 +63,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.610.0.gem'
-    sha256 'f73d949135910502bf81408a24e7ed6aaff78f66a05e24a1e9ac6ad0aec4b0f8'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.611.0.gem'
+    sha256 'e6d713381e4057a46a8144f4aa582bb59dde55426f9675d3dabd3f9c3a1f9bfd'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -83,8 +83,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.176.0.gem'
-    sha256 '0562c2816dcb6dbca3c0d416b180ea71f296eb8034acd87a95d2ab9e1d00e545'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.177.0.gem'
+    sha256 'fbbb672506b4df68a96ec08fa914a8ae818f3ec03e57d3d8176e0bc7f5b11b32'
   end
 
   resource 'aws-sdk-ssm' do
@@ -209,8 +209,8 @@ class Citools < Formula
   end
 
   resource 'parallel' do
-    url 'https://rubygems.org/gems/parallel-1.28.0.gem'
-    sha256 '33e6de1484baf2524792d178b0913fc8eb94c628d6cfe45599ad4458c638c970'
+    url 'https://rubygems.org/gems/parallel-2.0.0.gem'
+    sha256 '66c68ec5aac0827e742aa34458aa6af20c98e0f3d79f7735da700f3367471c95'
   end
 
   resource 'parser' do
@@ -264,8 +264,8 @@ class Citools < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.86.0.gem'
-    sha256 '4ff1186fe16ebe9baff5e7aad66bb0ad4cabf5cdcd419f773146dbba2565d186'
+    url 'https://rubygems.org/gems/rubocop-1.86.1.gem'
+    sha256 '44415f3f01d01a21e01132248d2fd0867572475b566ca188a0a42133a08d4531'
   end
 
   resource 'rubocop-ast' do
