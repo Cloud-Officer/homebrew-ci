@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.0'
+      tag: '1.7.1'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -209,8 +209,8 @@ class Citools < Formula
   end
 
   resource 'parallel' do
-    url 'https://rubygems.org/gems/parallel-2.0.0.gem'
-    sha256 '66c68ec5aac0827e742aa34458aa6af20c98e0f3d79f7735da700f3367471c95'
+    url 'https://rubygems.org/gems/parallel-2.0.1.gem'
+    sha256 '337782d3e39f4121e67563bf91dd8ece67f48923d90698614773a0ec9a5b2c7d'
   end
 
   resource 'parser' do
