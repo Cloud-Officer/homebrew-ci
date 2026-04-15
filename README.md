@@ -14,10 +14,30 @@
 
 This repository contains homebrew formulae for shared tools used locally or in CI pipelines.
 
+### Features
+
+* **citools** - continuous integration tools including linters, AWS key rotation, deployments, and more
+* **github-build** - GitHub Actions build file generator
+* **soup** - software of unknown provenance licenses checker
+
+These formulae are intended for developers and DevOps engineers who need consistent CI/CD tooling across local and pipeline environments.
+
 ## Installation
+
+### Prerequisites
+
+* [Homebrew](https://brew.sh/)
+
+### Install
 
 ```bash
 brew install cloud-officer/ci/<formula>
+```
+
+### Verify
+
+```bash
+brew list --versions cloud-officer/ci/<formula>
 ```
 
 ## Usage
