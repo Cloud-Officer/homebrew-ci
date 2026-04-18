@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.4'
+      tag: '1.7.5'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -33,13 +33,13 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1238.0.gem'
-    sha256 'fa3d1bdea6d7e7619e8cee22ebce8a569d2119296d3ec8c5f9b9b7c81fb0602c'
+    url 'https://rubygems.org/gems/aws-partitions-1.1240.0.gem'
+    sha256 'b885b21712fdad699c56a28434756ed27f1389b07231320796dda9e7551de4a7'
   end
 
   resource 'aws-sdk-autoscaling' do
-    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.156.0.gem'
-    sha256 'a0b34b4401fb58dc59ac1faf7a3d79fa4dc2c3cf45f1c560154a32cc6143c0ae'
+    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.157.0.gem'
+    sha256 '74ce96f2d557e942d8ac6e4f11982df6b7319bbb81b9dd33349789e4f344fac7'
   end
 
   resource 'aws-sdk-cloudformation' do
@@ -53,13 +53,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.144.0.gem'
-    sha256 '0e54050bb68f161befef33d714c80c48b3c5bca39e0d00db079ab0c4c7acbc8a'
+    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.145.0.gem'
+    sha256 '37cc5b724215c33d5289946a32985d64973fe7765d6dc841a57d1adb8222a861'
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.244.0.gem'
-    sha256 '3e458c078b0c5bdee95bc370c3a483374b3224cf730c1f9f0faf849a5d9a18ea'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.245.0.gem'
+    sha256 '94f43b40508c346f1625b3d31f811c5841b667c92de14d5fb3c473b1284cb4ad'
   end
 
   resource 'aws-sdk-ec2' do
