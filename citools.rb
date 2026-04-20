@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.5'
+      tag: '1.7.6'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -103,8 +103,8 @@ class Citools < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-4.1.1.gem'
-    sha256 '1c09efab961da45203c8316b0cdaec0ff391dfadb952dd459584b63ebf8054ca'
+    url 'https://rubygems.org/gems/bigdecimal-4.1.2.gem'
+    sha256 '53d217666027eab4280346fba98e7d5b66baaae1b9c3c1c0ffe89d48188a3fbd'
   end
 
   resource 'csv' do
@@ -138,8 +138,8 @@ class Citools < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.19.3.gem'
-    sha256 '289b0bb53052a1fa8c34ab33cc750b659ba14a5c45f3fcf4b18762dc67c78646'
+    url 'https://rubygems.org/gems/json-2.19.4.gem'
+    sha256 '670a7d333fb3b18ca5b29cb255eb7bef099e40d88c02c80bd42a3f30fe5239ac'
   end
 
   resource 'language_server-protocol' do
