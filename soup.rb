@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.6.19'
+      tag: '1.6.20'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -110,8 +110,8 @@ class Soup < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-6.0.4.gem'
-    sha256 'df1304664589d40f46089247fdc451f866b0ce0d7cae1457a15fc1eb7d48dca1'
+    url 'https://rubygems.org/gems/minitest-6.0.5.gem'
+    sha256 'f007d7246bf4feea549502842cd7c6aba8851cdc9c90ba06de9c476c0d01155c'
   end
 
   resource 'multi_xml' do
@@ -161,8 +161,8 @@ class Soup < Formula
   end
 
   resource 'parallel' do
-    url 'https://rubygems.org/gems/parallel-2.0.1.gem'
-    sha256 '337782d3e39f4121e67563bf91dd8ece67f48923d90698614773a0ec9a5b2c7d'
+    url 'https://rubygems.org/gems/parallel-2.1.0.gem'
+    sha256 'b35258865c2e31134c5ecb708beaaf6772adf9d5efae28e93e99260877b09356'
   end
 
   resource 'parser' do
