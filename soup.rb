@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.6.20'
+      tag: '1.6.21'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -122,8 +122,8 @@ class Soup < Formula
   on_linux do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.2-aarch64-linux-gnu.gem'
-        sha256 'c34d5c8208025587554608e98fd88ab125b29c80f9352b821964e9a5d5cfbd19'
+        url 'https://rubygems.org/gems/nokogiri-1.19.3-aarch64-linux-gnu.gem'
+        sha256 '46b89e5d7b9e844c2ee360794240c6ea2a4e6fa0c5892a4ed487db621224b639'
       end
     end
   end
@@ -131,8 +131,8 @@ class Soup < Formula
   on_macos do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.2-arm64-darwin.gem'
-        sha256 '58d8ea2e31a967b843b70487a44c14c8ba1866daa1b9da9be9dbdf1b43dee205'
+        url 'https://rubygems.org/gems/nokogiri-1.19.3-arm64-darwin.gem'
+        sha256 '71b9bd424b1b7abc18b05052a1a3cfd3627abdca62be280854cc411791357e42'
       end
     end
   end
@@ -140,8 +140,8 @@ class Soup < Formula
   on_macos do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.2-x86_64-darwin.gem'
-        sha256 '7d9af11fda72dfaa2961d8c4d5380ca0b51bc389dc5f8d4b859b9644f195e7a4'
+        url 'https://rubygems.org/gems/nokogiri-1.19.3-x86_64-darwin.gem'
+        sha256 '77f3fba57d46c53ab31e62fc6c28f705109d1bf6264356c76f132b2be5728d4d'
       end
     end
   end
@@ -149,8 +149,8 @@ class Soup < Formula
   on_linux do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.2-x86_64-linux-gnu.gem'
-        sha256 'fa8feca882b73e871a9845f3817a72e9734c8e974bdc4fbad6e4bc6e8076b94f'
+        url 'https://rubygems.org/gems/nokogiri-1.19.3-x86_64-linux-gnu.gem'
+        sha256 '2f5078620fe12e83669b5b17311b32532a8153d02eee7ad06948b926d6080976'
       end
     end
   end
