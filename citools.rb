@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.8'
+      tag: '1.7.9'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -33,8 +33,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1241.0.gem'
-    sha256 'cd0efc435de2782e8bdc77ae76bdafe70f493d54398071a88dbb1e1d32026cbe'
+    url 'https://rubygems.org/gems/aws-partitions-1.1243.0.gem'
+    sha256 '2751071202381b7bb115a1f592d699c73bb5ac9ad4e5aece6a14b1dabc265c43'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -48,8 +48,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudfront' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.143.0.gem'
-    sha256 '2a5bd39a6d849dbe793ffb20db909aee1bbe7692f8d0a44435e46b32ca7382fb'
+    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.144.0.gem'
+    sha256 '472b94c5b6699dab4dbfaf7e8c985211958b4d736e8b874d5be7a09a533d8475'
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
@@ -274,8 +274,8 @@ class Citools < Formula
   end
 
   resource 'rubocop-capybara' do
-    url 'https://rubygems.org/gems/rubocop-capybara-2.22.1.gem'
-    sha256 'ced88caef23efea53f46e098ff352f8fc1068c649606ca75cb74650970f51c0c'
+    url 'https://rubygems.org/gems/rubocop-capybara-2.23.0.gem'
+    sha256 'f9ea1ba3a7561ee8e88cf76fc378ce517ce5327155f305ee7b5c2500e5aee357'
   end
 
   resource 'rubocop-graphql' do
