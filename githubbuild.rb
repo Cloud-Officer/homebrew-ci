@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.21.0'
+      tag: '1.21.1'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -95,8 +95,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.19.4.gem'
-    sha256 '670a7d333fb3b18ca5b29cb255eb7bef099e40d88c02c80bd42a3f30fe5239ac'
+    url 'https://rubygems.org/gems/json-2.19.5.gem'
+    sha256 '218a18553e4801d579ca7e0f5bc72bafd776d7397238a1fb4e74db5b0a812c59'
   end
 
   resource 'language_server-protocol' do
@@ -120,13 +120,13 @@ class Githubbuild < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-6.0.5.gem'
-    sha256 'f007d7246bf4feea549502842cd7c6aba8851cdc9c90ba06de9c476c0d01155c'
+    url 'https://rubygems.org/gems/minitest-6.0.6.gem'
+    sha256 '153ea36d1d987a62942382b61075745042a2b3123b1cd48f4c3675af9cc7d6f1'
   end
 
   resource 'multi_xml' do
-    url 'https://rubygems.org/gems/multi_xml-0.8.1.gem'
-    sha256 'addba0290bac34e9088bfe73dc4878530297a82a7bbd66cb44dcd0a4b86edf5a'
+    url 'https://rubygems.org/gems/multi_xml-0.9.0.gem'
+    sha256 '7b6baedb68d1853b1a23b493b78aeee0b80d79bab94e144e63a1b84c9a9df9ca'
   end
 
   resource 'optparse' do
