@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.21.1'
+      tag: '1.21.2'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -125,8 +125,8 @@ class Githubbuild < Formula
   end
 
   resource 'multi_xml' do
-    url 'https://rubygems.org/gems/multi_xml-0.9.0.gem'
-    sha256 '7b6baedb68d1853b1a23b493b78aeee0b80d79bab94e144e63a1b84c9a9df9ca'
+    url 'https://rubygems.org/gems/multi_xml-0.9.1.gem'
+    sha256 '7ce766b59c17241ed62976caeae1fae9b2431b263398c35396239a68c4a64e57'
   end
 
   resource 'optparse' do

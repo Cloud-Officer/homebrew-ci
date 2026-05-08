@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.10'
+      tag: '1.7.11'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -33,8 +33,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1244.0.gem'
-    sha256 'e6e5ded095e3bd775db3b64f84533e1ddf7c74f070b3d0373f08dc77c8c3592b'
+    url 'https://rubygems.org/gems/aws-partitions-1.1246.0.gem'
+    sha256 '809cd7d38b7ba4ea651c9879248ecf9fd0f8289412e76f26478d2b37064faa1d'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -48,13 +48,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudfront' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.144.0.gem'
-    sha256 '472b94c5b6699dab4dbfaf7e8c985211958b4d736e8b874d5be7a09a533d8475'
+    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.145.0.gem'
+    sha256 '2abc2fe7e7076613dbaf338c6af81a48f56790b3fbf6ee628320f68e1ebf598e'
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.148.0.gem'
-    sha256 '25ebb7268c8a1019efc339ae252e7a8b36ef3763c67ad5bd1181bff28f1940c1'
+    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.149.0.gem'
+    sha256 '84315bc3759fcaab50d18711015da4bfa560cacbcb0310631b606f55de673a17'
   end
 
   resource 'aws-sdk-core' do
@@ -63,8 +63,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.613.0.gem'
-    sha256 '8898cdeb594b872a01ef4093c20c7a159065388144f084848e953fec34610b27'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.615.0.gem'
+    sha256 '3a238f6f3c95df4587a4d34a6ca972c4376ec9354abf483b06632b7a30a0a8c0'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -163,8 +163,8 @@ class Citools < Formula
   end
 
   resource 'multi_xml' do
-    url 'https://rubygems.org/gems/multi_xml-0.9.0.gem'
-    sha256 '7b6baedb68d1853b1a23b493b78aeee0b80d79bab94e144e63a1b84c9a9df9ca'
+    url 'https://rubygems.org/gems/multi_xml-0.9.1.gem'
+    sha256 '7ce766b59c17241ed62976caeae1fae9b2431b263398c35396239a68c4a64e57'
   end
 
   on_linux do

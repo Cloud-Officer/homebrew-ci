@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.6.23'
+      tag: '1.6.24'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -115,8 +115,8 @@ class Soup < Formula
   end
 
   resource 'multi_xml' do
-    url 'https://rubygems.org/gems/multi_xml-0.9.0.gem'
-    sha256 '7b6baedb68d1853b1a23b493b78aeee0b80d79bab94e144e63a1b84c9a9df9ca'
+    url 'https://rubygems.org/gems/multi_xml-0.9.1.gem'
+    sha256 '7ce766b59c17241ed62976caeae1fae9b2431b263398c35396239a68c4a64e57'
   end
 
   on_linux do
