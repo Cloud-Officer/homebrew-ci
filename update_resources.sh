@@ -140,8 +140,11 @@ for file in "${!files_to_dirs[@]}"; do
   # Navigate to the source repository for pre-flight checks
   pushd "${cloud_officer_dir}/${directory}" >/dev/null
 
-  # Check for uncommitted changes in the source repository
-  if ! git diff-index --quiet HEAD --; then
+  # Check for uncommitted changes in the source repository.
+  # Refresh the index first so stat-only differences (mtime/ctime changes from
+  # earlier git operations or file copies) don't produce false positives.
+  git update-index --refresh >/dev/null 2>&1 || true
+  if [ -n "$(git status --porcelain)" ]; then
     echo "Warning: ${directory} has uncommitted changes. Please commit them first."
     exit 1
   fi
