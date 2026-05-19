@@ -21,6 +21,9 @@ permissions:
 env:
   RUBY-BUNDLER-CACHE: 'true'
   RUBY-VERSION: 4.0.0
+concurrency:
+  group: build-${{github.ref}}
+  cancel-in-progress: true
 jobs:
   variables:
     name: Prepare Variables
