@@ -364,10 +364,14 @@ class Citools < Formula
   end
 
   def install
-    bin.install('brew-resources.rb')
-    bin.install('cycle-keys.rb')
-    bin.install('deploy.rb')
-    bin.install('encrypt-logs.rb')
+    # Ruby scripts that `require_relative 'lib/cli_main'` live in libexec next
+    # to the lib/ directory so the relative require resolves; bin only gets the
+    # bash wrappers below. Standalone tools with no lib/ dependency stay in bin.
+    libexec.install('brew-resources.rb')
+    libexec.install('cycle-keys.rb')
+    libexec.install('deploy.rb')
+    libexec.install('encrypt-logs.rb')
+    libexec.install('lib')
     bin.install('generate-codeowners')
     bin.install('linters')
     bin.install('ssm-jump')
@@ -393,7 +397,7 @@ class Citools < Formula
       export GEM_HOME="#{libexec}/vendor"
       export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/brew-resources.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/brew-resources.rb" "$@"
     SHELL
   end
 
@@ -403,7 +407,7 @@ class Citools < Formula
       export GEM_HOME="#{libexec}/vendor"
       export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/cycle-keys.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/cycle-keys.rb" "$@"
     SHELL
   end
 
@@ -413,7 +417,7 @@ class Citools < Formula
       export GEM_HOME="#{libexec}/vendor"
       export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/deploy.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/deploy.rb" "$@"
     SHELL
   end
 
@@ -423,7 +427,7 @@ class Citools < Formula
       export GEM_HOME="#{libexec}/vendor"
       export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/encrypt-logs.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/encrypt-logs.rb" "$@"
     SHELL
   end
 end
