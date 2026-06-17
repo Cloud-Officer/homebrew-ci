@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.9.8'
+      tag: '1.9.9'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -35,8 +35,8 @@ class Soup < Formula
   end
 
   resource 'concurrent-ruby' do
-    url 'https://rubygems.org/gems/concurrent-ruby-1.3.6.gem'
-    sha256 '6b56837e1e7e5292f9864f34b69c5a2cbc75c0cf5338f1ce9903d10fa762d5ab'
+    url 'https://rubygems.org/gems/concurrent-ruby-1.3.7.gem'
+    sha256 '4412caec3a5ea2e5fdc52076724c071a81f2c0593d83b2ac8cbb8ca63b3151b0'
   end
 
   resource 'connection_pool' do
@@ -80,13 +80,13 @@ class Soup < Formula
   end
 
   resource 'i18n' do
-    url 'https://rubygems.org/gems/i18n-1.14.8.gem'
-    sha256 '285778639134865c5e0f6269e0b818256017e8cde89993fdfcbfb64d088824a5'
+    url 'https://rubygems.org/gems/i18n-1.15.0.gem'
+    sha256 'ed20037ed7ca75dd36ec486b5fb9696e8e0cfe48f4f80980017932d93e70527f'
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.19.8.gem'
-    sha256 '6354310fd76ef69b87d5bd1f38b40d730613baf90b6803d2d0a48f618d32dfaa'
+    url 'https://rubygems.org/gems/json-2.19.9.gem'
+    sha256 '9b9025b7cdddafa38d316eca0b2358488e42d417045c1b90d216a9fefe46b79a'
   end
 
   resource 'language_server-protocol' do
@@ -231,8 +231,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.87.0.gem'
-    sha256 'b9d9ddf55116a513f8ef2c7ae660662d8b49301f118d3f0df61865b33a5c188d'
+    url 'https://rubygems.org/gems/rubocop-1.88.0.gem'
+    sha256 'e420ddf1662d0ef34bc8a2910ac4b396a7ddda0b51a708264405241734b08e0b'
   end
 
   resource 'rubocop-ast' do
