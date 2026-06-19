@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.9.10'
+      tag: '1.9.11'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -122,8 +122,8 @@ class Soup < Formula
   on_linux do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.3-aarch64-linux-gnu.gem'
-        sha256 '46b89e5d7b9e844c2ee360794240c6ea2a4e6fa0c5892a4ed487db621224b639'
+        url 'https://rubygems.org/gems/nokogiri-1.19.4-aarch64-linux-gnu.gem'
+        sha256 '1269fb644a6de405057a53dd5c762b1209b43ca7424f839454d3dbc677c31a8f'
       end
     end
   end
@@ -131,8 +131,8 @@ class Soup < Formula
   on_macos do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.3-arm64-darwin.gem'
-        sha256 '71b9bd424b1b7abc18b05052a1a3cfd3627abdca62be280854cc411791357e42'
+        url 'https://rubygems.org/gems/nokogiri-1.19.4-arm64-darwin.gem'
+        sha256 'a46db9853286e6597b36ebc6953817d15acf3a299583eb3f89fdc6f91dd63527'
       end
     end
   end
@@ -140,8 +140,8 @@ class Soup < Formula
   on_macos do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.3-x86_64-darwin.gem'
-        sha256 '77f3fba57d46c53ab31e62fc6c28f705109d1bf6264356c76f132b2be5728d4d'
+        url 'https://rubygems.org/gems/nokogiri-1.19.4-x86_64-darwin.gem'
+        sha256 '7fd17057d3e1f00e9954a74b3cd76595d3d4a5ef233b7ed9599047c204f70551'
       end
     end
   end
@@ -149,8 +149,8 @@ class Soup < Formula
   on_linux do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.3-x86_64-linux-gnu.gem'
-        sha256 '2f5078620fe12e83669b5b17311b32532a8153d02eee7ad06948b926d6080976'
+        url 'https://rubygems.org/gems/nokogiri-1.19.4-x86_64-linux-gnu.gem'
+        sha256 '379fae440b28915e3f19d752ce2dcf8465ed2b2fbefd2a7ca0dd497bc981a06a'
       end
     end
   end
