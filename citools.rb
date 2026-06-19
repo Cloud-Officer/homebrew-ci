@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.26'
+      tag: '1.7.27'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -58,8 +58,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.155.0.gem'
-    sha256 '482b3a7cc131648919cab75853efe05bd8ff456f6cc7f7b2b7ae425f3d62b325'
+    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.156.0.gem'
+    sha256 '8e9e6854a2da907725c5bc517f15e0a90d9aaf945b7094883e66fb0b5049dc64'
   end
 
   resource 'aws-sdk-core' do
@@ -68,8 +68,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.623.0.gem'
-    sha256 '6c2ac281b4d3cf04caaa88f39045333cd89bc9b8fccf9fabadb9c1e3ee6cfbe0'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.624.0.gem'
+    sha256 '816002b667f4dc0c6f031f02b1a43b84d646db5f55cf248fc4fa531a11bcbd98'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -88,8 +88,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.183.0.gem'
-    sha256 '3dbf19f07e2d484108ec9e7f45c6482ee2f5f3023ee5df1434caa8a4d84f3ae4'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.184.0.gem'
+    sha256 '27078229843bcaf9a87386be96ff36bcbd5b3c77f8bcb0ac83fd1c22eddc9034'
   end
 
   resource 'aws-sdk-ssm' do
@@ -185,8 +185,8 @@ class Citools < Formula
   on_linux do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.3-aarch64-linux-gnu.gem'
-        sha256 '46b89e5d7b9e844c2ee360794240c6ea2a4e6fa0c5892a4ed487db621224b639'
+        url 'https://rubygems.org/gems/nokogiri-1.19.4-aarch64-linux-gnu.gem'
+        sha256 '1269fb644a6de405057a53dd5c762b1209b43ca7424f839454d3dbc677c31a8f'
       end
     end
   end
@@ -194,8 +194,8 @@ class Citools < Formula
   on_macos do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.3-arm64-darwin.gem'
-        sha256 '71b9bd424b1b7abc18b05052a1a3cfd3627abdca62be280854cc411791357e42'
+        url 'https://rubygems.org/gems/nokogiri-1.19.4-arm64-darwin.gem'
+        sha256 'a46db9853286e6597b36ebc6953817d15acf3a299583eb3f89fdc6f91dd63527'
       end
     end
   end
@@ -203,8 +203,8 @@ class Citools < Formula
   on_macos do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.3-x86_64-darwin.gem'
-        sha256 '77f3fba57d46c53ab31e62fc6c28f705109d1bf6264356c76f132b2be5728d4d'
+        url 'https://rubygems.org/gems/nokogiri-1.19.4-x86_64-darwin.gem'
+        sha256 '7fd17057d3e1f00e9954a74b3cd76595d3d4a5ef233b7ed9599047c204f70551'
       end
     end
   end
@@ -212,8 +212,8 @@ class Citools < Formula
   on_linux do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.3-x86_64-linux-gnu.gem'
-        sha256 '2f5078620fe12e83669b5b17311b32532a8153d02eee7ad06948b926d6080976'
+        url 'https://rubygems.org/gems/nokogiri-1.19.4-x86_64-linux-gnu.gem'
+        sha256 '379fae440b28915e3f19d752ce2dcf8465ed2b2fbefd2a7ca0dd497bc981a06a'
       end
     end
   end
