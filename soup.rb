@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.9.11'
+      tag: '1.9.12'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -80,8 +80,8 @@ class Soup < Formula
   end
 
   resource 'i18n' do
-    url 'https://rubygems.org/gems/i18n-1.15.1.gem'
-    sha256 '505ec5de1f4e6c8a2cb028ef9700ca495f117911643455721dee5abdca797255'
+    url 'https://rubygems.org/gems/i18n-1.15.2.gem'
+    sha256 '00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5'
   end
 
   resource 'json' do
