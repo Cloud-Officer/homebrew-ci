@@ -46,10 +46,6 @@ brew list --versions cloud-officer/ci/<formula>
 
 This formula installs the following tools:
 
-* brew-resources (check for gem dependencies and generate brew resources section for formulae)
-* cycle-keys (rotate AWS keys)
-* deploy (automate the ASG, spot fleet and Lambda deployments)
-* encrypt-logs (encrypt logs in AWS CloudWatch Logs)
 * generate-codeowners (generate codeowners file)
 * linters (run all linters)
 * ssm-jump (ssh to a host by name without VPN)
