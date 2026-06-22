@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.28'
+      tag: '1.7.29'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -299,8 +299,8 @@ class Citools < Formula
   end
 
   resource 'rubocop-capybara' do
-    url 'https://rubygems.org/gems/rubocop-capybara-2.23.0.gem'
-    sha256 'f9ea1ba3a7561ee8e88cf76fc378ce517ce5327155f305ee7b5c2500e5aee357'
+    url 'https://rubygems.org/gems/rubocop-capybara-3.0.0.gem'
+    sha256 '7a64655238acda7f8f3c87e37ac825a64c615a79c17c253f1a28270dc3768c4b'
   end
 
   resource 'rubocop-graphql' do
