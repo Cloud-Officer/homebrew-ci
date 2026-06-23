@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.24.12'
+      tag: '1.24.13'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -95,8 +95,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.19.9.gem'
-    sha256 '9b9025b7cdddafa38d316eca0b2358488e42d417045c1b90d216a9fefe46b79a'
+    url 'https://rubygems.org/gems/json-2.20.0.gem'
+    sha256 '9362bc6e55a952b056abf9167cf053358181c904cb70cd6eee0808ea830fc32b'
   end
 
   resource 'language_server-protocol' do

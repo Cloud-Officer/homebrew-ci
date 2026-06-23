@@ -46,6 +46,10 @@ brew list --versions cloud-officer/ci/<formula>
 
 This formula installs the following tools:
 
+* brew-resources (generate Homebrew resource stanzas from a Gemfile)
+* cycle-keys (rotate AWS access keys)
+* deploy (deployment tool)
+* encrypt-logs (encrypt logs)
 * generate-codeowners (generate codeowners file)
 * linters (run all linters)
 * ssm-jump (ssh to a host by name without VPN)

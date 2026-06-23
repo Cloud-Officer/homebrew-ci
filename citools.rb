@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.29'
+      tag: '1.7.30'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -38,8 +38,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1261.0.gem'
-    sha256 '89eda89781c1ea4e1be2a2dcdc72318c62c6171a01cdaeaa0cbecf3cea6f9fdc'
+    url 'https://rubygems.org/gems/aws-partitions-1.1262.0.gem'
+    sha256 '77e9b1dd3e8f616673f2959d2fc4e762065f83a43140e2cb82274525afbaccf7'
   end
 
   resource 'aws-sdk-autoscaling' do
@@ -58,8 +58,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.156.0.gem'
-    sha256 '8e9e6854a2da907725c5bc517f15e0a90d9aaf945b7094883e66fb0b5049dc64'
+    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.157.0.gem'
+    sha256 '5551c4e6cb4b1ed89612026c264551c9bb6c9b3e8af023d795941820cfbc2681'
   end
 
   resource 'aws-sdk-core' do
@@ -68,8 +68,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.624.0.gem'
-    sha256 '816002b667f4dc0c6f031f02b1a43b84d646db5f55cf248fc4fa531a11bcbd98'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.625.0.gem'
+    sha256 '4af293c8d1b5398bc3b8b68b48c6e9f63c5ae898bd2bfc56acb7842b3ea3c7e7'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -88,8 +88,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.184.0.gem'
-    sha256 '27078229843bcaf9a87386be96ff36bcbd5b3c77f8bcb0ac83fd1c22eddc9034'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.185.0.gem'
+    sha256 'ba0e6f083776ff7c3538999bff85e18458c1c182d82538453b84277efc27c50e'
   end
 
   resource 'aws-sdk-ssm' do
@@ -153,8 +153,8 @@ class Citools < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.19.9.gem'
-    sha256 '9b9025b7cdddafa38d316eca0b2358488e42d417045c1b90d216a9fefe46b79a'
+    url 'https://rubygems.org/gems/json-2.20.0.gem'
+    sha256 '9362bc6e55a952b056abf9167cf053358181c904cb70cd6eee0808ea830fc32b'
   end
 
   resource 'language_server-protocol' do
