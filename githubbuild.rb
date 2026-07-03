@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.24.16'
+      tag: '1.24.17'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -100,8 +100,8 @@ class Githubbuild < Formula
   end
 
   resource 'language_server-protocol' do
-    url 'https://rubygems.org/gems/language_server-protocol-3.17.0.5.gem'
-    sha256 'fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc'
+    url 'https://rubygems.org/gems/language_server-protocol-3.17.0.6.gem'
+    sha256 '5ef2c0c138f8267e1bc631d3328347d354f96724b0af22f2c79516120443b7f0'
   end
 
   resource 'lint_roller' do
@@ -205,8 +205,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.88.0.gem'
-    sha256 'e420ddf1662d0ef34bc8a2910ac4b396a7ddda0b51a708264405241734b08e0b'
+    url 'https://rubygems.org/gems/rubocop-1.88.1.gem'
+    sha256 '726af773d6bc169ed3ff852f3ca020b7c58d39c34e7a8d879a8e0147cc994f26'
   end
 
   resource 'rubocop-ast' do
