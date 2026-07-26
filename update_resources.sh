@@ -1,6 +1,26 @@
 #!/usr/bin/env bash
 set -e
 
+# This script uses associative arrays (declare -A), a bash 4 feature, and only
+# ever runs on macOS. `#!/usr/bin/env bash` resolves to the first bash on PATH,
+# which here is often Apple's bash 3.2 -- /bin precedes /opt/homebrew/bin
+# whenever /usr/libexec/path_helper runs after the shell profile (login
+# sh/bash, /etc/profile, some GUI-launched tools). Re-exec under a newer bash
+# rather than dying at the first `declare -A` with a bare usage message.
+if [ "${BASH_VERSINFO[0]}" -lt 4 ]; then
+  for candidate in /opt/homebrew/bin/bash /usr/local/bin/bash /usr/bin/bash; do
+    # shellcheck disable=SC2016
+    if [ -x "${candidate}" ] && [ "$("${candidate}" -c 'echo ${BASH_VERSINFO[0]}')" -ge 4 ]; then
+      # ${@+"${@}"} rather than "${@}": bash 3.2 treats the braced form as an
+      # unset variable under `set -u` when there are no positional parameters.
+      exec "${candidate}" "${0}" ${@+"${@}"}
+    fi
+  done
+
+  echo "fatal: update_resources.sh requires bash 4 or newer (running ${BASH_VERSION}); install it with 'brew install bash'" >&2
+  exit 1
+fi
+
 cloud_officer_dir="${HOME}/Downloads/cloud-officer"
 
 # try another location if cloud-officer directory is not found
