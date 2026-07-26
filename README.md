@@ -6,7 +6,7 @@
 * [Installation](#installation)
 * [Usage](#usage)
   * [citools](#citools)
-  * [github build](#github-build)
+  * [githubbuild](#githubbuild)
   * [soup](#soup)
 * [Contributing](#contributing)
 
@@ -30,8 +30,20 @@ These formulae are intended for developers and DevOps engineers who need consist
 
 ### Install
 
+The tap provides the following formulae:
+
+* `citools`
+* `githubbuild`
+* `soup`
+
 ```bash
 brew install cloud-officer/ci/<formula>
+```
+
+For example:
+
+```bash
+brew install cloud-officer/ci/citools
 ```
 
 ### Verify
@@ -57,7 +69,7 @@ This formula installs the following tools:
 
 See [ci-tools](https://github.com/Cloud-Officer/ci-tools) for more information.
 
-### github build
+### githubbuild
 
 This formula installs the following tools:
 
@@ -93,3 +105,15 @@ Pull requests are the best way to propose changes to the codebase. We actively w
 
 When you submit code changes, your submissions are understood to be under the same [License](LICENSE) that covers the
 project. Feel free to contact the maintainers if that's a concern.
+
+### Updating the formulae
+
+The formulae are kept in sync with their upstream repositories by `update_resources.sh`, which bumps each formula to the
+latest tag and regenerates its gem `resource` stanzas.
+
+```bash
+./update_resources.sh
+```
+
+The script requires bash 4 or newer (`brew install bash`) and expects the upstream repositories to be checked out
+alongside this one in a `cloud-officer` directory.
