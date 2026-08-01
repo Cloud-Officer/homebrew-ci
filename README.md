@@ -17,7 +17,7 @@ This repository contains homebrew formulae for shared tools used locally or in C
 ### Features
 
 * **citools** - continuous integration tools including linters, AWS key rotation, deployments, and more
-* **github-build** - GitHub Actions build file generator
+* **githubbuild** - GitHub Actions build file generator
 * **soup** - software of unknown provenance licenses checker
 
 These formulae are intended for developers and DevOps engineers who need consistent CI/CD tooling across local and pipeline environments.
@@ -115,5 +115,5 @@ latest tag and regenerates its gem `resource` stanzas.
 ./update_resources.sh
 ```
 
-The script requires bash 4 or newer (`brew install bash`) and expects the upstream repositories to be checked out
-alongside this one in a `cloud-officer` directory.
+The script requires bash 4 or newer (`brew install bash`) and expects the upstream repositories to be checked out in
+`~/Downloads/cloud-officer`, falling back to `../../cloud-officer` relative to the current directory.
