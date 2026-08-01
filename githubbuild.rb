@@ -4,14 +4,14 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.24.18'
+      tag: '1.24.19'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
 
   resource 'activesupport' do
-    url 'https://rubygems.org/gems/activesupport-8.1.3.gem'
-    sha256 '21a5e0dfbd4c3ddd9e1317ec6a4d782fa226e7867dc70b0743acda81a1dca20e'
+    url 'https://rubygems.org/gems/activesupport-8.1.3.1.gem'
+    sha256 '85458765f25ea48b9019c46b6bb3fa5683197bf4280d9f06710a6e8d7a831376'
   end
 
   resource 'addressable' do
@@ -50,8 +50,8 @@ class Githubbuild < Formula
   end
 
   resource 'csv' do
-    url 'https://rubygems.org/gems/csv-3.3.5.gem'
-    sha256 '6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f'
+    url 'https://rubygems.org/gems/csv-3.3.6.gem'
+    sha256 'aba61e7e507a66f03d45cb1f3c4b6359861c3504038b422962875dce099e4456'
   end
 
   resource 'date' do
@@ -90,8 +90,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.21.1.gem'
-    sha256 '13a43df75d95641443f5702dff350f237164a9d811ff0f2c2800d4d980220583'
+    url 'https://rubygems.org/gems/json-2.21.2.gem'
+    sha256 '1f1d3b7cf2b3ba1a69beca0bb6db13d5438b80bff3cd54cdaaa620b9b07c1c6a'
   end
 
   resource 'language_server-protocol' do
@@ -250,8 +250,8 @@ class Githubbuild < Formula
   end
 
   resource 'simplecov' do
-    url 'https://rubygems.org/gems/simplecov-1.0.2.gem'
-    sha256 'c6459434efe4b948b46477cc2df2faa73ab365f83a33c7c17f81262f4f7f1244'
+    url 'https://rubygems.org/gems/simplecov-1.0.3.gem'
+    sha256 '38ef0514f16ae7562f0d0f4df02610071115103d301b6de7dacbcc000082e39b'
   end
 
   resource 'stringio' do
