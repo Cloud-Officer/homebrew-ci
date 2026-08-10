@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.9.19'
+      tag: '1.9.20'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -186,8 +186,8 @@ class Soup < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.88.2.gem'
-    sha256 '8def251c90cd955feb4daa3edc0ab56893250c4ce90ef81e6c80c03f9a939bbf'
+    url 'https://rubygems.org/gems/rubocop-1.89.0.gem'
+    sha256 '4dee8e3ee9c45e474834efd9e8d6fd031e8331c8dacdff0de4ad65ae0a6faae7'
   end
 
   resource 'rubocop-ast' do
