@@ -3,12 +3,17 @@
 ## Table of Contents
 
 * [Introduction](#introduction)
+  * [Features](#features)
 * [Installation](#installation)
+  * [Prerequisites](#prerequisites)
+  * [Install](#install)
+  * [Verify](#verify)
 * [Usage](#usage)
   * [citools](#citools)
   * [githubbuild](#githubbuild)
   * [soup](#soup)
 * [Contributing](#contributing)
+  * [Updating the formulae](#updating-the-formulae)
 
 ## Introduction
 
