@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.25.1'
+      tag: '1.25.2'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -250,8 +250,8 @@ class Githubbuild < Formula
   end
 
   resource 'simplecov' do
-    url 'https://rubygems.org/gems/simplecov-1.0.3.gem'
-    sha256 '38ef0514f16ae7562f0d0f4df02610071115103d301b6de7dacbcc000082e39b'
+    url 'https://rubygems.org/gems/simplecov-1.1.0.gem'
+    sha256 '30f12f31a659c377ef402d5463a50eaf9037035fe1fac3d263cb389682cae1b4'
   end
 
   resource 'stringio' do

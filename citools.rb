@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.35'
+      tag: '1.7.36'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -329,8 +329,8 @@ class Citools < Formula
   end
 
   resource 'simplecov' do
-    url 'https://rubygems.org/gems/simplecov-1.0.3.gem'
-    sha256 '38ef0514f16ae7562f0d0f4df02610071115103d301b6de7dacbcc000082e39b'
+    url 'https://rubygems.org/gems/simplecov-1.1.0.gem'
+    sha256 '30f12f31a659c377ef402d5463a50eaf9037035fe1fac3d263cb389682cae1b4'
   end
 
   resource 'unicode-display_width' do
