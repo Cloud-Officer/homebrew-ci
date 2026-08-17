@@ -4,7 +4,7 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.9.21'
+      tag: '1.9.22'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -211,8 +211,8 @@ class Soup < Formula
   end
 
   resource 'rubocop-performance' do
-    url 'https://rubygems.org/gems/rubocop-performance-1.26.1.gem'
-    sha256 'cd19b936ff196df85829d264b522fd4f98b6c89ad271fa52744a8c11b8f71834'
+    url 'https://rubygems.org/gems/rubocop-performance-1.27.0.gem'
+    sha256 'eeeb1374d062a368ee1c787b70eb0b0cc4b184cb1f8565f424760946146d61ce'
   end
 
   resource 'rubocop-rspec' do
@@ -231,8 +231,8 @@ class Soup < Formula
   end
 
   resource 'simplecov' do
-    url 'https://rubygems.org/gems/simplecov-1.1.0.gem'
-    sha256 '30f12f31a659c377ef402d5463a50eaf9037035fe1fac3d263cb389682cae1b4'
+    url 'https://rubygems.org/gems/simplecov-1.1.1.gem'
+    sha256 '25825ef13f0b2e74694d769817dad6ab8e90131dabdaa666e522fea105521e78'
   end
 
   resource 'tty-color' do
