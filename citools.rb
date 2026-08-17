@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.36'
+      tag: '1.7.37'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -38,13 +38,13 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1279.0.gem'
-    sha256 '9baa4f75bca3e5efe4d4df27655ae640aaaa1f6e2d3cf59fda3dad19689ae435'
+    url 'https://rubygems.org/gems/aws-partitions-1.1281.0.gem'
+    sha256 '97fcc7d6a068ab790a1efcd8c6587c08fb108b4bed7ff1409cb47e0d642782ec'
   end
 
   resource 'aws-sdk-autoscaling' do
-    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.164.0.gem'
-    sha256 '7f31dad52348d8f5696324bb1da57aa8ccca68e4aa0027848ee596e97d70c68a'
+    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.165.0.gem'
+    sha256 'dec15e7799117e0294e30edbd4c31c40314bb0d6e24535c2f347f49ad56e7035'
   end
 
   resource 'aws-sdk-cloudformation' do
@@ -78,8 +78,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-iam' do
-    url 'https://rubygems.org/gems/aws-sdk-iam-1.151.0.gem'
-    sha256 'a72fedd6fc9e7f3a8f5822e9fe64b71632f2a2ec21a5fa260f9c303ef4be3bf2'
+    url 'https://rubygems.org/gems/aws-sdk-iam-1.152.0.gem'
+    sha256 '095b82645f45829d1798e6cf4d9172e3cc349e49a444a5fec4db247fff60aa58'
   end
 
   resource 'aws-sdk-kms' do
@@ -309,8 +309,8 @@ class Citools < Formula
   end
 
   resource 'rubocop-performance' do
-    url 'https://rubygems.org/gems/rubocop-performance-1.26.1.gem'
-    sha256 'cd19b936ff196df85829d264b522fd4f98b6c89ad271fa52744a8c11b8f71834'
+    url 'https://rubygems.org/gems/rubocop-performance-1.27.0.gem'
+    sha256 'eeeb1374d062a368ee1c787b70eb0b0cc4b184cb1f8565f424760946146d61ce'
   end
 
   resource 'rubocop-rspec' do
@@ -329,8 +329,8 @@ class Citools < Formula
   end
 
   resource 'simplecov' do
-    url 'https://rubygems.org/gems/simplecov-1.1.0.gem'
-    sha256 '30f12f31a659c377ef402d5463a50eaf9037035fe1fac3d263cb389682cae1b4'
+    url 'https://rubygems.org/gems/simplecov-1.1.1.gem'
+    sha256 '25825ef13f0b2e74694d769817dad6ab8e90131dabdaa666e522fea105521e78'
   end
 
   resource 'unicode-display_width' do
