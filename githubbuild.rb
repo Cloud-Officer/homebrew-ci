@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.25.3'
+      tag: '1.25.4'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -145,8 +145,8 @@ class Githubbuild < Formula
   end
 
   resource 'psych' do
-    url 'https://rubygems.org/gems/psych-5.4.0.gem'
-    sha256 '14f72d69a611af663d7d70e4a7b67d9eb1f3ae9f8d916b478961d5a0075ba5b7'
+    url 'https://rubygems.org/gems/psych-5.5.0.gem'
+    sha256 '4b245bbbd0f3238df8ccee766ebc1a6b062b10e4ee1d3284eb588739ba156a0a'
   end
 
   resource 'public_suffix' do
@@ -200,8 +200,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.89.0.gem'
-    sha256 '4dee8e3ee9c45e474834efd9e8d6fd031e8331c8dacdff0de4ad65ae0a6faae7'
+    url 'https://rubygems.org/gems/rubocop-1.90.0.gem'
+    sha256 '9eb4c065b5c5154e4ef554c547972f3905a9eb6b53e657e580b6796b54bf8242'
   end
 
   resource 'rubocop-ast' do
@@ -215,8 +215,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-graphql' do
-    url 'https://rubygems.org/gems/rubocop-graphql-1.7.0.gem'
-    sha256 'e78636d6e28d5852dce7cf863bda35e1d659f57dfeea1cd6f71f972751f25142'
+    url 'https://rubygems.org/gems/rubocop-graphql-1.8.0.gem'
+    sha256 'b3714aa5d9bbd1680d928439de71a0aa21e31318a0ae808d591ba8b40eb94745'
   end
 
   resource 'rubocop-minitest' do
@@ -280,8 +280,8 @@ class Githubbuild < Formula
   end
 
   resource 'webmock' do
-    url 'https://rubygems.org/gems/webmock-3.26.2.gem'
-    sha256 '774556f2ea6371846cca68c01769b2eac0d134492d21f6d0ab5dd643965a4c90'
+    url 'https://rubygems.org/gems/webmock-3.26.3.gem'
+    sha256 '77c612816bdcb2fc43db0e42fd98b19be7d4770fd708816fdde65a006664ddec'
   end
 
   def install

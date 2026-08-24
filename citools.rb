@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.37'
+      tag: '1.7.38'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -53,8 +53,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudfront' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.151.0.gem'
-    sha256 'e2f1b643befb9bd1966f65912932a2be92e5b3ea3436f48e5e89f83c62b5fefb'
+    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.152.0.gem'
+    sha256 'c1f3be14e00ba147a4e8b43085ff51baff8a48a5d26f052d2e11f9e6aec5ca98'
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
@@ -68,8 +68,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.636.0.gem'
-    sha256 'a7545b46a8d8ebbe56effad0e74ae963f9ac9847969bed38f2d8c0f475191fa8'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.638.0.gem'
+    sha256 'ea98ff935f7ea8e173910aa79d3f3442ec46bbbcbbda99681b96f493ca1d6800'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -88,8 +88,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.192.0.gem'
-    sha256 '1bf8a974ed8243d02e483960c44ac5484c29be713bcedaea0bac1f0bf560c085'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.193.0.gem'
+    sha256 'ab7e4f0cf41447eac9ae380cec40d8077e9d5ac8eec4006f8fbc3382240100af'
   end
 
   resource 'aws-sdk-ssm' do
@@ -284,8 +284,8 @@ class Citools < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.89.0.gem'
-    sha256 '4dee8e3ee9c45e474834efd9e8d6fd031e8331c8dacdff0de4ad65ae0a6faae7'
+    url 'https://rubygems.org/gems/rubocop-1.90.0.gem'
+    sha256 '9eb4c065b5c5154e4ef554c547972f3905a9eb6b53e657e580b6796b54bf8242'
   end
 
   resource 'rubocop-ast' do
@@ -299,8 +299,8 @@ class Citools < Formula
   end
 
   resource 'rubocop-graphql' do
-    url 'https://rubygems.org/gems/rubocop-graphql-1.7.0.gem'
-    sha256 'e78636d6e28d5852dce7cf863bda35e1d659f57dfeea1cd6f71f972751f25142'
+    url 'https://rubygems.org/gems/rubocop-graphql-1.8.0.gem'
+    sha256 'b3714aa5d9bbd1680d928439de71a0aa21e31318a0ae808d591ba8b40eb94745'
   end
 
   resource 'rubocop-minitest' do
@@ -344,8 +344,8 @@ class Citools < Formula
   end
 
   resource 'webmock' do
-    url 'https://rubygems.org/gems/webmock-3.26.2.gem'
-    sha256 '774556f2ea6371846cca68c01769b2eac0d134492d21f6d0ab5dd643965a4c90'
+    url 'https://rubygems.org/gems/webmock-3.26.3.gem'
+    sha256 '77c612816bdcb2fc43db0e42fd98b19be7d4770fd708816fdde65a006664ddec'
   end
 
   def install
