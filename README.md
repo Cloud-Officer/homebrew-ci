@@ -113,12 +113,17 @@ project. Feel free to contact the maintainers if that's a concern.
 
 ### Updating the formulae
 
-The formulae are kept in sync with their upstream repositories by `update_resources.sh`, which bumps each formula to the
-latest tag and regenerates its gem `resource` stanzas.
+The formulae are kept in sync with their upstream repositories by `update_resources.sh`:
 
 ```bash
 ./update_resources.sh
 ```
 
-The script requires bash 4 or newer (`brew install bash`) and expects the upstream repositories to be checked out in
-`~/Downloads/cloud-officer`, falling back to `../../cloud-officer` relative to the current directory.
+For each formula the script regenerates the gem `resource` stanzas with `brew-resources`, and when either those stanzas
+or the upstream repository changed since the current tag, it derives the next MINOR or PATCH version from the upstream
+commit messages, creates and pushes that tag upstream, and rewrites the formula's `tag:`.
+
+The script requires bash 4 or newer (`brew install bash`), the [GitHub CLI](https://cli.github.com/) and the
+[Claude Code CLI](https://docs.claude.com/en/docs/claude-code/overview), and expects the upstream repositories to be
+checked out in `~/Downloads/cloud-officer`, falling back to `../../cloud-officer` relative to the current directory.
+Each upstream repository must have no uncommitted changes and no open pull requests.
