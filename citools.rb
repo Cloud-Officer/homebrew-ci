@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.39'
+      tag: '1.7.40'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -344,8 +344,8 @@ class Citools < Formula
   end
 
   resource 'webmock' do
-    url 'https://rubygems.org/gems/webmock-3.26.3.gem'
-    sha256 '77c612816bdcb2fc43db0e42fd98b19be7d4770fd708816fdde65a006664ddec'
+    url 'https://rubygems.org/gems/webmock-3.26.4.gem'
+    sha256 '8d8da206d217ebe6968cfb09c77f4533c23074e1432bad865f3994eacbaad50d'
   end
 
   def install

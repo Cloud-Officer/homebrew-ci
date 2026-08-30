@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.25.5'
+      tag: '1.25.6'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -280,8 +280,8 @@ class Githubbuild < Formula
   end
 
   resource 'webmock' do
-    url 'https://rubygems.org/gems/webmock-3.26.3.gem'
-    sha256 '77c612816bdcb2fc43db0e42fd98b19be7d4770fd708816fdde65a006664ddec'
+    url 'https://rubygems.org/gems/webmock-3.26.4.gem'
+    sha256 '8d8da206d217ebe6968cfb09c77f4533c23074e1432bad865f3994eacbaad50d'
   end
 
   def install
