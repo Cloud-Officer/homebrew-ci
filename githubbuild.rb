@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.25.6'
+      tag: '1.26.0'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -90,8 +90,8 @@ class Githubbuild < Formula
   end
 
   resource 'json' do
-    url 'https://rubygems.org/gems/json-2.21.2.gem'
-    sha256 '1f1d3b7cf2b3ba1a69beca0bb6db13d5438b80bff3cd54cdaaa620b9b07c1c6a'
+    url 'https://rubygems.org/gems/json-3.0.1.gem'
+    sha256 'c80f74a3570c3a310cd41c526904e7ef8363abdece4432f31fe97d812bc4a39e'
   end
 
   resource 'language_server-protocol' do
@@ -130,8 +130,8 @@ class Githubbuild < Formula
   end
 
   resource 'parallel' do
-    url 'https://rubygems.org/gems/parallel-2.1.0.gem'
-    sha256 'b35258865c2e31134c5ecb708beaaf6772adf9d5efae28e93e99260877b09356'
+    url 'https://rubygems.org/gems/parallel-2.2.0.gem'
+    sha256 'e1059c5fd7b649558a0aec38a769f06a42942bdb40503d005a59c352fe011cd8'
   end
 
   resource 'parser' do
@@ -250,8 +250,8 @@ class Githubbuild < Formula
   end
 
   resource 'simplecov' do
-    url 'https://rubygems.org/gems/simplecov-1.1.1.gem'
-    sha256 '25825ef13f0b2e74694d769817dad6ab8e90131dabdaa666e522fea105521e78'
+    url 'https://rubygems.org/gems/simplecov-1.2.0.gem'
+    sha256 'ea6acd05eece5a41990e2a5171c57d15700d329326c7666c85ee8c6a0dd0977e'
   end
 
   resource 'stringio' do
