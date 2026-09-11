@@ -126,4 +126,7 @@ commit messages, creates and pushes that tag upstream, and rewrites the formula'
 The script requires bash 4 or newer (`brew install bash`), the [GitHub CLI](https://cli.github.com/) and the
 [Claude Code CLI](https://docs.claude.com/en/docs/claude-code/overview), and expects the upstream repositories to be
 checked out in `~/Downloads/cloud-officer`, falling back to `../../cloud-officer` relative to the current directory.
-Each upstream repository must have no uncommitted changes and no open pull requests.
+Run it from the root of this repository: the gem resources are generated from the sibling checkouts (`../ci-tools`,
+`../github-build` and `../soup`), so this repository must sit in the same directory as the upstream repositories.
+Each upstream repository must have no uncommitted changes and no open pull requests, and is pulled before it is
+checked.

@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.26.3'
+      tag: '1.27.0'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -200,8 +200,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop' do
-    url 'https://rubygems.org/gems/rubocop-1.90.0.gem'
-    sha256 '9eb4c065b5c5154e4ef554c547972f3905a9eb6b53e657e580b6796b54bf8242'
+    url 'https://rubygems.org/gems/rubocop-1.91.0.gem'
+    sha256 '9c82b7bf391c5d7e3798c5b9996e22a1fe3bd7468e351dfdeb96140c058296d0'
   end
 
   resource 'rubocop-ast' do
