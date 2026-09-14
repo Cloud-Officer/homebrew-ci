@@ -4,7 +4,7 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.27.0'
+      tag: '1.28.0'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -30,8 +30,8 @@ class Githubbuild < Formula
   end
 
   resource 'bigdecimal' do
-    url 'https://rubygems.org/gems/bigdecimal-4.1.2.gem'
-    sha256 '53d217666027eab4280346fba98e7d5b66baaae1b9c3c1c0ffe89d48188a3fbd'
+    url 'https://rubygems.org/gems/bigdecimal-4.1.3.gem'
+    sha256 '61ebe1e5e559bdc3cc6f2c0ee7f427321fc838f59611c294356eb04d6e21cf66'
   end
 
   resource 'concurrent-ruby' do
@@ -235,8 +235,8 @@ class Githubbuild < Formula
   end
 
   resource 'rubocop-thread_safety' do
-    url 'https://rubygems.org/gems/rubocop-thread_safety-0.7.3.gem'
-    sha256 '067cdd52fbf5deffc18995437e45b5194236eaff4f71de3375a1f6052e48f431'
+    url 'https://rubygems.org/gems/rubocop-thread_safety-0.8.0.gem'
+    sha256 '71fe5e7894fb9acfbd4c2dcd394feabc35bd690f75b0bc846e1504d9e31f9034'
   end
 
   resource 'ruby-progressbar' do
@@ -250,8 +250,8 @@ class Githubbuild < Formula
   end
 
   resource 'simplecov' do
-    url 'https://rubygems.org/gems/simplecov-1.2.0.gem'
-    sha256 'ea6acd05eece5a41990e2a5171c57d15700d329326c7666c85ee8c6a0dd0977e'
+    url 'https://rubygems.org/gems/simplecov-1.3.0.gem'
+    sha256 'd9886307863c1ead47657dcbed869bfffd82318808b09014d8f0ff77dcfe7492'
   end
 
   resource 'stringio' do
