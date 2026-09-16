@@ -6,6 +6,7 @@ class Citools < Formula
   url 'https://github.com/Cloud-Officer/ci-tools.git',
       tag: '1.7.47'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
+  license 'MIT'
 
   depends_on 'actionlint'
   depends_on 'awscli'
@@ -348,5 +349,31 @@ class Citools < Formula
       export DISABLE_BUNDLER_SETUP=1
       exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/#{script}" "$@"
     SHELL
+  end
+
+  test do
+    (testpath / 'Gemfile.lock').write(<<~LOCK)
+      GEM
+        remote: https://rubygems.org/
+        specs:
+          ast (2.4.3)
+
+      PLATFORMS
+        ruby
+
+      DEPENDENCIES
+        ast
+
+      BUNDLED WITH
+         2.5.9
+    LOCK
+
+    output = shell_output("#{bin}/brew-resources")
+    assert_match("resource 'ast' do", output)
+    assert_match('https://rubygems.org/gems/ast-2.4.3.gem', output)
+
+    %w[brew-resources cycle-keys deploy encrypt-logs generate-codeowners linters ssm-jump sync-jira-release].each do |cli|
+      assert_predicate(bin / cli, :executable?)
+    end
   end
 end

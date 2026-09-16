@@ -6,6 +6,7 @@ class Githubbuild < Formula
   url 'https://github.com/Cloud-Officer/github-build.git',
       tag: '1.29.0'
   head 'https://github.com/Cloud-Officer/github-build.git'
+  license 'MIT'
 
   depends_on 'ruby'
 
@@ -306,5 +307,10 @@ class Githubbuild < Formula
       export DISABLE_BUNDLER_SETUP=1
       exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/github-build.rb" "$@"
     SHELL
+  end
+
+  test do
+    assert_match('Usage: github-build options', shell_output("#{bin}/github-build --help"))
+    assert_predicate(bin / 'github-build', :executable?)
   end
 end

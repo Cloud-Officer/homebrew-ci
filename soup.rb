@@ -6,6 +6,7 @@ class Soup < Formula
   url 'https://github.com/Cloud-Officer/soup.git',
       tag: '1.10.0'
   head 'https://github.com/Cloud-Officer/soup.git'
+  license 'MIT'
 
   depends_on 'ruby'
 
@@ -307,5 +308,10 @@ class Soup < Formula
       export DISABLE_BUNDLER_SETUP=1
       exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
     SHELL
+  end
+
+  test do
+    assert_match('Usage: soup options', shell_output("#{bin}/soup --help"))
+    assert_predicate(bin / 'soup', :executable?)
   end
 end
