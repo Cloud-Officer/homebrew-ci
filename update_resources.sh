@@ -169,6 +169,77 @@ has_commits_since_tag() {
   fi
 }
 
+# Function to rewrite a formula's resource block from generated content
+rewrite_formula_resources() {
+  local file=$1
+  local start_marker=$2
+  local end_marker=$3
+  local content_file=$4
+  local temp_file resource_count
+
+  if [ ! -s "${content_file}" ]; then
+    echo "fatal: brew-resources produced no output for ${file}" >&2
+    exit 1
+  fi
+
+  temp_file=$(mktemp)
+
+  if ! awk -v start="${start_marker}" -v end="${end_marker}" -v file="${content_file}" '
+    !p && $0 ~ start {p=1; matched=1; printf "%s\n\n", $0; while((getline line < file) > 0) print line; next}
+    p && $0 ~ end {p=0}
+    !p || $0 ~ end
+    END {if (!matched) exit 1}' "${file}" >"${temp_file}"; then
+    echo "fatal: start marker not found in ${file}: ${start_marker}" >&2
+    rm -f "${temp_file}"
+    exit 1
+  fi
+
+  resource_count=$(grep -c "^  resource " "${temp_file}" || true)
+
+  if [ "${resource_count}" -eq 0 ]; then
+    echo "fatal: rewritten ${file} would contain no resource blocks" >&2
+    rm -f "${temp_file}"
+    exit 1
+  fi
+
+  mv "${temp_file}" "${file}"
+}
+
+# Function to create a tag and push it, rolling back the local tag if the push fails
+create_and_push_tag() {
+  local new_tag=$1
+  local dir=$2
+
+  pushd "${dir}" >/dev/null
+
+  if git ls-remote --exit-code --tags origin "refs/tags/${new_tag}" >/dev/null 2>&1; then
+    echo "Tag ${new_tag} already exists on origin in ${dir}, skipping tag creation"
+    popd >/dev/null
+    return
+  fi
+
+  if git rev-parse -q --verify "refs/tags/${new_tag}" >/dev/null; then
+    echo "Removing orphaned local tag ${new_tag} that is absent from origin"
+    git tag -d "${new_tag}"
+  fi
+
+  echo "Creating tag ${new_tag} in ${dir}..."
+
+  if ! git tag "${new_tag}"; then
+    echo "fatal: failed to create tag ${new_tag} in ${dir}" >&2
+    exit 1
+  fi
+
+  if ! git push origin "${new_tag}"; then
+    git tag -d "${new_tag}"
+    echo "fatal: failed to push tag ${new_tag} to origin; local tag rolled back" >&2
+    exit 1
+  fi
+
+  echo "Tag ${new_tag} created and pushed successfully"
+  popd >/dev/null
+}
+
 for file in "${!files_to_dirs[@]}"; do
   echo "Updating ${file}..."
   directory="${files_to_dirs[${file}]}"
@@ -227,7 +298,7 @@ for file in "${!files_to_dirs[@]}"; do
   fi
 
   # Generate new resources
-  pushd "../${directory}" >/dev/null
+  pushd "${cloud_officer_dir}/${directory}" >/dev/null
 
   if type -P "${cloud_officer_dir}/ci-tools/brew-resources.rb" &>/dev/null; then
     "${cloud_officer_dir}/ci-tools/brew-resources.rb" >"${temp_new_content_file}"
@@ -237,13 +308,7 @@ for file in "${!files_to_dirs[@]}"; do
 
   popd >/dev/null
 
-  # Update the formula file with new resources
-  temp_file="$(mktemp)"
-  awk -v start="${start_marker}" -v end="${end_marker}" -v file="${temp_new_content_file}" '
-    !p && $0 ~ start {p=1; printf "%s\n\n", $0; while((getline line < file) > 0) print line; next}
-    p && $0 ~ end {p=0}
-    !p || $0 ~ end' "${file}" >"${temp_file}"
-  mv "${temp_file}" "${file}"
+  rewrite_formula_resources "${file}" "${start_marker}" "${end_marker}" "${temp_new_content_file}"
   rm "${temp_new_content_file}"
 
   # Check if the formula file was modified
@@ -271,24 +336,7 @@ for file in "${!files_to_dirs[@]}"; do
 
     echo "New tag: ${new_tag}"
 
-    # Navigate to the source repository
-    pushd "${cloud_officer_dir}/${directory}" >/dev/null
-
-    # Create the new tag if it doesn't already exist
-    if git rev-parse "${new_tag}" >/dev/null 2>&1; then
-      echo "Tag ${new_tag} already exists in ${directory}, skipping tag creation"
-    else
-      echo "Creating tag ${new_tag} in ${directory}..."
-      if git tag "${new_tag}"; then
-        git push origin "${new_tag}"
-        echo "Tag ${new_tag} created successfully"
-      else
-        echo "Warning: Failed to create tag ${new_tag}"
-        exit 1
-      fi
-    fi
-
-    popd >/dev/null
+    create_and_push_tag "${new_tag}" "${cloud_officer_dir}/${directory}"
 
     # Update the formula file with the new tag
     update_formula_tag "${file}" "${new_tag}" "${cloud_officer_dir}/${directory}"
