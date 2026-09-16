@@ -1,7 +1,5 @@
 #!/usr/bin/env bats
 
-bats_require_minimum_version 1.5.0
-
 setup() {
   TEST_TMP="$(mktemp -d)"
   export TEST_TMP
@@ -41,7 +39,8 @@ teardown() {
   run rewrite_formula_resources "${FORMULA}" "depends_on 'ruby'" 'def install' "${CONTENT}"
   [ "$status" -eq 0 ]
   grep -q "resource 'new-gem'" "${FORMULA}"
-  run ! grep -q "resource 'old-gem'" "${FORMULA}"
+  run grep -q "resource 'old-gem'" "${FORMULA}"
+  [ "$status" -ne 0 ]
   grep -q 'def install' "${FORMULA}"
   grep -q "depends_on 'ruby'" "${FORMULA}"
 }

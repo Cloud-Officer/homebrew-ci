@@ -1,13 +1,12 @@
 #!/usr/bin/env bats
 
-bats_require_minimum_version 1.5.0
-
 setup() {
   SCRIPT="${BATS_TEST_DIRNAME}/../update_resources.sh"
 }
 
 @test "regression #162: no repository access uses a relative path" {
-  run ! grep -nE 'pushd "\.\./' "${SCRIPT}"
+  run grep -nE 'pushd "\.\./' "${SCRIPT}"
+  [ "$status" -ne 0 ]
 }
 
 @test "regression #162: every pushd resolves through the discovered root or a passed-in dir" {

@@ -1,7 +1,5 @@
 #!/usr/bin/env bats
 
-bats_require_minimum_version 1.5.0
-
 setup() {
   TEST_TMP="$(mktemp -d)"
   export TEST_TMP
@@ -59,7 +57,8 @@ local_has_tag() {
   run create_and_push_tag 2.0.0 "${REPO}"
   [ "$status" -ne 0 ]
   [[ "$output" == *"local tag rolled back"* ]]
-  run ! local_has_tag 2.0.0
+  run local_has_tag 2.0.0
+  [ "$status" -ne 0 ]
 }
 
 @test "regression #148: a failed push leaves nothing a later run mistakes for success" {
