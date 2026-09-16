@@ -334,49 +334,19 @@ class Citools < Formula
 
     rm_rf('vendor')
 
-    (bin / 'brew-resources').write(exec_script_brew_resources)
-    (bin / 'cycle-keys').write(exec_script_cycle_keys)
-    (bin / 'deploy').write(exec_script_deploy)
-    (bin / 'encrypt-logs').write(exec_script_encrypt_logs)
+    (bin / 'brew-resources').write(exec_script('brew-resources.rb'))
+    (bin / 'cycle-keys').write(exec_script('cycle-keys.rb'))
+    (bin / 'deploy').write(exec_script('deploy.rb'))
+    (bin / 'encrypt-logs').write(exec_script('encrypt-logs.rb'))
   end
 
-  def exec_script_brew_resources
+  def exec_script(script)
     <<~SHELL
       #!/usr/bin/env bash
       export GEM_HOME="#{libexec}/vendor"
       export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/brew-resources.rb" "$@"
-    SHELL
-  end
-
-  def exec_script_cycle_keys
-    <<~SHELL
-      #!/usr/bin/env bash
-      export GEM_HOME="#{libexec}/vendor"
-      export GEM_PATH="#{libexec}/vendor"
-      export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/cycle-keys.rb" "$@"
-    SHELL
-  end
-
-  def exec_script_deploy
-    <<~SHELL
-      #!/usr/bin/env bash
-      export GEM_HOME="#{libexec}/vendor"
-      export GEM_PATH="#{libexec}/vendor"
-      export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/deploy.rb" "$@"
-    SHELL
-  end
-
-  def exec_script_encrypt_logs
-    <<~SHELL
-      #!/usr/bin/env bash
-      export GEM_HOME="#{libexec}/vendor"
-      export GEM_PATH="#{libexec}/vendor"
-      export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/encrypt-logs.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/#{script}" "$@"
     SHELL
   end
 end
