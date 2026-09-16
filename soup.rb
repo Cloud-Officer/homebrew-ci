@@ -4,7 +4,9 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.10.0'
+      tag: '1.10.0',
+      revision: '5544c4945f57858c8f6b5421be3cbd6c92e8aaf9'
+  license 'MIT'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
@@ -286,9 +288,7 @@ class Soup < Formula
   end
 
   def install
-    prefix.install(Dir['bin'])
-    prefix.install(Dir['config'])
-    prefix.install(Dir['lib'])
+    prefix.install('bin', 'config', 'lib')
     (libexec / 'vendor').mkpath
 
     resources.each do |r|
@@ -309,5 +309,10 @@ class Soup < Formula
       export DISABLE_BUNDLER_SETUP=1
       exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/soup.rb" "$@"
     SHELL
+  end
+
+  test do
+    assert_match('Usage: soup options', shell_output("#{bin}/soup --help"))
+    assert_predicate(bin / 'soup', :executable?)
   end
 end

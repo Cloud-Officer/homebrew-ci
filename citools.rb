@@ -4,7 +4,9 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.47'
+      tag: '1.7.47',
+      revision: '951df9d7b6a5ed6dc8883f5fd8d0bac71a6e1c71'
+  license 'MIT'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
   depends_on 'actionlint'
@@ -334,49 +336,45 @@ class Citools < Formula
 
     rm_rf('vendor')
 
-    (bin / 'brew-resources').write(exec_script_brew_resources)
-    (bin / 'cycle-keys').write(exec_script_cycle_keys)
-    (bin / 'deploy').write(exec_script_deploy)
-    (bin / 'encrypt-logs').write(exec_script_encrypt_logs)
+    (bin / 'brew-resources').write(exec_script('brew-resources.rb'))
+    (bin / 'cycle-keys').write(exec_script('cycle-keys.rb'))
+    (bin / 'deploy').write(exec_script('deploy.rb'))
+    (bin / 'encrypt-logs').write(exec_script('encrypt-logs.rb'))
   end
 
-  def exec_script_brew_resources
+  def exec_script(script)
     <<~SHELL
       #!/usr/bin/env bash
       export GEM_HOME="#{libexec}/vendor"
       export GEM_PATH="#{libexec}/vendor"
       export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/brew-resources.rb" "$@"
+      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/#{script}" "$@"
     SHELL
   end
 
-  def exec_script_cycle_keys
-    <<~SHELL
-      #!/usr/bin/env bash
-      export GEM_HOME="#{libexec}/vendor"
-      export GEM_PATH="#{libexec}/vendor"
-      export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/cycle-keys.rb" "$@"
-    SHELL
-  end
+  test do
+    (testpath / 'Gemfile.lock').write(<<~LOCK)
+      GEM
+        remote: https://rubygems.org/
+        specs:
+          ast (2.4.3)
 
-  def exec_script_deploy
-    <<~SHELL
-      #!/usr/bin/env bash
-      export GEM_HOME="#{libexec}/vendor"
-      export GEM_PATH="#{libexec}/vendor"
-      export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/deploy.rb" "$@"
-    SHELL
-  end
+      PLATFORMS
+        ruby
 
-  def exec_script_encrypt_logs
-    <<~SHELL
-      #!/usr/bin/env bash
-      export GEM_HOME="#{libexec}/vendor"
-      export GEM_PATH="#{libexec}/vendor"
-      export DISABLE_BUNDLER_SETUP=1
-      exec "#{Formula['ruby'].opt_bin}/ruby" "#{libexec}/encrypt-logs.rb" "$@"
-    SHELL
+      DEPENDENCIES
+        ast
+
+      BUNDLED WITH
+         2.5.9
+    LOCK
+
+    output = shell_output("#{bin}/brew-resources")
+    assert_match("resource 'ast' do", output)
+    assert_match('https://rubygems.org/gems/ast-2.4.3.gem', output)
+
+    %w[brew-resources cycle-keys deploy encrypt-logs generate-codeowners linters ssm-jump sync-jira-release].each do |cli|
+      assert_predicate(bin / cli, :executable?)
+    end
   end
 end

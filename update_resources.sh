@@ -105,12 +105,25 @@ Respond with ONLY one word: MINOR or PATCH"
 update_formula_tag() {
   local file=$1
   local new_tag=$2
-  local temp_file
+  local dir=$3
+  local new_revision temp_file
+
+  if ! new_revision=$(git -C "${dir}" rev-parse "${new_tag}^{commit}" 2>&1); then
+    echo "fatal: cannot resolve ${new_tag} to a commit in ${dir}: ${new_revision}" >&2
+    exit 1
+  fi
 
   temp_file=$(mktemp)
-  sed -E "s/(tag:) '[^']+'/\1 '${new_tag}'/" "${file}" > "${temp_file}"
+  sed -E -e "s/(tag:) '[^']+'/\1 '${new_tag}'/" \
+         -e "s/(revision:) '[^']+'/\1 '${new_revision}'/" "${file}" > "${temp_file}"
   mv "${temp_file}" "${file}"
-  echo "Updated ${file} with tag ${new_tag}"
+
+  if ! grep -q "revision: '${new_revision}'" "${file}"; then
+    echo "fatal: ${file} has no revision: line to update; add one next to tag:" >&2
+    exit 1
+  fi
+
+  echo "Updated ${file} with tag ${new_tag} (revision ${new_revision})"
 }
 
 # Function to check if source repo has commits newer than the latest tag
@@ -263,7 +276,7 @@ for file in "${!files_to_dirs[@]}"; do
     popd >/dev/null
 
     # Update the formula file with the new tag
-    update_formula_tag "${file}" "${new_tag}"
+    update_formula_tag "${file}" "${new_tag}" "${cloud_officer_dir}/${directory}"
 
     echo "✓ Successfully processed ${file}: ${current_tag} -> ${new_tag}"
     echo "  Reason: formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes}"

@@ -4,7 +4,9 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.29.0'
+      tag: '1.29.0',
+      revision: '85df82f3c3ad4a741b68cfe4e4475a762153c787'
+  license 'MIT'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
   depends_on 'ruby'
@@ -285,9 +287,7 @@ class Githubbuild < Formula
   end
 
   def install
-    prefix.install(Dir['bin'])
-    prefix.install(Dir['config'])
-    prefix.install(Dir['lib'])
+    prefix.install('bin', 'config', 'lib')
     (libexec / 'vendor').mkpath
 
     resources.each do |r|
@@ -308,5 +308,10 @@ class Githubbuild < Formula
       export DISABLE_BUNDLER_SETUP=1
       exec "#{Formula['ruby'].opt_bin}/ruby" "#{bin}/github-build.rb" "$@"
     SHELL
+  end
+
+  test do
+    assert_match('Usage: github-build options', shell_output("#{bin}/github-build --help"))
+    assert_predicate(bin / 'github-build', :executable?)
   end
 end
