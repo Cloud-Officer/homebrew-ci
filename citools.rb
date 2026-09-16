@@ -4,7 +4,7 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag:      '1.7.47',
+      tag: '1.7.47',
       revision: '951df9d7b6a5ed6dc8883f5fd8d0bac71a6e1c71'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
@@ -373,8 +373,7 @@ class Citools < Formula
     assert_match("resource 'ast' do", output)
     assert_match('https://rubygems.org/gems/ast-2.4.3.gem', output)
 
-    %w[brew-resources cycle-keys deploy encrypt-logs
-       generate-codeowners linters ssm-jump sync-jira-release].each do |cli|
+    %w[brew-resources cycle-keys deploy encrypt-logs generate-codeowners linters ssm-jump sync-jira-release].each do |cli|
       assert_predicate(bin / cli, :executable?)
     end
   end
