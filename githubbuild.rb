@@ -16,6 +16,11 @@ class Githubbuild < Formula
     sha256 '85458765f25ea48b9019c46b6bb3fa5683197bf4280d9f06710a6e8d7a831376'
   end
 
+  resource 'duplicate' do
+    url 'https://rubygems.org/gems/duplicate-1.1.1.gem'
+    sha256 'b0b4096902521038ff0bfde7f5ce66138b5bd03ae4975927a0b373c1229a7d61'
+  end
+
   resource 'httparty' do
     url 'https://rubygems.org/gems/httparty-0.24.2.gem'
     sha256 '8fca6a54aa0c4aa4303a0fd33e5e2156175d6a5334f714263b458abd7fda9c38'
