@@ -4,8 +4,8 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.29.0',
-      revision: '85df82f3c3ad4a741b68cfe4e4475a762153c787'
+      tag: '1.29.1',
+      revision: '941b59aea7b80214e44e8cf8d7a709f9f93db523'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
@@ -14,11 +14,6 @@ class Githubbuild < Formula
   resource 'activesupport' do
     url 'https://rubygems.org/gems/activesupport-8.1.3.1.gem'
     sha256 '85458765f25ea48b9019c46b6bb3fa5683197bf4280d9f06710a6e8d7a831376'
-  end
-
-  resource 'duplicate' do
-    url 'https://rubygems.org/gems/duplicate-1.1.1.gem'
-    sha256 'b0b4096902521038ff0bfde7f5ce66138b5bd03ae4975927a0b373c1229a7d61'
   end
 
   resource 'httparty' do
