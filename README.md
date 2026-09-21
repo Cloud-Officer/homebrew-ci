@@ -13,6 +13,7 @@
   * [githubbuild](#githubbuild)
   * [soup](#soup)
 * [Contributing](#contributing)
+  * [Running the tests](#running-the-tests)
   * [Updating the formulae](#updating-the-formulae)
 
 ## Introduction
@@ -111,6 +112,15 @@ Pull requests are the best way to propose changes to the codebase. We actively w
 When you submit code changes, your submissions are understood to be under the same [License](LICENSE) that covers the
 project. Feel free to contact the maintainers if that's a concern.
 
+### Running the tests
+
+The `update_resources.sh` helpers are covered by a [Bats](https://github.com/bats-core/bats-core) suite in `tests/`:
+
+```bash
+brew install bats-core
+bats tests/
+```
+
 ### Updating the formulae
 
 The formulae are kept in sync with their upstream repositories by `update_resources.sh`:
@@ -121,7 +131,7 @@ The formulae are kept in sync with their upstream repositories by `update_resour
 
 For each formula the script regenerates the gem `resource` stanzas with `brew-resources`, and when either those stanzas
 or the upstream repository changed since the current tag, it derives the next MINOR or PATCH version from the upstream
-commit messages, creates and pushes that tag upstream, and rewrites the formula's `tag:`.
+commit messages, creates and pushes that tag upstream, and rewrites the formula's `tag:` and `revision:`.
 
 The script requires bash 4 or newer (`brew install bash`), the [GitHub CLI](https://cli.github.com/) and the
 [Claude Code CLI](https://docs.claude.com/en/docs/claude-code/overview), and expects the upstream repositories to be
