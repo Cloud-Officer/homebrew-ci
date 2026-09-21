@@ -188,6 +188,11 @@ class Citools < Formula
   end
 
   test do
+    (testpath / 'Gemfile').write(<<~GEMFILE)
+      source 'https://rubygems.org'
+      gem 'ast'
+    GEMFILE
+
     (testpath / 'Gemfile.lock').write(<<~LOCK)
       GEM
         remote: https://rubygems.org/
