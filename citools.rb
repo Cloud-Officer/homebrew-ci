@@ -4,8 +4,8 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.53',
-      revision: '02928ced5827b2b427210d4fc94d1314af6baa44'
+      tag: '1.7.54',
+      revision: 'fa43da133ac41e6a441cd0314b0d1bf6397d6b6b'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
