@@ -4,8 +4,8 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.10.7',
-      revision: '640350da1bd7f0e5a6c08bc0a0102b4a8d0f048b'
+      tag: '1.10.8',
+      revision: 'f0865ab989c065c1851168946d0e2d85715b5565'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/soup.git'
 
@@ -63,8 +63,8 @@ class Soup < Formula
   end
 
   resource 'parallel' do
-    url 'https://rubygems.org/gems/parallel-2.2.0.gem'
-    sha256 'e1059c5fd7b649558a0aec38a769f06a42942bdb40503d005a59c352fe011cd8'
+    url 'https://rubygems.org/gems/parallel-2.3.0.gem'
+    sha256 'f75a3e904101ce6a1ccb6b8dc800cbafd42166d83330192438dcf29395167a6f'
   end
 
   resource 'tty-prompt' do
