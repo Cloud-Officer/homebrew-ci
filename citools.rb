@@ -165,7 +165,7 @@ class Citools < Formula
     (libexec / 'vendor').mkpath
 
     resources.each do |r|
-      r.verify_download_integrity(r.fetch)
+      r.verify_download_integrity(r.cached_download)
       system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor")
     end
 
