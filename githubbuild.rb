@@ -4,8 +4,8 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.30.3',
-      revision: '8417758f55c6318a884aa04010f1c52591825262'
+      tag: '1.30.4',
+      revision: 'e23e39651091e2e4c63b0942b88cd731a7dd7861'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
@@ -87,8 +87,8 @@ class Githubbuild < Formula
   end
 
   resource 'uri' do
-    url 'https://rubygems.org/gems/uri-1.1.1.gem'
-    sha256 '379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6'
+    url 'https://rubygems.org/gems/uri-1.1.2.gem'
+    sha256 '89292e98eabbef6248b0a0ed5e7e398e152f83f17560023a6d94a7f492b169fb'
   end
 
   resource 'csv' do
@@ -107,8 +107,8 @@ class Githubbuild < Formula
   end
 
   resource 'date' do
-    url 'https://rubygems.org/gems/date-3.5.1.gem'
-    sha256 '750d06384d7b9c15d562c76291407d89e368dda4d4fff957eb94962d325a0dc0'
+    url 'https://rubygems.org/gems/date-3.6.0.gem'
+    sha256 '18ac945c4e24ebd93534f8eab8c2fd8c5604b3e977105b3798d62a1e8d27b580'
   end
 
   resource 'stringio' do
