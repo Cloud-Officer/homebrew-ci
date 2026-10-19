@@ -4,8 +4,8 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.57',
-      revision: '7df40282d5ad477ea49f9f38f2098bd3cfbf72b9'
+      tag: '1.7.58',
+      revision: 'e4c5bbe3588b910678e0bf316e3336d5a9f9fd8e'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
@@ -35,8 +35,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudfront' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.156.0.gem'
-    sha256 '01b77b9dadba580729b5731a1eb67e32db9276fda24df450d9ed3e2f40f56f0e'
+    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.157.0.gem'
+    sha256 'ab041ed7e3f7355cb174aebf05edb8219dab4824ff2809b7e0f7b2bea388921c'
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
@@ -50,8 +50,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.655.0.gem'
-    sha256 '2cc23243b84f69437d5627886a7c339ea59a49c0c43b5103c09114f7ce35a508'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.656.0.gem'
+    sha256 '76e07de2bacf38c78ae5d6ab1419fd0d03647afaa0b67e56567259875c703fb7'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -70,8 +70,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.198.0.gem'
-    sha256 '5aade9a68aa88065e92842b713ecf0719cea11a1298026e9a73c6e8adc64f018'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.199.0.gem'
+    sha256 '2afe8a3ee57c3f673acd72f74d7beb793d120d32595ab1e973883a3d73a602de'
   end
 
   resource 'aws-sdk-ssm' do
@@ -110,8 +110,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1294.0.gem'
-    sha256 'e6045b27a414fd3ea5cbbf8b051f69b56b7d474fcade52d3f4969c3b45782ce6'
+    url 'https://rubygems.org/gems/aws-partitions-1.1296.0.gem'
+    sha256 '70cc7a44fa4824a9df5652b853dc96aaaf09ec20642cd9d42ed7335a36cc3567'
   end
 
   resource 'bigdecimal' do
