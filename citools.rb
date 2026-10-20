@@ -4,8 +4,8 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.59',
-      revision: '4a4d08d13aa4f2c0beb72b14fdbb9b6014f98c84'
+      tag: '1.7.60',
+      revision: '348d0f6bc10aaee343a189381cf4200e8b710914'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
@@ -25,58 +25,58 @@ class Citools < Formula
   depends_on 'yamllint'
 
   resource 'aws-sdk-autoscaling' do
-    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.168.0.gem'
-    sha256 'd4ee52805cd4c653e8504ec05a3ef5962923cc0de7aad173573a0499dc2f6ddb'
+    url 'https://rubygems.org/gems/aws-sdk-autoscaling-1.170.0.gem'
+    sha256 '62618ba1432e1d8008cfd490c8766dc788d64f49acfc54349bc8253bc9395902'
   end
 
   resource 'aws-sdk-cloudformation' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.160.0.gem'
-    sha256 '0570804901830356e4c28d76b27cdc31e67ae81240af7b86224b77d364828d84'
+    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.162.0.gem'
+    sha256 'ed1564b5a295a133dfebb556193c49d9303b79ba13555d96638b5508e5d82b01'
   end
 
   resource 'aws-sdk-cloudfront' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.157.0.gem'
-    sha256 'ab041ed7e3f7355cb174aebf05edb8219dab4824ff2809b7e0f7b2bea388921c'
+    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.159.0.gem'
+    sha256 'bc445e77387e999e7aa7158cf8c3b534a479978c39db1fd3975a6dbcf9b78605'
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.165.0.gem'
-    sha256 '8e43214de867d93a1a698b7cec863c1f4969d5ef4c6bd459c324565c1ef21f8f'
+    url 'https://rubygems.org/gems/aws-sdk-cloudwatchlogs-1.167.0.gem'
+    sha256 '5841f496d3e4a7df6bbedf74cbddc6f04de8d4cce3d4dbf144a86032b625c99c'
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.257.0.gem'
-    sha256 'a92ad19c7ff668cec6688ee3200ee562da80647a3bbeed9fda02e8b0ca6492c6'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.259.0.gem'
+    sha256 '1c2bcb73d4c1146a2f52a2a05258ae11e349fb8ea6e42159c699d6dae9fb9441'
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.656.0.gem'
-    sha256 '76e07de2bacf38c78ae5d6ab1419fd0d03647afaa0b67e56567259875c703fb7'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.657.0.gem'
+    sha256 'ac6022594b223350aede3e1f466bc480d799f698377c5f84d10c454eabf87a57'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
-    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.159.0.gem'
-    sha256 'c88ff8a5f3b147d7619675c35a15ac708214d9ea4a32ec6eef90b35e7a37838b'
+    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.160.0.gem'
+    sha256 '9888627936915ae1324ea78e396647a9869668d7b4b52b0595343511129d16c7'
   end
 
   resource 'aws-sdk-iam' do
-    url 'https://rubygems.org/gems/aws-sdk-iam-1.154.0.gem'
-    sha256 '4cc5e666dd99a331931f9339db42e2ef6d49ac8dfc149b939fd6a5d3291a48fc'
+    url 'https://rubygems.org/gems/aws-sdk-iam-1.155.0.gem'
+    sha256 '5b677cd48273c99d7ee0bcf23072e67bc1088d18c42a8b95094fea3877c24e21'
   end
 
   resource 'aws-sdk-kms' do
-    url 'https://rubygems.org/gems/aws-sdk-kms-1.132.0.gem'
-    sha256 '094b0097bb3be9d5c1ac87e971ca7f5aebb746801dfb5f0f576480bf98dca69c'
+    url 'https://rubygems.org/gems/aws-sdk-kms-1.134.0.gem'
+    sha256 '85dde5d616160a0bfa7aed143f0e6f54dd440b81d1cdfc7008d49ee8e0c49a28'
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.199.0.gem'
-    sha256 '2afe8a3ee57c3f673acd72f74d7beb793d120d32595ab1e973883a3d73a602de'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.200.0.gem'
+    sha256 'c232b5802d874e46b3b4bb07598ca2bb2af7ab0b8aaae23721906a5345957fb3'
   end
 
   resource 'aws-sdk-ssm' do
-    url 'https://rubygems.org/gems/aws-sdk-ssm-1.223.0.gem'
-    sha256 '6e6239f1844b0fb6447ea2d460ed59b00c257299b8f54f97bf712e73c11dda85'
+    url 'https://rubygems.org/gems/aws-sdk-ssm-1.224.0.gem'
+    sha256 '6cc5b571a9862bb5fe3534f0b394034fe0cd4561bed2f15fd0bd8443ad94008d'
   end
 
   resource 'base64' do
