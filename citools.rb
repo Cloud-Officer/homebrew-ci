@@ -4,8 +4,8 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.7.61',
-      revision: '0f263519941f5a5860790c6c06aeaf876a092f96'
+      tag: '1.7.62',
+      revision: 'aa439baadba3cba69c491d42e1e1f2fd69571bde'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
@@ -50,8 +50,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.659.0.gem'
-    sha256 '1a602d79c1fda13a2f34b649cdb8cee9d7fff1290a1619584bc6410db7917efd'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.660.0.gem'
+    sha256 'd58813ed553362ec9aa2f03fb1f4f21d4811473ff06fd40693c6db217a10df0a'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
@@ -70,8 +70,8 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.202.0.gem'
-    sha256 '36dc1a808bf475f86a834e19a723845c512309fca56df50a685149ae327d78d2'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.203.0.gem'
+    sha256 '926005adcb2ac979d5ee5939327829bcb45df14e35beec5e453840616de0b208'
   end
 
   resource 'aws-sdk-ssm' do
@@ -110,8 +110,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1297.0.gem'
-    sha256 'ea84c3a800f8757e02a5bde8d324f68ee4d964dcd29ed33ef6b858c29de6b69a'
+    url 'https://rubygems.org/gems/aws-partitions-1.1298.0.gem'
+    sha256 'c729707ab271e561bbb2c20078ed77cf210d1ba6541177fbd6b16f3c4b792938'
   end
 
   resource 'bigdecimal' do
