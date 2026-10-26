@@ -45,6 +45,7 @@ jobs:
         ln -s "${GITHUB_WORKSPACE}" "${tap}"
         brew tap | grep -qx cloud-officer/ci \
           || { echo "::error::working copy did not register as cloud-officer/ci"; exit 1; }
+        brew trust cloud-officer/ci
     # `--except=style` runs every audit method while skipping the RuboCop cops.
     # Homebrew's cops require double-quoted strings; this repo's .rubocop.yml sets
     # EnabledByDefault (single quotes) and its rubocop job is the merge gate, so
@@ -83,6 +84,7 @@ jobs:
         ln -s "${GITHUB_WORKSPACE}" "${tap}"
         brew tap | grep -qx cloud-officer/ci \
           || { echo "::error::working copy did not register as cloud-officer/ci"; exit 1; }
+        brew trust cloud-officer/ci
     - name: Audit
       shell: bash
       run: brew audit --except=style --formula cloud-officer/ci/githubbuild
@@ -119,6 +121,7 @@ jobs:
         ln -s "${GITHUB_WORKSPACE}" "${tap}"
         brew tap | grep -qx cloud-officer/ci \
           || { echo "::error::working copy did not register as cloud-officer/ci"; exit 1; }
+        brew trust cloud-officer/ci
     - name: Audit
       shell: bash
       run: brew audit --except=style --formula cloud-officer/ci/citools
