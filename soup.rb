@@ -4,8 +4,8 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.10.15',
-      revision: '23f34c3f3fac4b220e230748b5c275c8d9308afe'
+      tag: '1.10.16',
+      revision: '349757d6bbb17d3546b94c9f0a6ddabc02982a9f'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/soup.git'
 
@@ -24,8 +24,8 @@ class Soup < Formula
   on_linux do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.4-aarch64-linux-gnu.gem'
-        sha256 '1269fb644a6de405057a53dd5c762b1209b43ca7424f839454d3dbc677c31a8f'
+        url 'https://rubygems.org/gems/nokogiri-1.19.7-aarch64-linux-gnu.gem'
+        sha256 '8f5e15d299602456406e1f03a9f3456cceb33a0722811e818d2ee2214eb4c84a'
       end
     end
   end
@@ -33,8 +33,8 @@ class Soup < Formula
   on_macos do
     on_arm do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.4-arm64-darwin.gem'
-        sha256 'a46db9853286e6597b36ebc6953817d15acf3a299583eb3f89fdc6f91dd63527'
+        url 'https://rubygems.org/gems/nokogiri-1.19.7-arm64-darwin.gem'
+        sha256 'f27d7f25f4873fbc3aa35a2cc2fb680c98555fec1925348da439d0869d541142'
       end
     end
   end
@@ -42,8 +42,8 @@ class Soup < Formula
   on_macos do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.4-x86_64-darwin.gem'
-        sha256 '7fd17057d3e1f00e9954a74b3cd76595d3d4a5ef233b7ed9599047c204f70551'
+        url 'https://rubygems.org/gems/nokogiri-1.19.7-x86_64-darwin.gem'
+        sha256 '508e81e8c5f84aaa240dce981bf1c43faae60808726f0ce7024ee92effc5cafe'
       end
     end
   end
@@ -51,8 +51,8 @@ class Soup < Formula
   on_linux do
     on_intel do
       resource 'nokogiri' do
-        url 'https://rubygems.org/gems/nokogiri-1.19.4-x86_64-linux-gnu.gem'
-        sha256 '379fae440b28915e3f19d752ce2dcf8465ed2b2fbefd2a7ca0dd497bc981a06a'
+        url 'https://rubygems.org/gems/nokogiri-1.19.7-x86_64-linux-gnu.gem'
+        sha256 '25865ccb462f714e712fdf8906fde07849cb6704a808e3d629d75baa5af5dd3b'
       end
     end
   end
@@ -78,8 +78,8 @@ class Soup < Formula
   end
 
   resource 'csv' do
-    url 'https://rubygems.org/gems/csv-3.3.6.gem'
-    sha256 'aba61e7e507a66f03d45cb1f3c4b6359861c3504038b422962875dce099e4456'
+    url 'https://rubygems.org/gems/csv-3.3.7.gem'
+    sha256 '15a3f16f6628da8664d455eb634e7f22031bcf53044923caf56975109e71b9f8'
   end
 
   resource 'mini_mime' do
