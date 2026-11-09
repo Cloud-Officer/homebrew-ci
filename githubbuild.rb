@@ -4,8 +4,8 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.32.2',
-      revision: '75576720086129e1ea2d04c78cd1dd88a2b70dab'
+      tag: '1.32.3',
+      revision: 'f413386c5ada3585f3add070401ea639ffdb55dc'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
@@ -72,8 +72,8 @@ class Githubbuild < Formula
   end
 
   resource 'minitest' do
-    url 'https://rubygems.org/gems/minitest-6.0.6.gem'
-    sha256 '153ea36d1d987a62942382b61075745042a2b3123b1cd48f4c3675af9cc7d6f1'
+    url 'https://rubygems.org/gems/minitest-6.1.0.gem'
+    sha256 'ff373595aa8888631e8a5463986a76b3845346ae6d7fa46e139c1633d418076e'
   end
 
   resource 'securerandom' do
@@ -116,9 +116,40 @@ class Githubbuild < Formula
     sha256 'c37cb2e58b4ffbd33fe5cd948c05934af997b36e0b6ca6fdf43afa234cf222e1'
   end
 
-  resource 'prism' do
-    url 'https://rubygems.org/gems/prism-1.9.0.gem'
-    sha256 '7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85'
+  on_linux do
+    on_arm do
+      resource 'prism' do
+        url 'https://rubygems.org/gems/prism-2.1.0-aarch64-linux-gnu.gem'
+        sha256 '808dddc72def68e1a0463689414c97e0ba211938eddbab05387a4844aa2b3ec2'
+      end
+    end
+  end
+
+  on_macos do
+    on_arm do
+      resource 'prism' do
+        url 'https://rubygems.org/gems/prism-2.1.0-arm64-darwin.gem'
+        sha256 '2d0c2e3e011cfd89c041940907d3ff3def379d7b0f2ba158d1d42238e8ad8afc'
+      end
+    end
+  end
+
+  on_macos do
+    on_intel do
+      resource 'prism' do
+        url 'https://rubygems.org/gems/prism-2.1.0-x86_64-darwin.gem'
+        sha256 '6c645d8e6afc742956c7518220ce5106367727c4d9980ac9ab386d55004ddab4'
+      end
+    end
+  end
+
+  on_linux do
+    on_intel do
+      resource 'prism' do
+        url 'https://rubygems.org/gems/prism-2.1.0-x86_64-linux-gnu.gem'
+        sha256 'b2b647afce09551e650b8bb3e2fc91d7d73d392a09534ca307ec0d619c33bfd4'
+      end
+    end
   end
 
   def install

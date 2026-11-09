@@ -4,8 +4,8 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.10.16',
-      revision: '349757d6bbb17d3546b94c9f0a6ddabc02982a9f'
+      tag: '1.10.17',
+      revision: '0fd4615ff4839f6f7776d7dc01182b6951bcdf43'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/soup.git'
 
