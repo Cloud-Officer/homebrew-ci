@@ -137,12 +137,14 @@ update_formula_tag() {
   temp_file=$(mktemp)
   sed -E -e "s/(tag:) '[^']+'/\1 '${new_tag}'/" \
          -e "s/(revision:) '[^']+'/\1 '${new_revision}'/" "${file}" > "${temp_file}"
-  mv "${temp_file}" "${file}"
 
-  if ! grep -q "revision: '${new_revision}'" "${file}"; then
+  if ! grep -q "revision: '${new_revision}'" "${temp_file}"; then
     echo "fatal: ${file} has no revision: line to update; add one next to tag:" >&2
+    rm -f "${temp_file}"
     exit 1
   fi
+
+  mv "${temp_file}" "${file}"
 
   echo "Updated ${file} with tag ${new_tag} (revision ${new_revision})"
 }
