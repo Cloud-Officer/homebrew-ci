@@ -31,12 +31,7 @@ elif [ ! -d "${cloud_officer_dir}" ]; then
   exit 1
 fi
 
-declare -A start_markers=(
-  ["citools.rb"]="depends_on 'yamllint'"
-  ["githubbuild.rb"]="depends_on 'ruby'"
-  ["soup.rb"]="depends_on 'ruby'"
-)
-
+start_marker="^  (resource|on_linux|on_macos)[ (]"
 end_marker="def install"
 
 declare -A files_to_dirs=(
@@ -175,7 +170,7 @@ rewrite_formula_resources() {
   local start_marker=$2
   local end_marker=$3
   local content_file=$4
-  local temp_file resource_count
+  local temp_file resource_count missing_stanzas
 
   if [ ! -s "${content_file}" ]; then
     echo "fatal: brew-resources produced no output for ${file}" >&2
@@ -185,9 +180,9 @@ rewrite_formula_resources() {
   temp_file=$(mktemp)
 
   if ! awk -v start="${start_marker}" -v end="${end_marker}" -v file="${content_file}" '
-    !p && $0 ~ start {p=1; matched=1; printf "%s\n\n", $0; while((getline line < file) > 0) print line; next}
+    !matched && $0 ~ start {p=1; matched=1; while((getline line < file) > 0) print line; next}
     p && $0 ~ end {p=0}
-    !p || $0 ~ end
+    !p
     END {if (!matched) exit 1}' "${file}" >"${temp_file}"; then
     echo "fatal: start marker not found in ${file}: ${start_marker}" >&2
     rm -f "${temp_file}"
@@ -198,6 +193,15 @@ rewrite_formula_resources() {
 
   if [ "${resource_count}" -eq 0 ]; then
     echo "fatal: rewritten ${file} would contain no resource blocks" >&2
+    rm -f "${temp_file}"
+    exit 1
+  fi
+
+  missing_stanzas=$(grep -E "^  (depends_on|uses_from_macos) " "${file}" | grep -Fxvf "${temp_file}" || true)
+
+  if [ -n "${missing_stanzas}" ]; then
+    echo "fatal: rewritten ${file} would drop these stanzas:" >&2
+    echo "${missing_stanzas}" >&2
     rm -f "${temp_file}"
     exit 1
   fi
@@ -328,7 +332,6 @@ generate_resources() {
 process_formula() {
   local file=$1
   local dir="${cloud_officer_dir}/${files_to_dirs[${file}]}"
-  local start_marker="${start_markers[${file}]}"
   local current_tag new_tag temp_new_content_file
   local source_repo_has_changes=false
   local formula_has_changes=false

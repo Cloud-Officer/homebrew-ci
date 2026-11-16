@@ -16,6 +16,7 @@ setup() {
   eval "$(sed -n '/^[a-z_]*() {/,/^}/p' "${SCRIPT}")"
   eval "$(sed -n '/^declare -A/,/^)/p' "${SCRIPT}" | sed 's/^declare -A/declare -gA/')"
   eval "$(grep '^end_marker=' "${SCRIPT}")"
+  eval "$(grep -E '^start_marker=' "${SCRIPT}")"
 
   cloud_officer_dir="${TEST_TMP}/cloud-officer"
 
