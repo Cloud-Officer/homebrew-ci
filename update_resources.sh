@@ -205,6 +205,39 @@ rewrite_formula_resources() {
   mv "${temp_file}" "${file}"
 }
 
+check_default_branch() {
+  local dir=$1
+  local default_branch current_branch
+
+  if ! default_branch=$(git -C "${dir}" symbolic-ref --short refs/remotes/origin/HEAD 2>&1); then
+    echo "fatal: cannot determine the default branch of ${dir}: ${default_branch}; run 'git remote set-head origin --auto'" >&2
+    exit 1
+  fi
+
+  default_branch=${default_branch#origin/}
+  current_branch=$(git -C "${dir}" rev-parse --abbrev-ref HEAD)
+
+  if [ "${current_branch}" != "${default_branch}" ]; then
+    echo "fatal: ${dir} is on ${current_branch}, not the default branch ${default_branch}; check out ${default_branch} first" >&2
+    exit 1
+  fi
+}
+
+check_no_unpushed_commits() {
+  local dir=$1
+  local unpushed
+
+  if ! unpushed=$(git -C "${dir}" rev-list --count '@{u}..HEAD' 2>&1); then
+    echo "fatal: cannot compare HEAD with its upstream in ${dir}: ${unpushed}" >&2
+    exit 1
+  fi
+
+  if [ "${unpushed}" -ne 0 ]; then
+    echo "fatal: ${dir} has ${unpushed} unpushed commit(s); push or drop them first" >&2
+    exit 1
+  fi
+}
+
 # Function to create a tag and push it, rolling back the local tag if the push fails
 create_and_push_tag() {
   local new_tag=$1
@@ -268,12 +301,16 @@ for file in "${!files_to_dirs[@]}"; do
     exit 1
   fi
 
+  check_default_branch "${cloud_officer_dir}/${directory}"
+
   # Pull latest changes from remote
   echo "Pulling latest changes in ${directory}..."
   if ! git pull; then
     echo "Warning: Failed to pull latest changes in ${directory}"
     exit 1
   fi
+
+  check_no_unpushed_commits "${cloud_officer_dir}/${directory}"
 
   # Check for open pull requests
   if ! open_prs=$(gh pr list --state open --json number --jq 'length' 2>&1); then
