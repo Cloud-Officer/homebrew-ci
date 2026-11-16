@@ -31,12 +31,7 @@ elif [ ! -d "${cloud_officer_dir}" ]; then
   exit 1
 fi
 
-declare -A start_markers=(
-  ["citools.rb"]="depends_on 'yamllint'"
-  ["githubbuild.rb"]="depends_on 'ruby'"
-  ["soup.rb"]="depends_on 'ruby'"
-)
-
+start_marker="^  (resource|on_linux|on_macos)[ (]"
 end_marker="def install"
 
 declare -A files_to_dirs=(
@@ -60,11 +55,14 @@ determine_new_version() {
 
   IFS='.' read -r major minor patch <<< "${current_version}"
 
-  local commits
-  if ! commits=$(git -C "${dir}" log "${current_version}"..HEAD --pretty=format:"%s" 2>&1); then
-    echo "fatal: cannot read commit history for ${current_version}..HEAD in ${dir}: ${commits}" >&2
+  local commits err_file
+  err_file=$(mktemp)
+  if ! commits=$(git -C "${dir}" log "${current_version}"..HEAD --pretty=format:"%s" 2>"${err_file}"); then
+    echo "fatal: cannot read commit history for ${current_version}..HEAD in ${dir}: $(cat "${err_file}")" >&2
+    rm -f "${err_file}"
     exit 1
   fi
+  rm -f "${err_file}"
 
   if [ -z "${commits}" ]; then
     echo ""
@@ -121,22 +119,32 @@ update_formula_tag() {
   local file=$1
   local new_tag=$2
   local dir=$3
-  local new_revision temp_file
+  local new_revision temp_file err_file
 
-  if ! new_revision=$(git -C "${dir}" rev-parse "${new_tag}^{commit}" 2>&1); then
-    echo "fatal: cannot resolve ${new_tag} to a commit in ${dir}: ${new_revision}" >&2
+  err_file=$(mktemp)
+  if ! new_revision=$(git -C "${dir}" rev-parse "${new_tag}^{commit}" 2>"${err_file}"); then
+    echo "fatal: cannot resolve ${new_tag} to a commit in ${dir}: $(cat "${err_file}")" >&2
+    rm -f "${err_file}"
+    exit 1
+  fi
+  rm -f "${err_file}"
+
+  if [[ ! ${new_revision} =~ ^[0-9a-f]{40}$ ]]; then
+    echo "fatal: ${new_tag} in ${dir} resolved to an unexpected revision: ${new_revision}" >&2
     exit 1
   fi
 
   temp_file=$(mktemp)
   sed -E -e "s/(tag:) '[^']+'/\1 '${new_tag}'/" \
          -e "s/(revision:) '[^']+'/\1 '${new_revision}'/" "${file}" > "${temp_file}"
-  mv "${temp_file}" "${file}"
 
-  if ! grep -q "revision: '${new_revision}'" "${file}"; then
+  if ! grep -q "revision: '${new_revision}'" "${temp_file}"; then
     echo "fatal: ${file} has no revision: line to update; add one next to tag:" >&2
+    rm -f "${temp_file}"
     exit 1
   fi
+
+  mv "${temp_file}" "${file}"
 
   echo "Updated ${file} with tag ${new_tag} (revision ${new_revision})"
 }
@@ -175,7 +183,7 @@ rewrite_formula_resources() {
   local start_marker=$2
   local end_marker=$3
   local content_file=$4
-  local temp_file resource_count
+  local temp_file resource_count missing_stanzas
 
   if [ ! -s "${content_file}" ]; then
     echo "fatal: brew-resources produced no output for ${file}" >&2
@@ -185,9 +193,9 @@ rewrite_formula_resources() {
   temp_file=$(mktemp)
 
   if ! awk -v start="${start_marker}" -v end="${end_marker}" -v file="${content_file}" '
-    !p && $0 ~ start {p=1; matched=1; printf "%s\n\n", $0; while((getline line < file) > 0) print line; next}
+    !matched && $0 ~ start {p=1; matched=1; while((getline line < file) > 0) print line; next}
     p && $0 ~ end {p=0}
-    !p || $0 ~ end
+    !p
     END {if (!matched) exit 1}' "${file}" >"${temp_file}"; then
     echo "fatal: start marker not found in ${file}: ${start_marker}" >&2
     rm -f "${temp_file}"
@@ -202,7 +210,60 @@ rewrite_formula_resources() {
     exit 1
   fi
 
+  missing_stanzas=$(grep -E "^  (depends_on|uses_from_macos) " "${file}" | grep -Fxvf "${temp_file}" || true)
+
+  if [ -n "${missing_stanzas}" ]; then
+    echo "fatal: rewritten ${file} would drop these stanzas:" >&2
+    echo "${missing_stanzas}" >&2
+    rm -f "${temp_file}"
+    exit 1
+  fi
+
   mv "${temp_file}" "${file}"
+}
+
+check_default_branch() {
+  local dir=$1
+  local default_branch current_branch err_file
+
+  err_file=$(mktemp)
+  if ! default_branch=$(git -C "${dir}" symbolic-ref --short refs/remotes/origin/HEAD 2>"${err_file}"); then
+    echo "fatal: cannot determine the default branch of ${dir}: $(cat "${err_file}"); run 'git remote set-head origin --auto'" >&2
+    rm -f "${err_file}"
+    exit 1
+  fi
+  rm -f "${err_file}"
+
+  default_branch=${default_branch#origin/}
+  current_branch=$(git -C "${dir}" rev-parse --abbrev-ref HEAD)
+
+  if [ "${current_branch}" != "${default_branch}" ]; then
+    echo "fatal: ${dir} is on ${current_branch}, not the default branch ${default_branch}; check out ${default_branch} first" >&2
+    exit 1
+  fi
+}
+
+check_no_unpushed_commits() {
+  local dir=$1
+  local unpushed err_file
+
+  err_file=$(mktemp)
+  if ! unpushed=$(git -C "${dir}" rev-list --count '@{u}..HEAD' 2>"${err_file}"); then
+    echo "fatal: cannot compare HEAD with its upstream in ${dir}: $(cat "${err_file}")" >&2
+    rm -f "${err_file}"
+    exit 1
+  fi
+  rm -f "${err_file}"
+
+  if [[ ! ${unpushed} =~ ^[0-9]+$ ]]; then
+    echo "fatal: unexpected unpushed commit count for ${dir}: ${unpushed}" >&2
+    exit 1
+  fi
+
+  if [ "${unpushed}" -ne 0 ]; then
+    echo "fatal: ${dir} has ${unpushed} unpushed commit(s); push or drop them first" >&2
+    exit 1
+  fi
 }
 
 # Function to create a tag and push it, rolling back the local tag if the push fails
@@ -240,79 +301,104 @@ create_and_push_tag() {
   popd >/dev/null
 }
 
-for file in "${!files_to_dirs[@]}"; do
-  echo "Updating ${file}..."
-  directory="${files_to_dirs[${file}]}"
-  start_marker="${start_markers[${file}]}"
-  temp_new_content_file=$(mktemp)
+ensure_no_open_prs() {
+  local directory=$1
+  local open_prs err_file
 
-  # Get current tag before any updates
-  current_tag=$(extract_tag "${file}")
+  err_file=$(mktemp)
+  if ! open_prs=$(gh pr list --state open --json number --jq 'length' 2>"${err_file}"); then
+    echo "Warning: Failed to check open pull requests in ${directory}: $(cat "${err_file}")"
+    rm -f "${err_file}"
+    exit 1
+  fi
+  rm -f "${err_file}"
 
-  if [ -z "${current_tag}" ]; then
-    echo "Warning: Could not extract tag from ${file}, skipping..."
-    continue
+  if [[ ! ${open_prs} =~ ^[0-9]+$ ]]; then
+    echo "fatal: unexpected open pull request count for ${directory}: ${open_prs}" >&2
+    exit 1
   fi
 
-  echo "Current tag in ${file}: ${current_tag}"
+  if [ "${open_prs}" -gt 0 ]; then
+    echo "Warning: ${directory} has ${open_prs} open pull request(s). Please close or merge them first."
+    exit 1
+  fi
+}
 
-  # Navigate to the source repository for pre-flight checks
-  pushd "${cloud_officer_dir}/${directory}" >/dev/null
+preflight_source_repo() {
+  local dir=$1
 
-  # Check for uncommitted changes in the source repository.
+  pushd "${dir}" >/dev/null
+
   # Refresh the index first so stat-only differences (mtime/ctime changes from
   # earlier git operations or file copies) don't produce false positives.
   git update-index --refresh >/dev/null 2>&1 || true
   if [ -n "$(git status --porcelain)" ]; then
-    echo "Warning: ${directory} has uncommitted changes. Please commit them first."
+    echo "Warning: ${dir} has uncommitted changes. Please commit them first."
     exit 1
   fi
 
-  # Pull latest changes from remote
-  echo "Pulling latest changes in ${directory}..."
+  check_default_branch "${dir}"
+
+  echo "Pulling latest changes in ${dir}..."
   if ! git pull; then
-    echo "Warning: Failed to pull latest changes in ${directory}"
+    echo "Warning: Failed to pull latest changes in ${dir}"
     exit 1
   fi
 
-  # Check for open pull requests
-  if ! open_prs=$(gh pr list --state open --json number --jq 'length' 2>&1); then
-    echo "Warning: Failed to check open pull requests in ${directory}: ${open_prs}"
-    exit 1
-  fi
+  check_no_unpushed_commits "${dir}"
 
-  if [ -n "${open_prs}" ] && [ "${open_prs}" -gt 0 ]; then
-    echo "Warning: ${directory} has ${open_prs} open pull request(s). Please close or merge them first."
-    exit 1
-  fi
+  ensure_no_open_prs "${dir}"
 
   popd >/dev/null
+}
 
-  # Check if source repo has new commits since the current tag
-  source_repo_has_changes=false
-  if has_commits_since_tag "${current_tag}" "${cloud_officer_dir}/${directory}"; then
-    source_repo_has_changes=true
-    echo "Source repository ${directory} has new commits since tag ${current_tag}"
-  else
-    echo "Source repository ${directory} has no new commits since tag ${current_tag}"
-  fi
+generate_resources() {
+  local dir=$1
+  local out=$2
 
-  # Generate new resources
-  pushd "${cloud_officer_dir}/${directory}" >/dev/null
+  pushd "${dir}" >/dev/null
 
   if type -P "${cloud_officer_dir}/ci-tools/brew-resources.rb" &>/dev/null; then
-    "${cloud_officer_dir}/ci-tools/brew-resources.rb" >"${temp_new_content_file}"
+    "${cloud_officer_dir}/ci-tools/brew-resources.rb" >"${out}"
   else
-    brew-resources >"${temp_new_content_file}"
+    brew-resources >"${out}"
   fi
 
   popd >/dev/null
+}
 
+process_formula() {
+  local file=$1
+  local dir="${cloud_officer_dir}/${files_to_dirs[${file}]}"
+  local current_tag new_tag temp_new_content_file
+  local source_repo_has_changes=false
+  local formula_has_changes=false
+
+  echo "Updating ${file}..."
+
+  current_tag=$(extract_tag "${file}")
+
+  if [ -z "${current_tag}" ]; then
+    echo "Warning: Could not extract tag from ${file}, skipping..."
+    return
+  fi
+
+  echo "Current tag in ${file}: ${current_tag}"
+
+  preflight_source_repo "${dir}"
+
+  if has_commits_since_tag "${current_tag}" "${dir}"; then
+    source_repo_has_changes=true
+    echo "Source repository ${dir} has new commits since tag ${current_tag}"
+  else
+    echo "Source repository ${dir} has no new commits since tag ${current_tag}"
+  fi
+
+  temp_new_content_file=$(mktemp)
+  generate_resources "${dir}" "${temp_new_content_file}"
   rewrite_formula_resources "${file}" "${start_marker}" "${end_marker}" "${temp_new_content_file}"
   rm "${temp_new_content_file}"
 
-  # Check if the formula file was modified
-  formula_has_changes=false
   if ! git diff --quiet "${file}"; then
     formula_has_changes=true
     echo "Formula ${file} has been updated with new resources"
@@ -320,32 +406,32 @@ for file in "${!files_to_dirs[@]}"; do
     echo "Formula ${file} has no resource changes"
   fi
 
-  # Create new tag if EITHER condition is true:
-  # 1. Formula file has changes (resources updated)
-  # 2. Source repo has new commits since current tag
-  if [ "${formula_has_changes}" == true ] || [ "${source_repo_has_changes}" == true ]; then
-    echo "Determining new version (formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes})..."
-
-    new_tag=$(determine_new_version "${current_tag}" "${cloud_officer_dir}/${directory}")
-
-    if [ -z "${new_tag}" ]; then
-      echo "✓ ${file} - no commits since ${current_tag}, skipping tag creation"
-      echo ""
-      continue
-    fi
-
-    echo "New tag: ${new_tag}"
-
-    create_and_push_tag "${new_tag}" "${cloud_officer_dir}/${directory}"
-
-    # Update the formula file with the new tag
-    update_formula_tag "${file}" "${new_tag}" "${cloud_officer_dir}/${directory}"
-
-    echo "✓ Successfully processed ${file}: ${current_tag} -> ${new_tag}"
-    echo "  Reason: formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes}"
-    echo ""
-  else
+  if [ "${formula_has_changes}" != true ] && [ "${source_repo_has_changes}" != true ]; then
     echo "✓ ${file} is up to date (no formula or source changes)"
     echo ""
+    return
   fi
+
+  echo "Determining new version (formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes})..."
+
+  new_tag=$(determine_new_version "${current_tag}" "${dir}")
+
+  if [ -z "${new_tag}" ]; then
+    echo "✓ ${file} - no commits since ${current_tag}, skipping tag creation"
+    echo ""
+    return
+  fi
+
+  echo "New tag: ${new_tag}"
+
+  create_and_push_tag "${new_tag}" "${dir}"
+  update_formula_tag "${file}" "${new_tag}" "${dir}"
+
+  echo "✓ Successfully processed ${file}: ${current_tag} -> ${new_tag}"
+  echo "  Reason: formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes}"
+  echo ""
+}
+
+for file in "${!files_to_dirs[@]}"; do
+  process_formula "${file}"
 done

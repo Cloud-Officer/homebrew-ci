@@ -3,7 +3,13 @@
 setup() {
   TEST_TMP="$(mktemp -d)"
   export TEST_TMP
+  export TMPDIR="${TEST_TMP}/tmp"
+  mkdir -p "${TMPDIR}"
   eval "$(sed -n '/^rewrite_formula_resources()/,/^}/p' "${BATS_TEST_DIRNAME}/../update_resources.sh")"
+  start_marker=''
+  eval "$(grep -E '^start_marker=' "${BATS_TEST_DIRNAME}/../update_resources.sh")"
+  # shellcheck disable=SC2329
+  mktemp() { command mktemp "${TMPDIR}/tmp.XXXXXX"; }
 
   FORMULA="${TEST_TMP}/soup.rb"
   cat > "${FORMULA}" <<'RB'
@@ -36,7 +42,7 @@ teardown() {
 }
 
 @test "replaces the resource block between the markers" {
-  run rewrite_formula_resources "${FORMULA}" "depends_on 'ruby'" 'def install' "${CONTENT}"
+  run rewrite_formula_resources "${FORMULA}" "${start_marker}" 'def install' "${CONTENT}"
   [ "$status" -eq 0 ]
   grep -q "resource 'new-gem'" "${FORMULA}"
   run grep -q "resource 'old-gem'" "${FORMULA}"
@@ -57,7 +63,7 @@ teardown() {
 @test "regression #147b: empty generated content aborts instead of deleting every resource" {
   : > "${CONTENT}"
   cp "${FORMULA}" "${TEST_TMP}/before.rb"
-  run rewrite_formula_resources "${FORMULA}" "depends_on 'ruby'" 'def install' "${CONTENT}"
+  run rewrite_formula_resources "${FORMULA}" "${start_marker}" 'def install' "${CONTENT}"
   [ "$status" -ne 0 ]
   [[ "$output" == *"produced no output"* ]]
   run diff -q "${TEST_TMP}/before.rb" "${FORMULA}"
@@ -67,7 +73,7 @@ teardown() {
 @test "regression #147b: content with no resource blocks aborts before overwriting" {
   printf 'just some noise\n' > "${CONTENT}"
   cp "${FORMULA}" "${TEST_TMP}/before.rb"
-  run rewrite_formula_resources "${FORMULA}" "depends_on 'ruby'" 'def install' "${CONTENT}"
+  run rewrite_formula_resources "${FORMULA}" "${start_marker}" 'def install' "${CONTENT}"
   [ "$status" -ne 0 ]
   [[ "$output" == *"no resource blocks"* ]]
   run diff -q "${TEST_TMP}/before.rb" "${FORMULA}"
@@ -76,16 +82,100 @@ teardown() {
 
 @test "a missing content file aborts" {
   cp "${FORMULA}" "${TEST_TMP}/before.rb"
-  run rewrite_formula_resources "${FORMULA}" "depends_on 'ruby'" 'def install' "${TEST_TMP}/does-not-exist"
+  run rewrite_formula_resources "${FORMULA}" "${start_marker}" 'def install' "${TEST_TMP}/does-not-exist"
   [ "$status" -ne 0 ]
   run diff -q "${TEST_TMP}/before.rb" "${FORMULA}"
   [ "$status" -eq 0 ]
 }
 
-@test "leaves no temp files behind on the failure path" {
-  before=$(find "${TEST_TMP}" -type f | wc -l)
+@test "leaves no temp files behind when the start marker is missing" {
   run rewrite_formula_resources "${FORMULA}" "depends_on 'missing'" 'def install' "${CONTENT}"
   [ "$status" -ne 0 ]
-  after=$(find "${TEST_TMP}" -type f | wc -l)
-  [ "$before" -eq "$after" ]
+  [[ "$output" == *"start marker not found"* ]]
+  [ "$(find "${TMPDIR}" -type f | wc -l)" -eq 0 ]
+}
+
+@test "leaves no temp files behind when the rewrite has no resource blocks" {
+  printf 'just some noise\n' > "${CONTENT}"
+  run rewrite_formula_resources "${FORMULA}" "depends_on 'ruby'" 'def install' "${CONTENT}"
+  [ "$status" -ne 0 ]
+  [[ "$output" == *"no resource blocks"* ]]
+  [ "$(find "${TMPDIR}" -type f | wc -l)" -eq 0 ]
+}
+
+@test "regression #204: the configured start marker keeps stanzas that sort after the last depends_on" {
+  cat > "${FORMULA}" <<'RB'
+class Citools < Formula
+  depends_on 'yamllint'
+  depends_on 'zizmor'
+  uses_from_macos 'zlib'
+
+  resource 'old-gem' do
+    url 'https://rubygems.org/gems/old-gem-1.0.0.gem'
+    sha256 'aaaa'
+  end
+
+  def install
+    prefix.install('bin')
+  end
+end
+RB
+  run rewrite_formula_resources "${FORMULA}" "${start_marker}" 'def install' "${CONTENT}"
+  [ "$status" -eq 0 ]
+  grep -qx "  depends_on 'yamllint'" "${FORMULA}"
+  grep -qx "  depends_on 'zizmor'" "${FORMULA}"
+  grep -qx "  uses_from_macos 'zlib'" "${FORMULA}"
+  grep -q "resource 'new-gem'" "${FORMULA}"
+  run grep -q "resource 'old-gem'" "${FORMULA}"
+  [ "$status" -ne 0 ]
+}
+
+@test "regression #204: the configured start marker anchors on a leading on_macos block" {
+  cat > "${FORMULA}" <<'RB'
+class Soup < Formula
+  depends_on 'ruby'
+
+  on_macos do
+    resource 'old-gem' do
+      url 'https://rubygems.org/gems/old-gem-1.0.0.gem'
+      sha256 'aaaa'
+    end
+  end
+
+  def install
+    prefix.install('bin')
+  end
+end
+RB
+  run rewrite_formula_resources "${FORMULA}" "${start_marker}" 'def install' "${CONTENT}"
+  [ "$status" -eq 0 ]
+  grep -qx "  depends_on 'ruby'" "${FORMULA}"
+  run grep -q 'on_macos' "${FORMULA}"
+  [ "$status" -ne 0 ]
+  grep -q "resource 'new-gem'" "${FORMULA}"
+}
+
+@test "regression #204: a depends_on dropped by the rewrite aborts before overwriting" {
+  cat > "${FORMULA}" <<'RB'
+class Citools < Formula
+  depends_on 'yamllint'
+  depends_on 'zizmor'
+
+  resource 'old-gem' do
+    url 'https://rubygems.org/gems/old-gem-1.0.0.gem'
+    sha256 'aaaa'
+  end
+
+  def install
+    prefix.install('bin')
+  end
+end
+RB
+  cp "${FORMULA}" "${TEST_TMP}/before.rb"
+  run rewrite_formula_resources "${FORMULA}" "depends_on 'yamllint'" 'def install' "${CONTENT}"
+  [ "$status" -ne 0 ]
+  [[ "$output" == *"depends_on 'zizmor'"* ]]
+  run diff -q "${TEST_TMP}/before.rb" "${FORMULA}"
+  [ "$status" -eq 0 ]
+  [ "$(find "${TMPDIR}" -type f | wc -l)" -eq 0 ]
 }
