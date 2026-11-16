@@ -138,6 +138,18 @@ commit_with_subject() {
   [[ "$output" == *"cannot read commit history"* ]]
 }
 
+@test "regression #205: an ambiguous refname warning is not sent to claude as a commit" {
+  commit_with_subject 'Fix a bug'
+  git -C "${REPO}" branch 1.2.3 1.2.3
+  printf '#!/usr/bin/env bash\ncat > "%s/prompt.txt"\nprintf PATCH\n' "${TEST_TMP}" > "${TEST_TMP}/bin/claude"
+  chmod +x "${TEST_TMP}/bin/claude"
+  run determine_new_version 1.2.3 "${REPO}"
+  [ "$status" -eq 0 ]
+  grep -q 'Fix a bug' "${TEST_TMP}/prompt.txt"
+  run grep -q 'ambiguous' "${TEST_TMP}/prompt.txt"
+  [ "$status" -ne 0 ]
+}
+
 @test "no commits since the tag returns empty" {
   stub_claude 'MINOR'
   run determine_new_version 1.2.3 "${REPO}"

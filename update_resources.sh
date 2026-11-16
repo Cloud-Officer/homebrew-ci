@@ -60,11 +60,14 @@ determine_new_version() {
 
   IFS='.' read -r major minor patch <<< "${current_version}"
 
-  local commits
-  if ! commits=$(git -C "${dir}" log "${current_version}"..HEAD --pretty=format:"%s" 2>&1); then
-    echo "fatal: cannot read commit history for ${current_version}..HEAD in ${dir}: ${commits}" >&2
+  local commits err_file
+  err_file=$(mktemp)
+  if ! commits=$(git -C "${dir}" log "${current_version}"..HEAD --pretty=format:"%s" 2>"${err_file}"); then
+    echo "fatal: cannot read commit history for ${current_version}..HEAD in ${dir}: $(cat "${err_file}")" >&2
+    rm -f "${err_file}"
     exit 1
   fi
+  rm -f "${err_file}"
 
   if [ -z "${commits}" ]; then
     echo ""
@@ -121,10 +124,18 @@ update_formula_tag() {
   local file=$1
   local new_tag=$2
   local dir=$3
-  local new_revision temp_file
+  local new_revision temp_file err_file
 
-  if ! new_revision=$(git -C "${dir}" rev-parse "${new_tag}^{commit}" 2>&1); then
-    echo "fatal: cannot resolve ${new_tag} to a commit in ${dir}: ${new_revision}" >&2
+  err_file=$(mktemp)
+  if ! new_revision=$(git -C "${dir}" rev-parse "${new_tag}^{commit}" 2>"${err_file}"); then
+    echo "fatal: cannot resolve ${new_tag} to a commit in ${dir}: $(cat "${err_file}")" >&2
+    rm -f "${err_file}"
+    exit 1
+  fi
+  rm -f "${err_file}"
+
+  if [[ ! ${new_revision} =~ ^[0-9a-f]{40}$ ]]; then
+    echo "fatal: ${new_tag} in ${dir} resolved to an unexpected revision: ${new_revision}" >&2
     exit 1
   fi
 
@@ -240,6 +251,29 @@ create_and_push_tag() {
   popd >/dev/null
 }
 
+ensure_no_open_prs() {
+  local directory=$1
+  local open_prs err_file
+
+  err_file=$(mktemp)
+  if ! open_prs=$(gh pr list --state open --json number --jq 'length' 2>"${err_file}"); then
+    echo "Warning: Failed to check open pull requests in ${directory}: $(cat "${err_file}")"
+    rm -f "${err_file}"
+    exit 1
+  fi
+  rm -f "${err_file}"
+
+  if [[ ! ${open_prs} =~ ^[0-9]+$ ]]; then
+    echo "fatal: unexpected open pull request count for ${directory}: ${open_prs}" >&2
+    exit 1
+  fi
+
+  if [ "${open_prs}" -gt 0 ]; then
+    echo "Warning: ${directory} has ${open_prs} open pull request(s). Please close or merge them first."
+    exit 1
+  fi
+}
+
 for file in "${!files_to_dirs[@]}"; do
   echo "Updating ${file}..."
   directory="${files_to_dirs[${file}]}"
@@ -275,16 +309,7 @@ for file in "${!files_to_dirs[@]}"; do
     exit 1
   fi
 
-  # Check for open pull requests
-  if ! open_prs=$(gh pr list --state open --json number --jq 'length' 2>&1); then
-    echo "Warning: Failed to check open pull requests in ${directory}: ${open_prs}"
-    exit 1
-  fi
-
-  if [ -n "${open_prs}" ] && [ "${open_prs}" -gt 0 ]; then
-    echo "Warning: ${directory} has ${open_prs} open pull request(s). Please close or merge them first."
-    exit 1
-  fi
+  ensure_no_open_prs "${directory}"
 
   popd >/dev/null
 
