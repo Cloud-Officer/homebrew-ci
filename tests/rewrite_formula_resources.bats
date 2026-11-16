@@ -3,7 +3,10 @@
 setup() {
   TEST_TMP="$(mktemp -d)"
   export TEST_TMP
+  export TMPDIR="${TEST_TMP}/tmp"
+  mkdir -p "${TMPDIR}"
   eval "$(sed -n '/^rewrite_formula_resources()/,/^}/p' "${BATS_TEST_DIRNAME}/../update_resources.sh")"
+  mktemp() { command mktemp "${TMPDIR}/tmp.XXXXXX"; }
 
   FORMULA="${TEST_TMP}/soup.rb"
   cat > "${FORMULA}" <<'RB'
@@ -82,10 +85,17 @@ teardown() {
   [ "$status" -eq 0 ]
 }
 
-@test "leaves no temp files behind on the failure path" {
-  before=$(find "${TEST_TMP}" -type f | wc -l)
+@test "leaves no temp files behind when the start marker is missing" {
   run rewrite_formula_resources "${FORMULA}" "depends_on 'missing'" 'def install' "${CONTENT}"
   [ "$status" -ne 0 ]
-  after=$(find "${TEST_TMP}" -type f | wc -l)
-  [ "$before" -eq "$after" ]
+  [[ "$output" == *"start marker not found"* ]]
+  [ "$(find "${TMPDIR}" -type f | wc -l)" -eq 0 ]
+}
+
+@test "leaves no temp files behind when the rewrite has no resource blocks" {
+  printf 'just some noise\n' > "${CONTENT}"
+  run rewrite_formula_resources "${FORMULA}" "depends_on 'ruby'" 'def install' "${CONTENT}"
+  [ "$status" -ne 0 ]
+  [[ "$output" == *"no resource blocks"* ]]
+  [ "$(find "${TMPDIR}" -type f | wc -l)" -eq 0 ]
 }
