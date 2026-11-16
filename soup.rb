@@ -138,7 +138,7 @@ class Soup < Formula
 
     resources.each do |r|
       r.verify_download_integrity(r.cached_download)
-      system('gem', 'install', r.cached_download, '--no-document', '--install-dir', "#{libexec}/vendor")
+      system('gem', 'install', r.cached_download, '--ignore-dependencies', '--local', '--no-document', '--install-dir', "#{libexec}/vendor")
     end
 
     rm_rf('vendor')
