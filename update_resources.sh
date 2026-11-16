@@ -240,79 +240,87 @@ create_and_push_tag() {
   popd >/dev/null
 }
 
-for file in "${!files_to_dirs[@]}"; do
-  echo "Updating ${file}..."
-  directory="${files_to_dirs[${file}]}"
-  start_marker="${start_markers[${file}]}"
-  temp_new_content_file=$(mktemp)
+preflight_source_repo() {
+  local dir=$1
+  local open_prs
 
-  # Get current tag before any updates
-  current_tag=$(extract_tag "${file}")
+  pushd "${dir}" >/dev/null
 
-  if [ -z "${current_tag}" ]; then
-    echo "Warning: Could not extract tag from ${file}, skipping..."
-    continue
-  fi
-
-  echo "Current tag in ${file}: ${current_tag}"
-
-  # Navigate to the source repository for pre-flight checks
-  pushd "${cloud_officer_dir}/${directory}" >/dev/null
-
-  # Check for uncommitted changes in the source repository.
   # Refresh the index first so stat-only differences (mtime/ctime changes from
   # earlier git operations or file copies) don't produce false positives.
   git update-index --refresh >/dev/null 2>&1 || true
   if [ -n "$(git status --porcelain)" ]; then
-    echo "Warning: ${directory} has uncommitted changes. Please commit them first."
+    echo "Warning: ${dir} has uncommitted changes. Please commit them first."
     exit 1
   fi
 
-  # Pull latest changes from remote
-  echo "Pulling latest changes in ${directory}..."
+  echo "Pulling latest changes in ${dir}..."
   if ! git pull; then
-    echo "Warning: Failed to pull latest changes in ${directory}"
+    echo "Warning: Failed to pull latest changes in ${dir}"
     exit 1
   fi
 
-  # Check for open pull requests
   if ! open_prs=$(gh pr list --state open --json number --jq 'length' 2>&1); then
-    echo "Warning: Failed to check open pull requests in ${directory}: ${open_prs}"
+    echo "Warning: Failed to check open pull requests in ${dir}: ${open_prs}"
     exit 1
   fi
 
   if [ -n "${open_prs}" ] && [ "${open_prs}" -gt 0 ]; then
-    echo "Warning: ${directory} has ${open_prs} open pull request(s). Please close or merge them first."
+    echo "Warning: ${dir} has ${open_prs} open pull request(s). Please close or merge them first."
     exit 1
   fi
 
   popd >/dev/null
+}
 
-  # Check if source repo has new commits since the current tag
-  source_repo_has_changes=false
-  if has_commits_since_tag "${current_tag}" "${cloud_officer_dir}/${directory}"; then
-    source_repo_has_changes=true
-    echo "Source repository ${directory} has new commits since tag ${current_tag}"
-  else
-    echo "Source repository ${directory} has no new commits since tag ${current_tag}"
-  fi
+generate_resources() {
+  local dir=$1
+  local out=$2
 
-  # Generate new resources
-  pushd "${cloud_officer_dir}/${directory}" >/dev/null
+  pushd "${dir}" >/dev/null
 
   if type -P "${cloud_officer_dir}/ci-tools/brew-resources.rb" &>/dev/null; then
-    "${cloud_officer_dir}/ci-tools/brew-resources.rb" >"${temp_new_content_file}"
+    "${cloud_officer_dir}/ci-tools/brew-resources.rb" >"${out}"
   else
-    brew-resources >"${temp_new_content_file}"
+    brew-resources >"${out}"
   fi
 
   popd >/dev/null
+}
 
+process_formula() {
+  local file=$1
+  local dir="${cloud_officer_dir}/${files_to_dirs[${file}]}"
+  local start_marker="${start_markers[${file}]}"
+  local current_tag new_tag temp_new_content_file
+  local source_repo_has_changes=false
+  local formula_has_changes=false
+
+  echo "Updating ${file}..."
+
+  current_tag=$(extract_tag "${file}")
+
+  if [ -z "${current_tag}" ]; then
+    echo "Warning: Could not extract tag from ${file}, skipping..."
+    return
+  fi
+
+  echo "Current tag in ${file}: ${current_tag}"
+
+  preflight_source_repo "${dir}"
+
+  if has_commits_since_tag "${current_tag}" "${dir}"; then
+    source_repo_has_changes=true
+    echo "Source repository ${dir} has new commits since tag ${current_tag}"
+  else
+    echo "Source repository ${dir} has no new commits since tag ${current_tag}"
+  fi
+
+  temp_new_content_file=$(mktemp)
+  generate_resources "${dir}" "${temp_new_content_file}"
   rewrite_formula_resources "${file}" "${start_marker}" "${end_marker}" "${temp_new_content_file}"
   rm "${temp_new_content_file}"
 
-  # Check if the formula file was modified
-  formula_has_changes=false
   if ! git diff --quiet "${file}"; then
     formula_has_changes=true
     echo "Formula ${file} has been updated with new resources"
@@ -320,32 +328,32 @@ for file in "${!files_to_dirs[@]}"; do
     echo "Formula ${file} has no resource changes"
   fi
 
-  # Create new tag if EITHER condition is true:
-  # 1. Formula file has changes (resources updated)
-  # 2. Source repo has new commits since current tag
-  if [ "${formula_has_changes}" == true ] || [ "${source_repo_has_changes}" == true ]; then
-    echo "Determining new version (formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes})..."
-
-    new_tag=$(determine_new_version "${current_tag}" "${cloud_officer_dir}/${directory}")
-
-    if [ -z "${new_tag}" ]; then
-      echo "✓ ${file} - no commits since ${current_tag}, skipping tag creation"
-      echo ""
-      continue
-    fi
-
-    echo "New tag: ${new_tag}"
-
-    create_and_push_tag "${new_tag}" "${cloud_officer_dir}/${directory}"
-
-    # Update the formula file with the new tag
-    update_formula_tag "${file}" "${new_tag}" "${cloud_officer_dir}/${directory}"
-
-    echo "✓ Successfully processed ${file}: ${current_tag} -> ${new_tag}"
-    echo "  Reason: formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes}"
-    echo ""
-  else
+  if [ "${formula_has_changes}" != true ] && [ "${source_repo_has_changes}" != true ]; then
     echo "✓ ${file} is up to date (no formula or source changes)"
     echo ""
+    return
   fi
+
+  echo "Determining new version (formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes})..."
+
+  new_tag=$(determine_new_version "${current_tag}" "${dir}")
+
+  if [ -z "${new_tag}" ]; then
+    echo "✓ ${file} - no commits since ${current_tag}, skipping tag creation"
+    echo ""
+    return
+  fi
+
+  echo "New tag: ${new_tag}"
+
+  create_and_push_tag "${new_tag}" "${dir}"
+  update_formula_tag "${file}" "${new_tag}" "${dir}"
+
+  echo "✓ Successfully processed ${file}: ${current_tag} -> ${new_tag}"
+  echo "  Reason: formula_changes=${formula_has_changes}, source_changes=${source_repo_has_changes}"
+  echo ""
+}
+
+for file in "${!files_to_dirs[@]}"; do
+  process_formula "${file}"
 done
