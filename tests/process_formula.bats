@@ -26,6 +26,7 @@ setup() {
   git -C "${SOURCE}" commit -q --allow-empty -m 'initial'
   git -C "${SOURCE}" tag 1.2.3
   git -C "${SOURCE}" push -q -u origin master 1.2.3
+  git -C "${SOURCE}" remote set-head origin master
   REVISION="$(git -C "${SOURCE}" rev-parse HEAD)"
 
   TAP="${TEST_TMP}/tap"
@@ -168,4 +169,22 @@ remote_has_tag() {
   run process_formula soup.rb
   [ "$status" -ne 0 ]
   [[ "$output" == *"Failed to check open pull requests"* ]]
+}
+
+@test "a source repo on a feature branch aborts before tagging" {
+  upstream_commit 'Fix a typo'
+  git -C "${SOURCE}" checkout -q -b feature
+  run process_formula soup.rb
+  [ "$status" -ne 0 ]
+  [[ "$output" == *"not the default branch master"* ]]
+  ! remote_has_tag 1.2.4
+  git -C "${TAP}" diff --quiet soup.rb
+}
+
+@test "unpushed local commits in the source repo abort before tagging" {
+  git -C "${SOURCE}" commit -q --allow-empty -m 'local only'
+  run process_formula soup.rb
+  [ "$status" -ne 0 ]
+  [[ "$output" == *"unpushed commit(s)"* ]]
+  ! remote_has_tag 1.2.4
 }
