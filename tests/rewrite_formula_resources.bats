@@ -6,7 +6,9 @@ setup() {
   export TMPDIR="${TEST_TMP}/tmp"
   mkdir -p "${TMPDIR}"
   eval "$(sed -n '/^rewrite_formula_resources()/,/^}/p' "${BATS_TEST_DIRNAME}/../update_resources.sh")"
+  start_marker=''
   eval "$(grep -E '^start_marker=' "${BATS_TEST_DIRNAME}/../update_resources.sh")"
+  # shellcheck disable=SC2329
   mktemp() { command mktemp "${TMPDIR}/tmp.XXXXXX"; }
 
   FORMULA="${TEST_TMP}/soup.rb"

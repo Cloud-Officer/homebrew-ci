@@ -178,7 +178,8 @@ remote_has_tag() {
   run process_formula soup.rb
   [ "$status" -ne 0 ]
   [[ "$output" == *"not the default branch master"* ]]
-  ! remote_has_tag 1.2.4
+  run remote_has_tag 1.2.4
+  [ "$status" -ne 0 ]
   git -C "${TAP}" diff --quiet soup.rb
 }
 
@@ -187,5 +188,6 @@ remote_has_tag() {
   run process_formula soup.rb
   [ "$status" -ne 0 ]
   [[ "$output" == *"unpushed commit(s)"* ]]
-  ! remote_has_tag 1.2.4
+  run remote_has_tag 1.2.4
+  [ "$status" -ne 0 ]
 }
