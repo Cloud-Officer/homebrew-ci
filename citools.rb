@@ -44,6 +44,11 @@ class Citools < Formula
     sha256 'b8318a97bfddaeff89b523a114788e7961ab04a31b21556a89d76f7737c5aa79'
   end
 
+  resource 'aws-sdk-codedeploy' do
+    url 'https://rubygems.org/gems/aws-sdk-codedeploy-1.117.0.gem'
+    sha256 '2c512f415ff90a52cbc88f9603635c75705136a3768e920a458bb5c0582b940e'
+  end
+
   resource 'aws-sdk-core' do
     url 'https://rubygems.org/gems/aws-sdk-core-3.269.0.gem'
     sha256 'ad9e2b4bf9a11339cebb3a039ae8557944dd60c851abba5000bb7fa48923faa8'
@@ -158,6 +163,7 @@ class Citools < Formula
     libexec.install('deploy.rb')
     libexec.install('encrypt-logs.rb')
     libexec.install('lib')
+    libexec.install('plugins') if File.directory?('plugins')
     bin.install('generate-codeowners')
     bin.install('linters')
     bin.install('ssm-jump')
