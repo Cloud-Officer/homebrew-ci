@@ -4,16 +4,16 @@ class Soup < Formula
   desc 'Software of Unknown Provenance'
   homepage 'https://github.com/Cloud-Officer/soup'
   url 'https://github.com/Cloud-Officer/soup.git',
-      tag: '1.10.20',
-      revision: 'cf6af94f4adff10c82b293d6644d123e03c836cf'
+      tag: '1.10.21',
+      revision: '564d81fd4e6e0a762b4cc490fd84789175b7ef95'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/soup.git'
 
   depends_on 'ruby'
 
   resource 'httparty' do
-    url 'https://rubygems.org/gems/httparty-0.24.3.gem'
-    sha256 '5c95cf29ca70d5bfd834e56140ddfca6e94166c3b870cde9c25d157cdb5a00d2'
+    url 'https://rubygems.org/gems/httparty-0.25.1.gem'
+    sha256 '354f84b766f9a3e077d64fc8b61a71c88e7c8a890eac4178d30d3269458c1dc5'
   end
 
   resource 'json' do
