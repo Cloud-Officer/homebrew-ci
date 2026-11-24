@@ -4,8 +4,8 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.33.2',
-      revision: '6429461fb70afc4b29eca38f6145c9d71bae2081'
+      tag: '1.33.4',
+      revision: '1f67e336bd7c93b1e0701352ccd9c40826a48343'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
@@ -17,8 +17,8 @@ class Githubbuild < Formula
   end
 
   resource 'httparty' do
-    url 'https://rubygems.org/gems/httparty-0.24.3.gem'
-    sha256 '5c95cf29ca70d5bfd834e56140ddfca6e94166c3b870cde9c25d157cdb5a00d2'
+    url 'https://rubygems.org/gems/httparty-0.25.1.gem'
+    sha256 '354f84b766f9a3e077d64fc8b61a71c88e7c8a890eac4178d30d3269458c1dc5'
   end
 
   resource 'optparse' do

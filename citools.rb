@@ -4,8 +4,8 @@ class Citools < Formula
   desc 'Continuous Integration tools'
   homepage 'https://github.com/Cloud-Officer/ci-tools'
   url 'https://github.com/Cloud-Officer/ci-tools.git',
-      tag: '1.11.1',
-      revision: '16ccc5634e1a59a962d981c2bcc35c45989d5d48'
+      tag: '1.11.2',
+      revision: 'ad36d0c2e8cb0cfeeb9ea376244faaabe231adeb'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/ci-tools.git'
 
@@ -30,13 +30,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-cloudformation' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.173.0.gem'
-    sha256 'f0b0a7fbd664fc8b864b06851dbbc67970a12bc1630f953a8cf61568c4a434af'
+    url 'https://rubygems.org/gems/aws-sdk-cloudformation-1.174.0.gem'
+    sha256 '3af3f2f963ce702f979b2969b67582466e56e7cc8c84ac284684dc573efed9de'
   end
 
   resource 'aws-sdk-cloudfront' do
-    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.169.0.gem'
-    sha256 '424014cf8a72664cfd89f272f9ebdf916c33827bc1559cc88c1116f54f9f364d'
+    url 'https://rubygems.org/gems/aws-sdk-cloudfront-1.171.0.gem'
+    sha256 '75a00fd57db3334f11415ae7037521bb2ba18af931327375a10aab51904565e8'
   end
 
   resource 'aws-sdk-cloudwatchlogs' do
@@ -50,23 +50,23 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-core' do
-    url 'https://rubygems.org/gems/aws-sdk-core-3.270.0.gem'
-    sha256 '386da460d5e96dd09a94f9d6ccc0bbb6ea2635424d6af0a3ad0024e9b91cd83f'
+    url 'https://rubygems.org/gems/aws-sdk-core-3.271.1.gem'
+    sha256 'ee006612eb374da44bfe580f28063e7bdc66cb45875f71b2d2a879012a089c48'
   end
 
   resource 'aws-sdk-ec2' do
-    url 'https://rubygems.org/gems/aws-sdk-ec2-1.673.0.gem'
-    sha256 'efcf86705286ac02433ffa96dea1765bf3b934f3f86208074c8f00c05eb4a618'
+    url 'https://rubygems.org/gems/aws-sdk-ec2-1.674.0.gem'
+    sha256 'e636077d8276ccf477dd00f73306c4cd6c2fafd6c70615ccf1895797b908a3b6'
   end
 
   resource 'aws-sdk-elasticloadbalancingv2' do
-    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.171.0.gem'
-    sha256 '61bcf804b77be4f762e1ab9ed11971e04352332bed7e3b87dcafd6a88b270329'
+    url 'https://rubygems.org/gems/aws-sdk-elasticloadbalancingv2-1.172.0.gem'
+    sha256 'a29b8446819b0d032d0576d1fd87c8e4a4574900c2802c516b52466704eab7ee'
   end
 
   resource 'aws-sdk-iam' do
-    url 'https://rubygems.org/gems/aws-sdk-iam-1.167.0.gem'
-    sha256 'f854856aaaa2360407dcce15a7fde4cf909f951f2928b5e4a8fb9e3f0f4ea34c'
+    url 'https://rubygems.org/gems/aws-sdk-iam-1.168.0.gem'
+    sha256 'd1f3142fbf329671fc74e0f020263a0b0bebc6d584961c915033ad47bf393e76'
   end
 
   resource 'aws-sdk-kms' do
@@ -75,13 +75,13 @@ class Citools < Formula
   end
 
   resource 'aws-sdk-lambda' do
-    url 'https://rubygems.org/gems/aws-sdk-lambda-1.215.0.gem'
-    sha256 '52c2c1c7e683f21cd58f6e31ae2263109ab07283dddf05f604f56be623d4cadc'
+    url 'https://rubygems.org/gems/aws-sdk-lambda-1.216.0.gem'
+    sha256 '0289f94345a4b57a9b44efb7f84d840facc5ab8203169866c8dea189793ca9bc'
   end
 
   resource 'aws-sdk-ssm' do
-    url 'https://rubygems.org/gems/aws-sdk-ssm-1.236.0.gem'
-    sha256 '3155114475c9a412da17ed5b791144a7648072f127c889330f585d57492bb053'
+    url 'https://rubygems.org/gems/aws-sdk-ssm-1.237.0.gem'
+    sha256 '4d0036a33869987117b3761abb6d51cb111b7d324fdba6a21e00bda9a27ed0f3'
   end
 
   resource 'base64' do
@@ -90,8 +90,8 @@ class Citools < Formula
   end
 
   resource 'httparty' do
-    url 'https://rubygems.org/gems/httparty-0.24.3.gem'
-    sha256 '5c95cf29ca70d5bfd834e56140ddfca6e94166c3b870cde9c25d157cdb5a00d2'
+    url 'https://rubygems.org/gems/httparty-0.25.1.gem'
+    sha256 '354f84b766f9a3e077d64fc8b61a71c88e7c8a890eac4178d30d3269458c1dc5'
   end
 
   resource 'iniparse' do
@@ -115,8 +115,8 @@ class Citools < Formula
   end
 
   resource 'aws-partitions' do
-    url 'https://rubygems.org/gems/aws-partitions-1.1308.0.gem'
-    sha256 '902952315e2b93360277c4a567811b73f5d4bbbc25abc3fba77c6babd7c637a6'
+    url 'https://rubygems.org/gems/aws-partitions-1.1310.0.gem'
+    sha256 '8f97a525563ec4803d55d02f54f9749a17f8428aa0978afe0b59e61f4ae8e3f6'
   end
 
   resource 'bigdecimal' do
