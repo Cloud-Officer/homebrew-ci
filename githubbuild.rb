@@ -4,8 +4,8 @@ class Githubbuild < Formula
   desc 'GitHub build file generator'
   homepage 'https://github.com/Cloud-Officer/github-build'
   url 'https://github.com/Cloud-Officer/github-build.git',
-      tag: '1.33.5',
-      revision: 'd0411ef5c09e8dbb9cfe6c86a588b6839a8e1490'
+      tag: '1.34.0',
+      revision: 'a9887970e3ee155569ce45e1ad66465276001cc8'
   license 'MIT'
   head 'https://github.com/Cloud-Officer/github-build.git'
 
